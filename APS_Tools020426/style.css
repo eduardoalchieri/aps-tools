@@ -1,0 +1,669 @@
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #0b5ed7; /* Azul médico sóbrio */
+    color: white;
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px; /* Espaço entre o título principal e as informações do desenvolvedor */
+}
+
+/* Informações do Desenvolvedor */
+.developer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev-name {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 2px;
+}
+
+.dev-contact {
+    font-size: 0.8rem;
+    color: #e3f2fd;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.dev-contact:hover {
+    text-decoration: underline;
+}
+
+/* Botão de Voltar no Cabeçalho */
+#btn-voltar {
+    position: absolute;
+    left: 1rem;
+    top: 50%; /* Posiciona no meio exato do cabeçalho */
+    transform: translateY(-50%); /* Corrige o alinhamento para o centro perfeito */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+#btn-voltar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+/* Botão Favoritar no Cabeçalho */
+#btn-favoritar {
+    position: absolute;
+    right: 3.5rem; /* Fica posicionado ao lado do botão Sobre */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+}
+
+#btn-favoritar:hover {
+    transform: scale(1.1);
+}
+/* Botão Sobre no Cabeçalho */
+#btn-sobre {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    transition: background 0.2s;
+}
+
+#btn-sobre:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Container Principal */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Controle de Visualização das Telas */
+.view {
+    display: none;
+}
+.view.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilo dos Botões do Menu */
+.menu-btn {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.menu-btn:hover {
+    border-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(11, 94, 215, 0.15);
+}
+
+.menu-btn .material-symbols-outlined {
+    font-size: 2rem;
+    color: #0b5ed7;
+}
+
+/* Títulos das Seções Internas */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.placeholder-text {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Animação suave na troca de telas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ocultar elementos via classe */
+.hidden {
+    display: none !important;
+}
+.select-med {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    font-size: 0.95rem;
+    color: #495057;
+    outline: none;
+}
+.select-med:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.item-efs {
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.8rem;
+}
+.input-group-med {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.input-count {
+    width: 60px;
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.label-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.label-info details {
+    font-size: 0.75rem;
+    color: #0b5ed7;
+    cursor: pointer;
+}
+
+.label-info summary {
+    list-style: none;
+    text-decoration: underline;
+}
+
+.label-info p {
+    background: #f8f9fa;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: #333;
+}
+/* --- Estilos Originais das Escalas de Pneumologia --- */
+.btn-group-sc { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; }
+.btn-group-vertical-sc { flex-direction: column; }
+.btn-group-sc input[type="radio"] { display: none; }
+.btn-option-sc { flex: 1; min-width: 60px; padding: 15px 20px; background-color: #ffffff; border: 1px solid #ced4da; border-radius: 8px; color: #495057; cursor: pointer; text-align: left; display: flex; align-items: center; transition: all 0.2s ease; font-size: 1rem; position: relative; }
+.btn-option-sc:hover { background-color: #e9ecef; border-color: #adb5bd; }
+.btn-group-sc input[type="radio"]:checked + .btn-option-sc { background-color: #0b5ed7; color: white; border-color: #0b5ed7; box-shadow: 0 4px 6px rgba(11,94,215, 0.3); transform: translateY(-1px); }
+.obs-input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px; box-sizing: border-box; }
+.obs-container { display: none; padding-left: 5px; border-left: 3px solid #0b5ed7; margin-top: 10px; }
+.result-container { margin-top: 2rem; display: none; padding-top: 1rem; border-top: 1px solid #eee; }
+.final-score-box { text-align: center; background-color: #e3f2fd; border: 1px solid #bbdefb; color: #004d7a; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+.ref-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; display: flex; align-items: flex-start; background-color: white; opacity: 0.6; }
+.ref-card.active { opacity: 1; transform: scale(1.02); box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: relative; z-index: 1; }
+.btn-action-sc { display: inline-block; background-color: #0b5ed7; color: white; padding: 1rem; border-radius: 8px; text-align: center; cursor: pointer; border: none; font-size: 1.1rem; width: 100%; font-weight: bold; transition: background 0.2s; margin-top: 1rem; }
+.btn-action-sc:hover { background-color: #0a58ca; }
+/* --- Estilos da Calculadora de Carga Tabágica --- */
+.smoke-input-group { background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #ccc; }
+.smoke-active { border-left-color: #FBC02D; background-color: #fffde7; }
+/* --- Estilos da Seção Equipe --- */
+.profile-card {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    align-items: center;
+    border-left: 4px solid #0b5ed7;
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e9ecef;
+    flex-shrink: 0;
+}
+
+.profile-text h3 {
+    margin-bottom: 0.2rem;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.profile-text p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.profile-email {
+    font-size: 0.85rem;
+    color: #0b5ed7;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Foco da Barra de Pesquisa Global */
+#input-busca-global:focus {
+    border-color: #0b5ed7 !important;
+    box-shadow: 0 0 0 0.2rem rgba(11, 94, 215, 0.25);
+}
+/* --- Estilos do Fluxograma DPOC (Padrão APS Tools) --- */
+.gold-card { background: #FFFFFF; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+.gold-step-badge { background-color: #e3f2fd; color: #0b5ed7; font-size: 0.85rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 50%; margin-right: 0.75rem; }
+.gold-radio-option { display: flex; align-items: center; padding: 1rem; border: 1px solid #ced4da; border-radius: 8px; cursor: pointer; margin-bottom: 0.75rem; transition: all 0.2s; color: #495057; }
+.gold-radio-option:hover { background-color: #f8f9fa; border-color: #adb5bd; }
+.gold-radio-option.selected { border-color: #0b5ed7; background-color: #0b5ed7; color: white; box-shadow: 0 4px 6px rgba(11,94,215, 0.2); transform: translateY(-1px); }
+.gold-hidden { display: none !important; }
+.gold-fade-in { animation: fadeIn 0.3s ease-in; }
+
+/* --- Estilos dos Botões de Pontuação (MEEM) --- */
+.meem-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+.meem-row:last-child {
+    border-bottom: none;
+}
+.meem-row span {
+    font-size: 0.95rem;
+    color: #495057;
+    font-weight: 500;
+    max-width: 65%;
+    line-height: 1.2;
+}
+.score-toggle {
+    display: flex;
+    gap: 8px;
+}
+.score-toggle input[type="radio"] {
+    display: none;
+}
+.score-toggle label {
+    padding: 8px 18px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: 700;
+    background: #fff;
+    transition: all 0.2s;
+    user-select: none;
+}
+.score-toggle input[type="radio"]:checked + label {
+    border-color: #0b5ed7;
+    background: #0b5ed7;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(11,94,215,0.2);
+}
+.score-toggle input[type="radio"].zero:checked + label {
+    border-color: #dc3545;
+    background: #dc3545;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(220,53,69,0.2);
+}
+.meem-section-title {
+    font-size: 1.05rem;
+    color: #0b5ed7;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #e3f2fd;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.meem-section {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+/* Estilo da Figura do Pentágono no MEEM */
+.meem-figura-estimulo {
+    display: block;
+    max-width: 200px; /* Tamanho ideal para não ocupar a tela toda */
+    height: auto;
+    margin: 1rem auto; /* Centraliza horizontalmente e dá espaço vertical */
+    border: 1px solid #dee2e6; /* Leve borda para parecer um cartão de teste */
+    border-radius: 4px;
+    padding: 5px;
+    background-color: white;
+}
+/* Feedback visual para botões selecionados na arquitetura score-toggle */
+.score-toggle input[type="radio"]:checked + label,
+.score-toggle input[type="checkbox"]:checked + label {
+    background-color: #0b5ed7;
+    color: #ffffff;
+    border-color: #0b5ed7;
+}
+
+/* Estilização específica do Trail Making (Ligar pontos) */
+.trail-btn {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #0b5ed7;
+    color: #0b5ed7;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.trail-btn.success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #ffffff;
+}
+
+.trail-btn.error {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+/* Padrão visual APS Tools - Utilidades e Formulários */
+.gold-card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #eaeaea;
+}
+
+.input-group-med {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.btn-action-sc {
+  background-color: #0b5ed7;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-outline-sc {
+  background-color: transparent;
+  color: #0b5ed7;
+  border: 1px solid #0b5ed7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Regra de Ouro: Botões de seleção tátil em vez de inputs numéricos */
+.score-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.score-toggle input[type="radio"] {
+  display: none;
+}
+
+.score-toggle label {
+  display: block;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+.score-toggle input[type="radio"]:checked + label {
+  background-color: #e6f0fd;
+  border-color: #0b5ed7;
+  font-weight: 600;
+  color: #0b5ed7;
+}
+
+/* Mídia e Estímulos Visuais para o Paciente */
+.nihss-media-box {
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.nihss-media-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.nihss-text-stimulus {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Destaque de Gravidade no Resultado */
+.severity-highlight-green {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: bold;
+  border-left: 5px solid #28a745;
+}
+
+.severity-highlight-orange {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+  border-left: 5px solid #ff9800;
+}
+
+.severity-highlight-red {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+  border-left: 5px solid #dc3545;
+}
+
+/* Suporte a múltiplas seleções (Checkboxes) no padrão Score-Toggle */
+.score-toggle input[type="checkbox"] {
+    display: none;
+}
+.score-toggle input[type="checkbox"] + label {
+    padding: 8px 18px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: 700;
+    background: #fff;
+    transition: all 0.2s;
+    user-select: none;
+    text-align: center;
+}
+.score-toggle input[type="checkbox"]:checked + label {
+    border-color: #0b5ed7;
+    background: #0b5ed7;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(11,94,215,0.2);
+}
+
+/* Estilos do Easter Egg: TERMED */
+.termed-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 20px auto;
+}
+
+.termed-cell {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333;
+    background-color: #fafafa;
+    transition: all 0.3s;
+}
+
+.termed-keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.termed-key-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.termed-key {
+    flex: 1;
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #e3f2fd;
+    color: #0b5ed7;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+.termed-key:active {
+    background-color: #bbdefb;
+}
+
+.termed-key.large {
+    flex: 1.5;
+    font-size: 0.85rem;
+}
+
+/* Cores de Estado do Jogo */
+.termed-correct {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+.termed-present {
+    background-color: #ff9800 !important;
+    border-color: #ff9800 !important;
+    color: white !important;
+}
+
+.termed-absent {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: white !important;
+}
+/* Efeito de seleção da célula no TERMED */
+.termed-cell {
+    cursor: pointer; /* Mostra que a caixa é clicável */
+}
+
+.termed-cell-selected {
+    border-color: #0b5ed7 !important; /* Borda azul */
+    box-shadow: 0 0 8px rgba(11, 94, 215, 0.4); /* Brilho azul */
+    transform: scale(1.05); /* Leve aumento para destacar */
+}
