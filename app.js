@@ -1,3 +1,17 @@
+// Registro do Service Worker para funcionamento offline (PWA)
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('Service Worker registrado com sucesso no escopo:', registration.scope);
+      })
+      .catch(error => {
+        console.log('Falha ao registrar o Service Worker:', error);
+      });
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     // === 1. ELEMENTOS DE INTERFACE ===
     const views = document.querySelectorAll(".view");
@@ -300,4 +314,75 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+});
+// --- LÓGICA DE INSTALAÇÃO DO APLICATIVO (PWA) ---
+let promptDeInstalacao;
+const btnInstall = document.getElementById('btn-install-pwa');
+
+// O navegador dispara este evento quando percebe que o site é um PWA válido
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Impede o mini-infobar padrão do Chrome de aparecer
+    e.preventDefault();
+    
+    // Guarda o evento para usarmos quando o médico clicar no botão
+    promptDeInstalacao = e;
+    
+    // DETECÇÃO DE MOBILE: Verifica se o usuário está em um dispositivo móvel (Android)
+    const isMobile = /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Mostra o nosso botão verde APENAS se for um dispositivo móvel
+    if (btnInstall && isMobile) {
+        btnInstall.style.display = 'flex';
+    }
+});
+
+// O que acontece quando o médico clica no nosso botão
+if (btnInstall) {
+    btnInstall.addEventListener('click', async () => {
+        if (!promptDeInstalacao) return;
+        
+        // Dispara a tela nativa de instalação do Android/Windows
+        promptDeInstalacao.prompt();
+        
+        // Espera o médico escolher se quer instalar ou cancelar
+        const { outcome } = await promptDeInstalacao.userChoice;
+        console.log(`Escolha do usuário: ${outcome}`);
+        
+        // Limpa a variável, pois ela só pode ser usada uma vez
+        promptDeInstalacao = null;
+        
+        // Esconde o botão novamente
+        btnInstall.style.display = 'none';
+    });
+}
+
+// Se o aplicativo já foi instalado, garante que o botão não apareça
+window.addEventListener('appinstalled', () => {
+    if (btnInstall) {
+        btnInstall.style.display = 'none';
+    }
+    console.log('PWA instalado com sucesso!');
+});
+
+// --- LÓGICA DE INSTALAÇÃO EXCLUSIVA PARA iOS (APPLE) ---
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Detecta se o aparelho é um dispositivo Apple (iPhone, iPad)
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
+    // 2. Detecta se o usuário está usando o Safari (o Chrome no iOS tem regras diferentes)
+    const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+    
+    // 3. Verifica se o aplicativo JÁ ESTÁ instalado (rodando em tela cheia / standalone)
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+    // Se for um iPhone, no Safari, e NÃO estiver instalado...
+    if (isIOS && isSafari && !isStandalone) {
+        const iosToast = document.getElementById('ios-install-toast');
+        if (iosToast) {
+            // Aguarda 3 segundos após o médico abrir a página para mostrar a dica suavemente
+            setTimeout(() => {
+                iosToast.style.display = 'block';
+            }, 3000);
+        }
+    }
 });
