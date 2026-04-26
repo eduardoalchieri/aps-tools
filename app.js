@@ -29,76 +29,96 @@ document.addEventListener("DOMContentLoaded", () => {
     let favoritos = JSON.parse(localStorage.getItem("aps_favoritos")) || [];
     let ferramentaAtual = null; // Memória da escala/calculadora aberta no momento
 
-    // === 3. LÓGICA DE NAVEGAÇÃO E TROCA DE TELAS ===
-    function esconderTodasAsViews() {
-        views.forEach(view => {
-            view.classList.remove("active");
-            view.classList.add("hidden");
-        });
-    }
+    // === 3. MOTOR DE NAVEGAÇÃO UNIFICADO (HASH ROUTER + FAVORITOS) ===
 
-    // Função central que gerencia a abertura de qualquer tela
-    function abrirView(targetId, botaoElement) {
-        const targetView = document.getElementById(targetId);
-        if (!targetView) return;
-
-        esconderTodasAsViews();
-        targetView.classList.remove("hidden");
-        targetView.classList.add("active");
-        
-        btnVoltar.classList.remove("hidden");
-
-        // Lista de telas que são MENUS e não devem ter o botão de favoritar
-        const telasDeMenu = ['view-escalas', 'view-calculadoras', 'view-sobre', 'menu-principal'];
-        
-        if (!telasDeMenu.includes(targetId)) {
-            // É uma escala ou calculadora: Mostra a estrela de favorito
-            if (btnFavoritar) btnFavoritar.classList.remove("hidden");
-            
-            // Salva os dados do botão atual caso o usuário queira favoritar
-            if (botaoElement) {
-                const iconElement = botaoElement.querySelector('.material-symbols-outlined');
-                ferramentaAtual = {
-                    id: targetId,
-                    title: botaoElement.textContent.replace(iconElement ? iconElement.textContent : '', '').trim(),
-                    icon: iconElement ? iconElement.textContent : 'article'
-                };
-            }
-            verificarEstrela(targetId);
-        } else {
-            // É um menu: Esconde a estrela e reseta a memória
-            if (btnFavoritar) btnFavoritar.classList.add("hidden");
-            ferramentaAtual = null;
-        }
-    }
-
-    // Delegação de Eventos: Lê os cliques na tela inteira. 
-    // Essencial para botões criados dinamicamente (como os atalhos de favoritos)
+    // 1. Lê os cliques em qualquer botão de menu (inclusive na aba de pesquisa/favoritos)
     document.body.addEventListener("click", (evento) => {
         const botao = evento.target.closest(".menu-btn[data-target]");
         if (botao) {
+            evento.preventDefault();
             const targetId = botao.getAttribute("data-target");
-            abrirView(targetId, botao);
+
+            // Salva a ferramenta na memória para a "Estrela de Favoritos" ANTES de mudar a tela
+            const telasDeMenu = ['view-escalas', 'view-calculadoras', 'view-sobre', 'menu-principal', 'view-menu-fluxogramas'];
+            if (!telasDeMenu.includes(targetId)) {
+                const iconElement = botao.querySelector('.material-symbols-outlined');
+                ferramentaAtual = {
+                    id: targetId,
+                    title: botao.textContent.replace(iconElement ? iconElement.textContent : '', '').trim(),
+                    icon: iconElement ? iconElement.textContent : 'article'
+                };
+            } else {
+                ferramentaAtual = null;
+            }
+
+            // Dispara a navegação nativa do Android (Altera a URL com #)
+            window.location.hash = targetId;
         }
     });
 
-    // Eventos do Cabeçalho (Voltar e Sobre)
-    if (btnVoltar) {
-        btnVoltar.addEventListener("click", () => {
-            esconderTodasAsViews();
-            menuPrincipal.classList.remove("hidden");
-            menuPrincipal.classList.add("active");
-            btnVoltar.classList.add("hidden");
+    // 2. O "Ouvinte": Muda a tela quando a URL muda (Pelo clique ou pelo Gesto Físico do Android)
+    window.addEventListener('hashchange', () => {
+        let viewDestino = window.location.hash.substring(1); 
+        
+        // Proteção contra URL vazia
+        if (!viewDestino) {
+            viewDestino = 'menu-principal';
+            history.replaceState(null, null, '#menu-principal');
+        }
+
+        // Esconde todas as telas
+        document.querySelectorAll('.view').forEach(v => {
+            v.classList.remove('active');
+            v.classList.add('hidden');
+        });
+
+        // Mostra a tela alvo
+        const telaAlvo = document.getElementById(viewDestino);
+        if (telaAlvo) {
+            telaAlvo.classList.remove('hidden');
+            telaAlvo.classList.add('active');
+        }
+
+        // Controle Dinâmico: Seta de Voltar e Estrela de Favoritos
+        const btnSetaCabecalho = document.getElementById('btn-voltar');
+        const telasDeMenu = ['view-escalas', 'view-calculadoras', 'view-sobre', 'menu-principal', 'view-menu-fluxogramas'];
+
+        if (telasDeMenu.includes(viewDestino)) {
+            // Se for menu: Esconde seta, esconde estrela e zera memória
             if (btnFavoritar) btnFavoritar.classList.add("hidden");
-            ferramentaAtual = null;
+            if (btnSetaCabecalho) btnSetaCabecalho.classList.add('hidden');
+            ferramentaAtual = null; 
+        } else {
+            // Se for calculadora: Mostra seta, mostra estrela e verifica se já é favorita
+            if (btnFavoritar) btnFavoritar.classList.remove("hidden");
+            if (btnSetaCabecalho) btnSetaCabecalho.classList.remove('hidden');
+            verificarEstrela(viewDestino);
+        }
+        
+        // Joga a tela pro topo a cada nova navegação
+        window.scrollTo(0, 0);
+    });
+
+    // 3. Evento do Botão "Sobre a Equipe" (no cabeçalho)
+    if (btnSobre) {
+        btnSobre.addEventListener("click", () => {
+            window.location.hash = "view-sobre";
         });
     }
 
-    if (btnSobre) {
-        btnSobre.addEventListener("click", () => {
-            abrirView("view-sobre", null);
-            if (btnFavoritar) btnFavoritar.classList.add("hidden");
+    // 4. Sincroniza a seta visual do App com o Android
+    if (btnVoltar) {
+        const novoBtnVoltar = btnVoltar.cloneNode(true);
+        btnVoltar.parentNode.replaceChild(novoBtnVoltar, btnVoltar);
+        
+        novoBtnVoltar.addEventListener('click', () => {
+            history.back(); // Simula o gesto nativo do celular
         });
+    }
+
+    // 5. Ao iniciar o app, garante que ele crie a âncora inicial (#menu-principal)
+    if (!window.location.hash) {
+        history.replaceState(null, null, '#menu-principal');
     }
 
     // === 4. LÓGICA DE FAVORITOS (LOCALSTORAGE) ===
@@ -386,65 +406,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-// --- LÓGICA DE NAVEGAÇÃO NATIVA (GESTO DE VOLTAR DO ANDROID/iOS) ---
-
-// 1. Registra o estado inicial (Menu Principal) ao abrir o aplicativo
-if (!history.state) {
-    history.replaceState({ view: 'menu-principal' }, '', '#menu-principal');
-}
-
-// 2. Intercepta os cliques nos botões do menu para gravar o histórico
-document.querySelectorAll('.menu-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const targetId = btn.getAttribute('data-target');
-        if (targetId) {
-            // Adiciona a nova tela na memória do celular, criando a "migalha de pão"
-            history.pushState({ view: targetId }, '', '#' + targetId);
-        }
-    });
-});
-
-// 3. O "Ouvinte" do Gesto Físico do Celular (PopState)
-window.addEventListener('popstate', (event) => {
-    // Descobre para onde o celular quer voltar (se não souber, vai pro menu)
-    const viewDestino = event.state && event.state.view ? event.state.view : 'menu-principal';
-    
-    // Varre a tela e esconde todas as calculadoras ativas
-    document.querySelectorAll('.view').forEach(v => {
-        v.classList.remove('active');
-        v.classList.add('hidden');
-    });
-    
-    // Mostra a tela exata de destino
-    const telaAlvo = document.getElementById(viewDestino);
-    if (telaAlvo) {
-        telaAlvo.classList.remove('hidden');
-        telaAlvo.classList.add('active');
-    }
-    
-    // Ajusta a exibição da seta visual no cabeçalho do próprio aplicativo
-    const btnSetaCabecalho = document.getElementById('btn-voltar');
-    if (btnSetaCabecalho) {
-        if (viewDestino === 'menu-principal') {
-            btnSetaCabecalho.classList.add('hidden');
-        } else {
-            btnSetaCabecalho.classList.remove('hidden');
-        }
-    }
-    
-    // Garante que a tela volte pro topo ao trocar de visualização
-    window.scrollTo(0, 0);
-});
-
-// 4. Sincroniza a seta do cabeçalho do app com o sistema nativo do celular
-const btnVoltarCabecalho = document.getElementById('btn-voltar');
-if (btnVoltarCabecalho) {
-    // Clona o botão para remover funções antigas conflitantes
-    const novoBtnVoltar = btnVoltarCabecalho.cloneNode(true);
-    btnVoltarCabecalho.parentNode.replaceChild(novoBtnVoltar, btnVoltarCabecalho);
-    
-    // Adiciona a nova função que conversa diretamente com o sistema operacional
-    novoBtnVoltar.addEventListener('click', () => {
-        history.back(); // Isso dispara o popstate automaticamente
-    });
-}
