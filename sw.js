@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aps-tools-v5';
+const CACHE_NAME = 'aps-tools-v9';
 const urlsToCache = [
   './',
   './index.html',
@@ -47,6 +47,8 @@ const urlsToCache = [
   './escalas/tabagismo.js',
   './escalas/cuidasm.js',
   './escalas/dengue.js',
+  './escalas/twist.js',
+  './escalas/alvarado.js'
 ];
 
 // Instalação: Salva todos os arquivos essenciais no cache

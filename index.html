@@ -102,6 +102,14 @@
                     <span class="material-symbols-outlined">accessible</span>
                     Índice de Katz (ABVD)
                 </button>
+                <button class="menu-btn" data-target="view-alvarado" data-keywords="apendicite, abdome agudo, cirurgia geral, dor abdominal, alvarado modificado, leucocitose">
+                    <span class="material-symbols-outlined">medical_services</span>
+                    Alvarado Modificado
+                </button>
+                <button class="menu-btn" data-target="view-twist" data-keywords="testículo, escroto agudo, torção testicular, urologia, dor, twist, pediatria, cirurgia">
+                    <span class="material-symbols-outlined">male</span>
+                    TWIST (Torção Testicular)
+                </button>
                 <button class="menu-btn" data-target="view-cuidasm" data-keywords="saúde mental, aps, psiquiatria, cuidasm, risco, depressão, ansiedade, suicídio">
                     <span class="material-symbols-outlined">psychology</span>
                     CuidaSM (Saúde Mental)
@@ -1268,6 +1276,67 @@
 
             <div id="resultado-coelho" style="margin-top: 1.5rem; display: none;"></div>
         </section>
+
+        <section id="view-twist" class="view hidden">
+            <h2>Escore TWIST</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Avaliação clínica para predição de Torção Testicular em pacientes com escroto agudo.</p>
+
+            <div style="background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 6px; margin-bottom: 1.2rem; font-size: 0.85rem; border: 1px solid #ffeeba;">
+                <strong>⚠️ Nota Clínica:</strong> Apesar do alto Valor Preditivo Negativo (VPN) para escores ≤ 2, a exclusão definitiva de torção sem ultrassom exige cautela. Escores altos (≥ 5) apoiam consulta urológica/cirúrgica imediata para exploração, sem atrasar a conduta com exames de imagem.
+            </div>
+
+            <form id="form-twist" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Inchaço Testicular</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Aumento de volume do testículo acometido.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tw_inchaco_0" name="tw_inchaco" value="0" checked><label for="tw_inchaco_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tw_inchaco_2" name="tw_inchaco" value="2"><label for="tw_inchaco_2" style="flex: 1;">Sim (2 pts)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Testículo Endurecido</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Consistência pétrea / endurecida à palpação.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tw_endurecido_0" name="tw_endurecido" value="0" checked><label for="tw_endurecido_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tw_endurecido_2" name="tw_endurecido" value="2"><label for="tw_endurecido_2" style="flex: 1;">Sim (2 pts)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Reflexo Cremastérico Ausente</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Falta de elevação testicular ao estimular a face interna da coxa.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tw_reflexo_0" name="tw_reflexo" value="0" checked><label for="tw_reflexo_0" style="flex: 1;">Presente (0)</label>
+                        <input type="radio" id="tw_reflexo_1" name="tw_reflexo" value="1"><label for="tw_reflexo_1" style="flex: 1;">Ausente (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Náusea ou Vômito</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tw_nausea_0" name="tw_nausea" value="0" checked><label for="tw_nausea_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tw_nausea_1" name="tw_nausea" value="1"><label for="tw_nausea_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Testículo Elevado</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Testículo retraído ou em posição anormalmente alta (High-riding).</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tw_elevado_0" name="tw_elevado" value="0" checked><label for="tw_elevado_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tw_elevado_1" name="tw_elevado" value="1"><label for="tw_elevado_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-twist" class="btn-action-sc" style="margin-top: 10px;">Calcular Risco de Torção</button>
+            </form>
+
+            <div id="res-twist" style="margin-top: 1.5rem; display: none;"></div>
+        </section>
+
 
         <section id="view-findrisc" class="view hidden">
             <h2>FINDRISC</h2>
@@ -2861,6 +2930,84 @@
             <div id="res-imc-simples" style="margin-top: 1.5rem; display: none;"></div>
         </section>
 
+        <section id="view-alvarado" class="view hidden">
+            <h2>Escore de Alvarado Modificado</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Avaliação clínica de probabilidade de apendicite aguda para guiar conduta e exames de imagem.</p>
+
+            <div style="background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 6px; margin-bottom: 1.2rem; font-size: 0.85rem; border: 1px solid #ffeeba;">
+                <strong>⚠️ Nota Clínica:</strong> Este escore possui alta utilidade diagnóstica para <strong>descartar (rule out)</strong> a apendicite (escores < 4). Escores altos (≥ 7) exigem avaliação adicional com imagem antes do tratamento, devido à especificidade de 81%.
+            </div>
+
+            <form id="form-alvarado" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Dor migratória para Fossa Ilíaca Direita</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Dor que se inicia periumbilical/epigástrica e migra para o quadrante inferior direito.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_migratoria_0" name="alv_migratoria" value="0" checked><label for="alv_migratoria_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_migratoria_1" name="alv_migratoria" value="1"><label for="alv_migratoria_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Anorexia</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Perda de apetite relatada pelo paciente.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_anorexia_0" name="alv_anorexia" value="0" checked><label for="alv_anorexia_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_anorexia_1" name="alv_anorexia" value="1"><label for="alv_anorexia_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Náusea ou Vômito</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_nausea_0" name="alv_nausea" value="0" checked><label for="alv_nausea_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_nausea_1" name="alv_nausea" value="1"><label for="alv_nausea_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Dor à palpação na Fossa Ilíaca Direita</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Sensibilidade dolorosa no quadrante inferior direito (Tenderness).</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_palpacao_0" name="alv_palpacao" value="0" checked><label for="alv_palpacao_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_palpacao_2" name="alv_palpacao" value="2"><label for="alv_palpacao_2" style="flex: 1;">Sim (2 pts)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Descompressão Brusca Dolorosa (Blumberg)</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Sinal de irritação peritoneal no quadrante inferior direito (Rebound tenderness).</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_descompressao_0" name="alv_descompressao" value="0" checked><label for="alv_descompressao_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_descompressao_1" name="alv_descompressao" value="1"><label for="alv_descompressao_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Febre > 37.5°C</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_febre_0" name="alv_febre" value="0" checked><label for="alv_febre_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_febre_1" name="alv_febre" value="1"><label for="alv_febre_1" style="flex: 1;">Sim (1 pt)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Leucocitose > 10.000/mm³</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Contagem de leucócitos maior que 10 x 10⁹/L.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="alv_leuco_0" name="alv_leuco" value="0" checked><label for="alv_leuco_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="alv_leuco_2" name="alv_leuco" value="2"><label for="alv_leuco_2" style="flex: 1;">Sim (2 pts)</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-alvarado" class="btn-action-sc" style="margin-top: 10px;">Calcular Risco de Apendicite</button>
+            </form>
+
+            <div id="res-alvarado" style="margin-top: 1.5rem; display: none;"></div>
+        </section>
+
+
         <section id="view-erg" class="view hidden">
             <h2>Escore de Risco Global (ERG - SBC)</h2>
             <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Estimativa de risco de eventos cardiovasculares maiores em 10 anos (Diretriz Brasileira de Dislipidemia, 2017).</p>
@@ -3516,6 +3663,8 @@
 <script src="escalas/hasbled.js"></script>
 <script src="escalas/cuidasm.js"></script>
 <script src="escalas/dengue.js"></script>
+<script src="escalas/twist.js"></script>
+<script src="escalas/alvarado.js"></script>
 
 <div id="ios-install-toast" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); border-radius: 12px; padding: 15px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); width: 90%; max-width: 350px; z-index: 9999; text-align: center; border: 1px solid #e0e0e0; backdrop-filter: blur(5px);">
         <span class="material-symbols-outlined" style="position: absolute; top: 8px; right: 8px; color: #999; cursor: pointer; font-size: 1.2rem;" onclick="document.getElementById('ios-install-toast').style.display='none'">close</span>
