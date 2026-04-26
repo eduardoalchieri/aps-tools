@@ -386,3 +386,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+// --- LÓGICA DE NAVEGAÇÃO NATIVA (GESTO DE VOLTAR DO ANDROID/iOS) ---
+
+// 1. Registra o estado inicial (Menu Principal) ao abrir o aplicativo
+if (!history.state) {
+    history.replaceState({ view: 'menu-principal' }, '', '#menu-principal');
+}
+
+// 2. Intercepta os cliques nos botões do menu para gravar o histórico
+document.querySelectorAll('.menu-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const targetId = btn.getAttribute('data-target');
+        if (targetId) {
+            // Adiciona a nova tela na memória do celular, criando a "migalha de pão"
+            history.pushState({ view: targetId }, '', '#' + targetId);
+        }
+    });
+});
+
+// 3. O "Ouvinte" do Gesto Físico do Celular (PopState)
+window.addEventListener('popstate', (event) => {
+    // Descobre para onde o celular quer voltar (se não souber, vai pro menu)
+    const viewDestino = event.state && event.state.view ? event.state.view : 'menu-principal';
+    
+    // Varre a tela e esconde todas as calculadoras ativas
+    document.querySelectorAll('.view').forEach(v => {
+        v.classList.remove('active');
+        v.classList.add('hidden');
+    });
+    
+    // Mostra a tela exata de destino
+    const telaAlvo = document.getElementById(viewDestino);
+    if (telaAlvo) {
+        telaAlvo.classList.remove('hidden');
+        telaAlvo.classList.add('active');
+    }
+    
+    // Ajusta a exibição da seta visual no cabeçalho do próprio aplicativo
+    const btnSetaCabecalho = document.getElementById('btn-voltar');
+    if (btnSetaCabecalho) {
+        if (viewDestino === 'menu-principal') {
+            btnSetaCabecalho.classList.add('hidden');
+        } else {
+            btnSetaCabecalho.classList.remove('hidden');
+        }
+    }
+    
+    // Garante que a tela volte pro topo ao trocar de visualização
+    window.scrollTo(0, 0);
+});
+
+// 4. Sincroniza a seta do cabeçalho do app com o sistema nativo do celular
+const btnVoltarCabecalho = document.getElementById('btn-voltar');
+if (btnVoltarCabecalho) {
+    // Clona o botão para remover funções antigas conflitantes
+    const novoBtnVoltar = btnVoltarCabecalho.cloneNode(true);
+    btnVoltarCabecalho.parentNode.replaceChild(novoBtnVoltar, btnVoltarCabecalho);
+    
+    // Adiciona a nova função que conversa diretamente com o sistema operacional
+    novoBtnVoltar.addEventListener('click', () => {
+        history.back(); // Isso dispara o popstate automaticamente
+    });
+}
