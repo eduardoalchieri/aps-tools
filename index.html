@@ -908,6 +908,82 @@
                 <button type="button" id="btn-calc-tep" class="btn-action-sc" style="margin-top: 10px;">Calcular Risco de TEP</button>
             </form>
             <div id="res-wells-tep" style="margin-top: 1.5rem; display: none;"></div>
+            <div id="container-perc" style="margin-top: 2rem; display: none; padding-top: 1.5rem; border-top: 2px dashed #0b5ed7;">
+                <h3 style="color: #0b5ed7; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined">fact_check</span> Regra PERC
+                </h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.2rem;">Critérios de Exclusão de Embolia Pulmonar. Como o paciente possui <strong>TEP Improvável</strong>, preencha os critérios abaixo para verificar se a coleta de D-dímero pode ser dispensada clinicamente.</p>
+
+                <form id="form-perc" style="display: flex; flex-direction: column; gap: 1rem; background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #dee2e6;">
+                    
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">1. Idade ≥ 50 anos</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_idade_0" name="perc_idade" value="0" checked><label for="perc_idade_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_idade_1" name="perc_idade" value="1"><label for="perc_idade_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">2. Frequência Cardíaca ≥ 100 bpm</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_fc_0" name="perc_fc" value="0" checked><label for="perc_fc_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_fc_1" name="perc_fc" value="1"><label for="perc_fc_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">3. Saturação de O₂ < 95% (Ar ambiente)</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_sat_0" name="perc_sat" value="0" checked><label for="perc_sat_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_sat_1" name="perc_sat" value="1"><label for="perc_sat_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">4. Hemoptise recente/ativa</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_hemoptise_0" name="perc_hemoptise" value="0" checked><label for="perc_hemoptise_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_hemoptise_1" name="perc_hemoptise" value="1"><label for="perc_hemoptise_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">5. Uso de Estrogênio (Anticoncepcional/TRH)</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_estro_0" name="perc_estro" value="0" checked><label for="perc_estro_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_estro_1" name="perc_estro" value="1"><label for="perc_estro_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">6. História de TVP/TEP prévio</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_hist_0" name="perc_hist" value="0" checked><label for="perc_hist_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_hist_1" name="perc_hist" value="1"><label for="perc_hist_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">7. Edema unilateral da perna</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_edema_0" name="perc_edema" value="0" checked><label for="perc_edema_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_edema_1" name="perc_edema" value="1"><label for="perc_edema_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <label style="font-weight: 600; color: #333; font-size: 0.95rem; width: 60%;">8. Cirurgia/Trauma (últimas 4 semanas)</label>
+                        <div class="score-toggle" style="width: 35%; display: flex;">
+                            <input type="radio" id="perc_cirurgia_0" name="perc_cirurgia" value="0" checked><label for="perc_cirurgia_0" style="flex: 1;">Não</label>
+                            <input type="radio" id="perc_cirurgia_1" name="perc_cirurgia" value="1"><label for="perc_cirurgia_1" style="flex: 1; color: #dc3545;">Sim</label>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btn-calc-perc" class="btn-action-sc" style="margin-top: 15px; background-color: #28a745;">Validar Regra PERC</button>
+                </form>
+                <div id="res-perc" style="margin-top: 1.5rem; display: none;"></div>
+            </div>
         </section>
 
         <section id="view-cronometro" class="view hidden">
