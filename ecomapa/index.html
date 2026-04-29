@@ -40,13 +40,13 @@
             </div>
             <div>
                 <h1 class="text-xl font-bold text-gray-900 leading-tight">Genograma e Ecomapa - UFSM</h1>
-                <p class="text-xs text-gray-500">Eduardo Alchieri | eduardo.alchieri@acad.ufsm.br</p>
+                <p class="text-xs text-gray-500">Ferramenta Acadêmica e Clínica</p>
             </div>
         </div>
         
         <div class="flex items-center gap-3">
-            <div class="text-xs text-gray-400 mr-4 font-medium flex items-center gap-1">
-                <span>🔍 Scroll: Zoom</span> | <span>🖱️ Alt+Drag: Pan</span> | <span>🖐️ Arraste os ícones</span>
+            <div class="text-xs text-gray-400 mr-4 font-medium flex items-center gap-1 hidden lg:flex">
+                <span>🔍 Scroll: Zoom</span> | <span>🖱️ Alt+Drag: Pan</span> | <span>🖐️ Duplo Clique: Nome/Idade</span>
             </div>
             <div class="flex bg-gray-100 rounded-lg p-1 border border-gray-200">
                 <button onclick="undo()" class="p-1.5 px-3 text-gray-600 hover:text-blue-600 hover:bg-white rounded shadow-sm transition-all" title="Desfazer (Ctrl+Z)">
@@ -57,36 +57,59 @@
                 </button>
             </div>
             <div class="w-px h-8 bg-gray-200"></div>
-            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-300 rounded-lg text-sm font-semibold transition-colors flex items-center" onclick="openHelpModal()">
+            <button class="px-3 py-2 bg-green-50 hover:bg-green-100 text-green-700 border border-green-200 rounded-lg text-sm font-semibold transition-colors flex items-center" onclick="alignAndDistribute()" title="Selecione 2+ itens para alinhá-los perfeitamente">
+                🧲 Alinhar / Distribuir
+            </button>
+            <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-300 rounded-lg text-sm font-semibold transition-colors flex items-center" onclick="openHelpModal()">
                 ❓ Como Usar
             </button>
-            <button class="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-semibold transition-colors flex items-center" onclick="insertLegend()">
+            <button class="px-3 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-sm font-semibold transition-colors flex items-center" onclick="insertLegend()">
                 📋 Inserir Legenda
             </button>
-            <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition-colors flex items-center" onclick="exportToJPEG()">
-                💾 Exportar JPEG
+            <button class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm transition-colors flex items-center" onclick="exportToJPEG()">
+                💾 Exportar
             </button>
         </div>
     </header>
 
     <div class="flex flex-1 overflow-hidden relative">
         
-        <div id="contextMenu" class="absolute hidden bg-white rounded-xl shadow-xl border border-blue-200 p-2 z-50 flex flex-col gap-1 w-max">
-            <span class="text-[10px] uppercase font-bold text-blue-500 mb-1 text-center">Adicionar Herdeiro/Filho</span>
-            <div class="flex gap-1">
-                <button class="px-3 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('homem', 'Filho')"><span class="mr-1 text-base">🟩</span> Filho</button>
-                <button class="px-3 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('mulher', 'Filha')"><span class="mr-1 text-base">⚪</span> Filha</button>
-                <button class="px-3 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('gestacao', 'Gestação')"><span class="mr-1 text-base">🔺</span> Gestação</button>
+        <div id="contextMenu" class="absolute hidden bg-white rounded-xl shadow-2xl border border-blue-200 p-3 z-50 flex flex-col gap-2 w-max">
+            <span class="text-[11px] uppercase font-bold text-blue-600 mb-1 text-center tracking-wide">Gerar Linha de Descendência</span>
+            <div class="grid grid-cols-3 gap-1">
+                <button class="px-2 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('homem', 'Filho')"><span class="mr-1 text-base">🟩</span> Filho</button>
+                <button class="px-2 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('mulher', 'Filha')"><span class="mr-1 text-base">⚪</span> Filha</button>
+                <button class="px-2 py-1.5 bg-gray-50 hover:bg-blue-50 hover:text-blue-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center" onclick="addChildFromMenu('gestacao', 'Gestação')"><span class="mr-1 text-base">🔺</span> Gestação</button>
             </div>
-            <div class="flex gap-1 mt-1">
-                <button class="flex-1 px-3 py-1.5 bg-gray-50 hover:bg-red-50 hover:text-red-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center justify-center" onclick="addChildFromMenu('aborto_espontaneo', 'Aborto Espontâneo')"><span class="mr-1">●</span> Aborto Esp.</button>
-                <button class="flex-1 px-3 py-1.5 bg-gray-50 hover:bg-red-50 hover:text-red-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center justify-center" onclick="addChildFromMenu('aborto_induzido', 'Aborto Induzido')"><span class="mr-1">✖</span> Aborto Ind.</button>
+            <div class="grid grid-cols-2 gap-1">
+                <button class="px-2 py-1.5 bg-gray-50 hover:bg-red-50 hover:text-red-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center justify-center" onclick="addChildFromMenu('aborto_espontaneo', 'Aborto Espontâneo')"><span class="mr-1">●</span> Aborto Esp.</button>
+                <button class="px-2 py-1.5 bg-gray-50 hover:bg-red-50 hover:text-red-700 rounded text-xs font-bold border border-gray-200 transition-colors flex items-center justify-center" onclick="addChildFromMenu('aborto_induzido', 'Aborto Induzido')"><span class="mr-1">✖</span> Aborto Ind.</button>
             </div>
         </div>
 
         <aside class="w-72 bg-white border-r border-gray-200 overflow-y-auto shrink-0 shadow-inner flex flex-col z-10">
+            
             <div class="p-3 border-b border-gray-100 bg-gray-50/50">
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Cor e Intensidade</p>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Comorbidades / Notas</p>
+                <div class="flex gap-2">
+                    <select id="comorbiditySelect" class="flex-1 p-1.5 border border-gray-300 rounded-lg text-xs bg-white shadow-sm outline-none">
+                        <option value="HAS">HAS (Hipertensão)</option>
+                        <option value="DM">DM (Diabetes)</option>
+                        <option value="Depressão">Depressão</option>
+                        <option value="Ansiedade">Ansiedade</option>
+                        <option value="Tabagismo">Tabagismo</option>
+                        <option value="Etilismo">Etilismo</option>
+                        <option value="Drogadição">Drogadição</option>
+                        <option value="Obesidade">Obesidade</option>
+                        <option value="Câncer">Câncer</option>
+                        <option value="Outro">Outro (Digitar)...</option>
+                    </select>
+                    <button onclick="addComorbidity()" class="px-2 py-1 bg-red-50 hover:bg-red-100 text-red-700 rounded border border-red-200 text-xs font-bold transition-colors">➕ Add</button>
+                </div>
+            </div>
+
+            <div class="p-3 border-b border-gray-100 bg-gray-50/50">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Cor e Espessura</p>
                 <div class="flex gap-2 items-center">
                     <input type="color" id="styleColor" class="w-8 h-6 p-0 border border-gray-300 rounded cursor-pointer" value="#000000" oninput="updateCurrentStyle()">
                     <input type="range" id="styleOpacity" class="flex-1 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600" min="0" max="100" value="100" oninput="updateCurrentStyle()">
@@ -94,19 +117,25 @@
             </div>
 
             <div class="p-3 border-b border-gray-100">
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Relacionamentos Manuais</p>
-                <select id="lineType" class="w-full mb-2 p-1.5 border border-gray-300 rounded-lg text-sm bg-white shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
-                    <option value="casamento">Casamento (Contínua)</option>
-                    <option value="distante">Distante (Tracejada)</option>
-                    <option value="conflituoso">Conflituoso (Zigue-zague)</option>
-                    <option value="rompimento">Rompimento (Linha com corte)</option>
-                    <option value="muito_estreito">Muito estreito (Tripla)</option>
-                    <option value="fundido_conflitual">Fundido e Conflitual</option>
-                    <option value="alianca">Aliança (Dupla)</option>
-                    <option value="harmonico">Harmônico (Seta dupla)</option>
-                    <option value="vulneravel">Vulnerável (Com pontos)</option>
-                    <option value="separacao">Separação Conjugal</option>
-                    <option value="divorcio">Divórcio</option>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Relacionamentos e Fluxo</p>
+                <select id="lineType" class="w-full mb-2 p-1.5 border border-gray-300 rounded-lg text-sm bg-white shadow-sm outline-none">
+                    <optgroup label="Genograma">
+                        <option value="casamento">Casamento (Contínua)</option>
+                        <option value="distante">Distante (Tracejada)</option>
+                        <option value="conflituoso">Conflituoso (Zigue-zague)</option>
+                        <option value="rompimento">Rompimento (Linha com corte)</option>
+                        <option value="muito_estreito">Muito estreito (Tripla)</option>
+                        <option value="fundido_conflitual">Fundido e Conflitual</option>
+                        <option value="alianca">Aliança (Dupla)</option>
+                        <option value="separacao">Separação Conjugal</option>
+                        <option value="divorcio">Divórcio</option>
+                    </optgroup>
+                    <optgroup label="Ecomapa">
+                        <option value="seta_ida">Forte Influência (Seta Ida)</option>
+                        <option value="seta_volta">Forte Influência (Seta Volta)</option>
+                        <option value="harmonico">Harmônico (Seta dupla)</option>
+                        <option value="vulneravel">Fraco/Vulnerável (Pontilhado)</option>
+                    </optgroup>
                 </select>
                 <button id="btnConnect" class="w-full px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-300 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center cursor-pointer" onclick="toggleConnectionMode()">
                     🔗 <span class="ml-2">Iniciar Conexão</span>
@@ -114,57 +143,84 @@
             </div>
 
             <div class="flex-1 overflow-y-auto p-2">
+                
                 <div class="mb-2 border border-gray-200 rounded-lg overflow-hidden">
                     <input type="checkbox" id="acc-basic" class="accordion-toggle hidden" checked>
                     <label for="acc-basic" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
-                        Ícones Principais
+                        Pessoas Principais
                         <svg class="chevron w-4 h-4 transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
                     <div class="accordion-content p-1.5 bg-white">
                         <div class="grid grid-cols-2 gap-1">
                             <button class="tool-btn mb-0" draggable="true" ondragstart="handleDragStart(event, 'homem', 'Homem')" onclick="addShapeUI('homem', 'Homem')"><div class="tool-btn-icon">🟩</div>Homem</button>
                             <button class="tool-btn mb-0" draggable="true" ondragstart="handleDragStart(event, 'mulher', 'Mulher')" onclick="addShapeUI('mulher', 'Mulher')"><div class="tool-btn-icon">⚪</div>Mulher</button>
-                            <button class="tool-btn mb-0" draggable="true" ondragstart="handleDragStart(event, 'gestacao', 'Gestação')" onclick="addShapeUI('gestacao', 'Gestação')"><div class="tool-btn-icon">🔺</div>Gestação</button>
-                            <button class="tool-btn mb-0" draggable="true" ondragstart="handleDragStart(event, 'morte', 'Morte')" onclick="addShapeUI('morte', 'Morte')"><div class="tool-btn-icon">❌</div>Morte</button>
                         </div>
                         <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'indice_homem', 'Pessoa Índice (H)')" onclick="addShapeUI('indice_homem', 'Pessoa Índice (H)')"><div class="tool-btn-icon">🔳</div>Pessoa Índice (H)</button>
                         <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'indice_mulher', 'Pessoa Índice (M)')" onclick="addShapeUI('indice_mulher', 'Pessoa Índice (M)')"><div class="tool-btn-icon">◎</div>Pessoa Índice (M)</button>
-                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'abuso', 'Abuso Álcool/Drogas')" onclick="addShapeUI('abuso', 'Abuso Álcool/Drogas')">
-    <div class="tool-btn-icon">
-        <div class="border border-black w-4 h-4 bg-gradient-to-r from-black to-white"></div>
-    </div>
-    Abuso de Substâncias
-</button>
+                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'morte', 'Morte / Óbito')" onclick="addShapeUI('morte', 'Morte')"><div class="tool-btn-icon">❌</div>Óbito (Arraste sobre a pessoa)</button>
+                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'pet', 'Animal de Estimação')" onclick="addShapeUI('pet', 'Pet')"><div class="tool-btn-icon">💠</div>Animal de Estimação</button>
                     </div>
                 </div>
 
                 <div class="mb-2 border border-gray-200 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="acc-adv" class="accordion-toggle hidden">
-                    <label for="acc-adv" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
-                        Estruturas & Adoção
-                        <svg class="chevron w-4 h-4 transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </label>
-                    <div class="accordion-content p-1.5 bg-white">
-                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'filho_adotivo', 'Filho Adotivo')" onclick="addShapeUI('filho_adotivo', 'Filho Adotivo')"><div class="tool-btn-icon text-xs">Apt</div>Filho Adotivo</button>
-                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'gemeos_fraternos', 'Gêmeos Fraternos')" onclick="addShapeUI('gemeos_fraternos', 'Gêmeos Fraternos')"><div class="tool-btn-icon">👬</div>Gêmeos Fraternos</button>
-                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'gemeos_identicos', 'Gêmeos idênticos')" onclick="addShapeUI('gemeos_identicos', 'Gêmeos idênticos')"><div class="tool-btn-icon">🧑‍🤝‍🧑</div>Gêmeos idênticos</button>
-                    </div>
-                </div>
-
-                <div class="mb-2 border border-gray-200 rounded-lg overflow-hidden">
-                    <input type="checkbox" id="acc-esp" class="accordion-toggle hidden" checked>
-                    <label for="acc-esp" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
-                        Ecomapa & Outros
+                    <input type="checkbox" id="acc-filhos" class="accordion-toggle hidden">
+                    <label for="acc-filhos" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
+                        Filhos e Gestações
                         <svg class="chevron w-4 h-4 transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </label>
                     <div class="accordion-content p-1.5 bg-white flex flex-col gap-1">
-                        <button class="tool-btn bg-yellow-50 border-yellow-200 cursor-pointer" id="btnPolygon" onclick="togglePolygonMode()">
-                            <div class="tool-btn-icon text-yellow-600">✏️</div>Desenhar Fronteira (Ecomapa)
+                        <p class="text-[10px] text-gray-500 text-center mb-1 leading-tight">Dica: Selecione o casal junto para gerar a linha ortogonal automaticamente.</p>
+                        <div class="grid grid-cols-2 gap-1">
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'homem', 'Filho Biológico')" onclick="addShapeUI('homem', 'Filho Biológico')"><div class="tool-btn-icon mr-1">🟩</div>Filho</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'mulher', 'Filha Biológica')" onclick="addShapeUI('mulher', 'Filha Biológica')"><div class="tool-btn-icon mr-1">⚪</div>Filha</button>
+                        </div>
+                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'filho_adotivo', 'Filho Adotivo')" onclick="addShapeUI('filho_adotivo', 'Filho Adotivo')"><div class="tool-btn-icon text-xs">Apt</div>Filho Adotivo</button>
+                        <div class="grid grid-cols-2 gap-1">
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'gemeos_fraternos', 'Gêmeos Fraternos')" onclick="addShapeUI('gemeos_fraternos', 'Gêmeos Fraternos')"><div class="tool-btn-icon mr-1">👬</div>Fraternos</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'gemeos_identicos', 'Gêmeos idênticos')" onclick="addShapeUI('gemeos_identicos', 'Gêmeos idênticos')"><div class="tool-btn-icon mr-1">🧑‍🤝‍🧑</div>Idênticos</button>
+                        </div>
+                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'gestacao', 'Gestação')" onclick="addShapeUI('gestacao', 'Gestação')"><div class="tool-btn-icon">🔺</div>Gestação</button>
+                        <div class="grid grid-cols-2 gap-1">
+                            <button class="tool-btn mb-0 text-[10px] px-1 justify-center text-red-700" draggable="true" ondragstart="handleDragStart(event, 'aborto_espontaneo', 'Aborto Espontâneo')" onclick="addShapeUI('aborto_espontaneo', 'Aborto Espontâneo')">● Aborto Esp.</button>
+                            <button class="tool-btn mb-0 text-[10px] px-1 justify-center text-red-700" draggable="true" ondragstart="handleDragStart(event, 'aborto_induzido', 'Aborto Induzido')" onclick="addShapeUI('aborto_induzido', 'Aborto Induzido')">✖ Aborto Ind.</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-2 border border-gray-200 rounded-lg overflow-hidden">
+                    <input type="checkbox" id="acc-eco" class="accordion-toggle hidden">
+                    <label for="acc-eco" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
+                        Instituições (Ecomapa)
+                        <svg class="chevron w-4 h-4 transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </label>
+                    <div class="accordion-content p-1.5 bg-white">
+                        <div class="grid grid-cols-2 gap-1">
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_ubs', 'UBS / Saúde')" onclick="addShapeUI('inst_ubs', 'UBS / Saúde')"><div class="tool-btn-icon mr-1">🏥</div>Saúde</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_escola', 'Escola')" onclick="addShapeUI('inst_escola', 'Escola')"><div class="tool-btn-icon mr-1">🏫</div>Escola</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_igreja', 'Igreja/Religião')" onclick="addShapeUI('inst_igreja', 'Igreja/Religião')"><div class="tool-btn-icon mr-1">⛪</div>Religião</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_trabalho', 'Trabalho')" onclick="addShapeUI('inst_trabalho', 'Trabalho')"><div class="tool-btn-icon mr-1">💼</div>Trabalho</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_lazer', 'Lazer/Esporte')" onclick="addShapeUI('inst_lazer', 'Lazer/Esporte')"><div class="tool-btn-icon mr-1">⚽</div>Lazer</button>
+                            <button class="tool-btn mb-0 text-xs px-2" draggable="true" ondragstart="handleDragStart(event, 'inst_justica', 'Justiça')" onclick="addShapeUI('inst_justica', 'Justiça')"><div class="tool-btn-icon mr-1">⚖️</div>Justiça</button>
+                            <button class="tool-btn mb-0 text-xs px-2 col-span-2 justify-center" draggable="true" ondragstart="handleDragStart(event, 'inst_ass', 'Associação')" onclick="addShapeUI('inst_ass', 'Associação')"><div class="tool-btn-icon mr-1">🤝</div>Assoc. Comunitária</button>
+                        </div>
+                        <button class="tool-btn bg-yellow-50 border-yellow-200 cursor-pointer mt-2 justify-center" id="btnPolygon" onclick="togglePolygonMode()">
+                            <span class="text-yellow-600 mr-2 text-lg">✏️</span>Desenhar Fronteira
                         </button>
+                    </div>
+                </div>
+
+                <div class="mb-2 border border-gray-200 rounded-lg overflow-hidden">
+                    <input type="checkbox" id="acc-esp" class="accordion-toggle hidden">
+                    <label for="acc-esp" class="accordion-header cursor-pointer bg-gray-50 p-2.5 flex justify-between items-center text-sm font-semibold text-gray-700 hover:bg-gray-100">
+                        Anotações e Extras
+                        <svg class="chevron w-4 h-4 transition-transform text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </label>
+                    <div class="accordion-content p-1.5 bg-white flex flex-col gap-1">
+                        <button class="tool-btn border-blue-200 bg-blue-50" draggable="true" ondragstart="handleDragStart(event, 'texto', 'Texto Livre')" onclick="addText()"><div class="tool-btn-icon">📝</div>Adicionar Texto Livre</button>
+                        <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'abuso', 'Abuso Álcool/Drogas')" onclick="addShapeUI('abuso', 'Abuso Álcool/Drogas')"><div class="tool-btn-icon"><div class="border border-black w-4 h-4 bg-gradient-to-r from-black to-white"></div></div>Abuso de Substâncias</button>
                         <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'triangulacao', 'Triangulação')" onclick="addShapeUI('triangulacao', 'Triangulação')"><div class="tool-btn-icon">△</div>Forma: Triangulação</button>
                         <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'coalizao', 'Coalizão')" onclick="addShapeUI('coalizao', 'Coalizão')"><div class="tool-btn-icon">{</div>Forma: Coalizão</button>
                         <button class="tool-btn" draggable="true" ondragstart="handleDragStart(event, 'nao_informado', 'Não informado')" onclick="addShapeUI('nao_informado', 'Não informado')"><div class="tool-btn-icon">?</div>Não informado</button>
-                        <button class="tool-btn border-blue-200 bg-blue-50" draggable="true" ondragstart="handleDragStart(event, 'texto', 'Texto')" onclick="addText()"><div class="tool-btn-icon">📝</div>Adicionar Texto</button>
                     </div>
                 </div>
             </div>
@@ -173,7 +229,7 @@
                 <button class="tool-btn bg-red-50 hover:bg-red-100 text-red-700 border-red-200 justify-center mb-0 cursor-pointer" onclick="deleteSelected()">
                     🗑️ Deletar Selecionado
                 </button>
-                <button class="tool-btn mt-2 justify-center text-xs text-gray-500 hover:text-red-500 cursor-pointer" onclick="clearStorageAndCanvas()">
+                <button class="tool-btn mt-2 justify-center text-xs text-gray-500 hover:text-red-500 cursor-pointer border-transparent hover:border-red-200" onclick="clearStorageAndCanvas()">
                     ⚠️ Limpar Tudo
                 </button>
             </div>
@@ -187,18 +243,20 @@
         </main>
     </div>
 
-    <div id="helpModal" class="fixed inset-0 bg-gray-900/50 hidden items-center justify-center z-[100]">
+    <div id="helpModal" class="fixed inset-0 bg-gray-900/60 hidden items-center justify-center z-[100]">
         <div class="bg-white rounded-xl shadow-2xl p-6 max-w-lg w-full mx-4 relative">
             <button onclick="closeHelpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h2 class="text-xl font-bold mb-4 text-gray-800">Como Usar o Genograma e Ecomapa</h2>
             <ul class="space-y-3 text-sm text-gray-600 mb-6">
-                <li><strong class="text-gray-800">Adicionar Ícones:</strong> Você pode clicar nos botões do menu lateral para que a figura apareça no centro da tela, ou <strong>clicar e arrastar</strong> o botão diretamente para o local desejado.</li>
-                <li><strong class="text-gray-800">Inserir Filhos (Herdeiros):</strong> É essencial selecionar <strong>duas figuras (o casal) ao mesmo tempo</strong> (clicando e arrastando uma caixa de seleção, ou segurando a tecla <em>Shift</em> e clicando nas duas). Isso fará surgir automaticamente o menu para inserir um filho, filha ou aborto abaixo deles com o traçado correto.</li>
-                <li><strong class="text-gray-800">Conexões Manuais:</strong> Escolha o tipo de relacionamento na caixa correspondente, clique no botão "Iniciar Conexão" e, logo após, clique consecutivamente nas duas formas que deseja interligar.</li>
-                <li><strong class="text-gray-800">Fronteira (Ecomapa):</strong> Clique na ferramenta "Desenhar Fronteira" e comece a clicar pelo canvas para contornar sua família. Para fechar o desenho, dê um <strong>duplo clique</strong>.</li>
-                <li><strong class="text-gray-800">Navegação e Zoom:</strong> Utilize a roda do mouse (Scroll) para aproximar ou afastar a imagem (Zoom). Para arrastar a tela livremente, segure a tecla <strong>Alt + Clique e arraste</strong> (ou use o botão do meio do mouse).</li>
+                <li><strong class="text-gray-800">Adicionar Ícones:</strong> Clique nos botões do menu lateral ou <strong>clique e arraste</strong> para o local desejado.</li>
+                <li><strong class="text-blue-600">Rótulo Rápido (NOVO):</strong> Dê um <strong>duplo clique</strong> em qualquer pessoa ou instituição para adicionar o nome e a idade logo abaixo.</li>
+                <li><strong class="text-gray-800">Inserir Filhos:</strong> Selecione <strong>o casal inteiro</strong> (arrastando uma caixa ou com <em>Shift</em>). Um menu aparecerá para adicionar o filho com o traçado ortogonal clássico.</li>
+                <li><strong class="text-gray-800">Alinhar Simetricamente:</strong> Selecione vários irmãos ou formas e clique no botão verde superior <strong>🧲 Alinhar / Distribuir</strong> para espaçá-los igualmente na mesma altura.</li>
+                <li><strong class="text-gray-800">Conexões Manuais:</strong> Escolha o traço (Casamento, Divórcio, Seta, etc.), clique em "Iniciar Conexão" e depois nas Figuras 1 e 2.</li>
+                <li><strong class="text-gray-800">Fronteira (Ecomapa):</strong> Clique em "Desenhar Fronteira", marque os pontos ao redor da família e dê um <strong>duplo clique</strong> para fechar a linha demarcatória.</li>
+                <li><strong class="text-gray-800">Navegação:</strong> Use a roda do mouse para Zoom. Segure <strong>Alt + Clique e arraste</strong> para mover a folha.</li>
             </ul>
             <button onclick="closeHelpModal()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition-colors">
                 Entendi
@@ -220,7 +278,7 @@
             modal.classList.remove('flex');
         }
 
-        // --- INICIALIZAÇÃO E RESPONSIVIDADE ---
+        // --- INICIALIZAÇÃO DO CANVAS ---
         const canvas = new fabric.Canvas('diagramCanvas', {
             backgroundColor: 'transparent',
             preserveObjectStacking: true,
@@ -253,7 +311,36 @@
         let tempPolygonLines = [];
         let tempActiveLine = null;
 
-        // --- ARRASTAR E SOLTAR (DRAG & DROP) ---
+        // --- COMORBIDADES ---
+        function addComorbidity() {
+            const activeObj = canvas.getActiveObject();
+            if (!activeObj || activeObj.type === 'activeSelection') {
+                alert('Por favor, selecione uma única pessoa para adicionar a comorbidade.');
+                return;
+            }
+            
+            const select = document.getElementById('comorbiditySelect');
+            let val = select.value;
+            if (val === 'Outro') {
+                val = prompt('Digite o nome da condição ou nota:');
+                if (!val) return;
+            }
+
+            const center = activeObj.getCenterPoint();
+            const heightOffset = (activeObj.getScaledHeight() / 2) + 12;
+            
+            const text = new fabric.IText('* ' + val, {
+                fontFamily: 'Inter, Arial', fontSize: 13, fill: '#dc2626', fontWeight: 'bold',
+                selectable: true, hasControls: true, originX: 'center', originY: 'top'
+            });
+            
+            text.set({ left: center.x, top: center.y + heightOffset });
+            canvas.add(text);
+            canvas.setActiveObject(text);
+            saveHistory();
+        }
+
+        // --- DRAG & DROP ---
         function handleDragStart(e, type, typeName) {
             e.dataTransfer.setData('type', type);
             e.dataTransfer.setData('typeName', typeName);
@@ -272,18 +359,12 @@
             if (!type) return;
 
             const rect = wrapper.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const dropPoint = { x: x, y: y };
+            const dropPoint = { x: e.clientX - rect.left, y: e.clientY - rect.top };
             const invertedMatrix = fabric.util.invertTransform(canvas.viewportTransform);
             const canvasPt = fabric.util.transformPoint(dropPoint, invertedMatrix);
 
-            if (type === 'texto') {
-                addTextAt(canvasPt.x, canvasPt.y);
-            } else {
-                addShapeAt(type, typeName, canvasPt.x, canvasPt.y);
-            }
+            if (type === 'texto') addTextAt(canvasPt.x, canvasPt.y);
+            else addShapeAt(type, typeName, canvasPt.x, canvasPt.y);
         });
 
         function addShapeAt(type, typeName, x, y) {
@@ -295,14 +376,12 @@
 
             if (obj) {
                 obj.set({ 
-                    left: x - (obj.width || 40) / 2, 
-                    top: y - (obj.height || 40) / 2,
-                    id: 'node_' + new Date().getTime(),
-                    typeName: typeName,
-                    hasControls: true
+                    left: x - (obj.width || 40) / 2, top: y - (obj.height || 40) / 2,
+                    id: 'node_' + new Date().getTime(), typeName: typeName, hasControls: true
                 });
                 canvas.add(obj);
                 canvas.setActiveObject(obj);
+                saveHistory();
             }
         }
 
@@ -311,15 +390,15 @@
             const color = document.getElementById('styleColor').value;
             const opacity = document.getElementById('styleOpacity').value / 100;
             const text = new fabric.IText('Clique para editar', { 
-                left: x, top: y, 
-                fontFamily: 'Arial', fontSize: 16, fill: color, opacity: opacity 
+                left: x, top: y, fontFamily: 'Inter, Arial', fontSize: 16, fill: color, opacity: opacity 
             });
             text.typeName = 'Texto';
             canvas.add(text);
             canvas.setActiveObject(text);
+            saveHistory();
         }
 
-        // --- ZOOM E PANNING ---
+        // --- ZOOM, PANNING & NOVO DUPLO CLIQUE (RÓTULOS) ---
         canvas.on('mouse:wheel', function(opt) {
             let delta = opt.e.deltaY;
             let zoom = canvas.getZoom();
@@ -330,6 +409,29 @@
             opt.e.preventDefault();
             opt.e.stopPropagation();
             hideContextMenu();
+        });
+
+        canvas.on('mouse:dblclick', function(opt) {
+            if (isDrawingPolygon) {
+                finishPolygon();
+                return;
+            }
+            
+            // Adiciona Rótulo (Nome/Idade) com duplo clique sobre qualquer objeto que não seja linha ou fundo
+            if (opt.target && !opt.target.isLegendBg && !opt.target.isLegendItem && opt.target.type !== 'path' && opt.target.typeName !== 'Fronteira (Ecomapa)' && opt.target.type !== 'i-text') {
+                let currentLabel = prompt("Adicione Nome / Idade (ex: João, 45 anos):");
+                if (currentLabel && currentLabel.trim() !== "") {
+                    const center = opt.target.getCenterPoint();
+                    const text = new fabric.IText(currentLabel, {
+                        fontFamily: 'Inter, Arial', fontSize: 15, fill: '#1e293b', fontWeight: 'bold',
+                        left: center.x, top: center.y + (opt.target.getScaledHeight()/2) + 10,
+                        originX: 'center', originY: 'top', hasControls: true
+                    });
+                    canvas.add(text);
+                    canvas.setActiveObject(text);
+                    saveHistory();
+                }
+            }
         });
 
         let isPanning = false;
@@ -406,7 +508,7 @@
             }
         });
 
-        // --- PERSISTÊNCIA E HISTÓRICO ---
+        // --- HISTÓRICO ---
         function saveHistory() {
             if (isHistoryAction || isDrawingPolygon) return;
             const json = canvas.toJSON(['id', 'typeName', 'isLegendBg', 'isLegendItem', 'legendId', 'connectionData']);
@@ -415,11 +517,9 @@
             historyStack = historyStack.slice(0, historyIdx + 1);
             historyStack.push(jsonStr);
             
-            if (historyStack.length > MAX_HISTORY) {
-                historyStack.shift(); 
-            } else {
-                historyIdx++;
-            }
+            if (historyStack.length > MAX_HISTORY) historyStack.shift(); 
+            else historyIdx++;
+            
             localStorage.setItem('genograma_data', jsonStr);
         }
 
@@ -491,9 +591,7 @@
                     } else {
                         const fromNode = objects.find(o => o.id === obj.connectionData.fromId);
                         const toNode = objects.find(o => o.id === obj.connectionData.toId);
-                        if (fromNode && toNode) {
-                            lines.push({ lineObj: obj, fromNode: fromNode, toNode: toNode });
-                        }
+                        if (fromNode && toNode) lines.push({ lineObj: obj, fromNode: fromNode, toNode: toNode });
                     }
                 }
             });
@@ -514,10 +612,68 @@
             }
         });
 
-        // --- PADRÃO FACTORY PARA FORMAS ---
+        // --- ALINHAMENTO E DISTRIBUIÇÃO ---
+        function alignAndDistribute() {
+            if(isDrawingPolygon) finishPolygon();
+            const activeObjects = canvas.getActiveObjects();
+            const nodes = activeObjects.filter(o => !o.connectionData && o.type !== 'path' && o.typeName !== 'Fronteira (Ecomapa)' && !o.isLegendItem && !o.isLegendBg);
+            
+            if (nodes.length < 2) {
+                alert("Por favor, selecione pelo menos 2 formas (pais, irmãos, etc) para alinhá-los perfeitamente.");
+                return;
+            }
+
+            canvas.discardActiveObject(); 
+            nodes.sort((a, b) => a.left - b.left);
+            const avgY = nodes.reduce((sum, n) => sum + n.getCenterPoint().y, 0) / nodes.length;
+
+            if (nodes.length > 2) {
+                const firstX = nodes[0].getCenterPoint().x;
+                const lastX = nodes[nodes.length - 1].getCenterPoint().x;
+                const stepX = (lastX - firstX) / (nodes.length - 1);
+                
+                nodes.forEach((node, index) => {
+                    const targetX = firstX + (stepX * index);
+                    node.set({
+                        left: targetX - (node.getScaledWidth() / 2),
+                        top: avgY - (node.getScaledHeight() / 2)
+                    });
+                    node.setCoords();
+                });
+            } else if (nodes.length === 2) {
+                nodes.forEach((node) => {
+                    node.set({ top: avgY - (node.getScaledHeight() / 2) });
+                    node.setCoords();
+                });
+            }
+
+            lines.forEach(connection => {
+                updateConnectionPath(connection);
+                if(connection.lineObj && connection.lineObj.connectionData && connection.lineObj.connectionData.isParental) {
+                    updateAllChildLinks(connection.lineObj.id);
+                }
+            });
+
+            const sel = new fabric.ActiveSelection(nodes, { canvas: canvas });
+            canvas.setActiveObject(sel);
+
+            canvas.requestRenderAll();
+            saveHistory();
+        }
+
+        // --- PADRÃO FACTORY PARA FORMAS (ECOMAPA REINCLUIDO) ---
+        const createInstShape = (emoji, label, config) => {
+            return new fabric.Group([
+                new fabric.Circle({ radius: 30, fill: '#f8fafc', stroke: config.stroke || '#000', strokeWidth: 2, left: 0, top: 0 }),
+                new fabric.Text(emoji, { fontSize: 28, left: 30, top: 25, originX: 'center', originY: 'center' }),
+                new fabric.Text(label, { fontSize: 10, left: 30, top: 48, originX: 'center', originY: 'center', fontFamily: 'Arial', fontWeight: 'bold', fill: config.stroke || '#000' })
+            ], { opacity: config.opacity, width: 60, height: 60 });
+        };
+
         const ShapeFactory = {
             'homem': (config) => new fabric.Rect({ width: 40, height: 40, ...config }),
             'mulher': (config) => new fabric.Circle({ radius: 20, ...config }),
+            'pet': (config) => new fabric.Polygon([{x:20, y:0}, {x:40, y:20}, {x:20, y:40}, {x:0, y:20}], { width: 40, height: 40, ...config }),
             'gestacao': (config) => new fabric.Triangle({ width: 40, height: 40, ...config }),
             'indice_homem': (config) => new fabric.Group([
                 new fabric.Rect({ width: 40, height: 40, left: 0, top: 0, ...config }),
@@ -558,7 +714,16 @@
                 new fabric.Line([10, -10, 30, -10], config)
             ], { opacity: config.opacity }),
             'triangulacao': (config) => new fabric.Triangle({ width: 80, height: 80, ...config }),
-            'coalizao': (config) => new fabric.Path('M 20 0 Q 0 0 0 20 L 0 40 Q 0 50 -10 50 Q 0 50 0 60 L 0 80 Q 0 100 20 100', { fill: 'transparent', stroke: config.stroke, strokeWidth: 2, opacity: config.opacity })
+            'coalizao': (config) => new fabric.Path('M 20 0 Q 0 0 0 20 L 0 40 Q 0 50 -10 50 Q 0 50 0 60 L 0 80 Q 0 100 20 100', { fill: 'transparent', stroke: config.stroke, strokeWidth: 2, opacity: config.opacity }),
+            
+            // Instituições (Ecomapa)
+            'inst_ubs': (config) => createInstShape('🏥', 'Saúde', config),
+            'inst_escola': (config) => createInstShape('🏫', 'Escola', config),
+            'inst_igreja': (config) => createInstShape('⛪', 'Religião', config),
+            'inst_trabalho': (config) => createInstShape('💼', 'Trabalho', config),
+            'inst_lazer': (config) => createInstShape('⚽', 'Lazer', config),
+            'inst_justica': (config) => createInstShape('⚖️', 'Justiça', config),
+            'inst_ass': (config) => createInstShape('🤝', 'Associação', config)
         };
 
         function addShapeUI(type, typeName) {
@@ -571,16 +736,13 @@
             
             const config = { ...defaultStyle };
             const obj = ShapeFactory[type](config);
-            
             const vpCenter = canvas.getVpCenter();
 
             if (obj) {
                 obj.set({ 
                     left: vpCenter.x - (obj.width || 40) / 2, 
                     top: vpCenter.y - (obj.height || 40) / 2,
-                    id: 'node_' + new Date().getTime(),
-                    typeName: typeName,
-                    hasControls: true
+                    id: 'node_' + new Date().getTime(), typeName: typeName, hasControls: true
                 });
                 canvas.add(obj);
                 if(activate) canvas.setActiveObject(obj);
@@ -595,7 +757,7 @@
             const opacity = document.getElementById('styleOpacity').value / 100;
             const text = new fabric.IText('Clique para editar', { 
                 left: vpCenter.x, top: vpCenter.y, 
-                fontFamily: 'Arial', fontSize: 16, fill: color, opacity: opacity 
+                fontFamily: 'Inter, Arial', fontSize: 16, fill: color, opacity: opacity 
             });
             text.typeName = 'Texto';
             canvas.add(text);
@@ -664,9 +826,7 @@
             const childLinePath = new fabric.Path('M 0 0 L 0 0', { stroke: defaultStyle.stroke, strokeWidth: 2, fill: 'transparent', selectable: true, evented: true });
             childLinePath.id = 'line_' + new Date().getTime();
             childLinePath.connectionData = {
-                type: 'child_link',
-                parentLineId: parentLineRecord.lineObj.id,
-                childId: childObj.id
+                type: 'child_link', parentLineId: parentLineRecord.lineObj.id, childId: childObj.id
             };
             
             canvas.add(childLinePath);
@@ -683,8 +843,7 @@
         }
 
         function updateAllChildLinks(parentId) {
-            lines.filter(l => l.isChildLink && l.lineObj.connectionData.parentLineId === parentId)
-                 .forEach(updateConnectionPath);
+            lines.filter(l => l.isChildLink && l.lineObj.connectionData.parentLineId === parentId).forEach(updateConnectionPath);
         }
 
         function updateCurrentStyle() {
@@ -702,7 +861,8 @@
                     activeObject.getObjects().forEach(obj => {
                         if (obj.stroke && obj.stroke !== 'transparent' && obj.stroke !== 'none') obj.set({ stroke: color });
                         if (obj.type === 'rect' && obj.fill && obj.fill !== 'transparent' && obj.fill !== 'none') obj.set({ fill: color });
-                        if (obj.type === 'circle' && obj.fill && obj.fill !== 'transparent' && obj.fill !== 'none' && obj.radius <= 6) obj.set({ fill: color });
+                        if (obj.type === 'circle' && obj.fill && obj.fill !== 'transparent' && obj.fill !== '#f8fafc' && obj.fill !== 'none' && obj.radius <= 6) obj.set({ fill: color });
+                        if (obj.type === 'text' && obj.fontFamily === 'Arial') obj.set({ fill: color });
                     });
                 } else {
                     activeObject.set({ stroke: color, opacity: opacity });
@@ -718,12 +878,14 @@
             if (activeObjects.length) {
                 canvas.discardActiveObject();
                 activeObjects.forEach(function(object) {
+                    let linesToRemove = [];
                     lines = lines.filter(l => {
                         if (l.fromNode === object || l.toNode === object || l.childNodeRef === object) {
-                            if (l.lineObj.connectionData.isParental) {
+                            if (l.lineObj.connectionData && l.lineObj.connectionData.isParental) {
                                 lines.forEach(childL => {
                                     if(childL.isChildLink && childL.lineObj.connectionData.parentLineId === l.lineObj.id) {
                                         canvas.remove(childL.lineObj);
+                                        linesToRemove.push(childL);
                                     }
                                 });
                             }
@@ -732,6 +894,7 @@
                         }
                         return true;
                     });
+                    lines = lines.filter(l => !linesToRemove.includes(l));
                     canvas.remove(object);
                 });
                 saveHistory();
@@ -762,7 +925,7 @@
             canvas.defaultCursor = 'default';
             canvas.selection = true;
             const btn = document.getElementById('btnPolygon');
-            btn.innerHTML = '<div class="tool-btn-icon text-yellow-600">✏️</div>Desenhar Fronteira (Ecomapa)';
+            btn.innerHTML = '<span class="text-yellow-600 mr-2 text-lg">✏️</span>Desenhar Fronteira';
             btn.classList.replace('bg-red-100', 'bg-yellow-50');
             btn.classList.replace('text-red-800', 'text-yellow-600');
             btn.classList.replace('border-red-400', 'border-yellow-200');
@@ -789,10 +952,6 @@
             polygonPoints = [];
             canvas.renderAll();
         }
-
-        canvas.on('mouse:dblclick', function(options) {
-             if (isDrawingPolygon) finishPolygon();
-        });
 
         function toggleConnectionMode() {
             if (isDrawingPolygon) finishPolygon();
@@ -841,6 +1000,10 @@
                 path = `M 0 0 L ${mid - 5} 0 M ${mid - 5} -10 L ${mid - 5} 10 M ${mid + 5} -10 L ${mid + 5} 10 M ${mid + 5} 0 L ${l} 0`;
             } else if (type === 'harmonico') {
                 path = `M 0 0 L ${l} 0 M 12 -6 L 0 0 L 12 6 M ${l - 12} -6 L ${l} 0 L ${l - 12} 6`;
+            } else if (type === 'seta_ida') {
+                path = `M 0 0 L ${l} 0 M ${l - 12} -6 L ${l} 0 L ${l - 12} 6`;
+            } else if (type === 'seta_volta') {
+                path = `M 0 0 L ${l} 0 M 12 -6 L 0 0 L 12 6`;
             } else if (type === 'vulneravel') {
                 path = `M 5 0 a 5 5 0 1 0 -10 0 a 5 5 0 1 0 10 0 M 5 0 L ${l - 5} 0 M ${l} 0 a 5 5 0 1 0 -10 0 a 5 5 0 1 0 10 0`;
             } else if (type === 'separacao') {
@@ -862,7 +1025,6 @@
             const dy = toC.y - fromC.y;
             const length = Math.sqrt(dx*dx + dy*dy);
             const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-            const pathStr = generatePathStr(type, length);
             const selectEl = document.getElementById('lineType');
             const typeName = selectEl.options[selectEl.selectedIndex] ? selectEl.options[selectEl.selectedIndex].text : type;
 
@@ -872,7 +1034,9 @@
                 angle: angle, originX: 'left', originY: 'center', typeName: typeName
             };
             if (type === 'distante') lineProps.strokeDashArray = [8, 4];
+            if (type === 'vulneravel') lineProps.strokeDashArray = [2, 6];
 
+            const pathStr = generatePathStr(type, length);
             const linePath = new fabric.Path(pathStr, lineProps);
             linePath.id = 'line_' + new Date().getTime();
             linePath.connectionData = { type: type, fromId: fromObj.id, toId: toObj.id };
@@ -887,21 +1051,26 @@
 
         canvas.on('object:moving', function(e) {
             if(isDrawingPolygon || isPanning) return;
-            const p = e.target;
             hideContextMenu();
 
-            lines.forEach(connection => {
-                if (connection.isChildLink) {
-                    if (connection.childNodeRef === p) updateConnectionPath(connection);
-                    return;
-                }
-                if (connection.fromNode === p || connection.toNode === p) {
-                    updateConnectionPath(connection);
-                    if(connection.lineObj.connectionData.isParental) {
-                        updateAllChildLinks(connection.lineObj.id);
+            const updateObjLines = (node) => {
+                lines.forEach(connection => {
+                    if (connection.isChildLink) {
+                        if (connection.childNodeRef === node) updateConnectionPath(connection);
+                    } else if (connection.fromNode === node || connection.toNode === node) {
+                        updateConnectionPath(connection);
+                        if(connection.lineObj.connectionData.isParental) {
+                            updateAllChildLinks(connection.lineObj.id);
+                        }
                     }
-                }
-            });
+                });
+            };
+
+            if (e.target.type === 'activeSelection') {
+                e.target.getObjects().forEach(updateObjLines);
+            } else {
+                updateObjLines(e.target);
+            }
         });
 
         function updateConnectionPath(connection) {
@@ -912,44 +1081,25 @@
                 
                 const p1C = parentRecord.fromNode.getCenterPoint();
                 const p2C = parentRecord.toNode.getCenterPoint();
-                const dropY = Math.max(p1C.y, p2C.y) + 30; 
-
-                const childLinks = lines.filter(l => l.isChildLink && l.lineObj.connectionData.parentLineId === parentLineId);
-                const cIndex = childLinks.indexOf(connection);
-                const tCount = childLinks.length;
-
-                const minXBase = Math.min(p1C.x, p2C.x);
-                const maxXBase = Math.max(p1C.x, p2C.x);
-                const startX = tCount === 1 ? (minXBase + maxXBase) / 2 : minXBase + (maxXBase - minXBase) * (cIndex + 1) / (tCount + 1);
-                const childC = connection.childNodeRef.getCenterPoint();
+                
+                const startX = (p1C.x + p2C.x) / 2;
+                const startY = (p1C.y + p2C.y) / 2;
+                const dropY = Math.max(p1C.y, p2C.y) + 40; 
+                
+                const childObj = connection.childNodeRef;
+                const childC = childObj.getCenterPoint();
+                const childTopY = childC.y - (childObj.getScaledHeight() / 2);
 
                 const minX = Math.min(startX, childC.x) - 5;
-                const minY = Math.min(dropY, childC.y) - 5;
-                const pathStr = `M ${startX - minX} ${dropY - minY} L ${startX - minX} ${dropY + 15 - minY} L ${childC.x - minX} ${dropY + 15 - minY} L ${childC.x - minX} ${childC.y - minY}`;
+                const minY = Math.min(startY, dropY, childTopY) - 5;
+                
+                const pathStr = `M ${startX - minX} ${startY - minY} L ${startX - minX} ${dropY - minY} L ${childC.x - minX} ${dropY - minY} L ${childC.x - minX} ${childTopY - minY}`;
                 
                 const dummy = new fabric.Path(pathStr);
                 connection.lineObj.set({
                     path: dummy.path, width: dummy.width, height: dummy.height,
                     pathOffset: dummy.pathOffset, left: minX, top: minY, angle: 0,
                     originX: 'left', originY: 'top' 
-                });
-                connection.lineObj.setCoords();
-                return;
-            }
-
-            if (connection.lineObj.connectionData.isParental) {
-                const p1C = connection.fromNode.getCenterPoint();
-                const p2C = connection.toNode.getCenterPoint();
-                const dropY = Math.max(p1C.y, p2C.y) + 30;
-                const minX = Math.min(p1C.x, p2C.x) - 5;
-                const minY = Math.min(p1C.y, p2C.y) - 5;
-                const pathStr = `M ${p1C.x - minX} ${p1C.y - minY} L ${p1C.x - minX} ${dropY - minY} L ${p2C.x - minX} ${dropY - minY} L ${p2C.x - minX} ${p2C.y - minY}`;
-                
-                const dummy = new fabric.Path(pathStr);
-                connection.lineObj.set({
-                    path: dummy.path, width: dummy.width, height: dummy.height,
-                    pathOffset: dummy.pathOffset, left: minX, top: minY, angle: 0,
-                    originX: 'left', originY: 'top'
                 });
                 connection.lineObj.setCoords();
                 return;
@@ -1020,6 +1170,8 @@
                     legendIcon = new fabric.Polygon([{x:0, y:0}, {x:20, y:-10}, {x:40, y:10}, {x:10, y:20}], {
                         fill: 'transparent', stroke: icon.stroke, strokeWidth: 2, strokeDashArray: [8, 4]
                     });
+                } else if (icon.typeName.includes('Saúde') || icon.typeName.includes('Escola') || icon.typeName.includes('Religião') || icon.typeName.includes('Trabalho') || icon.typeName.includes('Lazer') || icon.typeName.includes('Justiça') || icon.typeName.includes('Assoc')) {
+                    legendIcon.set({ scaleX: 0.5, scaleY: 0.5, angle: 0 });
                 } else {
                     legendIcon.set({ scaleX: 0.7, scaleY: 0.7, angle: 0 });
                 }

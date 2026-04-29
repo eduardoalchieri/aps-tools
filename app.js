@@ -306,7 +306,16 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (!encontrouAlgo) {
-                containerBuscaGlobal.innerHTML = "<p style='color: #666; font-size: 0.95rem; margin-top: 10px;'>Nenhuma ferramenta encontrada para este sintoma ou termo.</p>";
+                containerBuscaGlobal.innerHTML = `
+                    <div style="text-align: center; margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border: 1px dashed #ced4da;">
+                        <p style="color: #666; font-size: 0.95rem; margin-bottom: 15px;">Nenhuma ferramenta encontrada para este sintoma ou termo.</p>
+                        <a href="mailto:eduardoa.alchieri@acad.ufsm.br?subject=Sugestão%20de%20Nova%20Escala%20-%20APS%20Tools&body=Olá,%20não%20encontrei%20o%20que%20buscava.%20Gostaria%20de%20sugerir%20a%20adição%20da%20seguinte%20ferramenta:%0A%0ANome%20da%20Escala/Calculadora:%20%0A%0AContexto%20Clínico%20(Opcional):" 
+                           style="display: inline-flex; align-items: center; justify-content: center; background-color: #0b5ed7; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; width: 100%; box-sizing: border-box;">
+                            <span class="material-symbols-outlined" style="margin-right: 8px; font-size: 1.2rem;">mail</span>
+                            Sugerir Nova Escala
+                        </a>
+                    </div>
+                `;
             }
         });
     }

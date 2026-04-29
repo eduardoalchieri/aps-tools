@@ -97,10 +97,23 @@
             <div style="margin-bottom: 1.5rem;">
                 <input type="text" id="input-pesquisa-escalas" placeholder="Pesquisar escala..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; outline: none;">
             </div>
+            
             <div id="container-escalas" class="grid-container">
                 <button class="menu-btn" data-target="view-katz" data-keywords="idoso, geriatria, funcionalidade, avd, banho, vestir, banheiro, transferência, continência, alimentação, dependência">
                     <span class="material-symbols-outlined">accessible</span>
                     Índice de Katz (ABVD)
+                </button>
+                <button class="menu-btn" data-target="view-wells-tvp" data-keywords="trombose venosa profunda, tvp, wells, perna, panturrilha, edema, doppler, d-dimero">
+                    <span class="material-symbols-outlined">airline_seat_legroom_reduced</span>
+                    Escore de Wells (TVP)
+                </button>
+                <button class="menu-btn" data-target="view-wells-tep" data-keywords="tromboembolismo pulmonar, tep, embolia, pulmão, dispneia, wells, angiotc, d-dimero">
+                    <span class="material-symbols-outlined">pulmonology</span>
+                    Escore de Wells (TEP)
+                </button>
+                <button class="menu-btn" data-target="view-glasgow" data-keywords="coma, rebaixamento, sensorio, tce, trauma craniano, neurologia, neuro, pupila, gcs, gcs-p, pgcs, decorticação, descerebração, intubado, motor, verbal, ocular">
+                    <span class="material-symbols-outlined">neurology</span>
+                    Escala de Glasgow (GCS / GCS-P / Pediátrica)
                 </button>
                 <button class="menu-btn" data-target="view-alvarado" data-keywords="apendicite, abdome agudo, cirurgia geral, dor abdominal, alvarado modificado, leucocitose">
                     <span class="material-symbols-outlined">medical_services</span>
@@ -515,6 +528,61 @@
             <div id="res-pps" style="margin-top: 1.5rem; display: none;"></div>
         </section>
 
+        <section id="view-glasgow" class="view hidden">
+            <h2>Escala de Glasgow</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Avaliação do nível de consciência, resposta pupilar (GCS-P) e adaptação pediátrica.</p>
+
+            <form id="form-glasgow" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Faixa Etária (Adaptação Clínica)</label>
+                    <select id="gcs-idade" class="select-med" style="margin-top: 0; background-color: #f8f9fa;">
+                        <option value="adulto">Adultos e Crianças > 5 anos (GCS Padrão)</option>
+                        <option value="pre-escolar">Crianças 2 a 5 anos (Fase Verbal)</option>
+                        <option value="lactente">Bebês e Infantes ≤ 2 anos (Pré-Verbais)</option>
+                    </select>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; border-top: 2px solid #e3f2fd; padding-top: 15px;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Abertura Ocular (E)</label>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 5px;">
+                        <input type="radio" id="gcs_e_4" name="gcs_e" value="4"><label for="gcs_e_4" style="text-align: left; padding-left: 15px;">4 - Espontânea</label>
+                        <input type="radio" id="gcs_e_3" name="gcs_e" value="3"><label for="gcs_e_3" style="text-align: left; padding-left: 15px;">3 - À solicitação verbal (voz normal/alta)</label>
+                        <input type="radio" id="gcs_e_2" name="gcs_e" value="2"><label for="gcs_e_2" style="text-align: left; padding-left: 15px;">2 - À pressão (estímulo físico periférico)</label>
+                        <input type="radio" id="gcs_e_1" name="gcs_e" value="1"><label for="gcs_e_1" style="text-align: left; padding-left: 15px;">1 - Nenhuma resposta</label>
+                        <input type="radio" id="gcs_e_nt" name="gcs_e" value="NT"><label for="gcs_e_nt" style="text-align: left; padding-left: 15px; background-color: #f8f9fa; color: #6c757d;">NT - Não Testável (ex: trauma ocular, edema)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; border-top: 2px solid #e3f2fd; padding-top: 15px;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Resposta Verbal (V)</label>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 5px;" id="container-gcs-verbal">
+                        </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; border-top: 2px solid #e3f2fd; padding-top: 15px;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Resposta Motora (M)</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">O estímulo à pressão central deve ser aplicado no trapézio ou incisura supraorbitária.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 5px;" id="container-gcs-motor">
+                        </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; border-top: 2px dashed #0b5ed7; padding-top: 15px; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Reatividade Pupilar à Luz (Escore PRS)</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Avalia o reflexo fotomotor do tronco cerebral. Penaliza a soma total gerando o GCS-P.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 5px;">
+                        <input type="radio" id="gcs_p_0" name="gcs_p" value="0"><label for="gcs_p_0" style="text-align: left; padding-left: 15px;">Ambas reagem (PEARL) [-0 pts]</label>
+                        <input type="radio" id="gcs_p_1" name="gcs_p" value="1"><label for="gcs_p_1" style="text-align: left; padding-left: 15px;">Apenas uma pupila reage (Assimetria) [-1 pt]</label>
+                        <input type="radio" id="gcs_p_2" name="gcs_p" value="2"><label for="gcs_p_2" style="text-align: left; padding-left: 15px;">Ambas NÃO reativas (Dano severo) [-2 pts]</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-glasgow" class="btn-action-sc" style="margin-top: 10px;">Calcular GCS Total</button>
+            </form>
+
+            <div id="res-glasgow" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;"></div>
+        </section>
+
         <section id="view-risco-ad" class="view hidden">
             <h2>Ribeiro-Fiuza (gestão da visita domiciliar à idosos)</h2>
             <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Escala para avaliação e gestão de visitas domiciliares na APS (Ribeiro, Fiuza e Pinheiro).</p>
@@ -667,6 +735,179 @@
             </form>
 
             <div id="res-chads" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;"></div>
+        </section>
+
+        <section id="view-wells-tvp" class="view hidden">
+            <h2>Escore de Wells (TVP)</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Estratificação de risco para Trombose Venosa Profunda (Modelo Simplificado de 2 Níveis).</p>
+
+            <form id="form-wells-tvp" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Câncer Ativo</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Tratamento em andamento, nos últimos 6 meses ou cuidados paliativos.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_cancer_0" name="tvp_cancer" value="0" checked><label for="tvp_cancer_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_cancer_1" name="tvp_cancer" value="1"><label for="tvp_cancer_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Paralisia, paresia ou imobilização (Gesso)</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Referente aos membros inferiores.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_paralisia_0" name="tvp_paralisia" value="0" checked><label for="tvp_paralisia_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_paralisia_1" name="tvp_paralisia" value="1"><label for="tvp_paralisia_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Acamado > 3 dias ou Cirurgia Maior <span style="color:#dc3545;">(Nas últimas 12 semanas)</span></label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Cirurgia com anestesia geral ou regional. Atenção ao prazo estendido de 12 semanas exclusivo da TVP.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_acamado_0" name="tvp_acamado" value="0" checked><label for="tvp_acamado_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_acamado_1" name="tvp_acamado" value="1"><label for="tvp_acamado_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Sensibilidade no trajeto venoso profundo</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Dor anatômica no trajeto das veias femorais ou poplíteas.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_dor_0" name="tvp_dor" value="0" checked><label for="tvp_dor_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_dor_1" name="tvp_dor" value="1"><label for="tvp_dor_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Edema abrangendo todo o membro</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_edematotal_0" name="tvp_edematotal" value="0" checked><label for="tvp_edematotal_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_edematotal_1" name="tvp_edematotal" value="1"><label for="tvp_edematotal_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Edema de panturrilha > 3 cm</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Diferença em relação à perna assintomática (medido 10cm abaixo da tuberosidade tibial).</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_panturrilha_0" name="tvp_panturrilha" value="0" checked><label for="tvp_panturrilha_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_panturrilha_1" name="tvp_panturrilha" value="1"><label for="tvp_panturrilha_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Edema com cacifo (Pitting edema)</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Confinado ou maior na perna sintomática.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_cacifo_0" name="tvp_cacifo" value="0" checked><label for="tvp_cacifo_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_cacifo_1" name="tvp_cacifo" value="1"><label for="tvp_cacifo_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Veias superficiais colaterais dilatadas</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_veias_0" name="tvp_veias" value="0" checked><label for="tvp_veias_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_veias_1" name="tvp_veias" value="1"><label for="tvp_veias_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Histórico prévio documentado de TVP</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_hist_0" name="tvp_hist" value="0" checked><label for="tvp_hist_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_hist_1" name="tvp_hist" value="1"><label for="tvp_hist_1" style="flex: 1;">Sim (+1)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #dc3545; margin-bottom: 0.5rem;">Diagnóstico alternativo tão ou mais provável</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Ex: Cisto de Baker, celulite, ruptura muscular, insuficiência cardíaca.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tvp_alt_0" name="tvp_alt" value="0" checked><label for="tvp_alt_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tvp_alt_2" name="tvp_alt" value="-2"><label for="tvp_alt_2" style="flex: 1; color: #dc3545; font-weight: bold;">Sim (-2)</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-tvp" class="btn-action-sc" style="margin-top: 10px;">Calcular Risco de TVP</button>
+            </form>
+            <div id="res-wells-tvp" style="margin-top: 1.5rem; display: none;"></div>
+        </section>
+
+        <section id="view-wells-tep" class="view hidden">
+            <h2>Escore de Wells (TEP)</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Estratificação de risco para Tromboembolismo Pulmonar (Modelo Simplificado de 2 Níveis).</p>
+            
+            <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 6px; margin-bottom: 1.2rem; font-size: 0.85rem; border: 1px solid #f5c6cb;">
+                <strong>🚨 ALERTA:</strong> Regras de predição clínica aplicam-se apenas a pacientes <strong>hemodinamicamente estáveis</strong>. Pacientes em choque ou hipotensão severa exigem suporte avançado e imagem imediata, independentemente do escore.
+            </div>
+
+            <form id="form-wells-tep" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Sinais clínicos focais de TVP</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Edema unilateral e dor à palpação no trajeto venoso.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_sinais_0" name="tep_sinais" value="0" checked><label for="tep_sinais_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_sinais_3" name="tep_sinais" value="3.0"><label for="tep_sinais_3" style="flex: 1;">Sim (+3.0)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Diagnóstico alternativo MENOS provável que TEP</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">O TEP é a principal suspeita clínica do examinador.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_alt_0" name="tep_alt" value="0" checked><label for="tep_alt_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_alt_3" name="tep_alt" value="3.0"><label for="tep_alt_3" style="flex: 1;">Sim (+3.0)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Frequência Cardíaca > 100 bpm</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_fc_0" name="tep_fc" value="0" checked><label for="tep_fc_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_fc_15" name="tep_fc" value="1.5"><label for="tep_fc_15" style="flex: 1;">Sim (+1.5)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Imobilização > 3 dias ou Cirurgia <span style="color:#dc3545;">(Nas últimas 4 semanas)</span></label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Atenção ao prazo restrito de 4 semanas exclusivo do TEP.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_imob_0" name="tep_imob" value="0" checked><label for="tep_imob_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_imob_15" name="tep_imob" value="1.5"><label for="tep_imob_15" style="flex: 1;">Sim (+1.5)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Episódio prévio documentado de TVP ou TEP</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_hist_0" name="tep_hist" value="0" checked><label for="tep_hist_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_hist_15" name="tep_hist" value="1.5"><label for="tep_hist_15" style="flex: 1;">Sim (+1.5)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Hemoptise</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Tosse com expectoração sanguinolenta.</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_hemoptise_0" name="tep_hemoptise" value="0" checked><label for="tep_hemoptise_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_hemoptise_1" name="tep_hemoptise" value="1.0"><label for="tep_hemoptise_1" style="flex: 1;">Sim (+1.0)</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem;">Câncer Ativo</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="tep_cancer_0" name="tep_cancer" value="0" checked><label for="tep_cancer_0" style="flex: 1;">Não (0)</label>
+                        <input type="radio" id="tep_cancer_1" name="tep_cancer" value="1.0"><label for="tep_cancer_1" style="flex: 1;">Sim (+1.0)</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-tep" class="btn-action-sc" style="margin-top: 10px;">Calcular Risco de TEP</button>
+            </form>
+            <div id="res-wells-tep" style="margin-top: 1.5rem; display: none;"></div>
         </section>
 
         <section id="view-cronometro" class="view hidden">
@@ -3665,6 +3906,8 @@
 <script src="escalas/dengue.js"></script>
 <script src="escalas/twist.js"></script>
 <script src="escalas/alvarado.js"></script>
+<script src="escalas/glasgow.js"></script>
+<script src="escalas/wells.js"></script>
 
 <div id="ios-install-toast" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); border-radius: 12px; padding: 15px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); width: 90%; max-width: 350px; z-index: 9999; text-align: center; border: 1px solid #e0e0e0; backdrop-filter: blur(5px);">
         <span class="material-symbols-outlined" style="position: absolute; top: 8px; right: 8px; color: #999; cursor: pointer; font-size: 1.2rem;" onclick="document.getElementById('ios-install-toast').style.display='none'">close</span>
