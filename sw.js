@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aps-tools-v11';
+const CACHE_NAME = 'aps-tools-v19';
 const urlsToCache = [
   './',
   './index.html',
