@@ -305,6 +305,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
+            // Busca também em medicamentos (se o dado existir e tiver sido carregado)
+            if (window.medicamentosData && window.medicamentosData.length > 0) {
+                window.medicamentosData.forEach(med => {
+                    const nomeMatch = med.nome.toLowerCase().includes(termo);
+                    const tagMatch = med.tags && med.tags.some(tag => tag.toLowerCase().includes(termo));
+                    
+                    if (nomeMatch || tagMatch) {
+                        encontrouAlgo = true;
+                        
+                        // Cria um botão que direciona para a view de medicamentos e preenche a pesquisa local
+                        const btnMed = document.createElement("button");
+                        btnMed.className = "menu-btn";
+                        btnMed.style.display = "flex";
+                        btnMed.innerHTML = `
+                            <span class="material-symbols-outlined" style="color: #0b5ed7;">medication</span>
+                            ${med.nome}
+                            <span style="font-size: 0.7rem; background-color: #e3f2fd; color: #0b5ed7; padding: 3px 8px; border-radius: 12px; margin-left: auto; font-weight: bold; text-transform: uppercase;">Medicamento</span>
+                        `;
+                        
+                        // Evento para abrir a seção de medicamentos e pesquisar direto
+                        btnMed.addEventListener("click", () => {
+                            window.location.hash = "view-medicamentos";
+                            const searchInput = document.getElementById("input-pesquisa-medicamentos");
+                            if (searchInput) {
+                                searchInput.value = med.nome;
+                                // Dispara o evento de input manualmente para filtrar a lista
+                                searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+                            }
+                        });
+                        
+                        containerBuscaGlobal.appendChild(btnMed);
+                    }
+                });
+            }
+
             if (!encontrouAlgo) {
                 containerBuscaGlobal.innerHTML = `
                     <div style="text-align: center; margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px; border: 1px dashed #ced4da;">

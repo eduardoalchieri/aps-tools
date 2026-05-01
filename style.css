@@ -667,3 +667,148 @@ h2 {
     box-shadow: 0 0 8px rgba(11, 94, 215, 0.4); /* Brilho azul */
     transform: scale(1.05); /* Leve aumento para destacar */
 }
+/* --- Estilos da Seção de Medicamentos --- */
+.med-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.med-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.med-header:hover {
+    background-color: #f8f9fa;
+}
+
+.med-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.med-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.med-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: help;
+}
+
+.tag-basico { background-color: #e8f5e9; color: #28a745; }
+.tag-estrategico { background-color: #fff3cd; color: #ff9800; }
+.tag-especializado { background-color: #fce4ec; color: #d81b60; }
+.tag-sintoma { background-color: #e3f2fd; color: #0b5ed7; font-weight: normal; }
+
+.med-details {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background-color: #fafafa;
+    border-top: 1px solid transparent;
+}
+
+.med-details.open {
+    max-height: 500px; /* Suficiente para o conteúdo */
+    padding: 1rem;
+    border-top-color: #eee;
+}
+
+.med-details h4 {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.med-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.med-details li {
+    font-size: 0.85rem;
+    color: #444;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #ddd;
+}
+.med-details li:last-child {
+    border-bottom: none;
+}
+
+/* Modal de Explicação de Tags */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-title {
+    color: #0b5ed7;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.modal-body {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.btn-close-modal {
+    background: #0b5ed7;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+

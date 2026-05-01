@@ -1,0 +1,5666 @@
+const medicamentosJSON = [
+  {
+    "nome": "Abatacepte",
+    "apresentacoes": [
+      "pó para solução para infusão 250 mg",
+      "solução injetável 125 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Abciximabe",
+    "apresentacoes": [
+      "solução injetável 2 mg/mL"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de betametasona + fosfato dissódico de betametasona",
+    "apresentacoes": [
+      "suspensão injetável 3 mg/mL + 3 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de ciproterona",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de desmopressina",
+    "apresentacoes": [
+      "comprimido 0,1 mg",
+      "comprimido 0,2 mg",
+      "solução injetável 15 mcg/mL",
+      "solução injetável 4 mcg/mL",
+      "solução spray nasal 0,1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de fludrocortisona",
+    "apresentacoes": [
+      "comprimido 0,1 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de glatirâmer",
+    "apresentacoes": [
+      "solução injetável 20 mg/mL",
+      "solução injetável 40 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de gosserrelina",
+    "apresentacoes": [
+      "implante 10,8 mg",
+      "implante 3,6 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de hidrocortisona",
+    "apresentacoes": [
+      "creme 10 mg/g (1%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de lanreotida",
+    "apresentacoes": [
+      "solução injetável de liberação prolongada 120 mg",
+      "solução injetável de liberação prolongada 60 mg",
+      "solução injetável de liberação prolongada 90 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de leuprorrelina",
+    "apresentacoes": [
+      "pó para suspensão injetável 11,25 mg",
+      "pó para suspensão injetável de liberação prolongada 3,75 mg",
+      "pó para suspensão injetável de liberação prolongada 45 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de medroxiprogesterona",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "suspensão injetável 150 mg/mL",
+      "suspensão injetável 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de medroxiprogesterona + cipionato de estradiol",
+    "apresentacoes": [
+      "suspensão injetável 25 mg/0,5 mL + 5 mg/ 0,5 mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de medroxiprogesterona 25 mg + cipionato de estradiol 5 mg",
+    "apresentacoes": [
+      "SCTIE/MS n.º 40, de 26/4/2022 n.º 724 – Contraceptivos injetáveis acetato de medroxiprogesterona + cipionato de estradiol (25 mg + 5 mg) e algestona acetofenida + enantato de estradiol (150 mg + 10 mg) para mulheres em idade fértil"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de octreotida",
+    "apresentacoes": [
+      "pó para suspensão injetável 10 mg",
+      "pó para suspensão injetável 20 mg",
+      "pó para suspensão injetável 30 mg",
+      "solução injetável 0,1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Acetato de sódio",
+    "apresentacoes": [
+      "solução injetável 2 mEq/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acetazolamida",
+    "apresentacoes": [
+      "comprimido 250 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Aciclovir",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "creme 50 mg/g (5%)",
+      "pó para solução injetável 250 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Acitretina",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 25 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Adalimumabe",
+    "apresentacoes": [
+      "solução injetável 40 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Aflibercepte 40 mg/ml solução injetável",
+    "apresentacoes": [
+      "O medicamento aflibercepte foi incorporado para o tratamento de pacientes com edema macular diabético condicionada à negociação de preço a partir da proposta apresentada pelo demandante e à elaboração do Protocolo Clínico e Diretrizes Terapêuticas do Ministério da Saúde (PCDT/MS), no âmbito do Sistema Único de Saúde (SUS), conforme Portaria SCTIE/MS n.º 50, de 5 de novembro de 2019. Sua pactuação (grupo 1A) deu-se na 11ª Reunião Ordinária da CIT, ocorrida em 12 de dezembro de 2019. Contudo, a Assistência Oftalmológica é de responsabilidade da Secretaria de Atenção Especializada à Saúde (Saes/MS), sendo que a maioria dos tratamentos oftalmológicos é realizado por meio de procedimentos ambulatoriais específicos desta área. Assim, foi pactuado na 12ª Reunião Ordinária da CIT, ocorrida em 15 de dezembro de 2022, o fornecimento do medicamento pela Assistência Oftalmológica, de responsabilidade da Secretaria de Atenção Especializada à Saúde (Saes/MS), por intermédio de procedimento clínico – 03.03.05.023-3 – TRATAMENTO MEDICAMENTOSO DE DOENÇA DA RETINA, o qual inclui o medicamento e o procedimento de aplicação. Edema Macular Diabético"
+    ],
+    "componente": "Não houve publicação de Portaria",
+    "tags": []
+  },
+  {
+    "nome": "Agulha para caneta aplicadora de insulina",
+    "apresentacoes": [
+      "- -"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Albendazol",
+    "apresentacoes": [
+      "comprimido mastigável 400 mg",
+      "suspensão oral 40 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Albumina humana",
+    "apresentacoes": [
+      "solução injetável 0,2 g/mL (20%)"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Alcachofra (cynara scolymus l.)",
+    "apresentacoes": [
+      "comprimido 24 a 48 mg de derivados de ácido cafeoilquínico expressos em ácido clorogênico (dose diária)",
+      "cápsula 24 a 48 mg de derivados de ácido cafeoilquínico expressos em ácido clorogênico (dose diária)",
+      "solução oral 24 a 48 mg de derivados de ácido cafeoilquínico expressos em ácido clorogênico (dose diária)",
+      "tintura 24 a 48 mg de derivados de ácido cafeoilquínico expressos em ácido clorogênico (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Alcatrão mineral (fn)",
+    "apresentacoes": [
+      "pomada 10 mg/g (1%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Alendronato de sódio",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 70 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Alentuzumabe",
+    "apresentacoes": [
+      "solução para diluição para infusão 10 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfa-agalsidase",
+    "apresentacoes": [
+      "solução injetável 1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfa-agalsidase 1 mg/ml solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 26, de 18/5/2023 n.º 803 – Alfagalsidase para o tratamento da doença de Fabry clássica em pacientes a partir dos sete anos de idade"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfa-alglicosidade",
+    "apresentacoes": [
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfa-alglicosidase",
+    "apresentacoes": [
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "1A",
+    "tags": []
+  },
+  {
+    "nome": "Alfacalcidol 0,25 mcg cápsula",
+    "apresentacoes": [
+      "n.º 937 – Exclusão dos medicamentos hidróxido de alumínio e alfacalcidol para o tratamento de Distúrbio Mineral Ósseo na Doença Renal Crônica e Hipoparatireoidismo Hipoparati- reoidismo"
+    ],
+    "componente": "Sectics/MS n.º 56, de 28/11/2024",
+    "tags": []
+  },
+  {
+    "nome": "Alfacalcidol 1 mcg cápsula",
+    "apresentacoes": [
+      "n.º 937 – Exclusão dos medicamentos hidróxido de alumínio e alfacalcidol para o tratamento de Distúrbio Mineral Ósseo na Doença Renal Crônica e Hipoparatireoidismo Hipoparati- reoidismo"
+    ],
+    "componente": "Sectics/MS n.º 56, de 28/11/2024",
+    "tags": []
+  },
+  {
+    "nome": "Alfacerliponase",
+    "apresentacoes": [
+      "solução para infusão 30 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfacerliponase 30 mg/ml solução para infusão",
+    "apresentacoes": [
+      "SCTIE/MS n.º 39, de 20/4/2022 n.º 706 – Alfacerliponase para tratamento da Lipofuscinose Ceroide Neuronal tipo 2 (CLN2)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfadornase",
+    "apresentacoes": [
+      "solução inalatória 1 mg/mL",
+      "solução para inalação 1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaelosulfase",
+    "apresentacoes": [
+      "solução injetável 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina",
+    "apresentacoes": [
+      "pó liófilo para solução injetável 1.000 UI",
+      "pó liófilo para solução injetável 10.000 UI",
+      "pó liófilo para solução injetável 2.000 UI",
+      "pó liófilo para solução injetável 3.000 UI",
+      "pó liófilo para solução injetável 4.000 UI",
+      "pó para solução injetável 1.000 UI",
+      "pó para solução injetável 10.000 UI",
+      "pó para solução injetável 2.000 UI",
+      "pó para solução injetável 3.000 UI",
+      "pó para solução injetável 4.000 UI",
+      "solução injetável 1.000 UI",
+      "solução injetável 10.000 UI",
+      "solução injetável 2.000 UI",
+      "solução injetável 3.000 UI",
+      "solução injetável 4.000 UI"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 1.000 ui pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 1.000 ui solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 10.000 ui pó liofilizado para solução injetável",
+    "apresentacoes": [
+      "n.º 698 – Alfaepoetina para o tratamento de pacientes adultos com Síndrome Mielodisplásica de Baixo Risco Síndrome Mielodisplásica de Baixo Risco"
+    ],
+    "componente": "SCTIE/MS n.º 45, de 18/5/2022",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 10.000 ui pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 10.000 ui solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina",
+      "n.º 698 – Alfaepoetina para o tratamento de pacientes adultos com Síndrome Mielodisplásica de Baixo Risco Síndrome Mielodisplásica de Baixo Risco"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 2.000 ui pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 2.000 ui solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 3.000 ui pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 3.000 ui solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 4.000 ui pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfaepoetina 4.000 ui solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 12, de 3/4/2024 n.º 874 – Alfaepoetina para o tratamento de pacientes com doença falciforme apresentando declínio da função renal e piora dos níveis de hemoglobina"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfagalsidase",
+    "apresentacoes": [
+      "solução injetável 1 mg/mL"
+    ],
+    "componente": "1A",
+    "tags": []
+  },
+  {
+    "nome": "Alfainterferona 2b",
+    "apresentacoes": [
+      "pó para solução injetável 10.000.000 UI",
+      "pó para solução injetável 3.000.000 UI",
+      "pó para solução injetável 5.000.000 UI"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfapeginterferona 2a",
+    "apresentacoes": [
+      "solução injetável 180 mcg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Alfapeginterferona 2b",
+    "apresentacoes": [
+      "pó para solução injetável 118,4 microgramas (80 microgramas/ 0,5 mL após reconstituição)",
+      "pó para solução injetável 148 microgramas (100 microgramas/ 0,5 mL após reconstituição)",
+      "pó para solução injetável 177,6 microgramas (120 microgramas/ 0,5 mL após reconstituição)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Alfaporactanto (surfactante pulmonar)",
+    "apresentacoes": [
+      "suspensão injetável intratecal ou intrabronquica 80 mg/mL"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Alfataliglicerase",
+    "apresentacoes": [
+      "pó liófilo para solução injetável 200 U",
+      "pó para solução injetável 200 U"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfavelaglicerase",
+    "apresentacoes": [
+      "pó liófilo para solução injetável 400 U",
+      "pó para solução injetável 400 U"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Alfavestronidase",
+    "apresentacoes": [
+      "solução injetável 2 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Algestona acetofenida + enantato de estradiol",
+    "apresentacoes": [
+      "solução injetável 150 mg/mL + 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Algestona acetofenida 150 mg/ml + enantato de estradiol 10 mg/ml",
+    "apresentacoes": [
+      "SCTIE/MS n.º 40, de 26/4/2022 n.º 724 – Contraceptivos injetáveis acetato de medroxiprogesterona + cipionato de estradiol (25 mg + 5 mg) e algestona acetofenida + enantato de estradiol (150 mg + 10 mg) para mulheres em idade fértil"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Alopurinol",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 300 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Alteplase",
+    "apresentacoes": [
+      "pó para solução injetável 10 mg",
+      "pó para solução injetável 20 mg",
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Ambrisentana",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Amoxicilina",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "cápsula 500 mg",
+      "suspensão oral 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "antibiótico",
+      "infecção",
+      "bactéria"
+    ]
+  },
+  {
+    "nome": "Amoxicilina + clavulanato de potássio",
+    "apresentacoes": [
+      "comprimido 500 mg + 125 mg",
+      "suspensão oral 50 mg/mL + 12,5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "antibiótico",
+      "infecção",
+      "bactéria"
+    ]
+  },
+  {
+    "nome": "Anfotericina b (complexo lipídico)",
+    "apresentacoes": [
+      "suspensão injetável 5 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Anfotericina b (desoxicolato)",
+    "apresentacoes": [
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Anfotericina b (lipossomal)",
+    "apresentacoes": [
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Anidulafungina",
+    "apresentacoes": [
+      "pó liofilizado para solução injetável 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Anidulafungina 100 mg pó liofilizado para solução injetável",
+    "apresentacoes": [
+      "SCTIE/MS n.º 55/2022 – Publicada em 28/7/2022 n.º 743 – Anidulafungina para tratamento de pacientes com candidemia e outras formas de candidíase invasiva"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Antimoniato de meglumina",
+    "apresentacoes": [
+      "solução injetável 300 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Aroeira (schinus terebinthifolia raddi)",
+    "apresentacoes": [
+      "gel vaginal 1,932 mg de ácido gálico (dose diária)",
+      "óvulo vaginal 1,932 mg de ácido gálico (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Arteméter + lumefantrina",
+    "apresentacoes": [
+      "comprimido 20 mg + 120 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Artesunato",
+    "apresentacoes": [
+      "pó para solução injetável 60 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Artesunato + mefloquina",
+    "apresentacoes": [
+      "comprimido 100 mg + 220 mg",
+      "comprimido 25 mg + 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Atenolol",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Atorvastatina cálcica",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 20 mg",
+      "comprimido 40 mg",
+      "comprimido 80 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Azatioprina",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Azitromicina",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg",
+      "pó para suspensão oral 40 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": [
+      "antibiótico",
+      "infecção",
+      "bactéria"
+    ]
+  },
+  {
+    "nome": "Babosa (aloe vera (l.) burm. f.)",
+    "apresentacoes": [
+      "creme 10%-70% gel fresco",
+      "gel 10%-70% gel fresco"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Baricitinibe",
+    "apresentacoes": [
+      "comprimido 2 mg",
+      "comprimido 4 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Basiliximabe",
+    "apresentacoes": [
+      "pó para solução injetável 20 mg"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Bedaquilina",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Benzilpenicilina benzatina",
+    "apresentacoes": [
+      "pó para suspensão injetável 1.200.000 UI",
+      "pó para suspensão injetável 600.000 UI",
+      "suspensão injetável 1.200.000 UI",
+      "suspensão injetável 600.000 UI"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Benzilpenicilina potássica",
+    "apresentacoes": [
+      "pó para solução injetável 5.000.000 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Benzilpenicilina procaína + benzilpenicilina potássica",
+    "apresentacoes": [
+      "pó para suspensão injetável 300.000 UI + 100.000 UI"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Benznidazol",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 12,5 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Benzoilmetronidazol",
+    "apresentacoes": [
+      "suspensão oral 40 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Beractanto (surfactante pulmonar)",
+    "apresentacoes": [
+      "solução injetável intratecal ou intrabronquica 25 mg/mL"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Besilato de anlodipino",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Beta-agalsidase",
+    "apresentacoes": [
+      "pó liófilo para solução injetável 35 mg",
+      "pó para solução injetável 35 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Betainterferona 1a",
+    "apresentacoes": [
+      "solução injetável 22 mcg (6.000.000 UI)",
+      "solução injetável 30 mcg (6.000.000 UI)",
+      "solução injetável 44 mcg (12.000.000 UI)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Betainterferona 1b",
+    "apresentacoes": [
+      "pó liófilo para solução injetável 300 mcg (9.600.000 UI)",
+      "pó para solução injetável 300 mcg (9.600.000 UI)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Beta–agalsidase 35 mg pó para solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 73, de 28/12/2023 n.º 865 – Beta-agalsidase para o tratamento da doença de Fabry clássica"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bezafibrato",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "comprimido de liberação prolongada 400 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bicarbonato de sódio",
+    "apresentacoes": [
+      "solução injetável 84 mg/mL (8,4%) equivalente a 1 mEq/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Bimatoprosta",
+    "apresentacoes": [
+      "solução oftálmica 0,3 mg/mL (0,03%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Biotina",
+    "apresentacoes": [
+      "cápsula 2,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bissulfato de clopidogrel",
+    "apresentacoes": [
+      "comprimido 75 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bosentana",
+    "apresentacoes": [
+      "comprimido 125 mg",
+      "comprimido 62,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Brinzolamida",
+    "apresentacoes": [
+      "suspensão oftálmica 10 mg/mL (1%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Brometo de ipratrópio",
+    "apresentacoes": [
+      "solução aerossol 20 mcg/dose",
+      "solução para inalação 0,25 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Brometo de piridostigmina",
+    "apresentacoes": [
+      "comprimido 60 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Brometo de tiotrópio monoidratado + cloridrato de olodaterol",
+    "apresentacoes": [
+      "solução inalatória 2,5 mcg + 2,5 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Brometo de umeclidínio + trifenatato de vilanterol",
+    "apresentacoes": [
+      "pó inalatório 62,5 mcg + 25 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bromidrato de fenoterol",
+    "apresentacoes": [
+      "solução aerossol 100 mcg/dose"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Bromidrato de galantamina",
+    "apresentacoes": [
+      "cápsula de liberação prolongada 16 mg",
+      "cápsula de liberação prolongada 24 mg",
+      "cápsula de liberação prolongada 8 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Budesonida",
+    "apresentacoes": [
+      "aerossol oral 200 mcg",
+      "cápsula inalatória 200 mcg",
+      "cápsula inalatória 400 mcg",
+      "cápsula para inalação 200 mcg",
+      "cápsula para inalação 400 mcg",
+      "pó inalatório 200 mcg",
+      "suspensão para inalação nasal 32 mcg",
+      "suspensão para inalação nasal 50 mcg",
+      "suspensão para inalação nasal 64 mcg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Burosumabe",
+    "apresentacoes": [
+      "solução injetável 10 mg/mL",
+      "solução injetável 20 mg/mL",
+      "solução injetável 30 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cabergolina",
+    "apresentacoes": [
+      "comprimido 0,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Calcipotriol",
+    "apresentacoes": [
+      "pomada 50 mcg/g (0,005%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Calcitonina",
+    "apresentacoes": [
+      "solução nasal 200 UI/dose"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Calcitriol",
+    "apresentacoes": [
+      "cápsula 0,25 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Caneta para aplicação de insulina",
+    "apresentacoes": [
+      "- -"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Capreomicina",
+    "apresentacoes": [
+      "pó para solução injetável 1 g"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Captopril",
+    "apresentacoes": [
+      "comprimido 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "hipertensão",
+      "pressão alta",
+      "anti-hipertensivo"
+    ]
+  },
+  {
+    "nome": "Carbamazepina",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "comprimido 400 mg",
+      "suspensão oral 20 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Carbonato de cálcio",
+    "apresentacoes": [
+      "comprimido 1.250 mg (equivalente a 500 mg de cálcio elementar)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Carbonato de cálcio + colecalciferol",
+    "apresentacoes": [
+      "comprimido 1.250 mg (equivalente a 500 mg de cálcio elementar) + 200 UI",
+      "comprimido 1.250 mg (equivalente a 500 mg de cálcio elementar) + 400 UI",
+      "comprimido 1.500 mg (equivalente a 600 mg de cálcio elementar) + 400 UI"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Carbonato de lítio",
+    "apresentacoes": [
+      "comprimido 300 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Carvedilol",
+    "apresentacoes": [
+      "comprimido 12,5 mg",
+      "comprimido 25 mg",
+      "comprimido 3,125 mg",
+      "comprimido 6,25 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Carvão vegetal ativado",
+    "apresentacoes": [
+      "pó para suspensão oral -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cefalexina",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "cápsula 500 mg",
+      "suspensão oral 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "antibiótico",
+      "infecção",
+      "bactéria"
+    ]
+  },
+  {
+    "nome": "Cefotaxima sódica",
+    "apresentacoes": [
+      "pó para solução injetável 500 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ceftriaxona",
+    "apresentacoes": [
+      "pó para solução injetável 1 g",
+      "pó para solução injetável 250 mg",
+      "pó para solução injetável 500 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Certolizumabe pegol",
+    "apresentacoes": [
+      "solução injetável 200 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cetoconazol",
+    "apresentacoes": [
+      "xampu 20 mg/mL (2%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cianocobalamina",
+    "apresentacoes": [
+      "solução injetável 500 mcg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ciclofosfamida",
+    "apresentacoes": [
+      "comprimido de liberação retardada 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciclosporina",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 100 mg",
+      "cápsula 25 mg",
+      "cápsula 50 mg",
+      "solução injetável 50 mg",
+      "solução oral 100 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciclosporina 100 mg cápsula mole",
+    "apresentacoes": [
+      "SCTIE/MS n.º 116, de 5/10/2022 n.º 772 – Ciclosporina oral para o tratamento de dermatite atópica moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciclosporina 100 mg/ml solução oral",
+    "apresentacoes": [
+      "SCTIE/MS n.º 116, de 5/10/2022 n.º 772 – Ciclosporina oral para o tratamento de dermatite atópica moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciclosporina 25 mg cápsula mole",
+    "apresentacoes": [
+      "SCTIE/MS n.º 116, de 5/10/2022 n.º 772 – Ciclosporina oral para o tratamento de dermatite atópica moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciclosporina 50 mg cápsula mole",
+    "apresentacoes": [
+      "SCTIE/MS n.º 116, de 5/10/2022 n.º 772 – Ciclosporina oral para o tratamento de dermatite atópica moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciprofibrato",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ciprofloxacino",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Citrato de dietilcarbamazina",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Citrato de sildenafila",
+    "apresentacoes": [
+      "comprimido 20 mg",
+      "comprimido 25 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Citrato de sildenafila 20 mg comprimido e bosentana 125 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 49, de 1º/6/2022 n.º 730 – Ambrisentana, bosentana, iloprosta, selexipague e sildenafila para o tratamento de pacientes com hipertensão arterial pulmonar"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Citrato de sildenafila 20 mg comprimido e bosentana 62,5 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 49, de 1º/6/2022 n.º 730 – Ambrisentana, bosentana, iloprosta, selexipague e sildenafila para o tratamento de pacientes com hipertensão arterial pulmonar"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cladribina",
+    "apresentacoes": [
+      "comprimido 10 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cladribina 10 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 62, de 27/10/2023 n.º 855 – Cladribina oral no tratamento de pacientes com esclerose múltipla remitente- recorrente altamente ativa"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Claritromicina",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg",
+      "cápsula 500 mg",
+      "grânulo para suspensão oral 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Clobazam",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 20 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Clofazimina",
+    "apresentacoes": [
+      "cápsula 100 mg*",
+      "cápsula 50 mg*"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Clonazepam",
+    "apresentacoes": [
+      "solução oral 2,5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "ansiedade",
+      "calmante",
+      "insônia"
+    ]
+  },
+  {
+    "nome": "Cloranfenicol",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "cápsula 250 mg",
+      "suspensão oral 25 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloreto de potássio",
+    "apresentacoes": [
+      "solução injetável 191 mg/mL (19,1%) equivalente a 2,56 mEq/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloreto de sódio",
+    "apresentacoes": [
+      "solução injetável 200 mg/mL (20%) equivalente a 3,4 mEq/mL",
+      "solução injetável 9 mg/mL (0,9%) equivalente a 0,154 mEq/mL",
+      "solução nasal 9 mg/mL (0,9%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de amantadina",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de amiodarona",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "solução injetável 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de amitriptilina",
+    "apresentacoes": [
+      "comprimido 25 mg",
+      "comprimido 75 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de biperideno",
+    "apresentacoes": [
+      "comprimido 2 mg",
+      "comprimido de liberação prolongada 4 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de bupivacaína",
+    "apresentacoes": [
+      "solução injetável 2,5 mg/mL (0,25%)",
+      "solução injetável 5 mg/mL (0,50%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de bupropiona",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de cinacalcete",
+    "apresentacoes": [
+      "comprimido 30 mg",
+      "comprimido 60 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de cinacalcete 30 mg comprimido revestido",
+    "apresentacoes": [
+      "n.º 704 – Cinacalcete para o tratamento de pacientes com hiperparatireoidismo secundário à doença renal crônica estágio 5D Distúrbio Mineral Ósseo na Doença Renal Crônica – tratamento do hiperparatireoi- dismo secundário"
+    ],
+    "componente": "SCTIE/MS n.º 37, de 13/4/2022",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de cinacalcete 60 mg comprimido revestido",
+    "apresentacoes": [
+      "n.º 704 – Cinacalcete para o tratamento de pacientes com hiperparatireoidismo secundário à doença renal crônica estágio 5D Distúrbio Mineral Ósseo na Doença Renal Crônica – tratamento do hiperparatireoidismo secundário"
+    ],
+    "componente": "SCTIE/MS n.º 37, de 13/4/2022",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de clindamicina",
+    "apresentacoes": [
+      "cápsula 150 mg",
+      "cápsula 300 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de clindamicina 300 mg cápsula",
+    "apresentacoes": [
+      "n.º 696 – Exclusão do cloridrato de clindamicina cápsula 300 mg, fosfato de clindamicina solução injetável 150 mg/mL, sulfato de quinina comprimido 500 mg e dicloridrato de quinina solução injetável 300 mg/mL para tratamento de pacientes diagnosticados com malária Malária"
+    ],
+    "componente": "n.º 80, de 29/12/2021",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de clomipramina",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de clorpromazina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 25 mg",
+      "solução injetável 5 mg/mL",
+      "solução oral 40 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de dobutamina",
+    "apresentacoes": [
+      "solução injetável 12,5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de donepezila",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de dopamina",
+    "apresentacoes": [
+      "solução injetável 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de dorzolamida",
+    "apresentacoes": [
+      "solução oftálmica 20 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de etambutol",
+    "apresentacoes": [
+      "comprimido 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de fingolimode",
+    "apresentacoes": [
+      "cápsula 0,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de fluoxetina",
+    "apresentacoes": [
+      "comprimido 20 mg",
+      "cápsula 20 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "ansiedade",
+      "antidepressivo",
+      "depressão"
+    ]
+  },
+  {
+    "nome": "Cloridrato de hidralazina",
+    "apresentacoes": [
+      "comprimido 25 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de hidroxocobalamina",
+    "apresentacoes": [
+      "pó para solução injetável 5 g"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de lidocaína",
+    "apresentacoes": [
+      "gel 20 mg/g (2%)",
+      "solução injetável 10 mg/mL (1%)",
+      "solução injetável 20 mg/mL (2%)",
+      "solução spray 100 mg/mL (10%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de lidocaína + glicose",
+    "apresentacoes": [
+      "solução injetável 50 mg/mL + 75 mg/mL (5% + 7,5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de lidocaína + hemitartarato de epinefrina",
+    "apresentacoes": [
+      "solução injetável 1% + 1:200.000 (10 mg + 20 mcg/mL)",
+      "solução injetável 2% + 1:200.000 (20 mg + 20 mcg/mL)",
+      "solução injetável 2% + 1:80.000 (20 mg + 12,5 mcg/mL)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de memantina",
+    "apresentacoes": [
+      "comprimido 10 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de metadona",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg",
+      "solução injetável 10 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de metformina",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "comprimido 850 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "hipoglicemiante",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Cloridrato de metoclopramida",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "solução injetável 5 mg/mL",
+      "solução oral 4 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de minociclina",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de moxifloxacino",
+    "apresentacoes": [
+      "comprimido 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de naloxona",
+    "apresentacoes": [
+      "solução injetável 0,4 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de nortriptilina",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 25 mg",
+      "cápsula 50 mg",
+      "cápsula 75 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de ondansetrona",
+    "apresentacoes": [
+      "comprimido 4 mg",
+      "comprimido 8 mg",
+      "comprimido orodispersível 4 mg",
+      "comprimido orodispersível 8 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de pilocarpina",
+    "apresentacoes": [
+      "solução oftálmica 20 mg/mL (2%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de piridoxina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 40 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de prilocaína + felipressina",
+    "apresentacoes": [
+      "solução injetável 30 mg/mL (3%) + 0,03 UI/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de prometazina",
+    "apresentacoes": [
+      "comprimido 25 mg",
+      "solução injetável 25 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de propafenona",
+    "apresentacoes": [
+      "comprimido 150 mg",
+      "comprimido 300 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de propranolol",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 40 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de protamina",
+    "apresentacoes": [
+      "solução injetável 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de raloxifeno",
+    "apresentacoes": [
+      "comprimido 60 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de selegilina",
+    "apresentacoes": [
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de sevelâmer",
+    "apresentacoes": [
+      "comprimido 800 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de sevelâmer 800 mg comprimido revestido",
+    "apresentacoes": [
+      "n.º 705 – Sevelâmer para o tratamento da hiperfosfatemia em pacientes com doença renal crônica estágio 5D Distúrbio Mineral Ósseo na Doença Renal Crônica – tratamento do hiperparatireoi- dismo secundário"
+    ],
+    "componente": "SCTIE/MS n.º 38, de 13/4/2022",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de tetraciclina",
+    "apresentacoes": [
+      "cápsula 500 mg",
+      "pomada oftálmica 5 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de tiamina",
+    "apresentacoes": [
+      "comprimido 300 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de tirofibana",
+    "apresentacoes": [
+      "solução injetável 0,25 mg/mL"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de triexifenidil",
+    "apresentacoes": [
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de verapamil",
+    "apresentacoes": [
+      "comprimido 120 mg",
+      "comprimido 80 mg",
+      "solução injetável 2,5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Cloridrato de ziprasidona",
+    "apresentacoes": [
+      "cápsula 40 mg",
+      "cápsula 80 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Clozapina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 25 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Colistimetato de sódio",
+    "apresentacoes": [
+      "pó para solução para infusão e inalação 1.000.000 UI (80 mg)",
+      "pó para solução para infusão e inalação 2.000.000 UI (160 mg)",
+      "pó para solução para infusão ou inalação 1.000.000 UI (80 mg)",
+      "pó para solução para infusão ou inalação 2.000.000 UI (160 mg)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Colistimetato de sódio 1.000.000 ui (80 mg) pó para solução para infusão ou inalação",
+    "apresentacoes": [
+      "SCTIE/MS n.º 29, de 31/3/2022 n.º 712 – Colistimetato sódico para pacientes com manifestações pulmonares de Fibrose Cística com infecção por Pseudomonas aeruginosa"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Colistimetato de sódio 2.000.000 ui (160 mg) pó para solução para infusão ou inalação",
+    "apresentacoes": [
+      "SCTIE/MS n.º 29, de 31/3/2022 n.º 712 – Colistimetato sódico para pacientes com manifestações pulmonares de Fibrose Cística com infecção por Pseudomonas aeruginosa"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Complemento alimentar para paciente fenilcetonúrico maior de 1 ano (fórmula de aminoácidos isenta de fenilalanina)",
+    "apresentacoes": [
+      "pó -"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Complemento alimentar para paciente fenilcetonúrico menor de 1 ano (fórmula de aminoácidos isenta de fenilalanina)",
+    "apresentacoes": [
+      "pó -"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Complexo protrombínico humano",
+    "apresentacoes": [
+      "pó para solução injetável 500 UI",
+      "pó para solução injetável 600 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Complexo protrombínico parcialmente ativado",
+    "apresentacoes": [
+      "pó para solução injetável 1.000UI",
+      "pó para solução injetável 2.500UI",
+      "pó para solução injetável 500 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Cáscara-sagrada (rhamnus purshiana)",
+    "apresentacoes": [
+      "cápsula 20 a 30 mg de derivados hidroxiantracênicos expressos em cascarosídeo A (dose diária)",
+      "tintura 20 a 30 mg de derivados hidroxiantracênicos expressos em cascarosídeo A (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Daclatasvir",
+    "apresentacoes": [
+      "comprimido 30 mg",
+      "comprimido 60 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Daclizumabe",
+    "apresentacoes": [
+      "solução injetável 5 mg/mL"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Danazol",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "cápsula 200 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Dapagliflozina propanodiol",
+    "apresentacoes": [
+      "comprimido 10 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Dapagliflozina propanodiol 10 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 106, de 26/9/2022 n.º 773 – Dapagliflozina para tratamento de pacientes adultos com doença renal crônica em uso de terapia padrão",
+      "SCTIE/MS n.º 63, de 7/7/2022 n.º 734 – Dapagliflozina para o tratamento adicional de pacientes adultos com insuficiência cardíaca com fração de ejeção reduzida (FEVE≤40%), NYHA II-IV e sintomáticos apesar do uso de terapia padrão com inibidor da Enzima Conversora de Angiotensina (IECA) ou Antagonista do Receptor da Angiotensina II (ARA II), com betabloqueadores, diuréticos e antagonista do receptor de mineralocorticoides",
+      "Sectics/MS n.º 09, de 4/4/2023 n.º 802 – Dapagliflozina para pacientes com diabete melito tipo 2 (DM2) com necessidade de segunda intensificação de tratamento e alto risco para desenvolver doença cardiovascular (DCV) ou com DCV já estabelecida e idade entre 40-64 anos"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Dapsona*",
+    "apresentacoes": [
+      "comprimido 100 mg*",
+      "comprimido 50 mg*"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Darunavir",
+    "apresentacoes": [
+      "comprimido 150 mg",
+      "comprimido 600 mg",
+      "comprimido 75 mg",
+      "comprimido 800 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Darunavir 800 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 34, de 3 de julho de 2023 n.º 829/2023 – Darunavir 800 mg para o tratamento de pessoas vivendo com HIV em falha virológica ao esquema de primeira linha e sem mutações que conferem resistência ao darunavir"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Deferasirox",
+    "apresentacoes": [
+      "comprimido para suspensão 125 mg",
+      "comprimido para suspensão 250 mg",
+      "comprimido para suspensão 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Deferiprona",
+    "apresentacoes": [
+      "comprimido 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Delamanida",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Dexametasona",
+    "apresentacoes": [
+      "comprimido 4 mg",
+      "creme dermatológico 1 mg/g (0,1%)",
+      "elixir 0,1 mg/mL",
+      "pomada oftálmica 1 mg/g (0,1%)",
+      "solução injetável 4 mg/mL",
+      "suspensão oftálmica 1 mg/mL (0,1%)"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "anti-inflamatório",
+      "alergia",
+      "corticoide"
+    ]
+  },
+  {
+    "nome": "Diafragma",
+    "apresentacoes": [
+      "- 60 mm de diâmetro",
+      "- 65 mm de diâmetro",
+      "- 70 mm de diâmetro",
+      "- 75 mm de diâmetro",
+      "- 80 mm de diâmetro",
+      "- 85 mm de diâmetro"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Diazepam",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg",
+      "solução injetável 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "ansiedade",
+      "calmante"
+    ]
+  },
+  {
+    "nome": "Dicloridrato de pramipexol",
+    "apresentacoes": [
+      "comprimido 0,125 mg",
+      "comprimido 0,25 mg",
+      "comprimido 1 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Dicloridrato de quinina 300 mg/ml solução injetável",
+    "apresentacoes": [
+      "n.º 696 – Exclusão do cloridrato de clindamicina cápsula 300 mg, fosfato de clindamicina solução injetável 150 mg/mL, sulfato de quinina comprimido 500 mg e dicloridrato de quinina solução injetável 300 mg/ mL para tratamento de pacientes diagnosticados com malária Malária"
+    ],
+    "componente": "n.º 80, de 29/12/2022",
+    "tags": []
+  },
+  {
+    "nome": "Dicloridrato de sapropterina",
+    "apresentacoes": [
+      "comprimido solúvel 100 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Dicloridrato de trientina",
+    "apresentacoes": [
+      "cápsula 250 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Difosfato de cloroquina",
+    "apresentacoes": [
+      "comprimido 150 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Difosfato de primaquina",
+    "apresentacoes": [
+      "comprimido 15 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Digliconato de clorexidina",
+    "apresentacoes": [
+      "solução bucal 0,12%",
+      "solução para uso tópico 2% a 4%"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Digoxina",
+    "apresentacoes": [
+      "comprimido 0,25 mg",
+      "elixir 0,05 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Dinitrato de isossorbida",
+    "apresentacoes": [
+      "comprimido sublingual 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Dipirona",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "solução injetável 500 mg/mL",
+      "solução oral 500 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "febre",
+      "dor",
+      "analgésico",
+      "antitérmico"
+    ]
+  },
+  {
+    "nome": "Dipropionato de beclometasona",
+    "apresentacoes": [
+      "cápsula para inalação oral 200 mcg/dose",
+      "cápsula para inalação oral 400 mcg/dose",
+      "pó para inalação oral 200 mcg/dose",
+      "pó para inalação oral 400 mcg/dose",
+      "solução aerossol 200 mcg/dose",
+      "solução aerossol 250 mcg/dose",
+      "solução aerossol 50 mcg/dose",
+      "suspensão para inalação nasal 50 mcg/dose"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Dispositivo intrauterino plástico com cobre (diu)",
+    "apresentacoes": [
+      "modelo T 380 mm() -",
+      "modelo T 380 mm2 -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Dolutegravir sódico",
+    "apresentacoes": [
+      "comprimido 50 mg",
+      "comprimidos dispersíveis 5mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Dolutegravir sódico + lamivudina",
+    "apresentacoes": [
+      "comprimido 50 mg + 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Dolutegravir sódico + lamivudina 50 mg + 300 mg comprimido",
+    "apresentacoes": [
+      "Nota Técnica n.º 244/2023 – Citec/Dgits/Sectics/MS – Consulta sobre a aplicabilidade do processo de incorporação no Sistema Único de Saúde (SUS) da Associação em Dose Fixa (ADF) de dolutegravir/lamivudina para tratamento de pacientes com HIV consubstanciado pelo Parecer n.º 00463/2023/Conjur-MS/CGU/AGU Nota Técnica n.º 116/2023 – CGAHV/ Dathi/SVSA/MS – Subsídios técnicos para análise sobre a aplicabilidade do processo de incorporação no SUS da Dose Fixa Combinada (DFC) de Dolutegravir/ Lamivudina para tratamento de pacientes com HIV"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Dolutegravir sódico 5 mg comprimidos dispersíveis",
+    "apresentacoes": [
+      "Sectics/MS n.º 36, de 3 de julho de 2023 n.º 830/2023 – Dolutegravir 5 mg como tratamento complementar ou substitutivo em crianças com HIV de 2 meses a 6 anos de idade"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Doxiciclina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido solúvel 100 mg",
+      "pó para solução injetável 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Eculizumabe",
+    "apresentacoes": [
+      "solução para diluição para infusão 10 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Efavirenz",
+    "apresentacoes": [
+      "comprimido 600 mg",
+      "cápsula 200 mg",
+      "solução oral 30 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Elbasvir + grazoprevir monidratado",
+    "apresentacoes": [
+      "comprimido 50 mg + 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Elexacaftor 100 mg/tezacaftor 50 mg/ivacaftor 75 mg + ivacaftor 150 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 47, de 5/9/2023 n.º 844 – Elexacaftor/Tezacaftor/Ivacaftor para o tratamento de pacientes com fibrose cística com 6 anos de idade ou mais com ao menos uma mutação f508del no gene regulador de condução transmembrana de fibrose cística"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Elexacaftor 50 mg/tezacaftor 25 mg/ivacaftor 37,5 mg + ivacaftor 75 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 47, de 5/9/2023 n.º 844 – Elexacaftor/Tezacaftor/Ivacaftor para o tratamento de pacientes com fibrose cística com 6 anos de idade ou mais com ao menos uma mutação f508del no gene regulador de condução transmembrana de fibrose cística"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Elexacaftor/ tezacaftor/ivacaftor + ivacaftor",
+    "apresentacoes": [
+      "comprimido 100 mg/50 mg/75 mg + 150 mg",
+      "comprimido 50 mg/25 mg/37,5 mg + 75 mg"
+    ],
+    "componente": "1A",
+    "tags": []
+  },
+  {
+    "nome": "Elexacaftor/tezacaftor/ ivacaftor + ivacaftor",
+    "apresentacoes": [
+      "comprimido 100 mg/50 mg/75 mg + 150 mg",
+      "comprimido 50 mg/25 mg/37,5 mg + 75 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Eltrombopague olamina",
+    "apresentacoes": [
+      "comprimido 25 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Eltrombopague olamina 25 mg comprimido revestido",
+    "apresentacoes": [
+      "n.º 731 – Ampliação de uso do eltrombopague para o tratamento adicional a imunossupressor em pacientes adultos com anemia aplástica grave Síndrome de Falência Medular – anemia aplástica grave"
+    ],
+    "componente": "SCTIE/MS n.º 47, de 1º/6/2022",
+    "tags": []
+  },
+  {
+    "nome": "Eltrombopague olamina 50 mg comprimido revestido",
+    "apresentacoes": [
+      "n.º 731 – Ampliação de uso do eltrombopague para o tratamento adicional a imunossupressor em pacientes adultos com anemia aplástica grave Síndrome de Falência Medular – anemia aplástica grave"
+    ],
+    "componente": "SCTIE/MS n.º 47, de 1º/6/2022",
+    "tags": []
+  },
+  {
+    "nome": "Embonato de triptorrelina",
+    "apresentacoes": [
+      "pó para suspensão injetável de liberação prolongada 11,25 mg",
+      "pó para suspensão injetável de liberação prolongada 22,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Embonato de triptorrelina 22,5 mg pó para suspensão injetável de liberação prolongada",
+    "apresentacoes": [
+      "SCTIE/MS n.º 27, de 16/3/2022 n.º 717 – Embonato de triptorrelina 22,5 mg administração semestral para o tratamento de puberdade precoce central"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Emicizumabe",
+    "apresentacoes": [
+      "solução injetável 150 mg /mL (apresentações de 0,4 ml , 0,7 ml e 1 ml)",
+      "solução injetável 30 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Enantato de noretisterona + valerato de estradiol",
+    "apresentacoes": [
+      "solução injetável 50 mg/mL + 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Enfuvirtida",
+    "apresentacoes": [
+      "pó para solução injetável 108 mg (90 mg/mL após reconstituição)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Enoxaparina sódica",
+    "apresentacoes": [
+      "solução injetável 40 mg/0,4 mL",
+      "solução injetável 60 mg/0,6 mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Entacapona",
+    "apresentacoes": [
+      "comprimido 200 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Entecavir",
+    "apresentacoes": [
+      "comprimido 0,5 mg",
+      "comprimido 1 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Epinefrina",
+    "apresentacoes": [
+      "solução injetável 1 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Espinheira-santa (maytenus ilicifolia mart. ex reissek e/ou monteverdia ilicifolia (mart. ex reissek) biral )",
+    "apresentacoes": [
+      "cápsula 60 a 90 mg taninos totais expressos em pirogalol (dose diária)",
+      "emulsão oral 60 a 90 mg taninos totais expressos em pirogalol (dose diária)",
+      "suspensão oral 60 a 90 mg taninos totais expressos em pirogalol (dose diária)",
+      "tintura 60 a 90 mg taninos totais expressos em pirogalol (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Espiramicina",
+    "apresentacoes": [
+      "comprimido 1.500.000 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Espironolactona",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Estolato de eritromicina",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "suspensão oral 25 mg/mL",
+      "suspensão oral 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Estreptoquinase",
+    "apresentacoes": [
+      "pó para solução injetável 250.000 UI"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Estriol",
+    "apresentacoes": [
+      "creme vaginal 1 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Estrogênios conjugados",
+    "apresentacoes": [
+      "comprimido 0,3 mg",
+      "comprimido 0,625 mg",
+      "creme vaginal 0,625 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Etanercepte",
+    "apresentacoes": [
+      "solução injetável 25 mg",
+      "solução injetável 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Etinilestradiol + levonorgestrel",
+    "apresentacoes": [
+      "comprimido 0,03 mg + 0,15 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Etionamida",
+    "apresentacoes": [
+      "comprimido 250 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Etofibrato",
+    "apresentacoes": [
+      "cápsula 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Etossuximida",
+    "apresentacoes": [
+      "xarope 50 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Etravirina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 200 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Everolimo",
+    "apresentacoes": [
+      "comprimido 0,5 mg",
+      "comprimido 0,75 mg",
+      "comprimido 1 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fator ix de coagulação",
+    "apresentacoes": [
+      "pó para solução injetável 1.000 UI",
+      "pó para solução injetável 1.200 UI",
+      "pó para solução injetável 200 UI",
+      "pó para solução injetável 250 UI",
+      "pó para solução injetável 500 UI",
+      "pó para solução injetável 600 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator vii de coagulação ativado recombinante",
+    "apresentacoes": [
+      "pó para solução injetável 1 mg (50.000 UI)",
+      "pó para solução injetável 2 mg (100.000 UI)",
+      "pó para solução injetável 5 mg (250.000 UI)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator viii de coagulação",
+    "apresentacoes": [
+      "pó para solução injetável 1.000 UI",
+      "pó para solução injetável 250 UI",
+      "pó para solução injetável 500 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator viii de coagulação contendo fator de von willebrand",
+    "apresentacoes": [
+      "pó para solução injetável 1.000 UI",
+      "pó para solução injetável 250 UI",
+      "pó para solução injetável 500 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator viii de coagulação recombinante",
+    "apresentacoes": [
+      "pó para solução injetável 1.000 UI",
+      "pó para solução injetável 1.500 UI",
+      "pó para solução injetável 250 UI",
+      "pó para solução injetável 500 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator viii de coagulação recombinante 1.500 ui",
+    "apresentacoes": [
+      "n.º 11/2013 – Publicada em 7/3/2013 n.º 48/2013 – Fator VIII de origem recombinante para profilaxia primária e tratamento de pacientes com hemofilia A"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fator xiii de coagulação",
+    "apresentacoes": [
+      "pó para solução injetável 250 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fenitoína",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "solução injetável 50 mg/mL",
+      "suspensão oral 20 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fenobarbital",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "solução injetável 100 mg/mL",
+      "solução oral 40 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fenofibrato",
+    "apresentacoes": [
+      "cápsula 200 mg",
+      "cápsula de liberação retardada 250 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fenoximetilpenicili- na potássica",
+    "apresentacoes": [
+      "pó para solução oral 80.000 UI/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ferripolimaltose",
+    "apresentacoes": [
+      "comprimido mastigável 100 mg",
+      "solução oral 50 mg/mL",
+      "xarope 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ferripolimaltose 10 mg/ml xarope",
+    "apresentacoes": [
+      "Sectics/MS n.º 17, de 10/5/2024 n.º 813 – Ferripolimaltose para o tratamento de pacientes com anemia por deficiência de ferro e intolerância ao sulfato ferroso"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ferripolimaltose 100 mg comprimido mastigável",
+    "apresentacoes": [
+      "Sectics/MS n.º 17, de 10/5/2023 nº 813 – Ferripolimaltose para o tratamento de pacientes com anemia por deficiência de ferro e intolerância ao sulfato ferroso"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ferripolimaltose 50 mg/ml solução oral",
+    "apresentacoes": [
+      "Sectics/MS n.º 17, de 10/5/2023 n.º 813 – Ferripolimaltose para o tratamento de pacientes com anemia pordeficiência de ferro e intolerância ao sulfato ferroso"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fibrinogênio",
+    "apresentacoes": [
+      "pó para solução injetável 1 g"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Filgrastim",
+    "apresentacoes": [
+      "solução injetável 300 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Finasterida",
+    "apresentacoes": [
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Flucitosina",
+    "apresentacoes": [
+      "cápsula 500 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fluconazol",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "cápsula 150 mg",
+      "solução injetável 2 mg/mL",
+      "suspensão oral 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Flumazenil",
+    "apresentacoes": [
+      "solução injetável 0,1 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Folinato de cálcio",
+    "apresentacoes": [
+      "comprimido 15 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fosamprenavir",
+    "apresentacoes": [
+      "suspensão oral 50 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de clindamicina",
+    "apresentacoes": [
+      "gel 10 mg/g",
+      "solução tópica 10 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de clindamicina 150 mg/ml solução injetável",
+    "apresentacoes": [
+      "n.º 696 – Exclusão do cloridrato de clindamicina cápsula 300 mg, fosfato de clindamicina solução injetável 150 mg/mL, sulfato de quinina comprimido 500 mg e dicloridrato de quinina solução injetável 300 mg/mL para tratamento de pacientes diagnosticados com malária Malária"
+    ],
+    "componente": "n.º 80, de 29/12/2021",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de codeína",
+    "apresentacoes": [
+      "comprimido 30 mg",
+      "comprimido 60 mg",
+      "solução injetável 30 mg/mL",
+      "solução oral 3 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de cálcio tribásico + colecalciferol",
+    "apresentacoes": [
+      "comprimido 1661,616 mg (600 mg de cálcio) + 400 UI"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de oseltamivir",
+    "apresentacoes": [
+      "cápsula 30 mg",
+      "cápsula 45 mg",
+      "cápsula 75 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato de potássio monobásico + fosfato de potássio dibásico",
+    "apresentacoes": [
+      "solução injetável 0,03 g/mL + 0,1567 g/mL (equivalente a 2 mEq/mL)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fosfato sódico de prednisolona",
+    "apresentacoes": [
+      "solução oral 1 mg/mL",
+      "solução oral 3 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Fostensavir trometamol",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 600 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fostensavir trometamol 600 mg, comprimido de liberação prolongada",
+    "apresentacoes": [
+      "Sectics/MS n.º 20, de 18 de abril de 2024 n.º 884/2024 – Fostensavir trometamol 600 mg para o tratamento de indivíduos adultos vivendo com HIV multirresistentes aos antirretrovirais"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de dimetila",
+    "apresentacoes": [
+      "cápsula de liberação retardada 120 mg",
+      "cápsula de liberação retardada 240 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de formoterol",
+    "apresentacoes": [
+      "cápsula inalatória 12 mcg",
+      "pó inalatório 12 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de formoterol + budesonida",
+    "apresentacoes": [
+      "cápsula inalatória 12 mcg + 400 mcg",
+      "cápsula inalatória 6 mcg + 200 mcg",
+      "pó inalatório 12 mcg + 400 mcg",
+      "pó inalatório 6 mcg + 200 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de tenofovir desoproxila",
+    "apresentacoes": [
+      "comprimido 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de tenofovir desoproxila + entricitabina",
+    "apresentacoes": [
+      "comprimido 300 mg + 200 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de tenofovir desoproxila + lamivudina",
+    "apresentacoes": [
+      "comprimido 300 mg + 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Fumarato de tenofovir desoproxila + lamivudina + efavirenz",
+    "apresentacoes": [
+      "comprimido 300 mg + 300 mg + 600 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Furosemida",
+    "apresentacoes": [
+      "comprimido 40 mg",
+      "solução injetável 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Gabapentina",
+    "apresentacoes": [
+      "cápsula 300 mg",
+      "cápsula 400 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Galsulfase",
+    "apresentacoes": [
+      "solução injetável 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Garra-do-diabo (harpagophytum procumbens dc. ex meissn.)",
+    "apresentacoes": [
+      "comprimido 30 a 100 mg de harpagosídeo ou 45 a 150 mg de iridoides totais expressos em harpagosídeos (dose diária)",
+      "comprimido de liberação retardada 30 a 100 mg de harpagosídeo ou 45 a 150 mg de iridoides totais expressos em harpagosídeos (dose diária)",
+      "cápsula 30 a 100 mg de harpagosídeo ou 45 a 150 mg de iridoides totais expressos em harpagosídeos (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Gel lubrificante",
+    "apresentacoes": [
+      "gel -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Genfibrozila",
+    "apresentacoes": [
+      "comprimido 600 mg",
+      "comprimido 900 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Gentamicina",
+    "apresentacoes": [
+      "pomada oftálmica 5 mg/g",
+      "solução oftálmica 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Glecaprevir + pibrentasvir",
+    "apresentacoes": [
+      "comprimido 100 mg + 40 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Glibenclamida",
+    "apresentacoes": [
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Glicerol",
+    "apresentacoes": [
+      "solução retal 120 mg/mL",
+      "supositório retal 72 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Gliclazida",
+    "apresentacoes": [
+      "comprimido 80 mg",
+      "comprimido de liberação prolongada 30 mg",
+      "comprimido de liberação prolongada 60 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "hipoglicemiante",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Glicose",
+    "apresentacoes": [
+      "solução injetável 100 mg/mL (10%)",
+      "solução injetável 50 mg/mL (5%)",
+      "solução injetável 500 mg/mL (50%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Glutaral",
+    "apresentacoes": [
+      "solução 0,02"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Golimumabe",
+    "apresentacoes": [
+      "solução injetável 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Guaco (mikania glomerata spreng.)",
+    "apresentacoes": [
+      "solução oral 0,5 a 5 mg de cumarina (dose diária)",
+      "tintura 0,5 a 5 mg de cumarina (dose diária)",
+      "xarope 0,5 a 5 mg de cumarina (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Haloperidol",
+    "apresentacoes": [
+      "comprimido 1 mg",
+      "comprimido 5 mg",
+      "solução injetável 5 mg/mL",
+      "solução injetável 50 mg/mL",
+      "solução oral 2 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hemifumarato de quetiapina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 200 mg",
+      "comprimido 25 mg",
+      "comprimido 300 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Hemifumarato de tenofovir alafenamida",
+    "apresentacoes": [
+      "comprimido 25 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Hemitartarato de norepinefrina",
+    "apresentacoes": [
+      "solução injetável 2 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Heparina sódica",
+    "apresentacoes": [
+      "solução injetável 5.000 UI/0,25 mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hidroclorotiazida",
+    "apresentacoes": [
+      "comprimido 12,5 mg",
+      "comprimido 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "hipertensão",
+      "diurético",
+      "pressão alta"
+    ]
+  },
+  {
+    "nome": "Hidroxiureia",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "cápsula 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Hidroxiureia 100 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 04, de 5/3/2024 n.º 872 – Hidroxiureia 100 mg e 1000 mg para o tratamento de pacientes com doença falciforme com pelo menos 9 meses de idade"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Hidroxiureia 500 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 02, de 5/3/2024 n.º 873 – Hidroxiureia para o tratamento de pacientes com doença falciforme (SS, Sbeta0 e SD Punjab), entre 9 e 24 meses de idade, sem sintomas e complicações"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Hidróxido de alumínio",
+    "apresentacoes": [
+      "comprimido 230 mg",
+      "suspensão oral 60 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hidróxido de alumínio 60 mg/ ml suspensão oral",
+    "apresentacoes": [
+      "Sectics/MS n.º 43, de 21/7/2023 n.º 833 – Hidróxido de alumínio em suspensão de 60 mg/mL para o tratamento de gastrite, úlceras gástricas e duodenais e esofagite de refluxo"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hipoclorito de sódio",
+    "apresentacoes": [
+      "solução 10 mg/mL (1%)",
+      "solução 25 mg/mL (2,5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hipromelose",
+    "apresentacoes": [
+      "solução oftálmica 3 mg/mL (0,3%)",
+      "solução oftálmica 5 mg/mL (0,5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Hortelã (mentha x piperita l.)",
+    "apresentacoes": [
+      "cápsula 60 a 440 mg de mentol e 28 a 256 mg de mentona (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ibuprofeno",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "comprimido 300 mg",
+      "comprimido 600 mg",
+      "cápsula 600 mg",
+      "suspensão oral 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "febre",
+      "dor",
+      "anti-inflamatório",
+      "aine"
+    ]
+  },
+  {
+    "nome": "Idursulfase",
+    "apresentacoes": [
+      "solução injetável 2 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Iloprosta",
+    "apresentacoes": [
+      "solução inalatória 10 mcg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Imiglucerase",
+    "apresentacoes": [
+      "pó para solução injetável 400 U"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Imiquimode",
+    "apresentacoes": [
+      "creme 50 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina anti-rho (d)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina antitetânica",
+    "apresentacoes": [
+      "solução injetável 250 UI/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina antitimócitos humanos (coelho)",
+    "apresentacoes": [
+      "pó para solução injetável 25 mg"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina humana",
+    "apresentacoes": [
+      "pó para solução injetável 0,5 g",
+      "pó para solução injetável 1 g",
+      "pó para solução injetável 2,5 g",
+      "pó para solução injetável 5 g",
+      "solução injetável 0,5 g",
+      "solução injetável 1 g",
+      "solução injetável 2,5 g",
+      "solução injetável 5 g",
+      "solução injetável 5g"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina humana anti- -hepatite b",
+    "apresentacoes": [
+      "solução injetável 1.000 UI",
+      "solução injetável 100 UI",
+      "solução injetável 180 - 200 UI/mL",
+      "solução injetável 500 UI",
+      "solução injetável 600 UI"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina humana antirrábica",
+    "apresentacoes": [
+      "solução injetável 150 UI/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Imunoglobulina humana antivaricela zoster",
+    "apresentacoes": [
+      "solução injetável 125 UI/2,5 mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Infliximabe",
+    "apresentacoes": [
+      "pó para solução injetável 100 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Insulina análoga de ação prolongada",
+    "apresentacoes": [
+      "solução injetável 100 UI/mL",
+      "solução injetável 300 UI/mL"
+    ],
+    "componente": "Especializado",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Insulina análoga de ação rápida",
+    "apresentacoes": [
+      "solução injetável 100 UI/mL"
+    ],
+    "componente": "Especializado",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Insulina humana nph",
+    "apresentacoes": [
+      "suspensão injetável 100 UI/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Insulina humana regular",
+    "apresentacoes": [
+      "solução injetável 100 UI/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Iodeto de potássio",
+    "apresentacoes": [
+      "- Ofício n.º 10/2023/Cgats/Dgits/Sectics/MS (0037958456)",
+      "comprimido 130 mg",
+      "xarope 20 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Iodo + iodeto de potássio",
+    "apresentacoes": [
+      "solução para uso tópico 20 mg/mL + 40 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Isetionato de pentamidina",
+    "apresentacoes": [
+      "pó para solução injetável 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Isoflavona-de-soja (glycine max (l.) merr.)",
+    "apresentacoes": [
+      "comprimido 50 a 120 mg de isoflavonas (dose diária)",
+      "cápsula 50 a 120 mg de isoflavonas (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Isoniazida",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Isotretinoína",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 20 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Itraconazol",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "solução oral 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ivacaftor",
+    "apresentacoes": [
+      "comprimido 150 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ivermectina",
+    "apresentacoes": [
+      "comprimido 6 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Lactato de biperideno",
+    "apresentacoes": [
+      "solução injetável 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Lactulose",
+    "apresentacoes": [
+      "xarope 667 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Lamivudina",
+    "apresentacoes": [
+      "comprimido 150 mg",
+      "solução oral 10 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Lamotrigina",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 25 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Lancetas para punção digital",
+    "apresentacoes": [
+      "unidade -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Laronidase",
+    "apresentacoes": [
+      "solução injetável 0,58 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Latanoprosta",
+    "apresentacoes": [
+      "solução oftálmica 0,05 mg/mL (0,005%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ledipasvir + sofosbovir",
+    "apresentacoes": [
+      "comprimido 90 mg + 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Leflunomida",
+    "apresentacoes": [
+      "comprimido 20 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Levetiracetam",
+    "apresentacoes": [
+      "comprimido 1.000 mg",
+      "comprimido 250 mg",
+      "comprimido 500 mg",
+      "comprimido 750 mg",
+      "solução oral 100 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Levodopa + benserazida",
+    "apresentacoes": [
+      "comprimido 100 mg + 25 mg",
+      "comprimido 200 mg + 50 mg",
+      "cápsula 100 mg + 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Levodopa + carbidopa",
+    "apresentacoes": [
+      "comprimido 200 mg + 50 mg",
+      "comprimido 250 mg + 25 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Levofloxacino",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Levonorgestrel",
+    "apresentacoes": [
+      "comprimido 0,75 mg",
+      "comprimido 1,5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Levotiroxina sódica",
+    "apresentacoes": [
+      "comprimido 100 mcg",
+      "comprimido 12,5 mcg",
+      "comprimido 25 mcg",
+      "comprimido 37,5 mcg",
+      "comprimido 50 mcg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Linezolida",
+    "apresentacoes": [
+      "comprimido 600 mg",
+      "solução para infusão 2 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Lopinavir + ritonavir",
+    "apresentacoes": [
+      "comprimido 100 mg + 25 mg",
+      "comprimido 200 mg + 50 mg",
+      "solução oral 80 mg/mL + 20 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Loratadina",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "xarope 1 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "coceira",
+      "alergia",
+      "antialérgico"
+    ]
+  },
+  {
+    "nome": "Losartana potássica",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "hipertensão",
+      "pressão alta",
+      "anti-hipertensivo"
+    ]
+  },
+  {
+    "nome": "Maleato de dexclorfeniramina",
+    "apresentacoes": [
+      "comprimido 2 mg",
+      "solução oral 0,4 mg/mL",
+      "xarope 0,4 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "coceira",
+      "alergia",
+      "antialérgico"
+    ]
+  },
+  {
+    "nome": "Maleato de enalapril",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 20 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Maleato de timolol",
+    "apresentacoes": [
+      "solução oftálmica 2,5 mg/mL (0,25%)",
+      "solução oftálmica 5 mg/mL (0,5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Maraviroque",
+    "apresentacoes": [
+      "comprimido 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Medicamentos homeopáticos",
+    "apresentacoes": [
+      "Conforme Farmacopeia Homeopática Brasileira vigente Conforme Farmacopeia Homeopática Brasileira vigente"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Mepolizumabe",
+    "apresentacoes": [
+      "pó para solução injetável 100 mg",
+      "solução injetável 100 mg/mL",
+      "solução injetável 40 mg/0,4 mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mepolizumabe 100 mg/ml solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 22, de 18/4/2024 n.º 886 – Ampliação de uso do mepolizumabe para o tratamento de pacientes com idade entre 6 e 17 anos com asma eosinofílica grave refratária"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mepolizumabe 40 mg/0,4 ml solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 22, de 18/4/2024 n.º 886 – Ampliação de uso do mepolizumabe para o tratamento de pacientes com idade entre 6 e 17 anos com asma eosinofílica grave refratária"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mesalazina",
+    "apresentacoes": [
+      "comprimido 400 mg",
+      "comprimido 800 mg",
+      "comprimido de liberação prolongada 500 mg",
+      "enema 10 mg/mL",
+      "granulado revestido de liberação prolongada 2 g",
+      "supositório retal 1.000 mg",
+      "supositório retal 250 mg",
+      "supositório retal 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mesalazina 2g granulado revestido de liberação prolongada",
+    "apresentacoes": [
+      "Sectics/MS n.º 15, de 10/5/2023 n.º 801 – Mesalazina sachê para tratamento de retocolite ulcerativa leve a moderada"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mesilato de bromocriptina",
+    "apresentacoes": [
+      "comprimido 2,5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mesilato de desferroxamina",
+    "apresentacoes": [
+      "pó para solução injetável 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Mesilato de doxazosina",
+    "apresentacoes": [
+      "comprimido 2 mg",
+      "comprimido 4 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Mesilato de rasagilina",
+    "apresentacoes": [
+      "comprimido 1 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Metildopa",
+    "apresentacoes": [
+      "comprimido 250 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Metilsulfato de pralidoxima",
+    "apresentacoes": [
+      "solução injetável 200 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Metotrexato",
+    "apresentacoes": [
+      "comprimido 1",
+      "comprimido 2,5 mg",
+      "solução injetável 25 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Metronidazol",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 400 mg",
+      "gel vaginal 100 mg/g (10%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Micofenolato de mofetila",
+    "apresentacoes": [
+      "comprimido 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Micofenolato de mofetila 500 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 46, de 18/5/2022 n.º 358 – Micofenolato de mofetila e micofenolato de sódio para nefrite lúpica"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Micofenolato de sódio",
+    "apresentacoes": [
+      "comprimido 180 mg",
+      "comprimido 360 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Micronutrientes",
+    "apresentacoes": [
+      "pó cada sachê de 1 g contém: vitamina A 400 mcg, vitamina D 5 mcg, vitamina E 5 mg, vitamina C 30 mg, vitamina B1 0,5 mg, vitamina B2 0,5 mg, vitamina B6 0,5 mg, vitamina PP 6 mg, vitamina B9 150 mcg, vitamina B12 0,9 mcg, ferro 10 mg, zinco 4,1 mg, cobre 560 mcg, selênio 17 mcg, iodo 90 mcg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Midazolam",
+    "apresentacoes": [
+      "solução oral 2 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Miglustate",
+    "apresentacoes": [
+      "cápsula 100 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Miltefosina",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Misoprostol",
+    "apresentacoes": [
+      "comprimido vaginal 200 mcg",
+      "comprimido vaginal 25 mcg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Mononitrato de isossorbida",
+    "apresentacoes": [
+      "comprimido 20 mg",
+      "comprimido 40 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Naproxeno",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Natalizumabe",
+    "apresentacoes": [
+      "solução injetável 20 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Nevirapina",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "suspensão oral 10 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Nicotina",
+    "apresentacoes": [
+      "adesivo transdérmico 14 mg",
+      "adesivo transdérmico 21 mg",
+      "adesivo transdérmico 7 mg",
+      "goma de mascar 2 mg",
+      "pastilha 2 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Nifedipino",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "cápsula 10 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Nifurtimox",
+    "apresentacoes": [
+      "comprimido 120 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Nirmatrelvir + ritonavir",
+    "apresentacoes": [
+      "comprimido 150 mg + 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Nirmatrelvir 150 mg + ritonavir 100 mg",
+    "apresentacoes": [
+      "SCTIE/MS n.º 44/2022 – Publicada em 6/5/2022 n.º 727 – Nirmatrelvir/ritonavir para pacientes infectados por SARS-CoV-2 não hospitalizados e de alto risco"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Nistatina",
+    "apresentacoes": [
+      "suspensão oral 100.000 UI/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Nitrato de miconazol",
+    "apresentacoes": [
+      "creme 2% (20 mg/g)",
+      "creme vaginal 2% (20 mg/g)",
+      "gel oral 2% (20 mg/g)",
+      "loção 2% (20 mg/g)",
+      "pó 2% (20 mg/g)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Nitrofurantoína",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "suspensão oral 5 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Noretisterona",
+    "apresentacoes": [
+      "comprimido 0,35 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Nusinersena",
+    "apresentacoes": [
+      "solução injetável 2,4 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ofloxacino",
+    "apresentacoes": [
+      "comprimido 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Olanzapina",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Omalizumabe",
+    "apresentacoes": [
+      "pó para solução injetável 150 mg",
+      "solução injetável 150 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Omalizumabe 150 mg/ml solução injetável",
+    "apresentacoes": [
+      "SCTIE/MS n.º 143, de 10/11/2022 n.º 777 – Inclusão de nova apresentação de omalizumabe (150 mg/mL) solução injetável em seringa preenchida para tratamento da asma alérgica grave não controlada apesar do uso de corticoide inalatório (CI) associado a um beta2-agonista de longa ação (LABA)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Omeprazol",
+    "apresentacoes": [
+      "cápsula 10 mg",
+      "cápsula 20 mg"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "estômago",
+      "refluxo",
+      "gastrite",
+      "azia"
+    ]
+  },
+  {
+    "nome": "Onasemnogeno abeparvoveque",
+    "apresentacoes": [
+      "suspensão injetável 2,0 x 1013 gv/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Onasemnogeno abeparvoveque 2,0 × 1013 gv/ ml suspensão para infusão",
+    "apresentacoes": [
+      "SCTIE/MS n.º 172, de 6/12/2022 n.º 793 – Onasemnogeno abeparvoveque para o tratamento de Atrofia Muscular Espinhal (AME)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Palivizumabe",
+    "apresentacoes": [
+      "solução injetável 100 mg/mL (frasco de 0,5 mL e 1 mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Palmitato de retinol",
+    "apresentacoes": [
+      "cápsula 100.000 UI",
+      "cápsula 200.000 UI",
+      "solução oral 150.000 UI/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Pamidronato dissódico",
+    "apresentacoes": [
+      "pó para solução injetável 60 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Pamoato de pasireotida",
+    "apresentacoes": [
+      "pó para suspensão injetável 40 mg",
+      "pó para suspensão injetável 60 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Pamoato de pasireotida 40 mg pó para suspensão injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 25, de 19/6/2024 n.º 904 – Pamoato de pasireotida no tratamento de pacientes com acromegalia"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Pamoato de pasireotida 60 mg pó para suspensão injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 25, de 19/6/2024 n.º 904 – Pamoato de pasireotida no tratamento de pacientes com acromegalia"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Pancreatina",
+    "apresentacoes": [
+      "cápsula 10.000 UI",
+      "cápsula 25.000 UI"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Paracetamol",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "solução oral 200 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "febre",
+      "dor",
+      "analgésico",
+      "antitérmico"
+    ]
+  },
+  {
+    "nome": "Paricalcitol",
+    "apresentacoes": [
+      "solução injetável 5 mcg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Paricalcitol 5 mcg/ml solução injetável",
+    "apresentacoes": [
+      "n.º 703 – Paricalcitol para o tratamento de pacientes com hiperparatireoidismo secundário à doença renal crônica estágio 5D Distúrbio Mineral Ósseo na Doença Renal Crônica – tratamento do hiperparatireoi- dismo secundário"
+    ],
+    "componente": "SCTIE/MS n.º 36, de 13/4/2022",
+    "tags": []
+  },
+  {
+    "nome": "Pasta de óxido de zinco (fn)",
+    "apresentacoes": [
+      "pasta 250 mg/g (25%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Penicilamina",
+    "apresentacoes": [
+      "cápsula 250 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Pentoxifilina",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Permanganato de potássio",
+    "apresentacoes": [
+      "comprimido para uso tópico 100 mg",
+      "pó 100 mg (FN)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Permetrina",
+    "apresentacoes": [
+      "loção 10 mg/g (1%) 10 mg/mL (1%)",
+      "loção 50 mg/g (5%) 50 mg/mL (5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Peróxido de benzoíla (fn)",
+    "apresentacoes": [
+      "gel 25 mg/g (2,5%)",
+      "gel 50 mg/g (5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Pirazinamida",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "comprimido dispersível 150 mg",
+      "suspensão oral 30 mg/mL (3%)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Pirimetamina",
+    "apresentacoes": [
+      "comprimido 25 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Plantago (plantago ovata forssk.)",
+    "apresentacoes": [
+      "pó para dispersão oral 3 a 30 g (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Podofilina (fn)",
+    "apresentacoes": [
+      "solução para uso tópico 100 mg/mL (10%) a 250 mg/mL (25%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Podofilotoxina",
+    "apresentacoes": [
+      "creme 1,5 mg/g"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Pravastatina sódica",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 20 mg",
+      "comprimido 40 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Praziquantel",
+    "apresentacoes": [
+      "comprimido 600 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Prednisona",
+    "apresentacoes": [
+      "comprimido 20 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": [
+      "anti-inflamatório",
+      "alergia",
+      "corticoide"
+    ]
+  },
+  {
+    "nome": "Preservativo externo",
+    "apresentacoes": [
+      "160 mm x 49 mm -",
+      "160 mm x 52 mm -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Preservativo interno",
+    "apresentacoes": [
+      "até 20 cm -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Pretomanida",
+    "apresentacoes": [
+      "comprimido 200 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Pretomanida 200 mg",
+    "apresentacoes": [
+      "Sectics/MS n.º 49/2023 – Publicada em 22/9/2023 n.º 849 – Pretomanida para o tratamento da tuberculose resistente a medicamentos"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Primidona",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 250 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Propiltiouracila",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Propionato de clobetasol",
+    "apresentacoes": [
+      "creme 0,5 mg/g",
+      "solução capilar 0,5 mg/g"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Raltegravir potássico",
+    "apresentacoes": [
+      "comprimido 400 mg",
+      "comprimido mastigável 100 mg",
+      "granulado para suspensão oral 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Raltegravir potássico 100 mg granulado para suspensão oral",
+    "apresentacoes": [
+      "Sectics/MS n.º 38, de 3 de julho de 2023 n.º 831/2023 – Raltegravir 100 mg granulado para profilaxia da transmissão vertical do HIV em crianças com alto risco de exposição ao HIV"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ravulizumabe",
+    "apresentacoes": [
+      "solução para diluição para infusão 100 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ravulizumabe 100 mg/ml solução para diluição para infusão",
+    "apresentacoes": [
+      "Sectics/MS n.º 10, de 5/3/2024 n.º 875 – Ravulizumabe no tratamento da Hemoglobinúria Paroxística Noturna"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ribavirina",
+    "apresentacoes": [
+      "cápsula 250 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifabutina",
+    "apresentacoes": [
+      "cápsula 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifampicina + isoniazida",
+    "apresentacoes": [
+      "comprimido 150 mg + 75 mg",
+      "comprimido 300 mg + 150 mg",
+      "comprimidos dispersíveis 75 mg + 50 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifampicina + isoniazida + pirazinamida",
+    "apresentacoes": [
+      "comprimidos dispersíveis 75 mg + 50 mg + 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifampicina + isoniazida + pirazinamida + cloridrato de etambutol",
+    "apresentacoes": [
+      "comprimido 150 mg + 75 mg + 400 mg + 275 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifampicina 20 mg/ml (2%) suspensão oral",
+    "apresentacoes": [
+      "n.º 525 – Exclusão da rifampicina para quimioprofilaxia de contatos de pacientes com hanseníase Hanseníase"
+    ],
+    "componente": "n.º 18, de 12/6/2020",
+    "tags": []
+  },
+  {
+    "nome": "Rifampicina*",
+    "apresentacoes": [
+      "cápsula 150 mg*",
+      "cápsula 300 mg*",
+      "suspensão oral 20mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifapentina",
+    "apresentacoes": [
+      "comprimido 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifapentina + isoniazida",
+    "apresentacoes": [
+      "comprimido 300 mg + 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rifapentina 300 mg + isoniazida 300 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 19/2020 – Publicada em 15/6/2020 n.º Nº 526 – Rifapentina + isoniazida para o tratamento da Infecção Latente pelo Mycobacterium Tuberculosis (ILTB)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Riluzol",
+    "apresentacoes": [
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Risanquizumabe",
+    "apresentacoes": [
+      "solução injetável 75 mg/ 0,83 mL",
+      "solução injetável 75 mg/0,83 mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Risdiplam",
+    "apresentacoes": [
+      "pó para solução oral 0,75 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Risdiplam 0,75 mg/ml pó para solução oral",
+    "apresentacoes": [
+      "SCTIE/MS n.º 17, de 11/3/2022 n.º 710 – Risdiplam para o tratamento de Atrofia Muscular Espinhal (AME) tipo II e III",
+      "SCTIE/MS n.º 19, de 11/3/2022 n.º 709 – Risdiplam para o tratamento de Atrofia Muscular Espinhal (AME) tipo I"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Risedronato sódico",
+    "apresentacoes": [
+      "comprimido 35 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Risperidona",
+    "apresentacoes": [
+      "comprimido 1 mg",
+      "comprimido 2 mg",
+      "comprimido 3 mg",
+      "solução oral 1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ritonavir",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Rituximabe",
+    "apresentacoes": [
+      "solução para diluição para infusão 10 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rituximabe 10 mg/ml solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 44, de 27/7/2023 n.º 836 – Rituximabe para terapia de indução de remissão dos pacientes com diagnóstico recente e para casos de recidiva de vasculites associadas aos anticorpos anticitoplasma de neutrófilos, ativa e grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina",
+    "apresentacoes": [
+      "adesivo transdérmico 18 mg",
+      "adesivo transdérmico 9 mg",
+      "cápsula 1,5 mg",
+      "cápsula 3 mg",
+      "cápsula 4,5 mg",
+      "cápsula 6 mg",
+      "solução oral 2 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 1,5 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 18 mg adesivo transdérmico",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 3 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 4,5 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 6 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Rivastigmina 9 mg adesivo transdérmico",
+    "apresentacoes": [
+      "Sectics/MS n.º 27, de 19/6/2024 n.º 902 – Rivastigmina para o tratamento em indivíduos com doença de Parkinson e demência"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Romosozumabe",
+    "apresentacoes": [
+      "solução injetável 90 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Romosozumabe 90 mg/ml solução injetável",
+    "apresentacoes": [
+      "SCTIE/MS n.º 166, de 5/12/2022 n.º 788 – Romosozumabe para o tratamento da osteoporose grave em mulheres na pós-menopausa, acima de 70 anos, em falha terapêutica ao padrão de tratamento atualmente disponível no Sistema Único de Saúde (SUS) e em muito alto risco de fratura por fragilidade",
+      "n.º 920 – Ampliação de uso do romosozumabe e reavaliação da teriparatida para o tratamento de osteoporose grave Osteoporose"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sacarato de hidróxido férrico",
+    "apresentacoes": [
+      "solução injetável 20 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sacubitril valsartana sódica hidratada",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 200 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sais para reidratação oral",
+    "apresentacoes": [
+      "pó para solução oral cloreto de sódio, glicose anidra, cloreto de potássio, citrato de sódio diidratado"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Salgueiro (salix alba l.)",
+    "apresentacoes": [
+      "comprimido 60 a 240 mg de salicina (dose diária)",
+      "elixir 60 a 240 mg de salicina (dose diária)",
+      "solução oral 60 a 240 mg de salicina (dose diária)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Secuquinumabe",
+    "apresentacoes": [
+      "solução injetável 150 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Selexipague",
+    "apresentacoes": [
+      "comprimido 1.000 mcg",
+      "comprimido 1.200 mcg",
+      "comprimido 1.400 mcg",
+      "comprimido 1.600 mcg",
+      "comprimido 200 mcg",
+      "comprimido 400 mcg",
+      "comprimido 600 mcg",
+      "comprimido 800 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Seringas com agulha acoplada para aplicação de insulina",
+    "apresentacoes": [
+      "unidade -"
+    ],
+    "componente": "Básico",
+    "tags": [
+      "diabetes",
+      "açúcar"
+    ]
+  },
+  {
+    "nome": "Sinvastatina",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 20 mg",
+      "comprimido 40 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sirolimo",
+    "apresentacoes": [
+      "comprimido 1 mg",
+      "comprimido 2 mg",
+      "solução oral 1 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sofosbuvir",
+    "apresentacoes": [
+      "comprimido 400 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sofosbuvir + velpatasvir",
+    "apresentacoes": [
+      "comprimido 400 mg + 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sofosbuvir + velpatasvir + voxilaprevir",
+    "apresentacoes": [
+      "comprimido 400 mg + 100 mg + 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sofosbuvir 400 mg + velpatasvir 100 mg + voxilaprevir 100 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 163/2022 – Publicada em 2/12/2022 n.º 782 – Sofosbuvir+velpatasvir+ +voxilaprevir para o retratamento da hepatite C crônica em pacientes com ou sem cirrose compensada"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Solução ringer + lactato",
+    "apresentacoes": [
+      "solução injetável lactato de sódio 3 mg/mL + cloreto de sódio 6 mg/mL + cloreto de potássio 0/ ,3 mg/mL + cloreto de cálcio 0,2 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Somatropina",
+    "apresentacoes": [
+      "pó para solução injetável 12 UI",
+      "pó para solução injetável 15 UI",
+      "pó para solução injetável 16 UI",
+      "pó para solução injetável 18 UI",
+      "pó para solução injetável 24 UI",
+      "pó para solução injetável 30 UI",
+      "pó para solução injetável 4 UI",
+      "solução injetável 12 UI",
+      "solução injetável 15 UI",
+      "solução injetável 16 UI",
+      "solução injetável 18 UI",
+      "solução injetável 24 UI",
+      "solução injetável 30 UI",
+      "solução injetável 4 UI"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Soro antiaracnídico (loxosceles, phoneutria e tityus)",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 Dose Mínima Mortal (DMM) de veneno de Tityus serrulatus (1,5 DMM/ mL), 1,5 DMM de veneno de Phoneutria nigriventer (1,5 DMM/mL) e 15 DMN (Dose Mínima Necrosante) de veneno de Loxosceles gaucho (15 DMN/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antibotrópico (pentavalente)",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas (IgG) que neutralizam, no mínimo, 5 mg de veneno de Bothrops jararaca (5 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antibotrópico (pentavalente) e anticrotálico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 5 mg de veneno de Bothrops jararaca e a 1,5 mg de veneno de Crotalus durissus terrifcus (5 mg/ mL e 1,5 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antibotrópico (pentavalente) e antilaquético",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 5 mg de veneno de Bothrops jararaca e 3 mg de veneno de Lachesis muta (5 mg/mL e 3 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antibotulínico ab (bivalente)",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 375 UI de toxina botulínica tipo A e 275 UI de toxina botulínica tipo B (375 UI/mL e 275 UI/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro anticrotálico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 mg de veneno Crotalus durissus terrificus (1,5 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antidiftérico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 1.000 UI de toxina diftérica (1.000 UI/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antielapídico (bivalente)",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 1,5 mg de veneno de Micrurus frontalis (1,5 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antiescorpiônico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo 1,5 DMM (Dose Mínima Mortal) de veneno de Tityus serrulatus (1,5 DMM/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antilonômico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 0,35 mg de veneno de Lonomia obliqua (0,35 mg/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antiloxoscélico (trivalente)",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 15 DMN (Dose Mínima Necrosante) de veneno de aranhas das espécies Loxosceles laeta, Loxosceles gaucho e Loxosceles intermedia (15 DMN/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antirrábico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imonoglobulinas que neutralizam, no mínimo, 200 UI de vírus da raiva (200 UI/mL)"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Soro antitetânico",
+    "apresentacoes": [
+      "solução injetável cada mL contém imunoglobulinas que neutralizam, no mínimo, 1.000 UI de toxina tetânica"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Succinato de metoprolol",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 100 mg",
+      "comprimido de liberação prolongada 25 mg",
+      "comprimido de liberação prolongada 50 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Succinato de tafenoquina",
+    "apresentacoes": [
+      "comprimido 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Succinato de tafenoquina 150 mg comprimido",
+    "apresentacoes": [
+      "Sectics/MS n.º 27/2023 – Publicada em 6/6/2023 n.º 832 – Tafenoquina e teste quantitativo da atividade da enzima glicose-6-fosfato desidrogenase (G6PD) para tratamento de pacientes com malária por Plasmodium vivax"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Succinato sódico de hidrocortisona",
+    "apresentacoes": [
+      "pó para solução injetável 100 mg",
+      "pó para solução injetável 500 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Succinato sódico de metilprednisolona",
+    "apresentacoes": [
+      "pó para solução injetável 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sulfadiazina",
+    "apresentacoes": [
+      "comprimido 500 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfadiazina de prata",
+    "apresentacoes": [
+      "creme 10 mg/g (1%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfametoxazol + trimetoprima",
+    "apresentacoes": [
+      "comprimido 400 mg + 80 mg",
+      "solução injetável 80 mg/mL + 16 mg/mL",
+      "suspensão oral 40 mg/mL + 8 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfassalazina",
+    "apresentacoes": [
+      "comprimido 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de abacavir",
+    "apresentacoes": [
+      "comprimido 300 mg",
+      "solução oral 20 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de amicacina",
+    "apresentacoes": [
+      "solução injetável 250 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de atazanavir",
+    "apresentacoes": [
+      "cápsula 300 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de atropina",
+    "apresentacoes": [
+      "solução injetável 0,25 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de estreptomicina",
+    "apresentacoes": [
+      "pó para solução injetável 1 g"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de gentamicina",
+    "apresentacoes": [
+      "solução injetável 40 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de gentamicina 40 mg/ml solução injetável",
+    "apresentacoes": [
+      "SecticsMS n.º 28/2024 – Publicada em 21/6/2024 n.º 901 – Sulfato de gentamicina combinado à doxiciclina para o tratamento da brucelose humana"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de hidroxicloroquina",
+    "apresentacoes": [
+      "comprimido 400 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de isavuconazônio",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "pó liofilizado para solução injetável 200 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de isavuconazônio 100 mg cápsula",
+    "apresentacoes": [
+      "SCTIE/MS n.º 60/2022 – Publicada em 28/7/2022 n.º 745 – Isavuconazol para tratamento de consolidação em pacientes com mucormicose"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de isavuconazônio 200 mg pó liofilizado para solução injetável",
+    "apresentacoes": [
+      "SCTIE/MS n.º 60/2022 – Publicada em 28/7/2022 n.º 745 – Isavuconazol para tratamento de consolidação em pacientes com mucormicose"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de magnésio",
+    "apresentacoes": [
+      "pó para solução oral -",
+      "solução injetável 10% (0,81 mEq/mL Mg++)",
+      "solução injetável 50% (4,05 mEq/mL Mg++)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de morfina",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 30 mg",
+      "cápsula de liberação prolongada 100 mg",
+      "cápsula de liberação prolongada 30 mg",
+      "cápsula de liberação prolongada 60 mg",
+      "solução injetável 10 mg/mL",
+      "solução oral 10 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de polimixina b + sulfato de neomicina + fluocinolona acetonida + cloridrato de lidocaína",
+    "apresentacoes": [
+      "solução otológica 10.000 UI/mL + 3,500 mg/mL + 0,250 mg/mL + 20 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de quinina 500 mg comprimido",
+    "apresentacoes": [
+      "n.º 696 – Exclusão do cloridrato de clindamicina cápsula 300 mg, fosfato de clindamicina solução injetável 150 mg/mL, sulfato de quinina comprimido 500 mg e dicloridrato de quinina solução injetável 300 mg/ mL para tratamento de pacientes diagnosticados com malária Malária"
+    ],
+    "componente": "n.º 80, de 29/12/2021",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de salbutamol",
+    "apresentacoes": [
+      "solução injetável 0,5 mg/mL",
+      "solução para inalação 5 mg/mL",
+      "suspensão aerossol 100 mcg/dose"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato de zinco",
+    "apresentacoes": [
+      "comprimido mastigável 10 mg",
+      "solução injetável 200 mcg/mL",
+      "xarope equivalente a 4 mg/mL de zinco elementar"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Sulfato ferroso",
+    "apresentacoes": [
+      "comprimido Equivalente a 40 mg de ferro elementar",
+      "solução oral Equivalente a 25 mg/mL de ferro elementar",
+      "xarope Equivalente a 5 mg/mL de ferro elementar"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Tacrolimo",
+    "apresentacoes": [
+      "cápsula 1 mg",
+      "cápsula 5 mg",
+      "solução injetável 5 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tafamidis",
+    "apresentacoes": [
+      "cápsula 61 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tafamidis 61 mg cápsula",
+    "apresentacoes": [
+      "Sectics/MS n.º 26, de 19/6/2024 n.º 899 – Tafamidis 61 mg no tratamento de pacientes com cardiopatia amiloide associada à transtirretina (selvagem ou hereditária), classe NYHA II e III acima de 60 anos de idade"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tafamidis meglumina",
+    "apresentacoes": [
+      "cápsula 20 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Talidomida",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Tartarato de brimonidina",
+    "apresentacoes": [
+      "solução oftálmica 2 mg/mL (0,2%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tartarato de metoprolol",
+    "apresentacoes": [
+      "comprimido 100 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Teclozana",
+    "apresentacoes": [
+      "comprimido 500 mg",
+      "suspensão oral 10 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Tenecteplase",
+    "apresentacoes": [
+      "pó para solução injetável 40 mg",
+      "pó para solução injetável 50 mg"
+    ],
+    "componente": "Procedimento Hospitalar(1)",
+    "tags": []
+  },
+  {
+    "nome": "Tenecteplase 30 mg pó para solução injetável",
+    "apresentacoes": [
+      "n.º 3.438, de 7/12/2021 Reformulação e qualificação de aspectos críticos da Linha de Cuidado do Infarto Agudo do Miocárdio"
+    ],
+    "componente": "Procedimento Hospitalar",
+    "tags": []
+  },
+  {
+    "nome": "Teriflunomida",
+    "apresentacoes": [
+      "comprimido 14 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Teriparatida 250 mcg/ml solução injetável",
+    "apresentacoes": [
+      "n.º 921 – Teriparatida para o tratamento de osteoporose secundária a glicocorticoides, pacientes do sexo masculino e pacientes que apresentaram infarto do miocárdio ou acidente vascular cerebral no ano interior Osteoporose"
+    ],
+    "componente": "Sectics/MS n.º 39, de 19/9/2024",
+    "tags": []
+  },
+  {
+    "nome": "Teriparatida 250 mcg/ml solução injetável*",
+    "apresentacoes": [
+      "SCTIE/MS n.º 62, de 19/7/2022 n.º 742 – Denosumabe e teriparatida para o tratamento indivíduos com osteoporose grave e falha terapêutica aos medicamentos disponíveis no Sistema Único de Saúde (SUS)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Terizidona",
+    "apresentacoes": [
+      "cápsula 250 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Teste quantitativo da atividade da enzima glicose-6-fosfato desidrogenase (g6pd)",
+    "apresentacoes": [
+      "- -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Teste tuberculínico (derivado proteico purificado – ppd)",
+    "apresentacoes": [
+      "- -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Tiamazol",
+    "apresentacoes": [
+      "comprimido 10 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Tipranavir",
+    "apresentacoes": [
+      "cápsula 250 mg",
+      "solução oral 100 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Tiras reagentes de medida de glicemia capilar",
+    "apresentacoes": [
+      "unidade -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Tobramicina",
+    "apresentacoes": [
+      "solução inalatória 300 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tocilizumabe",
+    "apresentacoes": [
+      "solução injetável 20 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Tofacitinibe",
+    "apresentacoes": [
+      "comprimido 5 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Topiramato",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 25 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Toxina botulínica a",
+    "apresentacoes": [
+      "pó para solução injetável 100 U",
+      "pó para solução injetável 500 U"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Travoprosta",
+    "apresentacoes": [
+      "solução oftálmica 0,04 mg/mL (0,004%)"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Triptorrelina",
+    "apresentacoes": [
+      "pó para suspensão injetável de liberação prolongada 3,75 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Unha-de-gato (uncaria tomentosa (willd. ex roem. & schult.))",
+    "apresentacoes": [
+      "comprimido 0,9 mg de alcaloides oxindólicos pentaclíclicos",
+      "cápsula 0,9 mg de alcaloides oxindólicos pentaclíclicos",
+      "gel 0,9 mg de alcaloides oxindólicos pentaclíclicos"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Upadacitinibe",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 15 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ustequinumabe",
+    "apresentacoes": [
+      "solução injetável 130 mg",
+      "solução injetável 45 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ustequinumabe 130 mg solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 01, de 22/1/2024 n.º 864 – Ustequinumabe para o tratamento de pacientes com doença de Crohn ativa moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ustequinumabe 45 mg/0,5 ml solução injetável",
+    "apresentacoes": [
+      "Sectics/MS n.º 01, de 22/1/2024 n.º 864 – Ustequinumabe para o tratamento de pacientes com doença de Crohn ativa moderada a grave"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria e tétano adulto",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria e tétano infantil",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria, tétano e pertussis",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria, tétano e pertussis (acelular) adulto",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria, tétano e pertussis (acelular) infantil",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida difteria, tétano, pertussis, hepatite b (recombinante) e haemophilus influenzae b (conjugada)",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida hepatite a (inativada) adulto",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina adsorvida hepatite a (inativada) infantil",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina bcg",
+    "apresentacoes": [
+      "pó para suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina cólera (inativada)",
+    "apresentacoes": [
+      "suspensão oral -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina febre amarela (atenuada)",
+    "apresentacoes": [
+      "pó para solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina febre tifoide (polissacarídica)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina haemophilus influenzae b (conjugada)",
+    "apresentacoes": [
+      "pó para solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina hepatite b (recombinante)",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina influenza trivalente (fragmentada, inativada)",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina meningocócica acwy (conjugada)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina meningocócica c (conjugada)",
+    "apresentacoes": [
+      "pó para suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina papilomavírus humano 6, 11, 16 e 18 (recombinante)",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina pneumocócica 10-valente (conjugada)",
+    "apresentacoes": [
+      "suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina pneumocócica 13-valente (conjugada)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina pneumocócica 23-valente (polissacarídica)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina poliomielite 1 e 3 (atenuada)",
+    "apresentacoes": [
+      "solução oral -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina poliomielite 1, 2 e 3 (inativada)",
+    "apresentacoes": [
+      "solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina raiva (inativada)",
+    "apresentacoes": [
+      "pó para suspensão injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina rotavírus humano g1p [8] (atenuada)",
+    "apresentacoes": [
+      "suspensão oral -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina sarampo, caxumba, rubéola",
+    "apresentacoes": [
+      "pó para solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina sarampo, caxumba, rubéola e varicela (atenuada)",
+    "apresentacoes": [
+      "pó para solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Vacina varicela (atenuada)",
+    "apresentacoes": [
+      "pó para solução injetável -"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Valproato de sódio",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 500 mg",
+      "cápsula 250 mg",
+      "solução oral 50mg/ml",
+      "xarope 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Varfarina sódica",
+    "apresentacoes": [
+      "comprimido 1 mg",
+      "comprimido 5 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Vedolizumabe",
+    "apresentacoes": [
+      "pó para solução injetável 300 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Vigabatrina",
+    "apresentacoes": [
+      "comprimido 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Voriconazol",
+    "apresentacoes": [
+      "comprimido 200 mg",
+      "pó liófilizado para injetável 200 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Voriconazol 200 mg comprimido",
+    "apresentacoes": [
+      "SCTIE/MS n.º 59/2022 – Publicada em 28/7/2022 n.º 744 – Voriconazol para tratamento de pacientes com aspergilose invasiva"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Voriconazol 200 mg pó liófilizado para injetável",
+    "apresentacoes": [
+      "SCTIE/MS n.º 59/2022 – Publicada em 28/7/2022 n.º 744 – Voriconazol para tratamento de pacientes com aspergilose invasiva"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Xinafoato de salmeterol",
+    "apresentacoes": [
+      "pó inalatório 50 mcg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Zanamivir",
+    "apresentacoes": [
+      "pó para inalação oral 5 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Zidovudina",
+    "apresentacoes": [
+      "cápsula 100 mg",
+      "solução injetável 10 mg/mL",
+      "solução oral 10 mg/mL"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Zidovudina + lamivudina",
+    "apresentacoes": [
+      "comprimido 300 mg + 150 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido acetilsalicílico",
+    "apresentacoes": [
+      "comprimido 100 mg",
+      "comprimido 500 mg"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido folínico",
+    "apresentacoes": [
+      "comprimido 15 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido fólico",
+    "apresentacoes": [
+      "comprimido 5 mg",
+      "solução oral 0,2 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido nicotínico",
+    "apresentacoes": [
+      "comprimido de liberação prolongada 500 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ácido paraminossalicílico",
+    "apresentacoes": [
+      "granulado oral 4 g"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido salicílico (fn)",
+    "apresentacoes": [
+      "pomada 50 mg/g (5%)"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido tranexâmico",
+    "apresentacoes": [
+      "comprimido 250 mg"
+    ],
+    "componente": "Estratégico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido ursodesoxicólico",
+    "apresentacoes": [
+      "comprimido 150 mg",
+      "comprimido 300 mg",
+      "comprimido 50 mg"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ácido valproico",
+    "apresentacoes": [
+      "comprimido 250 mg",
+      "comprimido 300 mg",
+      "comprimido 500 mg",
+      "cápsula 250 mg",
+      "solução oral 50 mg/mL",
+      "xarope 50 mg/mL"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Ácido zoledrônico",
+    "apresentacoes": [
+      "solução para infusão 0,05 mg/mL"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Ácido zoledrônico 0,05 mg/ml solução para infusão",
+    "apresentacoes": [
+      "SCTIE/MS n.º 61, de 19/7/2022 n.º 741 – Ácido zoledrônico para pacientes com osteoporose com intolerância ou dificuldades de deglutição dos bisfosfonatos orais"
+    ],
+    "componente": "Especializado",
+    "tags": []
+  },
+  {
+    "nome": "Água para injetáveis",
+    "apresentacoes": [
+      "solução injetável 10 mL -",
+      "solução injetável 100 mL -",
+      "solução injetável 5 mL -",
+      "solução injetável 500 mL -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Álcool etílico (fn)",
+    "apresentacoes": [
+      "gel 70%",
+      "solução 70%"
+    ],
+    "componente": "Básico",
+    "tags": []
+  },
+  {
+    "nome": "Óleo mineral",
+    "apresentacoes": [
+      "óleo para uso oral -"
+    ],
+    "componente": "Básico",
+    "tags": []
+  }
+];
