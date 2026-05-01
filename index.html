@@ -2594,16 +2594,11 @@
             <h2>Escala de Dispneia mMRC</h2>
             <p style="margin-bottom: 20px;">Selecione a opção que melhor descreve sua falta de ar:</p>
             <div class="btn-group-sc btn-group-vertical-sc">
-                <input type="radio" name="mmrc" id="mmrc0" value="0"><label for="mmrc0" class="btn-option-sc">0: Falta
-                    de ar apenas exercícios intensos</label>
-                <input type="radio" name="mmrc" id="mmrc1" value="1"><label for="mmrc1" class="btn-option-sc">1: Falta
-                    de ar andando rápido ou subindo leve</label>
-                <input type="radio" name="mmrc" id="mmrc2" value="2"><label for="mmrc2" class="btn-option-sc">2: Anda
-                    mais devagar que a média ou para para respirar</label>
-                <input type="radio" name="mmrc" id="mmrc3" value="3"><label for="mmrc3" class="btn-option-sc">3: Para
-                    para respirar após ~100m ou poucos minutos</label>
-                <input type="radio" name="mmrc" id="mmrc4" value="4"><label for="mmrc4" class="btn-option-sc">4: Não
-                    sai de casa ou falta de ar ao se vestir</label>
+                <input type="radio" name="mmrc" id="mmrc0" value="0"><label for="mmrc0" class="btn-option-sc">Grau 0: Sinto falta de ar apenas ao realizar exercício físico intenso</label>
+                <input type="radio" name="mmrc" id="mmrc1" value="1"><label for="mmrc1" class="btn-option-sc">Grau 1: Sinto falta de ar quando apresso o passo ou subo escadas ou ladeira</label>
+                <input type="radio" name="mmrc" id="mmrc2" value="2"><label for="mmrc2" class="btn-option-sc">Grau 2: Preciso parar para respirar quando ando no meu próprio passo, ou ando mais devagar que as pessoas da minha idade</label>
+                <input type="radio" name="mmrc" id="mmrc3" value="3"><label for="mmrc3" class="btn-option-sc">Grau 3: Preciso parar para respirar após andar cerca de 100 metros ou poucos minutos no plano</label>
+                <input type="radio" name="mmrc" id="mmrc4" value="4"><label for="mmrc4" class="btn-option-sc">Grau 4: Sinto tanta falta de ar que não saio de casa, ou sinto falta de ar para me vestir ou despir</label>
             </div>
             <button class="btn-action-sc" onclick="sc_calcMMRC()">Calcular Resultado</button>
             <div id="mmrc-result" class="result-container"></div>
@@ -2620,8 +2615,7 @@
         <section id="view-act" class="view hidden">
             <h2>ACT - Controle da Asma (4 semanas)</h2>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">1. Frequência que
-                    a asma impediu tarefas (trabalho/escola/casa)?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">1. Durante as últimas 4 semanas, com que frequência sua asma o(a) impediu de fazer o máximo na escola, no trabalho ou em casa?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="act1" id="act1-1" value="1"><label for="act1-1" class="btn-option-sc">O
                         tempo todo (1)</label>
@@ -2636,8 +2630,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">2. Frequência de
-                    falta de ar?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">2. Durante as últimas 4 semanas, com que frequência você teve falta de ar?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="act2" id="act2-1" value="1"><label for="act2-1" class="btn-option-sc">> 1
                         vez ao dia (1)</label>
@@ -2652,8 +2645,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">3. Sintomas
-                    acordaram você à noite?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">3. Durante as últimas 4 semanas, com que frequência os sintomas da asma (chiado no peito, tosse, falta de ar, aperto no peito ou dor) o(a) acordaram à noite ou mais cedo do que o normal pela manhã?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="act3" id="act3-1" value="1"><label for="act3-1" class="btn-option-sc">4 ou
                         mais noites/sem (1)</label>
@@ -2668,8 +2660,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">4. Uso de
-                    medicação de alívio?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">4. Durante as últimas 4 semanas, com que frequência você usou seu inalador de alívio (medicação de resgate)?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="act4" id="act4-1" value="1"><label for="act4-1" class="btn-option-sc">3 ou
                         mais vezes ao dia (1)</label>
@@ -2684,8 +2675,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">5. Autoavaliação
-                    do controle?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">5. Como você avaliaria o controle da sua asma durante as últimas 4 semanas?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="act5" id="act5-1" value="1"><label for="act5-1" class="btn-option-sc">Não
                         controlada (1)</label>
@@ -3864,8 +3854,7 @@
         <section id="view-fagerstrom" class="view hidden">
             <h2>Fagerström (Nicotina)</h2>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">1. Tempo até o 1º
-                    cigarro após acordar?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">1. Quanto tempo após acordar você fuma seu primeiro cigarro?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="fag1" id="f1-3" value="3"><label for="f1-3" class="btn-option-sc">≤ 5
                         min (3)</label>
@@ -3879,8 +3868,7 @@
             </div>
             <div id="fagerstrom-questions-dynamic"></div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">2. Difícil não
-                    fumar em locais proibidos?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">2. Você acha difícil não fumar em lugares onde o fumo é proibido (como igrejas, cinemas, etc.)?</span>
                 <div class="btn-group-sc" style="display: flex; max-width: 100%;">
                     <input type="radio" name="fag2" id="f2-1" value="1"><label for="f2-1" class="btn-option-sc">Sim
                         (1)</label>
@@ -3889,8 +3877,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">3. Cigarro mais
-                    satisfatório?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">3. Qual cigarro do dia traz mais satisfação?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="fag3" id="f3-1" value="1"><label for="f3-1" class="btn-option-sc">1º da
                         manhã (1)</label>
@@ -3899,8 +3886,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">4. Cigarros por
-                    dia?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">4. Quantos cigarros você fuma por dia?</span>
                 <div class="btn-group-sc btn-group-vertical-sc">
                     <input type="radio" name="fag4" id="f4-0" value="0"><label for="f4-0" class="btn-option-sc">≤ 10
                         (0)</label>
@@ -3913,8 +3899,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">5. Fuma mais pela
-                    manhã?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">5. Você fuma mais frequentemente pela manhã (nas primeiras horas após acordar) do que no resto do dia?</span>
                 <div class="btn-group-sc" style="display: flex; max-width: 100%;">
                     <input type="radio" name="fag5" id="f5-1" value="1"><label for="f5-1" class="btn-option-sc">Sim
                         (1)</label>
@@ -3923,8 +3908,7 @@
                 </div>
             </div>
             <div style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
-                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">6. Fuma mesmo
-                    doente?</span>
+                <span style="font-weight: 600; margin-bottom: 1rem; color: #2c3e50; display: block;">6. Você fuma mesmo quando está doente e precisa ficar na cama a maior parte do tempo?</span>
                 <div class="btn-group-sc" style="display: flex; max-width: 100%;">
                     <input type="radio" name="fag6" id="f6-1" value="1"><label for="f6-1" class="btn-option-sc">Sim
                         (1)</label>

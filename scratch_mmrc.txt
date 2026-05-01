@@ -1,0 +1,35 @@
+--- view-mmrc ---
+0: Falta
+                    de ar apenas exercícios intensos
+1: Falta
+                    de ar andando rápido ou subindo leve
+2: Anda
+                    mais devagar que a média ou para para respirar
+3: Para
+                    para respirar após ~100m ou poucos minutos
+4: Não
+                    sai de casa ou falta de ar ao se vestir
+--- view-gold ---
+Relação
+                            VEF1/CVF (Decimal)
+GOLD 1 (Leve)VEF1 ≥ 80% do
+                                    predito
+GOLD 2 (Moderada)50% ≤ VEF1
+GOLD 3 (Grave)30% ≤ VEF1
+GOLD 4 (Muito Grave)VEF1
+Escolha o
+                            critério:
+mMRC 0 - 1Pouca falta de ar
+                                    (apenas exercício intenso ou apressado).
+mMRC ≥ 2Caminha mais devagar que
+                                    outros da mesma idade ou para para respirar.
+CAT Baixo impacto dos
+                                            sintomas.
+CAT ≥ 10Alto impacto dos
+                                    sintomas.
+0 Exacerbações Moderadas/GravesBaixo Risco.
+≥ 1 Exacerbação Moderada ou GraveAlto Risco (Critério GOLD 2026
+                                    Atualizado)Inclui qualquer exacerbação
+                                    levando à hospitalização.
+Eosinófilos
+                            Séricos (Opcional)

@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // CAT
     const sc_catLabels = [
-        ["Nunca tenho tosse", "Tenho tosse o tempo todo"],
-        ["Sem catarro no peito", "Peito cheio de catarro"],
-        ["Sem pressão no peito", "Grande pressão no peito"],
-        ["Sem falta de ar (escada)", "Muita falta de ar (escada)"],
-        ["Sem limitação em casa", "Muito limitado em casa"],
-        ["Confiante para sair", "Sem confiança para sair"],
-        ["Durmo profundamente", "Não durmo bem"],
-        ["Muita energia", "Sem energia"]
-    ];
+    ["Eu nunca tusso", "Eu estou sempre tossindo"],
+    ["Eu não tenho catarro no peito", "O meu peito está completamente cheio de catarro"],
+    ["Eu não sinto nenhum aperto no peito", "Sinto muito aperto no peito"],
+    ["Quando subo uma ladeira ou um lance de escadas, não sinto falta de ar", "Quando subo uma ladeira ou um lance de escadas, sinto muita falta de ar"],
+    ["Não me sinto limitado(a) em fazer minhas atividades em casa", "Sinto-me muito limitado(a) em fazer minhas atividades em casa"],
+    ["Sinto-me confiante para sair de casa, apesar da minha doença pulmonar", "Não me sinto nem um pouco confiante para sair de casa por causa de minha doença pulmonar"],
+    ["Durmo profundamente", "Não durmo bem por causa da minha doença pulmonar"],
+    ["Tenho muita energia", "Não tenho nenhuma energia"]
+];
     const sc_catContainer = document.getElementById('cat-questions');
     if (sc_catContainer) {
         sc_catLabels.forEach((labels, idx) => {
@@ -33,11 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // STOP-BANG
     const sc_sbQs = [
-        "1. Ronca alto (mais que falar)?", "2. Sente-se cansado/fadiga de dia?", 
-        "3. Alguém observou apneia?", "4. Tem pressão alta?", 
-        "5. IMC > 35 kg/m²?", "6. Idade > 50 anos?", 
-        "7. Pescoço > 40cm?", "8. Gênero Masculino?"
-    ];
+    "1. Ronco: Você ronca alto (mais alto que falar ou o suficiente para ser ouvido por trás de portas fechadas)?",
+    "2. Cansaço: Você frequentemente se sente cansado(a), fadigado(a) ou sonolento(a) durante o dia?",
+    "3. Observação: Alguém já observou você parar de respirar durante o sono?",
+    "4. Pressão alta: Você tem ou está em tratamento para pressão alta?",
+    "5. IMC: Seu Índice de Massa Corporal é superior a 35 kg/m²?",
+    "6. Idade: Você tem mais de 50 anos?",
+    "7. Pescoço: A circunferência do seu pescoço é maior que 40 cm?",
+    "8. Gênero: Você é do sexo masculino?"
+];
     const sc_sbContainer = document.getElementById('sb-questions');
     if (sc_sbContainer) {
         sc_sbQs.forEach((q, idx) => {
@@ -55,10 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Epworth
     const sc_epQs = [
-        "1. Sentado, lendo", "2. Assistindo TV", "3. Sentado passivo em lugar público",
-        "4. Passageiro em viagem de 1h", "5. Deitado à tarde (se possível)",
-        "6. Sentado conversando", "7. Sentado quieto após almoço", "8. No carro parado no trânsito"
-    ];
+    "1. Sentado e lendo",
+    "2. Assistindo à televisão",
+    "3. Sentado, inativo, em um lugar público (ex: teatro, reunião)",
+    "4. Como passageiro em um carro durante uma hora sem parar",
+    "5. Deitado para descansar à tarde, quando as circunstâncias permitem",
+    "6. Sentado e conversando com alguém",
+    "7. Sentado calmamente após o almoço sem álcool",
+    "8. Em um carro, parado por alguns minutos no trânsito"
+];
     const sc_epContainer = document.getElementById('epworth-list');
     if (sc_epContainer) {
         sc_epQs.forEach((q, idx) => {

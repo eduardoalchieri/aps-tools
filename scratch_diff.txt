@@ -1,0 +1,674 @@
+
+--- Section: view-hasbled ---
+OLD LABELS:
+  Hipertens├úo (H) MODIFIC├üVEL
+  N├úo (0)
+  Sim (1)
+  Fun├º├úo Renal Anormal (A)
+  N├úo (0)
+  Sim (1)
+  Fun├º├úo Hep├ítica Anormal (A)
+  N├úo (0)
+  Sim (1)
+  AVC (S)
+NEW LABELS:
+  Hipertensão
+                        (H) MODIFICÁVEL
+  Não (0)
+  Sim
+                            (1)
+  Função
+                        Renal Anormal (A)
+  Não (0)
+  Sim (1)
+  Função
+                        Hepática Anormal (A)
+  Não (0)
+  Sim (1)
+  AVC
+                        (S)
+
+--- Section: view-pps ---
+OLD LABELS:
+  Selecione o n├¡vel de Desempenho (PPS %)
+  PPS 100%
+                                
+                                    Deambula├º├úo: Total
+                                    Atividade e doen├ºa: Atividade e trabalho normais; sem evid├¬ncia de doen├ºa
+                                    Autocuidado: Completo
+                                    Ingest├úo alimentar: Normal
+                                    N├¡vel de consci├¬ncia: Total
+  PPS 90%
+                                
+                                    Deambula├º├úo: Total
+                                    Atividade e doen├ºa: Atividade e trabalho normais; alguma evid├¬ncia de doen├ºa
+                                    Autocuidado: Completo
+                                    Ingest├úo alimentar: Normal
+                                    N├¡vel de consci├¬ncia: Total
+  PPS 80%
+                                
+                                    Deambula├º├úo: Total
+                                    Atividade e doen├ºa: Atividade normal realizada com esfor├ºo; alguma evid├¬ncia de doen├ºa
+                                    Autocuidado: Completo
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total
+  PPS 70%
+                                
+                                    Deambula├º├úo: Diminu├¡da
+                                    Atividade e doen├ºa: Incapaz de executar o trabalho habitual; doen├ºa significativa
+                                    Autocuidado: Completo
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total
+  PPS 60%
+                                
+                                    Deambula├º├úo: Diminu├¡da
+                                    Atividade e doen├ºa: Incapaz de realizar hobbies e atividades dom├®sticas; doen├ºa significativa
+                                    Autocuidado: Necessita de apoio pontual
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total ou confus├úo
+  PPS 50%
+                                
+                                    Deambula├º├úo: Majoritariamente sentado ou deitado
+                                    Atividade e doen├ºa: Incapaz de executar qualquer trabalho; doen├ºa extensa
+                                    Autocuidado: Necessita de apoio consider├ível
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total ou confus├úo
+  PPS 40%
+                                
+                                    Deambula├º├úo: Majoritariamente deitado
+                                    Atividade e doen├ºa: Incapaz de fazer a maioria das atividades; doen├ºa extensa
+                                    Autocuidado: Necessita de apoio quase completo
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total ou sonol├¬ncia com ou sem confus├úo
+  PPS 30%
+                                
+                                    Deambula├º├úo: Acamado
+                                    Atividade e doen├ºa: Incapaz de fazer qualquer atividade; doen├ºa extensa
+                                    Autocuidado: Totalmente dependente
+                                    Ingest├úo alimentar: Normal ou reduzida
+                                    N├¡vel de consci├¬ncia: Total ou sonol├¬ncia com ou sem confus├úo
+  PPS 20%
+                                
+                                    Deambula├º├úo: Acamado
+                                    Atividade e doen├ºa: Incapaz de fazer qualquer atividade; doen├ºa extensa
+                                    Autocuidado: Totalmente dependente
+                                    Ingest├úo alimentar: M├¡nima a goles
+                                    N├¡vel de consci├¬ncia: Total ou sonol├¬ncia com ou sem confus├úo
+NEW LABELS:
+  Selecione o nível de
+                        Desempenho (PPS %)
+  PPS 100%
+                                
+                                    Deambulação: Total
+                                    Atividade e doença: Atividade e trabalho normais; sem evidência
+                                    de doença
+                                    Autocuidado: Completo
+                                    Ingestão alimentar: Normal
+                                    Nível de consciência: Total
+  PPS 90%
+                                
+                                    Deambulação: Total
+                                    Atividade e doença: Atividade e trabalho normais; alguma
+                                    evidência de doença
+                                    Autocuidado: Completo
+                                    Ingestão alimentar: Normal
+                                    Nível de consciência: Total
+  PPS 80%
+                                
+                                    Deambulação: Total
+                                    Atividade e doença: Atividade normal realizada com esforço;
+                                    alguma evidência de doença
+                                    Autocuidado: Completo
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total
+  PPS 70%
+                                
+                                    Deambulação: Diminuída
+                                    Atividade e doença: Incapaz de executar o trabalho habitual;
+                                    doença significativa
+                                    Autocuidado: Completo
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total
+  PPS 60%
+                                
+                                    Deambulação: Diminuída
+                                    Atividade e doença: Incapaz de realizar hobbies e atividades
+                                    domésticas; doença significativa
+                                    Autocuidado: Necessita de apoio pontual
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total ou confusão
+  PPS 50%
+                                
+                                    Deambulação: Majoritariamente sentado ou deitado
+                                    Atividade e doença: Incapaz de executar qualquer trabalho; doença
+                                    extensa
+                                    Autocuidado: Necessita de apoio considerável
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total ou confusão
+  PPS 40%
+                                
+                                    Deambulação: Majoritariamente deitado
+                                    Atividade e doença: Incapaz de fazer a maioria das atividades;
+                                    doença extensa
+                                    Autocuidado: Necessita de apoio quase completo
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total ou sonolência com ou sem confusão
+  PPS 30%
+                                
+                                    Deambulação: Acamado
+                                    Atividade e doença: Incapaz de fazer qualquer atividade; doença
+                                    extensa
+                                    Autocuidado: Totalmente dependente
+                                    Ingestão alimentar: Normal ou reduzida
+                                    Nível de consciência: Total ou sonolência com ou sem confusão
+  PPS 20%
+                                
+                                    Deambulação: Acamado
+                                    Atividade e doença: Incapaz de fazer qualquer atividade; doença
+                                    extensa
+                                    Autocuidado: Totalmente dependente
+                                    Ingestão alimentar: Mínima a goles
+                                    Nível de consciência: Total ou sonolência com ou sem confusão
+
+--- Section: view-risco-ad ---
+OLD LABELS:
+  Idade
+  &lt; 75 anos (0)
+  75 a 84 anos (1)
+  &gt; 85 anos (2)
+  Multimorbidade e Polifarm├ícia (Selecione se aplic├ível)
+  N┬║ de comorbidades ÔëÑ 5 (2)
+  Descompensa├º├úo cl├¡nica (5)
+  Polifarm├ícia: N┬║ de medicamentos ÔëÑ 5 (2)
+  Depend├¬ncia Funcional
+  Independente (0)
+NEW LABELS:
+  Idade
+  &lt; 75 anos (0)
+  75 a 84 anos (1)
+  &gt; 85 anos (2)
+  Multimorbidade
+                        e Polifarmácia (Selecione se aplicável)
+  Nº de comorbidades ≥ 5 (2)
+  Descompensação clínica (5)
+  Polifarmácia: Nº de medicamentos ≥ 5 (2)
+  Dependência
+                        Funcional
+  Independente (0)
+
+--- Section: view-chads ---
+OLD LABELS:
+  Insufici├¬ncia Card├¡aca (C)
+  N├úo (0)
+  Sim (1)
+  Hipertens├úo Arterial (H)
+  N├úo (0)
+  Sim (1)
+  Idade (A)
+  &lt; 65 anos (0)
+  65 a 74 anos (1)
+  ÔëÑ 75 anos (2)
+NEW LABELS:
+  Insuficiência
+                        Cardíaca (C)
+  Não (0)
+  Sim (1)
+  Hipertensão
+                        Arterial (H)
+  Não (0)
+  Sim (1)
+  Idade
+                        (A)
+  &lt; 65 anos (0)
+  65 a 74 anos (1)
+  ≥ 75 anos (2)
+
+--- Section: view-cronometro ---
+OLD LABELS:
+  Atalhos Cl├¡nicos (Regressivo)
+  Contador de Sinais Vitais (Tap)
+  Tabelas de Refer├¬ncia
+NEW LABELS:
+  Atalhos
+                        Clínicos (Regressivo)
+  Contador
+                        de Sinais Vitais (Tap)
+  Tabelas
+                        de Referência
+
+--- Section: view-ivcf20 ---
+OLD LABELS:
+  Idade e Percep├º├úo de Sa├║de
+  60 a 74 anos (0)
+  75 a 84 anos (1)
+  ÔëÑ 85 anos (3)
+  Excelente / Boa (0)
+  Regular / Ruim (1)
+  Atividades da Vida Di├íria (AVD)
+  N├úo (0)
+  Sim (4)
+  N├úo (0)
+NEW LABELS:
+  Idade
+                        e Percepção de Saúde
+  60 a 74 anos (0)
+  75 a 84 anos (1)
+  ≥ 85 anos (3)
+  Excelente / Boa (0)
+  Regular / Ruim (1)
+  Atividades
+                        da Vida Diária (AVD)
+  Não
+                            (0)
+  Sim (4)
+  Não
+                            (0)
+
+--- Section: view-katz ---
+OLD LABELS:
+  1. Banho
+  2. Vestir-se
+  3. Ir ao Banheiro
+  4. Transfer├¬ncia
+  5. Contin├¬ncia
+  6. Alimenta├º├úo
+NEW LABELS:
+  1. Banho
+  2. Vestir-se
+  3. Ir ao Banheiro
+  4. Transferência
+  5. Continência
+  6. Alimentação
+
+--- Section: view-edmonton ---
+OLD LABELS:
+  1. Cogni├º├úo (Teste do Rel├│gio):
+  2. Estado de Sa├║de (Hospitaliza├º├úo no ├║ltimo ano):
+  3. Autoavalia├º├úo de Sa├║de:
+  4. Independ├¬ncia Funcional (Depend├¬ncia em preparar comida, compras, limpeza, lavanderia, transporte, medicamentos, finan├ºas, telefone):
+  5. Suporte Social (Pode contar com algu├®m se adoecer?):
+  6. Medicamentos (Uso regular de f├írmacos):
+  7. Ades├úo (Esquece de tomar os rem├®dios?):
+  8. Nutri├º├úo (Perda de peso recente n├úo intencional?):
+  9. Humor (Sente-se triste ou deprimido com frequ├¬ncia?):
+  10. Contin├¬ncia (Perda de controle urin├írio?):
+NEW LABELS:
+  1. Cognição (Teste do Relógio):
+  2. Estado de Saúde (Hospitalização no último ano):
+  3. Autoavaliação de Saúde:
+  4. Independência Funcional (Dependência em preparar comida, compras, limpeza,
+                            lavanderia, transporte, medicamentos, finanças, telefone):
+  5. Suporte Social (Pode contar com alguém se adoecer?):
+  6. Medicamentos (Uso regular de fármacos):
+  7. Adesão (Esquece de tomar os remédios?):
+  8. Nutrição (Perda de peso recente não intencional?):
+  9. Humor (Sente-se triste ou deprimido com frequência?):
+  10. Continência (Perda de controle urinário?):
+
+--- Section: view-coelho-savassi ---
+OLD LABELS:
+  Acamado (3 pts/cada)
+  0
+  1
+  2
+  3
+  4+
+  Defici├¬ncia F├¡sica ou Mental (3 pts/cada)
+  0
+  1
+  2
+NEW LABELS:
+  Acamado (3 pts/cada)
+  0
+  1
+  2
+  3
+  4+
+  Deficiência Física ou Mental (3 pts/cada)
+  0
+  1
+  2
+
+--- Section: view-findrisc ---
+OLD LABELS:
+  1. Idade
+  Abaixo de 45 anos
+  Entre 45 - 54 anos
+  Entre 55 - 64 anos
+  Acima de 64 anos
+  2. ├ìndice de Massa Corporal (C├ílculo Autom├ítico)
+  Peso (kg)
+  Altura (m)
+  3. Circunfer├¬ncia da cintura (abaixo das costelas)
+  Homens: Menor que 94 cm Mulheres: Menor que 80 cm
+NEW LABELS:
+  1. Idade
+  Abaixo de 45 anos
+  Entre 45 - 54 anos
+  Entre 55 - 64 anos
+  Acima de 64 anos
+  2. Índice de Massa Corporal
+                        (Cálculo Automático)
+  Peso (kg)
+  Altura (m)
+  3. Circunferência da
+                        cintura (abaixo das costelas)
+  Homens: Menor que 94 cm Mulheres: Menor que 80 cm
+
+--- Section: view-mmrc ---
+OLD LABELS:
+  0: Falta de ar apenas exerc├¡cios intensos
+  1: Falta de ar andando r├ípido ou subindo leve
+  2: Anda mais devagar que a m├®dia ou para para respirar
+  3: Para para respirar ap├│s ~100m ou poucos minutos
+  4: N├úo sai de casa ou falta de ar ao se vestir
+NEW LABELS:
+  0: Falta
+                    de ar apenas exercícios intensos
+  1: Falta
+                    de ar andando rápido ou subindo leve
+  2: Anda
+                    mais devagar que a média ou para para respirar
+  3: Para
+                    para respirar após ~100m ou poucos minutos
+  4: Não
+                    sai de casa ou falta de ar ao se vestir
+
+--- Section: view-act ---
+OLD LABELS:
+  O tempo todo (1)
+  A maior parte do tempo (2)
+  Alguma parte do tempo (3)
+  Pouca parte do tempo (4)
+  Nunca (5)
+  > 1 vez ao dia (1)
+  1 vez ao dia (2)
+  3 a 6 vezes por semana (3)
+  1 ou 2 vezes por semana (4)
+  Nenhuma vez (5)
+NEW LABELS:
+  O
+                        tempo todo (1)
+  A
+                        maior parte do tempo (2)
+  Alguma parte do tempo (3)
+  Pouca parte do tempo (4)
+  Nunca (5)
+  > 1
+                        vez ao dia (1)
+  1
+                        vez ao dia (2)
+  3 a
+                        6 vezes por semana (3)
+  1 ou
+                        2 vezes por semana (4)
+  Nenhuma vez (5)
+
+--- Section: view-calc-gestacional ---
+OLD LABELS:
+  Data da ├Ültima Menstrua├º├úo (DUM)
+  Data de realiza├º├úo do exame
+  Semanas indicadas no exame
+  Dias indicados no exame
+  Data da Transfer├¬ncia Embrion├íria
+  Tipo de Embri├úo transferido
+  D3 (Clivagem)
+  D5/D6 (Blastocisto)
+  Data Prov├ível do Parto (DPP)
+  Dilata├º├úo
+NEW LABELS:
+  Data da Última Menstruação (DUM)
+  Data de realização do exame
+  Semanas indicadas no exame
+  Dias indicados no exame
+  Data da Transferência Embrionária
+  Tipo de Embrião transferido
+  D3 (Clivagem)
+  D5/D6 (Blastocisto)
+  Data Provável do Parto (DPP)
+  Dilatação
+
+--- Section: view-calc-mdsupdrs ---
+OLD LABELS:
+  1.1 Disfun├º├úo cognitiva
+  0
+  1
+  2
+  3
+  4
+  1.2 Alucina├º├Áes e psicoses
+  0
+  1
+  2
+NEW LABELS:
+  1.1 Disfunção cognitiva
+  0
+  1
+  2
+  3
+  4
+  1.2 Alucinações e psicoses
+  0
+  1
+  2
+
+--- Section: view-fagerstrom ---
+OLD LABELS:
+  Ôëñ 5 min (3)
+  6-30 min (2)
+  31-60 min (1)
+  > 60 min (0)
+  Sim (1)
+  N├úo (0)
+  1┬║ da manh├ú (1)
+  Outros (0)
+  Ôëñ 10 (0)
+  11-20 (1)
+NEW LABELS:
+  ≤ 5
+                        min (3)
+  6-30 min
+                        (2)
+  31-60
+                        min (1)
+  > 60 min
+                        (0)
+  Sim
+                        (1)
+  Não
+                        (0)
+  1º da
+                        manhã (1)
+  Outros
+                        (0)
+  ≤ 10
+                        (0)
+  11-20
+                        (1)
+
+--- Section: view-meem ---
+OLD LABELS:
+  Avalia├º├úo do escore obtido (Pontos de corte)
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+NEW LABELS:
+  Avaliação
+                        do escore obtido (Pontos de corte)
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+  1
+  0
+
+--- Section: view-tabagismo ---
+OLD LABELS:
+  Idade In├¡cio:
+  Idade Fim (ou Atual):
+  Qtd/Dia:
+  Unidade:
+  Anos:
+  Unidades/Dia:
+  Anos:
+  Pods/Dia:
+  Anos:
+  Sess├Áes/Dia:
+NEW LABELS:
+  Idade Início:
+  Idade Fim (ou Atual):
+  Qtd/Dia:
+  Unidade:
+  Anos:
+  Unidades/Dia:
+  Anos:
+  Pods/Dia:
+  Anos:
+  Sessões/Dia:
+
+--- Section: view-ckd-epi ---
+OLD LABELS:
+  Idade (Anos)
+  Sexo Biol├│gico
+  Creatinina S├®rica (mg/dL)
+NEW LABELS:
+  Idade (Anos)
+  Sexo Biológico
+  Creatinina Sérica
+                        (mg/dL)
+
+--- Section: view-schwartz ---
+OLD LABELS:
+  Idade (Anos)
+  Estatura (cm)
+  Creatinina S├®rica (mg/dL)
+NEW LABELS:
+  Idade (Anos)
+  Estatura (cm)
+  Creatinina Sérica
+                        (mg/dL)
+
+--- Section: view-erg ---
+OLD LABELS:
+  Fatores de Alto Risco Autom├ítico
+  Sexo
+  Idade (30-74 anos)
+  Colesterol Total (mg/dL)
+  HDL-c (mg/dL)
+  PAS (Sist├│lica)
+  HAS Tratada?
+  Tabagista?
+  Diabetes?
+  Fatores Agravantes
+NEW LABELS:
+  Fatores de
+                        Alto Risco Automático
+  Sexo
+  Idade (30-74 anos)
+  Colesterol Total (mg/dL)
+  HDL-c (mg/dL)
+  PAS (Sistólica)
+  HAS Tratada?
+  Tabagista?
+  Diabetes?
+  Fatores Agravantes
+
+--- Section: view-gold ---
+OLD LABELS:
+  Rela├º├úo VEF1/CVF (Decimal)
+  GOLD 1 (Leve)VEF1 ÔëÑ 80% do predito
+  GOLD 2 (Moderada)50% Ôëñ VEF1
+  GOLD 3 (Grave)30% Ôëñ VEF1
+  GOLD 4 (Muito Grave)VEF1
+  Escolha o crit├®rio:
+  mMRC 0 - 1Pouca falta de ar (apenas exerc├¡cio intenso ou apressado).
+  mMRC ÔëÑ 2Caminha mais devagar que outros da mesma idade ou para para respirar.
+  CAT Baixo impacto dos sintomas.
+  CAT ÔëÑ 10Alto impacto dos sintomas.
+NEW LABELS:
+  Relação
+                            VEF1/CVF (Decimal)
+  GOLD 1 (Leve)VEF1 ≥ 80% do
+                                    predito
+  GOLD 2 (Moderada)50% ≤ VEF1
+  GOLD 3 (Grave)30% ≤ VEF1
+  GOLD 4 (Muito Grave)VEF1
+  Escolha o
+                            critério:
+  mMRC 0 - 1Pouca falta de ar
+                                    (apenas exercício intenso ou apressado).
+  mMRC ≥ 2Caminha mais devagar que
+                                    outros da mesma idade ou para para respirar.
+  CAT Baixo impacto dos
+                                            sintomas.
+  CAT ≥ 10Alto impacto dos
+                                    sintomas.
+
+--- Section: view-gina ---
+OLD LABELS:
+  RarosMenos de 2 vezes por m├¬s
+  OcasionaisEntre 2 vezes/m├¬s e 3 vezes/semana
+  Frequentes4 a 5 dias por semana (mas n├úo di├írios)
+  Di├íriosSintomas na maioria dos dias ou di├írios
+  N├úo / RaramenteMenos de 1 vez por semana
+  Sim1 vez por semana ou mais
+  Fun├º├úo Pulmonar (VEF1):
+  Contagem de Eosin├│filos:
+  Trilha 1 (Preferencial)Uso de CI-Formoterol como medica├º├úo de al├¡vio. Reduz mais o risco de exacerba├º├Áes graves.
+  Trilha 2 (Alternativa)Uso de SABA (Curta dura├º├úo) para al├¡vio + Corticoide inalat├│rio de manuten├º├úo regular.
+NEW LABELS:
+  RarosMenos de 2 vezes por
+                                    mês
+  OcasionaisEntre 2 vezes/mês e 3
+                                    vezes/semana
+  Frequentes4 a 5 dias por semana
+                                    (mas não diários)
+  DiáriosSintomas na maioria dos
+                                    dias ou diários
+  Não / RaramenteMenos de 1 vez por
+                                    semana
+  Sim1 vez por semana ou mais
+  Função
+                            Pulmonar (VEF1):
+  Contagem de
+                            Eosinófilos:
+  Trilha 1 (Preferencial)Uso de CI-Formoterol como medicação de alívio. Reduz
+                                    mais o risco de exacerbações graves.
+  Trilha 2 (Alternativa)Uso de SABA
+                                    (Curta duração) para alívio + Corticoide inalatório de manutenção
+                                    regular.
+
+--- Section: view-imc-avancado ---
+OLD LABELS:
+  Faixa Et├íria
+  Adulto (20 a 59 anos)
+  Idoso (ÔëÑ 60 anos)
+  Sexo Biol├│gico (Para c├ílculo do Peso Ideal - IBW)
+  Masculino
+  Feminino
+  Ancestralidade Asi├ítica?
+  N├úo
+  Sim
+  Paciente Amputado?
+NEW LABELS:
+  Faixa Etária
+  Adulto (20 a 59 anos)
+  Idoso (≥ 60 anos)
+  Sexo Biológico (Para
+                        cálculo do Peso Ideal - IBW)
+  Masculino
+  Feminino
+  Ancestralidade
+                        Asiática?
+  Não
+  Sim
+  Paciente Amputado?
