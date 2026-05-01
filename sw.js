@@ -1,10 +1,11 @@
-const CACHE_NAME = 'aps-tools-v19';
+const CACHE_NAME = 'aps-tools-v20';
 const urlsToCache = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './manifest.json',
+  './medicamentos.json',
   
   /* --- Mapeamento de Imagens da Interface e Escalas --- */
   './imagens/icon-192.png',
