@@ -101,8 +101,141 @@
                     <span class="material-symbols-outlined">hub</span>
                     Criar Ecomapa/Genograma
                 </button>
+
+                <button class="menu-btn" data-target="view-curvas-crescimento">
+                    <span class="material-symbols-outlined" style="color: #0b5ed7;">child_care</span>
+                    Curvas de Crescimento (OMS)
+                </button>
             </div>
         </section>
+
+
+        <!-- === SEÇÃO: CURVAS DE CRESCIMENTO OMS === -->
+        <section id="view-curvas-crescimento" class="view hidden">
+            <h2 style="display: flex; align-items: center; gap: 10px;">
+                <span class="material-symbols-outlined" style="color: #0b5ed7; font-size: 1.5rem;">child_care</span>
+                Curvas de Crescimento OMS
+            </h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                Insira os dados da criança para plotar automaticamente nas curvas de crescimento da OMS.
+                Preencha apenas os campos que desejar avaliar.
+            </p>
+
+            <!-- Toggle: Percentil vs Z-Score -->
+            <div class="curva-escala-toggle">
+                <span style="font-weight: 600; color: #333; margin-right: 10px; font-size: 0.95rem;">Tipo de Curva:</span>
+                <div class="curva-toggle-group">
+                    <input type="radio" id="escala-percentil" name="curva-escala" value="percentil" checked>
+                    <label for="escala-percentil">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">show_chart</span>
+                        Percentil
+                    </label>
+                    <input type="radio" id="escala-zscore" name="curva-escala" value="zscore">
+                    <label for="escala-zscore">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">ssid_chart</span>
+                        Escore Z
+                    </label>
+                </div>
+            </div>
+
+            <!-- Formulário de Dados -->
+            <div class="curva-form-card">
+                <!-- Sexo -->
+                <div class="curva-input-row">
+                    <label class="curva-label">
+                        <span class="material-symbols-outlined curva-label-icon">wc</span>
+                        Sexo
+                    </label>
+                    <select id="curva-sexo" class="curva-select">
+                        <option value="">Selecione...</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                </div>
+
+                <!-- Idade -->
+                <div class="curva-input-row">
+                    <label class="curva-label">
+                        <span class="material-symbols-outlined curva-label-icon">calendar_month</span>
+                        Idade
+                    </label>
+                    <div class="curva-idade-group">
+                        <div class="curva-idade-field">
+                            <input type="number" id="curva-idade-anos" min="0" max="19" placeholder="0" class="curva-input-num">
+                            <span class="curva-unit">anos</span>
+                        </div>
+                        <div class="curva-idade-field">
+                            <input type="number" id="curva-idade-meses" min="0" max="11" placeholder="0" class="curva-input-num">
+                            <span class="curva-unit">meses</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="curva-divider"></div>
+
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem; text-align: center; font-style: italic;">
+                    Preencha apenas os dados disponíveis. As curvas correspondentes serão geradas automaticamente.
+                </p>
+
+                <!-- Peso -->
+                <div class="curva-input-row">
+                    <label class="curva-label">
+                        <span class="material-symbols-outlined curva-label-icon" style="color: #e53935;">monitor_weight</span>
+                        Peso
+                    </label>
+                    <div class="curva-valor-field">
+                        <input type="number" id="curva-peso" step="0.1" min="0" max="100" placeholder="—" class="curva-input-num curva-input-grande">
+                        <span class="curva-unit">kg</span>
+                    </div>
+                </div>
+
+                <!-- Altura -->
+                <div class="curva-input-row">
+                    <label class="curva-label">
+                        <span class="material-symbols-outlined curva-label-icon" style="color: #1976d2;">height</span>
+                        Altura / Comprimento
+                    </label>
+                    <div class="curva-valor-field">
+                        <input type="number" id="curva-altura" step="0.1" min="0" max="220" placeholder="—" class="curva-input-num curva-input-grande">
+                        <span class="curva-unit">cm</span>
+                    </div>
+                </div>
+
+                <!-- Perímetro Cefálico -->
+                <div class="curva-input-row">
+                    <label class="curva-label">
+                        <span class="material-symbols-outlined curva-label-icon" style="color: #ff9800;">face</span>
+                        Perímetro Cefálico
+                    </label>
+                    <div class="curva-valor-field">
+                        <input type="number" id="curva-pc" step="0.1" min="0" max="60" placeholder="—" class="curva-input-num curva-input-grande">
+                        <span class="curva-unit">cm</span>
+                    </div>
+                </div>
+
+                <!-- Info IMC -->
+                <div style="background-color: #e8f5e9; color: #2e7d32; padding: 10px 14px; border-radius: 6px; margin-top: 0.5rem; font-size: 0.85rem; border: 1px solid #c8e6c9; display: flex; align-items: center; gap: 8px;">
+                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">info</span>
+                    <span>Se você informar <strong>peso</strong> e <strong>altura</strong>, o IMC será calculado automaticamente e plotado na curva correspondente.</span>
+                </div>
+
+                <!-- Botões -->
+                <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+                    <button type="button" id="btn-plotar-curvas" class="btn-action-sc" style="flex: 3; display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #28a745; border-color: #28a745;">
+                        <span class="material-symbols-outlined">show_chart</span>
+                        Plotar nas Curvas
+                    </button>
+                    <button type="button" id="btn-limpar-curvas" class="btn-outline-sc" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; color: #dc3545; border-color: #dc3545;">
+                        <span class="material-symbols-outlined">delete</span>
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Container dos Resultados (Curvas Plotadas) -->
+            <div id="curvas-resultado" style="display: none; margin-top: 1.5rem;"></div>
+        </section>
+        <!-- === FIM: CURVAS DE CRESCIMENTO === -->
 
 
         <section id="view-medicamentos" class="view hidden">
@@ -6008,6 +6141,7 @@
 
     <script src="medicamentos_data.js"></script>
     <script src="medicamentos.js"></script>
+    <script src="curvas_crescimento.js"></script>
 
 </body>
 
