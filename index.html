@@ -325,10 +325,15 @@
                     <span class="material-symbols-outlined">neurology</span>
                     NIHSS (AVC)
                 </button>
-                <button class="menu-btn" data-target="view-edmonton"
+                <button class="menu-btn" data-target="view-efs"
                     data-keywords="idoso, geriatria, fragilidade, vulnerabilidade, cognitivo, funcional, efs, edmonton">
                     <span class="material-symbols-outlined">elderly</span>
                     Edmonton Frail Scale (EFS)
+                </button>
+                <button class="menu-btn" data-target="view-ease"
+                    data-keywords="paliativo, dor, sintoma, edmonton, ease, oncologia, terminalidade, falta de ar, náusea, fadiga, sofrimento">
+                    <span class="material-symbols-outlined">assignment_turned_in</span>
+                    Escala de Edmonton (EASE)
                 </button>
                 <button class="menu-btn" data-target="view-coelho-savassi"
                     data-keywords="aps, esf, visita domiciliar, vulnerabilidade, risco familiar, genograma, ecomapa, coelho, savassi">
@@ -2282,9 +2287,9 @@
             </div>
         </section>
 
-        <section id="view-edmonton" class="view hidden">
+        <section id="view-efs" class="view hidden">
             <h2>Edmonton Frail Scale (EFS)</h2>
-            <form id="form-edmonton"
+            <form id="form-efs"
                 style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
 
                 <div class="item-efs">
@@ -2378,12 +2383,12 @@
                     </select>
                 </div>
 
-                <button type="button" id="btn-calcular-edmonton"
+                <button type="button" id="btn-calcular-efs"
                     style="background-color: #0b5ed7; color: white; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Calcular
-                    Edmonton</button>
+                    EFS</button>
             </form>
 
-            <div id="resultado-edmonton"
+            <div id="resultado-efs"
                 style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 8px; display: none; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <h3 id="efs-status-texto" style="font-size: 1.4rem; margin-bottom: 1rem;"></h3>
 
@@ -2415,6 +2420,227 @@
 
                 <p id="efs-detalhe-escore" style="font-weight: bold; color: #555;"></p>
             </div>
+        </section>
+
+        <section id="view-ease" class="view hidden">
+            <h2 style="display: flex; align-items: center; gap: 10px;">
+                <span class="material-symbols-outlined" style="color: #0b5ed7; font-size: 1.5rem;">assignment_turned_in</span>
+                Escala de Edmonton (EASE)
+            </h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+                Avaliação de Sintomas de Edmonton. Selecione a intensidade de cada sintoma (0 a 10).
+            </p>
+
+            <form id="form-ease" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <!-- Sintoma: Dor -->
+                <div class="ease-question">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Dor</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem dor)</span>
+                        <span>10 (Pior dor possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_dor_0" name="ease_dor" value="0"><label for="ease_dor_0">0</label>
+                        <input type="radio" id="ease_dor_1" name="ease_dor" value="1"><label for="ease_dor_1">1</label>
+                        <input type="radio" id="ease_dor_2" name="ease_dor" value="2"><label for="ease_dor_2">2</label>
+                        <input type="radio" id="ease_dor_3" name="ease_dor" value="3"><label for="ease_dor_3">3</label>
+                        <input type="radio" id="ease_dor_4" name="ease_dor" value="4"><label for="ease_dor_4">4</label>
+                        <input type="radio" id="ease_dor_5" name="ease_dor" value="5"><label for="ease_dor_5">5</label>
+                        <input type="radio" id="ease_dor_6" name="ease_dor" value="6"><label for="ease_dor_6">6</label>
+                        <input type="radio" id="ease_dor_7" name="ease_dor" value="7"><label for="ease_dor_7">7</label>
+                        <input type="radio" id="ease_dor_8" name="ease_dor" value="8"><label for="ease_dor_8">8</label>
+                        <input type="radio" id="ease_dor_9" name="ease_dor" value="9"><label for="ease_dor_9">9</label>
+                        <input type="radio" id="ease_dor_10" name="ease_dor" value="10"><label for="ease_dor_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Cansaço -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Cansaço / Fadiga</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem cansaço)</span>
+                        <span>10 (Pior cansaço possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_can_0" name="ease_can" value="0"><label for="ease_can_0">0</label>
+                        <input type="radio" id="ease_can_1" name="ease_can" value="1"><label for="ease_can_1">1</label>
+                        <input type="radio" id="ease_can_2" name="ease_can" value="2"><label for="ease_can_2">2</label>
+                        <input type="radio" id="ease_can_3" name="ease_can" value="3"><label for="ease_can_3">3</label>
+                        <input type="radio" id="ease_can_4" name="ease_can" value="4"><label for="ease_can_4">4</label>
+                        <input type="radio" id="ease_can_5" name="ease_can" value="5"><label for="ease_can_5">5</label>
+                        <input type="radio" id="ease_can_6" name="ease_can" value="6"><label for="ease_can_6">6</label>
+                        <input type="radio" id="ease_can_7" name="ease_can" value="7"><label for="ease_can_7">7</label>
+                        <input type="radio" id="ease_can_8" name="ease_can" value="8"><label for="ease_can_8">8</label>
+                        <input type="radio" id="ease_can_9" name="ease_can" value="9"><label for="ease_can_9">9</label>
+                        <input type="radio" id="ease_can_10" name="ease_can" value="10"><label for="ease_can_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Náusea -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Náusea</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem náusea)</span>
+                        <span>10 (Pior náusea possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_nau_0" name="ease_nau" value="0"><label for="ease_nau_0">0</label>
+                        <input type="radio" id="ease_nau_1" name="ease_nau" value="1"><label for="ease_nau_1">1</label>
+                        <input type="radio" id="ease_nau_2" name="ease_nau" value="2"><label for="ease_nau_2">2</label>
+                        <input type="radio" id="ease_nau_3" name="ease_nau" value="3"><label for="ease_nau_3">3</label>
+                        <input type="radio" id="ease_nau_4" name="ease_nau" value="4"><label for="ease_nau_4">4</label>
+                        <input type="radio" id="ease_nau_5" name="ease_nau" value="5"><label for="ease_nau_5">5</label>
+                        <input type="radio" id="ease_nau_6" name="ease_nau" value="6"><label for="ease_nau_6">6</label>
+                        <input type="radio" id="ease_nau_7" name="ease_nau" value="7"><label for="ease_nau_7">7</label>
+                        <input type="radio" id="ease_nau_8" name="ease_nau" value="8"><label for="ease_nau_8">8</label>
+                        <input type="radio" id="ease_nau_9" name="ease_nau" value="9"><label for="ease_nau_9">9</label>
+                        <input type="radio" id="ease_nau_10" name="ease_nau" value="10"><label for="ease_nau_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Depressão -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Depressão</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem depressão)</span>
+                        <span>10 (Pior depressão possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_dep_0" name="ease_dep" value="0"><label for="ease_dep_0">0</label>
+                        <input type="radio" id="ease_dep_1" name="ease_dep" value="1"><label for="ease_dep_1">1</label>
+                        <input type="radio" id="ease_dep_2" name="ease_dep" value="2"><label for="ease_dep_2">2</label>
+                        <input type="radio" id="ease_dep_3" name="ease_dep" value="3"><label for="ease_dep_3">3</label>
+                        <input type="radio" id="ease_dep_4" name="ease_dep" value="4"><label for="ease_dep_4">4</label>
+                        <input type="radio" id="ease_dep_5" name="ease_dep" value="5"><label for="ease_dep_5">5</label>
+                        <input type="radio" id="ease_dep_6" name="ease_dep" value="6"><label for="ease_dep_6">6</label>
+                        <input type="radio" id="ease_dep_7" name="ease_dep" value="7"><label for="ease_dep_7">7</label>
+                        <input type="radio" id="ease_dep_8" name="ease_dep" value="8"><label for="ease_dep_8">8</label>
+                        <input type="radio" id="ease_dep_9" name="ease_dep" value="9"><label for="ease_dep_9">9</label>
+                        <input type="radio" id="ease_dep_10" name="ease_dep" value="10"><label for="ease_dep_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Ansiedade -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Ansiedade</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem ansiedade)</span>
+                        <span>10 (Pior ansiedade possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_ans_0" name="ease_ans" value="0"><label for="ease_ans_0">0</label>
+                        <input type="radio" id="ease_ans_1" name="ease_ans" value="1"><label for="ease_ans_1">1</label>
+                        <input type="radio" id="ease_ans_2" name="ease_ans" value="2"><label for="ease_ans_2">2</label>
+                        <input type="radio" id="ease_ans_3" name="ease_ans" value="3"><label for="ease_ans_3">3</label>
+                        <input type="radio" id="ease_ans_4" name="ease_ans" value="4"><label for="ease_ans_4">4</label>
+                        <input type="radio" id="ease_ans_5" name="ease_ans" value="5"><label for="ease_ans_5">5</label>
+                        <input type="radio" id="ease_ans_6" name="ease_ans" value="6"><label for="ease_ans_6">6</label>
+                        <input type="radio" id="ease_ans_7" name="ease_ans" value="7"><label for="ease_ans_7">7</label>
+                        <input type="radio" id="ease_ans_8" name="ease_ans" value="8"><label for="ease_ans_8">8</label>
+                        <input type="radio" id="ease_ans_9" name="ease_ans" value="9"><label for="ease_ans_9">9</label>
+                        <input type="radio" id="ease_ans_10" name="ease_ans" value="10"><label for="ease_ans_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Sonolência -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Sonolência</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem sonolência)</span>
+                        <span>10 (Pior sonolência possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_son_0" name="ease_son" value="0"><label for="ease_son_0">0</label>
+                        <input type="radio" id="ease_son_1" name="ease_son" value="1"><label for="ease_son_1">1</label>
+                        <input type="radio" id="ease_son_2" name="ease_son" value="2"><label for="ease_son_2">2</label>
+                        <input type="radio" id="ease_son_3" name="ease_son" value="3"><label for="ease_son_3">3</label>
+                        <input type="radio" id="ease_son_4" name="ease_son" value="4"><label for="ease_son_4">4</label>
+                        <input type="radio" id="ease_son_5" name="ease_son" value="5"><label for="ease_son_5">5</label>
+                        <input type="radio" id="ease_son_6" name="ease_son" value="6"><label for="ease_son_6">6</label>
+                        <input type="radio" id="ease_son_7" name="ease_son" value="7"><label for="ease_son_7">7</label>
+                        <input type="radio" id="ease_son_8" name="ease_son" value="8"><label for="ease_son_8">8</label>
+                        <input type="radio" id="ease_son_9" name="ease_son" value="9"><label for="ease_son_9">9</label>
+                        <input type="radio" id="ease_son_10" name="ease_son" value="10"><label for="ease_son_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Apetite -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Apetite</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Melhor apetite)</span>
+                        <span>10 (Pior apetite possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_ape_0" name="ease_ape" value="0"><label for="ease_ape_0">0</label>
+                        <input type="radio" id="ease_ape_1" name="ease_ape" value="1"><label for="ease_ape_1">1</label>
+                        <input type="radio" id="ease_ape_2" name="ease_ape" value="2"><label for="ease_ape_2">2</label>
+                        <input type="radio" id="ease_ape_3" name="ease_ape" value="3"><label for="ease_ape_3">3</label>
+                        <input type="radio" id="ease_ape_4" name="ease_ape" value="4"><label for="ease_ape_4">4</label>
+                        <input type="radio" id="ease_ape_5" name="ease_ape" value="5"><label for="ease_ape_5">5</label>
+                        <input type="radio" id="ease_ape_6" name="ease_ape" value="6"><label for="ease_ape_6">6</label>
+                        <input type="radio" id="ease_ape_7" name="ease_ape" value="7"><label for="ease_ape_7">7</label>
+                        <input type="radio" id="ease_ape_8" name="ease_ape" value="8"><label for="ease_ape_8">8</label>
+                        <input type="radio" id="ease_ape_9" name="ease_ape" value="9"><label for="ease_ape_9">9</label>
+                        <input type="radio" id="ease_ape_10" name="ease_ape" value="10"><label for="ease_ape_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Bem-estar -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Bem-estar</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Melhor bem-estar)</span>
+                        <span>10 (Pior bem-estar possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_bem_0" name="ease_bem" value="0"><label for="ease_bem_0">0</label>
+                        <input type="radio" id="ease_bem_1" name="ease_bem" value="1"><label for="ease_bem_1">1</label>
+                        <input type="radio" id="ease_bem_2" name="ease_bem" value="2"><label for="ease_bem_2">2</label>
+                        <input type="radio" id="ease_bem_3" name="ease_bem" value="3"><label for="ease_bem_3">3</label>
+                        <input type="radio" id="ease_bem_4" name="ease_bem" value="4"><label for="ease_bem_4">4</label>
+                        <input type="radio" id="ease_bem_5" name="ease_bem" value="5"><label for="ease_bem_5">5</label>
+                        <input type="radio" id="ease_bem_6" name="ease_bem" value="6"><label for="ease_bem_6">6</label>
+                        <input type="radio" id="ease_bem_7" name="ease_bem" value="7"><label for="ease_bem_7">7</label>
+                        <input type="radio" id="ease_bem_8" name="ease_bem" value="8"><label for="ease_bem_8">8</label>
+                        <input type="radio" id="ease_bem_9" name="ease_bem" value="9"><label for="ease_bem_9">9</label>
+                        <input type="radio" id="ease_bem_10" name="ease_bem" value="10"><label for="ease_bem_10">10</label>
+                    </div>
+                </div>
+
+                <!-- Sintoma: Falta de ar -->
+                <div class="ease-question" style="border-top: 1px solid #eee; padding-top: 15px;">
+                    <label style="font-weight: 600; color: #0b5ed7; display: block; margin-bottom: 5px;">Falta de ar</label>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #888; margin-bottom: 5px;">
+                        <span>0 (Sem falta de ar)</span>
+                        <span>10 (Pior falta de ar possível)</span>
+                    </div>
+                    <div class="ease-score-toggle">
+                        <input type="radio" id="ease_ar_0" name="ease_ar" value="0"><label for="ease_ar_0">0</label>
+                        <input type="radio" id="ease_ar_1" name="ease_ar" value="1"><label for="ease_ar_1">1</label>
+                        <input type="radio" id="ease_ar_2" name="ease_ar" value="2"><label for="ease_ar_2">2</label>
+                        <input type="radio" id="ease_ar_3" name="ease_ar" value="3"><label for="ease_ar_3">3</label>
+                        <input type="radio" id="ease_ar_4" name="ease_ar" value="4"><label for="ease_ar_4">4</label>
+                        <input type="radio" id="ease_ar_5" name="ease_ar" value="5"><label for="ease_ar_5">5</label>
+                        <input type="radio" id="ease_ar_6" name="ease_ar" value="6"><label for="ease_ar_6">6</label>
+                        <input type="radio" id="ease_ar_7" name="ease_ar" value="7"><label for="ease_ar_7">7</label>
+                        <input type="radio" id="ease_ar_8" name="ease_ar" value="8"><label for="ease_ar_8">8</label>
+                        <input type="radio" id="ease_ar_9" name="ease_ar" value="9"><label for="ease_ar_9">9</label>
+                        <input type="radio" id="ease_ar_10" name="ease_ar" value="10"><label for="ease_ar_10">10</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-ease" class="btn-action-sc" style="margin-top: 10px;">Calcular Escore de Sofrimento</button>
+                <button type="reset" class="btn-outline-sc" style="margin-top: 5px;">Limpar Questionário</button>
+            </form>
+
+            <div id="res-ease" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+
+            <p style="color: #888; font-size: 0.8rem; margin-top: 1.5rem; border-top: 1px solid #ddd; padding-top: 10px; text-align: justify;">
+                Referência: Bruera E, Kuehn N, Miller MJ, Selmser P, Macmillan K. The Edmonton Symptom Assessment System (ESAS): a simple method for the assessment of palliative care patients. J Palliat Care. 1991;7(2):6-9.
+            </p>
         </section>
 
         <section id="view-coelho-savassi" class="view hidden">
@@ -6268,6 +6494,7 @@
 
     <script src="app.js"></script>
     <script src="escalas/katz.js"></script>
+    <script src="escalas/efs.js"></script>
     <script src="escalas/edmonton.js"></script>
     <script src="escalas/coelho_savassi.js"></script>
     <script src="escalas/pneumo_basicas.js"></script>

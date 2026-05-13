@@ -1,45 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnCalcular = document.getElementById("btn-calcular-edmonton");
-    const resDiv = document.getElementById("resultado-edmonton");
-    const statusTxt = document.getElementById("efs-status-texto");
-    const detalheTxt = document.getElementById("efs-detalhe-escore");
-    const seta = document.getElementById("efs-seta");
+    const btnCalc = document.getElementById("btn-calc-ease");
+    const resDiv = document.getElementById("res-ease");
 
-    if (btnCalcular) {
-        btnCalcular.addEventListener("click", () => {
-            // Soma dos itens
-            const total = 
-                parseInt(document.getElementById("efs-cog").value) +
-                parseInt(document.getElementById("efs-hosp").value) +
-                parseInt(document.getElementById("efs-auto").value) +
-                parseInt(document.getElementById("efs-indep").value) +
-                parseInt(document.getElementById("efs-sup").value) +
-                parseInt(document.getElementById("efs-med").value) +
-                parseInt(document.getElementById("efs-ade").value) +
-                parseInt(document.getElementById("efs-nut").value) +
-                parseInt(document.getElementById("efs-hum").value) +
-                parseInt(document.getElementById("efs-cont").value) +
-                parseInt(document.getElementById("efs-tug").value);
+    if (btnCalc) {
+        btnCalc.addEventListener("click", () => {
+            const symptoms = [
+                { id: "dor", name: "Dor", labels: ["Sem dor", "Pior dor possível"] },
+                { id: "can", name: "Cansaço / Fadiga", labels: ["Sem cansaço", "Pior cansaço possível"] },
+                { id: "nau", name: "Náusea", labels: ["Sem náusea", "Pior náusea possível"] },
+                { id: "dep", name: "Depressão", labels: ["Sem depressão", "Pior depressão possível"] },
+                { id: "ans", name: "Ansiedade", labels: ["Sem ansiedade", "Pior ansiedade possível"] },
+                { id: "son", name: "Sonolência", labels: ["Sem sonolência", "Pior sonolência possível"] },
+                { id: "ape", name: "Apetite", labels: ["Melhor apetite", "Pior apetite possível"] },
+                { id: "bem", name: "Bem-estar", labels: ["Melhor bem-estar", "Pior bem-estar possível"] },
+                { id: "ar",  name: "Falta de ar", labels: ["Sem falta de ar", "Pior falta de ar possível"] }
+            ];
 
-            let classe = "";
-            let cor = "";
+            let scoreTotal = 0;
+            let resultsHtml = `<div style="margin-bottom: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 10px;"><h3 style="font-size: 1.1rem; color: #333;">Gravidade por Sintoma:</h3></div>`;
+            let allAnswered = true;
+
+            symptoms.forEach(s => {
+                const checked = document.querySelector(`input[name="ease_${s.id}"]:checked`);
+                if (!checked) {
+                    allAnswered = false;
+                    return;
+                }
+                const val = parseInt(checked.value);
+                scoreTotal += val;
+
+                let classification = "";
+                let cor = "";
+                if (val === 0) { classification = "Ausente"; cor = "#28a745"; }
+                else if (val <= 3) { classification = "Leve"; cor = "#ffc107"; }
+                else if (val <= 6) { classification = "Moderado"; cor = "#fd7e14"; }
+                else { classification = "Intenso"; cor = "#dc3545"; }
+
+                resultsHtml += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f9f9f9;">
+                        <div>
+                            <strong style="color: #555;">${s.name}:</strong> 
+                            <span style="margin-left: 5px; font-weight: 600; color: ${cor};">${classification} (Paciente)</span>
+                        </div>
+                        <div style="background: ${cor}; color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">${val}</div>
+                    </div>
+                `;
+            });
+
+            if (!allAnswered) {
+                alert("Por favor, avalie todos os 9 sintomas antes de calcular.");
+                return;
+            }
+
+            resDiv.innerHTML = `
+                <div style="background-color: #0b5ed7; color: #FFFFFF; padding: 1.5rem; border-radius: 8px 8px 0 0; text-align: center;">
+                    <h2 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin: 0;">Escore de Sofrimento (Total)</h2>
+                    <div style="font-size: 3.5rem; font-weight: 800; line-height: 1.2;">${scoreTotal}</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Soma dos Sintomas (0 a 90)</div>
+                </div>
+                <div style="border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px; padding: 1.5rem; background: #FFFFFF; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    ${resultsHtml}
+                </div>
+            `;
             
-            if (total <= 4) { classe = "Não apresenta fragilidade"; cor = "#28a745"; }
-            else if (total <= 6) { classe = "Aparentemente vulnerável"; cor = "#ffc107"; }
-            else if (total <= 8) { classe = "Fragilidade leve"; cor = "#fd7e14"; }
-            else if (total <= 10) { classe = "Fragilidade moderada"; cor = "#e65100"; }
-            else { classe = "Fragilidade grave"; cor = "#dc3545"; }
-
-            // Lógica do marcador visual (0 a 17 pontos convertidos em 0 a 100%)
-            const porcentagemPosicao = (total / 17) * 100;
-            seta.style.left = `calc(${porcentagemPosicao}% - 10px)`;
-
-            // Exibir resultados
             resDiv.style.display = "block";
-            statusTxt.innerText = classe;
-            statusTxt.style.color = cor;
-            detalheTxt.innerHTML = `Pontuação Total: <strong>${total} de 17 pontos</strong>`;
-            
             resDiv.scrollIntoView({ behavior: 'smooth' });
         });
     }
