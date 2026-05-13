@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .curva-canvas { width: 100%; height: auto; display: block; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" class="curva-canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const img = new Image();
+        img.src = 'curvas_img/OMS__Peso_para_Idade__Meninos___0-5_anos__Em_Percentil_.png';
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+
+            const curva = {
+                idadeMin: 0, idadeMax: 60,
+                valorMin: 0, valorMax: 24, // I'll test with valorMin: 0
+                plotArea: { left: 6.71, top: 13.06, right: 93.24, bottom: 91.84 }
+            };
+
+            const idadeMeses = 41;
+            const valor = 20.0;
+
+            const pa = curva.plotArea;
+            const plotLeft = (pa.left / 100) * img.width;
+            const plotRight = (pa.right / 100) * img.width;
+            const plotTop = (pa.top / 100) * img.height;
+            const plotBottom = (pa.bottom / 100) * img.height;
+
+            const plotWidth = plotRight - plotLeft;
+            const plotHeight = plotBottom - plotTop;
+
+            const xNorm = (idadeMeses - curva.idadeMin) / (curva.idadeMax - curva.idadeMin);
+            const yNorm = (valor - curva.valorMin) / (curva.valorMax - curva.valorMin);
+
+            const px = plotLeft + xNorm * plotWidth;
+            const py = plotBottom - yNorm * plotHeight;
+
+            const radius = Math.max(8, img.width * 0.006);
+            ctx.save();
+            ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 1;
+            ctx.shadowOffsetY = 1;
+
+            ctx.beginPath();
+            ctx.arc(px, py, radius, 0, Math.PI * 2);
+            ctx.fillStyle = "#c62828";
+            ctx.fill();
+            ctx.restore();
+
+            ctx.beginPath();
+            ctx.arc(px, py, radius + 2, 0, Math.PI * 2);
+            ctx.strokeStyle = "#b71c1c";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Guardar imagem para checarmos
+            const dataURL = canvas.toDataURL('image/png');
+            // We can't save it directly from JS without a server, but we can write a small node script instead.
+        };
+    </script>
+</body>
+</html>
