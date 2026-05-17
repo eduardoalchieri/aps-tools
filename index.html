@@ -4942,11 +4942,11 @@
                     <label>Escolaridade</label>
                     <div class="score-toggle" style="display: flex; gap: 0.5rem; width: 100%;">
                         <input type="radio" name="moca-escolaridade" id="esc-menor" value="1" style="display: none;">
-                        <label for="esc-menor" class="btn-outline-sc" style="flex: 1; text-align: center;">&le; 12
+                        <label for="esc-menor" style="flex: 1; text-align: center;">&le; 12
                             anos</label>
 
                         <input type="radio" name="moca-escolaridade" id="esc-maior" value="0" style="display: none;">
-                        <label for="esc-maior" class="btn-outline-sc" style="flex: 1; text-align: center;">&gt; 12
+                        <label for="esc-maior" style="flex: 1; text-align: center;">&gt; 12
                             anos</label>
                     </div>
                 </div>
@@ -4954,7 +4954,7 @@
                 <hr style="border: 1px solid #eee; margin: 1.5rem 0;">
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem;">
                     VISUOESPACIAL / EXECUTIVA</h3>
 
                 <div class="input-group-med" style="margin-top: 1rem;">
@@ -4962,9 +4962,9 @@
                     <p style="font-size: 0.8rem; color: #555;">Selecione na ordem exata: 1 A 2 B 3 C 4 D 5 E. O primeiro
                         erro anula a pontuação.</p>
                     <div id="trail-container"
-                        style="position: relative; width: 100%; height: 250px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 0.5rem;">
+                       style="position: relative; width: 100%; height: 250px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 0.5rem;">
                         <button class="trail-btn" data-val="1" style="top: 40%; left: 15%;">1<br><span
-                                style="font-size: 0.5rem">Início</span></button>
+                               style="font-size: 0.5rem">Início</span></button>
                         <button class="trail-btn" data-val="A" style="top: 15%; left: 35%;">A</button>
                         <button class="trail-btn" data-val="2" style="top: 35%; left: 60%;">2</button>
                         <button class="trail-btn" data-val="B" style="top: 30%; left: 40%;">B</button>
@@ -4974,24 +4974,22 @@
                         <button class="trail-btn" data-val="D" style="top: 55%; left: 10%;">D</button>
                         <button class="trail-btn" data-val="5" style="top: 25%; left: 5%;">5</button>
                         <button class="trail-btn" data-val="E" style="top: 5%; left: 15%;">E<br><span
-                                style="font-size: 0.5rem">Fim</span></button>
+                               style="font-size: 0.5rem">Fim</span></button>
                     </div>
                     <button type="button" class="btn-outline-sc" id="btn-reset-trail"
-                        style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Refazer Trilha</button>
+                       style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Refazer Trilha</button>
                     <input type="hidden" id="score-trilha" value="0">
                 </div>
 
                 <div class="input-group-med" style="margin-top: 1.5rem;">
                     <label>Copiar o cubo</label>
                     <img src="imagens/cubo.png" alt="Cubo"
-                        style="max-width: 100px; display: block; margin-bottom: 0.5rem;">
+                       style="max-width: 100px; display: block; margin-bottom: 0.5rem;">
                     <div class="score-toggle" style="display: flex; gap: 0.5rem; width: 100%;">
                         <input type="radio" name="moca-cubo" id="cubo-erro" value="0" style="display: none;">
-                        <label for="cubo-erro" class="btn-outline-sc" style="flex: 1; text-align: center;">[ ]
-                            Erro</label>
+                        <label for="cubo-erro" style="flex: 1; text-align: center;">0 (Erro)</label>
                         <input type="radio" name="moca-cubo" id="cubo-acerto" value="1" style="display: none;">
-                        <label for="cubo-acerto" class="btn-outline-sc" style="flex: 1; text-align: center;">[ ]
-                            Acerto</label>
+                        <label for="cubo-acerto" style="flex: 1; text-align: center;">1 (Acerto)</label>
                     </div>
                 </div>
 
@@ -5001,93 +4999,93 @@
                         relógio em uma folha de papel e depois avalie o desenho. Selecione o que estiver correto:</p>
                     <div class="score-toggle" style="display: flex; gap: 0.5rem; width: 100%; flex-wrap: wrap;">
                         <input type="checkbox" id="relogio-contorno" value="1" style="display: none;">
-                        <label for="relogio-contorno" class="btn-outline-sc"
-                            style="flex: 1; text-align: center; min-width: 30%;">[ ] Contorno</label>
+                        <label for="relogio-contorno" 
+                           style="flex: 1; text-align: center; min-width: 30%;">Contorno</label>
 
                         <input type="checkbox" id="relogio-numeros" value="1" style="display: none;">
-                        <label for="relogio-numeros" class="btn-outline-sc"
-                            style="flex: 1; text-align: center; min-width: 30%;">[ ] Números</label>
+                        <label for="relogio-numeros" 
+                           style="flex: 1; text-align: center; min-width: 30%;">Números</label>
 
                         <input type="checkbox" id="relogio-ponteiros" value="1" style="display: none;">
-                        <label for="relogio-ponteiros" class="btn-outline-sc"
-                            style="flex: 1; text-align: center; min-width: 30%;">[ ] Ponteiros</label>
+                        <label for="relogio-ponteiros" 
+                           style="flex: 1; text-align: center; min-width: 30%;">Ponteiros</label>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     NOMEAÇÃO</h3>
                 <div style="display: flex; gap: 1rem; justify-content: space-between; margin-top: 1rem;">
                     <div class="input-group-med" style="flex: 1; align-items: center;">
                         <img src="imagens/leao.png" alt="Leão" style="width: 100%; max-width: 80px; height: auto;">
                         <div class="score-toggle" style="display: flex; gap: 0.2rem; width: 100%; margin-top: 0.5rem;">
                             <input type="radio" name="moca-nome1" id="nome1-erro" value="0"
-                                style="display: none;"><label for="nome1-erro" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[ ]</label>
+                               style="display: none;"><label for="nome1-erro" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">0</label>
                             <input type="radio" name="moca-nome1" id="nome1-acerto" value="1"
-                                style="display: none;"><label for="nome1-acerto" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[x]</label>
+                               style="display: none;"><label for="nome1-acerto" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">1</label>
                         </div>
                     </div>
                     <div class="input-group-med" style="flex: 1; align-items: center;">
                         <img src="imagens/rino.png" alt="Rinoceronte"
-                            style="width: 100%; max-width: 80px; height: auto;">
+                           style="width: 100%; max-width: 80px; height: auto;">
                         <div class="score-toggle" style="display: flex; gap: 0.2rem; width: 100%; margin-top: 0.5rem;">
                             <input type="radio" name="moca-nome2" id="nome2-erro" value="0"
-                                style="display: none;"><label for="nome2-erro" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[ ]</label>
+                               style="display: none;"><label for="nome2-erro" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">0</label>
                             <input type="radio" name="moca-nome2" id="nome2-acerto" value="1"
-                                style="display: none;"><label for="nome2-acerto" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[x]</label>
+                               style="display: none;"><label for="nome2-acerto" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">1</label>
                         </div>
                     </div>
                     <div class="input-group-med" style="flex: 1; align-items: center;">
                         <img src="imagens/camelo.png" alt="Camelo" style="width: 100%; max-width: 80px; height: auto;">
                         <div class="score-toggle" style="display: flex; gap: 0.2rem; width: 100%; margin-top: 0.5rem;">
                             <input type="radio" name="moca-nome3" id="nome3-erro" value="0"
-                                style="display: none;"><label for="nome3-erro" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[ ]</label>
+                               style="display: none;"><label for="nome3-erro" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">0</label>
                             <input type="radio" name="moca-nome3" id="nome3-acerto" value="1"
-                                style="display: none;"><label for="nome3-acerto" class="btn-outline-sc"
-                                style="flex: 1; text-align: center; padding: 0.3rem;">[x]</label>
+                               style="display: none;"><label for="nome3-acerto" 
+                               style="flex: 1; text-align: center; padding: 0.3rem;">1</label>
                         </div>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     MEMÓRIA (Sem Pontuação)</h3>
                 <p style="font-size: 0.85rem; color: #555; margin-bottom: 0.5rem;">Leia a lista de palavras. O sujeito
                     deve repeti-la. Faça duas tentativas. Evocar após 5 minutos.</p>
                 <p style="font-weight: 600; font-size: 0.9rem;">Rosto | Veludo | Igreja | Margarida | Vermelho</p>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     ATENÇÃO</h3>
 
                 <div class="input-group-med" style="margin-top: 1rem;">
                     <label>Leia a seqÃ¼ência de números (1 número por segundo)</label>
                     <div
-                        style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.5rem;">
+                       style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 0.5rem;">
                         <span style="font-size: 0.9rem;">Ordem direta: <strong>2 1 8 5 4</strong></span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem;">
                             <input type="radio" name="moca-at-dir" id="at-dir-erro" value="0"
-                                style="display: none;"><label for="at-dir-erro" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[ ]</label>
+                               style="display: none;"><label for="at-dir-erro" 
+                               style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-at-dir" id="at-dir-acerto" value="1"
-                                style="display: none;"><label for="at-dir-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="at-dir-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                         <span style="font-size: 0.9rem;">Ordem indireta: <strong>7 4 2</strong></span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem;">
                             <input type="radio" name="moca-at-ind" id="at-ind-erro" value="0"
-                                style="display: none;"><label for="at-ind-erro" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[ ]</label>
+                               style="display: none;"><label for="at-ind-erro" 
+                               style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-at-ind" id="at-ind-acerto" value="1"
-                                style="display: none;"><label for="at-ind-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="at-ind-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                 </div>
@@ -5100,11 +5098,11 @@
                         D E A A A J A M O F A A B</p>
                     <div class="score-toggle" style="display: flex; gap: 0.5rem; width: 100%;">
                         <input type="radio" name="moca-letras" id="letras-erro" value="0" style="display: none;">
-                        <label for="letras-erro" class="btn-outline-sc" style="flex: 1; text-align: center;">&ge; 2
+                        <label for="letras-erro" style="flex: 1; text-align: center;">&ge; 2
                             erros</label>
                         <input type="radio" name="moca-letras" id="letras-acerto" value="1" style="display: none;">
-                        <label for="letras-acerto" class="btn-outline-sc" style="flex: 1; text-align: center;">&le; 1
-                            erro [x]</label>
+                        <label for="letras-acerto" style="flex: 1; text-align: center;">&le; 1
+                            erro</label>
                     </div>
                 </div>
 
@@ -5113,25 +5111,25 @@
                     <p style="font-size: 0.8rem; color: #555;">93 - 86 - 79 - 72 - 65</p>
                     <div class="score-toggle" style="display: flex; gap: 0.3rem; width: 100%; flex-wrap: wrap;">
                         <input type="radio" name="moca-sub" id="sub-0" value="0" style="display: none;">
-                        <label for="sub-0" class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 45%;">0
+                        <label for="sub-0" style="flex: 1; text-align: center; min-width: 45%;">0
                             corretas (0 pt)</label>
 
                         <input type="radio" name="moca-sub" id="sub-1" value="1" style="display: none;">
-                        <label for="sub-1" class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 45%;">1
+                        <label for="sub-1" style="flex: 1; text-align: center; min-width: 45%;">1
                             correta (1 pt)</label>
 
                         <input type="radio" name="moca-sub" id="sub-2" value="2" style="display: none;">
-                        <label for="sub-2" class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 45%;">2
+                        <label for="sub-2" style="flex: 1; text-align: center; min-width: 45%;">2
                             ou 3 corretas (2 pts)</label>
 
                         <input type="radio" name="moca-sub" id="sub-3" value="3" style="display: none;">
-                        <label for="sub-3" class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 45%;">4
+                        <label for="sub-3" style="flex: 1; text-align: center; min-width: 45%;">4
                             ou 5 corretas (3 pts)</label>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     LINGUAGEM</h3>
 
                 <div class="input-group-med" style="margin-top: 1rem;">
@@ -5140,11 +5138,11 @@
                         <span style="font-size: 0.9rem;">"Eu somente sei que é João quem será ajudado hoje."</span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem; margin-top: 0.2rem;">
                             <input type="radio" name="moca-frase1" id="frase1-erro" value="0"
-                                style="display: none;"><label for="frase1-erro" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[ ]</label>
+                               style="display: none;"><label for="frase1-erro" 
+                               style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-frase1" id="frase1-acerto" value="1"
-                                style="display: none;"><label for="frase1-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="frase1-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                     <div style="width: 100%;">
@@ -5152,11 +5150,11 @@
                             está na sala."</span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem; margin-top: 0.2rem;">
                             <input type="radio" name="moca-frase2" id="frase2-erro" value="0"
-                                style="display: none;"><label for="frase2-erro" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[ ]</label>
+                               style="display: none;"><label for="frase2-erro" 
+                               style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-frase2" id="frase2-acerto" value="1"
-                                style="display: none;"><label for="frase2-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="frase2-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                 </div>
@@ -5167,16 +5165,16 @@
                         pela letra F (1 minuto).</p>
                     <div class="score-toggle" style="display: flex; gap: 0.5rem; width: 100%;">
                         <input type="radio" name="moca-fluencia" id="fluencia-erro" value="0" style="display: none;">
-                        <label for="fluencia-erro" class="btn-outline-sc" style="flex: 1; text-align: center;">&lt; 11
+                        <label for="fluencia-erro" style="flex: 1; text-align: center;">&lt; 11
                             palavras</label>
                         <input type="radio" name="moca-fluencia" id="fluencia-acerto" value="1" style="display: none;">
-                        <label for="fluencia-acerto" class="btn-outline-sc" style="flex: 1; text-align: center;">&ge; 11
-                            palavras [x]</label>
+                        <label for="fluencia-acerto" style="flex: 1; text-align: center;">&ge; 11
+                            palavras</label>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     ABSTRAÇÃO</h3>
                 <div class="input-group-med" style="margin-top: 1rem;">
                     <label>Semelhança (ex. entre banana e laranja = fruta)</label>
@@ -5184,78 +5182,71 @@
                         <span style="flex: 1; font-size: 0.9rem; align-self: center;">trem - bicicleta</span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem;">
                             <input type="radio" name="moca-abs1" id="abs1-erro" value="0" style="display: none;"><label
-                                for="abs1-erro" class="btn-outline-sc" style="padding: 0.3rem 0.8rem;">[ ]</label>
+                                for="abs1-erro" style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-abs1" id="abs1-acerto" value="1"
-                                style="display: none;"><label for="abs1-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="abs1-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                     <div style="display: flex; gap: 0.5rem; width: 100%;">
                         <span style="flex: 1; font-size: 0.9rem; align-self: center;">relógio - régua</span>
                         <div class="score-toggle" style="display: flex; gap: 0.2rem;">
                             <input type="radio" name="moca-abs2" id="abs2-erro" value="0" style="display: none;"><label
-                                for="abs2-erro" class="btn-outline-sc" style="padding: 0.3rem 0.8rem;">[ ]</label>
+                                for="abs2-erro" style="padding: 0.3rem 0.8rem;">0</label>
                             <input type="radio" name="moca-abs2" id="abs2-acerto" value="1"
-                                style="display: none;"><label for="abs2-acerto" class="btn-outline-sc"
-                                style="padding: 0.3rem 0.8rem;">[x]</label>
+                               style="display: none;"><label for="abs2-acerto" 
+                               style="padding: 0.3rem 0.8rem;">1</label>
                         </div>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     EVOCAÇÃO TARDIA</h3>
                 <div class="input-group-med" style="margin-top: 1rem;">
                     <label>Deve recordar as palavras SEM PISTAS</label>
                     <div class="score-toggle"
-                        style="display: flex; gap: 0.3rem; width: 100%; flex-wrap: wrap; margin-top: 0.5rem;">
+                       style="display: flex; gap: 0.3rem; width: 100%; flex-wrap: wrap; margin-top: 0.5rem;">
                         <input type="checkbox" id="evo-rosto" value="1" style="display: none;"><label for="evo-rosto"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Rosto [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Rosto </label>
                         <input type="checkbox" id="evo-veludo" value="1" style="display: none;"><label for="evo-veludo"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Veludo [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Veludo </label>
                         <input type="checkbox" id="evo-igreja" value="1" style="display: none;"><label for="evo-igreja"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Igreja [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Igreja </label>
                         <input type="checkbox" id="evo-margarida" value="1" style="display: none;"><label
-                            for="evo-margarida" class="btn-outline-sc"
-                            style="flex: 1; text-align: center; min-width: 30%;">Margarida [ ]</label>
+                            for="evo-margarida" 
+                           style="flex: 1; text-align: center; min-width: 30%;">Margarida</label>
                         <input type="checkbox" id="evo-vermelho" value="1" style="display: none;"><label
-                            for="evo-vermelho" class="btn-outline-sc"
-                            style="flex: 1; text-align: center; min-width: 30%;">Vermelho [ ]</label>
+                            for="evo-vermelho" 
+                           style="flex: 1; text-align: center; min-width: 30%;">Vermelho</label>
                     </div>
                 </div>
 
                 <h3
-                    style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
+                   style="background-color: #333; color: #fff; padding: 0.3rem 0.5rem; border-radius: 4px; font-size: 1rem; margin-top: 2rem;">
                     ORIENTAÇÃO</h3>
                 <div class="input-group-med" style="margin-top: 1rem;">
                     <div class="score-toggle" style="display: flex; gap: 0.3rem; width: 100%; flex-wrap: wrap;">
                         <input type="checkbox" id="ori-dia" value="1" style="display: none;"><label for="ori-dia"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Dia do mês [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Dia do mês </label>
                         <input type="checkbox" id="ori-mes" value="1" style="display: none;"><label for="ori-mes"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Mês [ ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Mês</label>
                         <input type="checkbox" id="ori-ano" value="1" style="display: none;"><label for="ori-ano"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Ano [ ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Ano</label>
                         <input type="checkbox" id="ori-semana" value="1" style="display: none;"><label for="ori-semana"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Dia da semana [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Dia da semana </label>
                         <input type="checkbox" id="ori-lugar" value="1" style="display: none;"><label for="ori-lugar"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Lugar [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Lugar </label>
                         <input type="checkbox" id="ori-cidade" value="1" style="display: none;"><label for="ori-cidade"
-                            class="btn-outline-sc" style="flex: 1; text-align: center; min-width: 30%;">Cidade [
-                            ]</label>
+                            style="flex: 1; text-align: center; min-width: 30%;">Cidade </label>
                     </div>
                 </div>
 
                 <button type="button" id="btn-calc-moca" class="btn-action-sc"
-                    style="width: 100%; margin-top: 2rem; padding: 1rem; font-size: 1.1rem;">Calcular Resultado</button>
+                   style="width: 100%; margin-top: 2rem; padding: 1rem; font-size: 1.1rem;">Calcular Resultado</button>
 
                 <div id="res-moca"
-                    style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; text-align: center;">
+                   style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; text-align: center;">
                 </div>
             </div>
         </section>
