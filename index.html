@@ -395,6 +395,11 @@
                     style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; outline: none;">
             </div>
             <div id="container-calculadoras" class="grid-container">
+                <button class="menu-btn" data-target="view-curb65"
+                    data-keywords="pulmão, pneumonia, crb, curb, curb-65, respiração, infecção, ubs">
+                    <span class="material-symbols-outlined">pulmonology</span>
+                    CURB-65 / CRB-65
+                </button>
                 <button class="menu-btn" data-target="view-tug"
                     data-keywords="geriatria, idoso, marcha, queda, equilíbrio, timed, up, go, tug, mobilidade">
                     <span class="material-symbols-outlined">directions_walk</span>
@@ -630,6 +635,63 @@
             </form>
 
             <div id="res-gbs" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-curb65" class="view hidden">
+            <h2 id="titulo-curb">Escore CRB-65</h2>
+            
+            <div style="background-color: #e3f2fd; color: #0b5ed7; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #bbdefb;">
+                <strong>Quando usar este escore:</strong> Utilize para avaliar a gravidade da Pneumonia Adquirida na Comunidade (PAC) e nortear o local de tratamento (ambulatorial, enfermaria ou UTI).
+            </div>
+
+            <form id="form-curb65" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="curb-idade" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Idade</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="curb-idade" min="0" placeholder="Anos" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="curb-fr" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Frequência Respiratória</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="curb-fr" min="0" placeholder="irpm" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; flex: 1;">
+                        <label for="curb-pas" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Pressão Sistólica</label>
+                        <input type="number" id="curb-pas" min="0" placeholder="mmHg" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                    <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; flex: 1;">
+                        <label for="curb-pad" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Pressão Diastólica</label>
+                        <input type="number" id="curb-pad" min="0" placeholder="mmHg" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 600; color: #333; margin-bottom: 0.5rem;">Confusão Mental</label>
+                    <div style="font-size: 0.85rem; color: #666; margin-bottom: 8px; margin-top: -5px;">Desorientação em tempo, espaço ou pessoa</div>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="curb_conf_nao" name="curb_conf" value="nao" checked><label for="curb_conf_nao" style="flex: 1;">Não</label>
+                        <input type="radio" id="curb_conf_sim" name="curb_conf" value="sim"><label for="curb_conf_sim" style="flex: 1;">Sim</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; border-top: 1px dashed #ccc; padding-top: 1rem; margin-top: 0.5rem;">
+                    <label for="curb-ureia" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.3rem;">Ureia Sérica <span style="font-size: 0.8rem; color: #888; font-weight: normal;">(Opcional)</span></label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="curb-ureia" step="0.1" min="0" placeholder="Deixe em branco para usar CRB-65 (Atenção Primária)" style="flex: 1; padding: 0.8rem; border: 1px solid #0b5ed7; border-radius: 8px; font-size: 0.95rem;">
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-curb65" class="btn-action-sc" style="margin-top: 15px;">Calcular Escore</button>
+            </form>
+
+            <div id="res-curb65" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
             </div>
         </section>
 
@@ -6964,6 +7026,7 @@
     <script src="escalas/childpugh.js"></script>
     <script src="escalas/ranson.js"></script>
     <script src="escalas/tug.js"></script>
+    <script src="escalas/curb65.js"></script>
     <script src="escalas/cuidasm.js"></script>
     <script src="escalas/dengue.js"></script>
     <script src="escalas/twist.js"></script>
