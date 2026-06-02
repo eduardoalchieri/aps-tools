@@ -395,6 +395,31 @@
                     style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; outline: none;">
             </div>
             <div id="container-calculadoras" class="grid-container">
+                <button class="menu-btn" data-target="view-ranson"
+                    data-keywords="pâncreas, pancreatite, ranson, biliar, admissão, gastro, gravidade, mortalidade">
+                    <span class="material-symbols-outlined">analytics</span>
+                    Critérios de Ranson
+                </button>
+                <button class="menu-btn" data-target="view-gbs"
+                    data-keywords="estômago, hemorragia, hda, digestiva, sangramento, glasgow, blatchford, gbs, endoscopia, gastro, urgência">
+                    <span class="material-symbols-outlined">stomach</span>
+                    Glasgow-Blatchford (HDA)
+                </button>
+                <button class="menu-btn" data-target="view-childpugh"
+                    data-keywords="fígado, hepatologia, cirrose, child, pugh, child-pugh, ascite, encefalopatia, bilirrubina, albumina, inr, prognóstico, gastro">
+                    <span class="material-symbols-outlined">medical_information</span>
+                    Escore Child-Pugh
+                </button>
+                <button class="menu-btn" data-target="view-meldna"
+                    data-keywords="fígado, hepatologia, cirrose, meld, meld-na, sódio, bilirrubina, inr, creatinina, transplante, mortalidade, gastro">
+                    <span class="material-symbols-outlined">vaccines</span>
+                    MELD-Na (Mortalidade Cirrose)
+                </button>
+                <button class="menu-btn" data-target="view-fib4"
+                    data-keywords="fígado, hepatologia, hepatite, fibrose, cirrose, transaminase, plaqueta, ast, alt, tgo, tgp, esteatose, gastro">
+                    <span class="material-symbols-outlined">science</span>
+                    FIB-4 (Índice de Fibrose)
+                </button>
                 <button class="menu-btn" data-target="view-erg"
                     data-keywords="infarto, coração, colesterol, pressão alta, hipertensão, diabetes, sbc, framingham, avc, cardiovascular, erg">
                     <span class="material-symbols-outlined">favorite</span>
@@ -450,6 +475,380 @@
                     <span class="material-symbols-outlined">child_care</span>
                     TFG Pediátrica (Bedside Schwartz)
                 </button>
+            </div>
+        </section>
+
+        <section id="view-meldna" class="view hidden">
+            <h2>Calculadora MELD-Na</h2>
+            
+            <div style="background-color: #fff3e0; color: #e65100; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #ffe0b2;">
+                <strong>Quando usar este escore:</strong> Utilize em pacientes com cirrose hepática (doença hepática terminal) com idade ≥ 12 anos para estimar a mortalidade em 90 dias e avaliar a prioridade para o transplante de fígado.
+            </div>
+
+            <form id="form-meldna" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="meld-bilirrubina" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Bilirrubina Total</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="meld-bilirrubina" min="0" step="0.1" placeholder="Ex: 1.5" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mg/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="meld-inr" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">INR</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="meld-inr" min="0" step="0.1" placeholder="Ex: 1.2" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="meld-creatinina" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Creatinina Sérica</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="meld-creatinina" min="0" step="0.1" placeholder="Ex: 1.0" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mg/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="meld-sodio" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Sódio Sérico</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="meld-sodio" min="0" placeholder="Ex: 135" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mEq/L</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; margin-top: 0.5rem;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Diálise</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Paciente realizou 2 ou mais sessões de diálise na última semana (ou 24h de CVVHED)?</p>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="meld_dialise_0" name="meld_dialise" value="0" checked><label for="meld_dialise_0" style="flex: 1;">Não</label>
+                        <input type="radio" id="meld_dialise_1" name="meld_dialise" value="1"><label for="meld_dialise_1" style="flex: 1;">Sim</label>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-meldna" class="btn-action-sc" style="margin-top: 10px;">Calcular MELD-Na</button>
+            </form>
+
+            <div id="res-meldna" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-gbs" class="view hidden">
+            <h2>Glasgow-Blatchford (GBS)</h2>
+            
+            <div style="background-color: #fff3e0; color: #e65100; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #ffe0b2;">
+                <strong>Quando usar este escore:</strong> Indispensável para a avaliação inicial da Hemorragia Digestiva Alta (HDA) na sala de emergência. Permite identificar com segurança os pacientes de baixo risco que podem receber alta para investigação ambulatorial, poupando recursos e endoscopias de urgência desnecessárias.
+            </div>
+
+            <form id="form-gbs" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Sexo</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="gbs_sexo_m" name="gbs_sexo" value="M" checked><label for="gbs_sexo_m" style="flex: 1;">Masculino</label>
+                        <input type="radio" id="gbs_sexo_f" name="gbs_sexo" value="F"><label for="gbs_sexo_f" style="flex: 1;">Feminino</label>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="gbs-ureia" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Ureia Séria</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="gbs-ureia" min="0" step="0.1" placeholder="Ex: 40" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mg/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="gbs-hb" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Hemoglobina</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="gbs-hb" min="0" step="0.1" placeholder="Ex: 12.5" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">g/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="gbs-pas" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Pressão Arterial Sistólica (PAS)</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="gbs-pas" min="0" placeholder="Ex: 110" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mmHg</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="gbs-fc" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Frequência Cardíaca</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="gbs-fc" min="0" placeholder="Ex: 95" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">bpm</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Apresentação Clínica e Comorbidades</label>
+                    
+                    <div style="width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 8px;">
+                            <span style="font-size: 0.95rem; color: #444;">Melena</span>
+                            <div class="score-toggle" style="width: 120px; display: flex;">
+                                <input type="radio" id="gbs_melena_0" name="gbs_melena" value="0" checked><label for="gbs_melena_0" style="flex: 1; padding: 5px;">Não</label>
+                                <input type="radio" id="gbs_melena_1" name="gbs_melena" value="1"><label for="gbs_melena_1" style="flex: 1; padding: 5px;">Sim</label>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 8px;">
+                            <span style="font-size: 0.95rem; color: #444;">Síncope</span>
+                            <div class="score-toggle" style="width: 120px; display: flex;">
+                                <input type="radio" id="gbs_sincope_0" name="gbs_sincope" value="0" checked><label for="gbs_sincope_0" style="flex: 1; padding: 5px;">Não</label>
+                                <input type="radio" id="gbs_sincope_1" name="gbs_sincope" value="1"><label for="gbs_sincope_1" style="flex: 1; padding: 5px;">Sim</label>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 8px;">
+                            <span style="font-size: 0.95rem; color: #444;">Doença Hepática</span>
+                            <div class="score-toggle" style="width: 120px; display: flex;">
+                                <input type="radio" id="gbs_figado_0" name="gbs_figado" value="0" checked><label for="gbs_figado_0" style="flex: 1; padding: 5px;">Não</label>
+                                <input type="radio" id="gbs_figado_1" name="gbs_figado" value="1"><label for="gbs_figado_1" style="flex: 1; padding: 5px;">Sim</label>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px;">
+                            <span style="font-size: 0.95rem; color: #444;">Insuficiência Cardíaca</span>
+                            <div class="score-toggle" style="width: 120px; display: flex;">
+                                <input type="radio" id="gbs_ic_0" name="gbs_ic" value="0" checked><label for="gbs_ic_0" style="flex: 1; padding: 5px;">Não</label>
+                                <input type="radio" id="gbs_ic_1" name="gbs_ic" value="1"><label for="gbs_ic_1" style="flex: 1; padding: 5px;">Sim</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-gbs" class="btn-action-sc" style="margin-top: 10px;">Calcular GBS</button>
+            </form>
+
+            <div id="res-gbs" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-ranson" class="view hidden">
+            <h2>Critérios de Ranson</h2>
+            
+            <div style="background-color: #fff3e0; color: #e65100; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #ffe0b2;">
+                <strong>Quando usar este escore:</strong> Utilize para estimar a gravidade e o prognóstico de mortalidade na pancreatite aguda, dividindo a avaliação entre os achados da admissão e a evolução laboratorial em 48 horas.
+            </div>
+
+            <form id="form-ranson" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Etiologia da Pancreatite</label>
+                    <div class="score-toggle" style="width: 100%; display: flex;">
+                        <input type="radio" id="ranson_etiol_naobiliar" name="ranson_etiol" value="nao-biliar" checked><label for="ranson_etiol_naobiliar" style="flex: 1;">Não Biliar</label>
+                        <input type="radio" id="ranson_etiol_biliar" name="ranson_etiol" value="biliar"><label for="ranson_etiol_biliar" style="flex: 1;">Biliar</label>
+                    </div>
+                </div>
+
+                <!-- Bloco 1: Admissão -->
+                <div style="margin-top: 1rem; border: 1px solid #0b5ed7; border-radius: 8px; overflow: hidden;">
+                    <div style="background-color: #0b5ed7; color: white; padding: 10px 15px; font-weight: bold;">1. Avaliação na Admissão (0h)</div>
+                    <div style="padding: 15px; display: flex; flex-direction: column; gap: 15px; background: #f8f9fa;">
+                        
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-idade" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Idade</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-idade" min="0" placeholder="Anos" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-leuco" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Leucócitos</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-leuco" min="0" placeholder="células/mm³" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-glic" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Glicemia</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-glic" min="0" placeholder="mg/dL" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-ldh" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">LDH</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-ldh" min="0" placeholder="U/L" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-ast" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">AST/TGO</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-ast" min="0" placeholder="U/L" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Bloco 2: 48 Horas -->
+                <div style="margin-top: 1rem; border: 1px solid #6c757d; border-radius: 8px; overflow: hidden;">
+                    <div style="background-color: #6c757d; color: white; padding: 10px 15px; font-weight: bold;">2. Avaliação em 48 Horas (Opcional)</div>
+                    <div style="padding: 15px; display: flex; flex-direction: column; gap: 15px; background: #f8f9fa;">
+                        
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-ht" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Queda do Hematócrito</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-ht" step="0.1" placeholder="Em % absolutos. Ex: 10" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-ureia" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Aumento da Ureia</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-ureia" step="0.1" placeholder="mg/dL" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-calcio" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Cálcio Sérico</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-calcio" step="0.1" placeholder="mg/dL" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div id="ranson-pao2-container" class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-pao2" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">PaO2</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-pao2" step="0.1" placeholder="mmHg" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-deficit" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Déficit de Base</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-deficit" step="0.1" placeholder="mEq/L" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                            <label for="ranson-fluidos" style="font-weight: 600; color: #333; margin-bottom: 0.3rem;">Sequestro de Fluidos Estimado</label>
+                            <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                                <input type="number" id="ranson-fluidos" step="0.1" placeholder="Litros" style="flex: 1; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-ranson" class="btn-action-sc" style="margin-top: 15px;">Calcular Escore de Ranson</button>
+            </form>
+
+            <div id="res-ranson" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-childpugh" class="view hidden">
+            <h2>Escore Child-Pugh</h2>
+            
+            <div style="background-color: #fff3e0; color: #e65100; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #ffe0b2;">
+                <strong>Quando usar este escore:</strong> Utilize em pacientes com cirrose hepática para avaliar o prognóstico, a gravidade da disfunção hepática e a necessidade de ajuste de doses de medicamentos.
+            </div>
+
+            <form id="form-childpugh" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="cp-bilirrubina" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Bilirrubina Total</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="cp-bilirrubina" min="0" step="0.1" placeholder="Ex: 1.5" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">mg/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="cp-albumina" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Albumina Sérica</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="cp-albumina" min="0" step="0.1" placeholder="Ex: 3.5" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">g/dL</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="cp-inr" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">INR</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="cp-inr" min="0" step="0.1" placeholder="Ex: 1.2" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Ascite</label>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_ascite_1" name="cp_ascite" value="1"><label for="cp_ascite_1" style="flex: 1;">Ausente</label></div>
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_ascite_2" name="cp_ascite" value="2"><label for="cp_ascite_2" style="flex: 1;">Leve / Controlada com diuréticos</label></div>
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_ascite_3" name="cp_ascite" value="3"><label for="cp_ascite_3" style="flex: 1;">Moderada a Grave / Refratária</label></div>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Encefalopatia Hepática</label>
+                    <div class="score-toggle" style="width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_encefalopatia_1" name="cp_encefalopatia" value="1"><label for="cp_encefalopatia_1" style="flex: 1;">Ausente</label></div>
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_encefalopatia_2" name="cp_encefalopatia" value="2"><label for="cp_encefalopatia_2" style="flex: 1;">Grau I a II (Confusão leve a moderada)</label></div>
+                        <div style="display: flex; width: 100%;"><input type="radio" id="cp_encefalopatia_3" name="cp_encefalopatia" value="3"><label for="cp_encefalopatia_3" style="flex: 1;">Grau III a IV (Estupor a coma)</label></div>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-childpugh" class="btn-action-sc" style="margin-top: 10px;">Calcular Escore</button>
+            </form>
+
+            <div id="res-childpugh" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-fib4" class="view hidden">
+            <h2>Calculadora FIB-4</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 1.5rem;">Índice de Fibrose-4 para estimar o risco de fibrose hepática avançada (F3-F4).</p>
+
+            <form id="form-fib4" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="fib4-idade" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Idade</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="fib4-idade" min="1" max="120" placeholder="Anos" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">anos</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="fib4-ast" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">AST (TGO)</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="fib4-ast" min="1" step="0.1" placeholder="Valor" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">U/L</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="fib4-alt" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">ALT (TGP)</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="fib4-alt" min="1" step="0.1" placeholder="Valor" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">U/L</span>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start;">
+                    <label for="fib4-plaquetas" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Plaquetas</label>
+                    <p style="font-size: 0.8rem; color: #666; margin: 0 0 8px 0;">Ex: Se 150.000, insira 150.</p>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="fib4-plaquetas" min="1" step="0.1" placeholder="Valor (x 10³/µL)" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        <span style="color: #666; font-size: 0.9rem;">x 10³/µL</span>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-fib4" class="btn-action-sc" style="margin-top: 10px;">Calcular FIB-4</button>
+            </form>
+
+            <div id="res-fib4" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+            
+            <div style="background-color: #e3f2fd; color: #0b5ed7; padding: 10px; border-radius: 6px; margin-top: 1.2rem; font-size: 0.85rem; border: 1px solid #b6d4fe;">
+                <strong>Nota:</strong> Em pacientes maiores de 65 anos, o ponto de corte inferior para exclusão de fibrose avançada costuma ser ajustado para &lt; 2.0.
             </div>
         </section>
 
@@ -6510,6 +6909,11 @@
     <script src="escalas/termed.js"></script>
     <script src="escalas/chads.js"></script>
     <script src="escalas/hasbled.js"></script>
+    <script src="escalas/fib4.js"></script>
+    <script src="escalas/meldna.js"></script>
+    <script src="escalas/gbs.js"></script>
+    <script src="escalas/childpugh.js"></script>
+    <script src="escalas/ranson.js"></script>
     <script src="escalas/cuidasm.js"></script>
     <script src="escalas/dengue.js"></script>
     <script src="escalas/twist.js"></script>
