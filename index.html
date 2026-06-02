@@ -395,6 +395,11 @@
                     style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; outline: none;">
             </div>
             <div id="container-calculadoras" class="grid-container">
+                <button class="menu-btn" data-target="view-tug"
+                    data-keywords="geriatria, idoso, marcha, queda, equilíbrio, timed, up, go, tug, mobilidade">
+                    <span class="material-symbols-outlined">directions_walk</span>
+                    Timed Up and Go (TUG)
+                </button>
                 <button class="menu-btn" data-target="view-ranson"
                     data-keywords="pâncreas, pancreatite, ranson, biliar, admissão, gastro, gravidade, mortalidade">
                     <span class="material-symbols-outlined">analytics</span>
@@ -625,6 +630,50 @@
             </form>
 
             <div id="res-gbs" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-tug" class="view hidden">
+            <h2>Timed Up and Go (TUG)</h2>
+            
+            <div style="background-color: #e3f2fd; color: #0b5ed7; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #bbdefb;">
+                <strong style="display:block; margin-bottom: 5px;">Como realizar o teste:</strong>
+                <ol style="margin: 0; padding-left: 20px; line-height: 1.4;">
+                    <li>O paciente deve iniciar sentado em uma cadeira com braços.</li>
+                    <li>Ao comando "Vai", inicie o cronômetro.</li>
+                    <li>O paciente deve levantar, caminhar 3 metros, virar, voltar e sentar.</li>
+                    <li>Pare o cronômetro assim que o paciente encostar as costas na cadeira.</li>
+                </ol>
+            </div>
+
+            <form id="form-tug" style="display: flex; flex-direction: column; gap: 1.2rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; text-align: center;">
+                    <div style="font-size: 2.5rem; font-family: monospace; font-weight: bold; color: #333;" id="tug-display">00.0s</div>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+                        <button type="button" id="btn-tug-start" class="btn-action-sc" style="background-color: #28a745; border-color: #28a745; padding: 8px 20px; border-radius: 20px; font-weight: bold;">
+                            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.2rem; margin-right: 4px;">play_arrow</span> Iniciar
+                        </button>
+                        <button type="button" id="btn-tug-stop" class="btn-outline-sc" style="display: none; border-color: #dc3545; color: #dc3545; padding: 8px 20px; border-radius: 20px; font-weight: bold;">
+                            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.2rem; margin-right: 4px;">stop</span> Parar
+                        </button>
+                        <button type="button" id="btn-tug-reset" class="btn-outline-sc" style="padding: 8px 15px; border-radius: 20px;">
+                            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 1.2rem;">refresh</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group-med" style="border: none; padding: 0; flex-direction: column; align-items: flex-start; margin-top: 0.5rem;">
+                    <label for="tug-tempo" style="font-weight: 700; color: #0b5ed7; margin-bottom: 0.5rem; font-size: 1.05rem;">Tempo Cronometrado</label>
+                    <div style="display: flex; width: 100%; align-items: center; gap: 10px;">
+                        <input type="number" id="tug-tempo" min="0" step="0.1" placeholder="Ex: 12.5" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1.2rem; font-weight: bold; text-align: center;">
+                        <span style="color: #666; font-weight: bold;">segundos</span>
+                    </div>
+                </div>
+
+            </form>
+
+            <div id="res-tug" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
             </div>
         </section>
 
@@ -6914,6 +6963,7 @@
     <script src="escalas/gbs.js"></script>
     <script src="escalas/childpugh.js"></script>
     <script src="escalas/ranson.js"></script>
+    <script src="escalas/tug.js"></script>
     <script src="escalas/cuidasm.js"></script>
     <script src="escalas/dengue.js"></script>
     <script src="escalas/twist.js"></script>
