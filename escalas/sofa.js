@@ -1,73 +1,167 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const btnCalcSofa = document.getElementById("btn-calc-sofa");
+    const btnCalc = document.getElementById("btn-calc-sofa");
+    const resContainer = document.getElementById("res-sofa");
 
-    if (btnCalcSofa) {
-        btnCalcSofa.addEventListener("click", () => {
-            const resp = parseInt(document.getElementById("sofa-resp").value);
-            const coag = parseInt(document.getElementById("sofa-coag").value);
-            const figado = parseInt(document.getElementById("sofa-figado").value);
-            const cardio = parseInt(document.getElementById("sofa-cardio").value);
-            const neuro = parseInt(document.getElementById("sofa-neuro").value);
-            const renal = parseInt(document.getElementById("sofa-renal").value);
+    // UI Logic for Cardiovascular Scenario
+    const cardioScenario = document.getElementById('sofa-cardio-scenario');
+    const doseContainer = document.getElementById('sofa-cardio-dose-container');
+    const unitRadios = document.getElementsByName('sofa_cardio_unit');
+    const inputMcg = document.getElementById('sofa-cardio-mcg-input');
+    const inputMlh = document.getElementById('sofa-cardio-mlh-input');
+    const labelMcg = document.getElementById('label-mcg');
+    const labelMlh = document.getElementById('label-mlh');
 
-            const score = resp + coag + figado + cardio + neuro + renal;
-
-            let classificacao = "";
-            let corHex = "";
-            let bgTint = "";
-            let conduta = "";
-
-            if (score === 0) {
-                classificacao = "Mortalidade estimada: < 10%";
-                corHex = "#28a745"; // Verde
-                bgTint = "#e8f5e9";
-                conduta = "Sem disfunção orgânica significativa segundo o SOFA.";
-            } else if (score >= 1 && score <= 6) {
-                classificacao = "Mortalidade estimada: ~10-20%";
-                corHex = "#fbc02d"; // Amarelo
-                bgTint = "#fff9c4";
-                conduta = "Disfunção orgânica leve a moderada. Necessita de monitoramento rigoroso.";
-            } else if (score >= 7 && score <= 9) {
-                classificacao = "Mortalidade estimada: ~15-20%";
-                corHex = "#f57c00"; // Laranja
-                bgTint = "#fff3e0";
-                conduta = "Disfunção orgânica considerável. Manejo em UTI frequentemente necessário.";
-            } else if (score >= 10 && score <= 12) {
-                classificacao = "Mortalidade estimada: ~40-50%";
-                corHex = "#e64a19"; // Laranja escuro
-                bgTint = "#fbe9e7";
-                conduta = "Disfunção multiorgânica severa. Alto risco de mortalidade.";
-            } else if (score >= 13 && score <= 14) {
-                classificacao = "Mortalidade estimada: ~50-60%";
-                corHex = "#dc3545"; // Vermelho
-                bgTint = "#ffebee";
-                conduta = "Disfunção multiorgânica crítica. Prognóstico reservado.";
+    if (cardioScenario) {
+        cardioScenario.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (val === '4' || val === '5') {
+                doseContainer.style.display = 'block';
             } else {
-                classificacao = "Mortalidade estimada: > 80%";
-                corHex = "#8b0000"; // Vermelho escuro
-                bgTint = "#f8d7da";
-                conduta = "Falência multiorgânica muito grave. Altíssimo risco de mortalidade.";
+                doseContainer.style.display = 'none';
+            }
+        });
+    }
+
+    if (unitRadios) {
+        unitRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'mcg') {
+                    inputMcg.style.display = 'block';
+                    inputMlh.style.display = 'none';
+                    labelMcg.style.background = '#e3f2fd';
+                    labelMcg.style.borderColor = '#0b5ed7';
+                    labelMcg.style.color = '#0b5ed7';
+                    labelMlh.style.background = '#f9f9f9';
+                    labelMlh.style.borderColor = '#ddd';
+                    labelMlh.style.color = '#555';
+                } else {
+                    inputMcg.style.display = 'none';
+                    inputMlh.style.display = 'block';
+                    labelMlh.style.background = '#e3f2fd';
+                    labelMlh.style.borderColor = '#0b5ed7';
+                    labelMlh.style.color = '#0b5ed7';
+                    labelMcg.style.background = '#f9f9f9';
+                    labelMcg.style.borderColor = '#ddd';
+                    labelMcg.style.color = '#555';
+                }
+            });
+        });
+    }
+
+    if (btnCalc) {
+        btnCalc.addEventListener("click", () => {
+            // A. Respiratory
+            let respScore = 0;
+            const pao2 = parseFloat(document.getElementById("sofa-pao2").value);
+            let fio2 = parseFloat(document.getElementById("sofa-fio2").value);
+            const hasVm = document.getElementById("sofa-vm").checked;
+
+            if (!isNaN(pao2) && !isNaN(fio2)) {
+                if (fio2 > 1) fio2 = fio2 / 100;
+                const ratio = pao2 / fio2;
+
+                if (ratio >= 400) respScore = 0;
+                else if (ratio < 400 && ratio >= 300) respScore = 1;
+                else if (ratio < 300 && ratio >= 200) respScore = 2;
+                else if (ratio < 200 && ratio >= 100 && hasVm) respScore = 3;
+                else if (ratio < 100 && hasVm) respScore = 4;
+                else if (ratio < 200) respScore = 2; // Maximum without VM is 2
+            } else {
+                alert("Por favor, preencha corretamente a PaO₂ e a FiO₂.");
+                return;
             }
 
-            const resDiv = document.getElementById("res-sofa");
-            resDiv.innerHTML = `
-                <div style="background-color: ${corHex}; color: ${corHex === '#fbc02d' ? '#333' : '#FFFFFF'}; padding: 1.5rem; border-radius: 8px 8px 0 0; text-align: center;">
-                    <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9;">Escore SOFA</div>
-                    <div style="font-size: 4rem; font-weight: 800; line-height: 1.1;">${score} <span style="font-size: 1.5rem; font-weight: 500;">pontos</span></div>
-                    <div style="font-size: 1.3rem; font-weight: 700; background-color: rgba(255,255,255,0.3); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-top: 8px;">${classificacao}</div>
-                </div>
+            // B. Neurological
+            const neuroScore = parseInt(document.getElementById("sofa-glasgow").value) || 0;
+
+            // C. Cardiovascular
+            let cardioScore = 0;
+            const cardioVal = document.getElementById('sofa-cardio-scenario').value;
+            if (cardioVal === '1') cardioScore = 0;
+            else if (cardioVal === '2') cardioScore = 1;
+            else if (cardioVal === '3') cardioScore = 2;
+            else if (cardioVal === '4' || cardioVal === '5') {
+                const unit = document.querySelector('input[name="sofa_cardio_unit"]:checked').value;
+                let dose = 0;
+                if (unit === 'mcg') {
+                    dose = parseFloat(document.getElementById('sofa-cardio-mcg').value);
+                } else {
+                    const peso = parseFloat(document.getElementById('sofa-peso').value);
+                    const conc = parseFloat(document.getElementById('sofa-concentracao').value);
+                    const vazao = parseFloat(document.getElementById('sofa-vazao').value);
+                    if (peso > 0 && conc > 0 && vazao > 0) {
+                        dose = (vazao * conc * 1000) / (peso * 60);
+                    } else {
+                        alert("Por favor, preencha os dados de Peso, Concentração e Velocidade para a conversão de dose.");
+                        return;
+                    }
+                }
                 
-                <div style="border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px; padding: 1.5rem; background: ${bgTint}; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <div style="font-size: 0.9rem; color: #555; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; font-weight: bold; text-align: center;">Considerações</div>
-                    <p style="font-size: 1.1rem; color: #333; line-height: 1.5; margin-bottom: 0; text-align: center;">${conduta}</p>
-                    <div style="margin-top: 15px; font-size: 0.85rem; color: #666; text-align: center;">
-                        Lembre-se: Um <strong>aumento de ≥ 2 pontos</strong> em relação ao basal do paciente indica disfunção de órgãos e está associado a uma mortalidade em torno de 10% na população geral com suspeita de infecção.
+                if (isNaN(dose)) {
+                    alert("Dose inválida no sistema cardiovascular.");
+                    return;
+                }
+
+                if (dose <= 0.1) cardioScore = 3;
+                else cardioScore = 4;
+            }
+
+            // D. Hepático, Coagulação, Renal
+            const figadoScore = parseInt(document.getElementById("sofa-figado").value) || 0;
+            const coagScore = parseInt(document.getElementById("sofa-coag").value) || 0;
+            const renalScore = parseInt(document.getElementById("sofa-renal").value) || 0;
+
+            const totalScore = respScore + neuroScore + cardioScore + figadoScore + coagScore + renalScore;
+
+            // Mortality Estimate
+            let mortality = "";
+            let cardColor = "";
+            let cardBg = "";
+            
+            if (totalScore <= 1) {
+                mortality = "0.0%"; cardColor = "#155724"; cardBg = "#d4edda";
+            } else if (totalScore <= 3) {
+                mortality = "6.4%"; cardColor = "#155724"; cardBg = "#d4edda";
+            } else if (totalScore <= 5) {
+                mortality = "20.2%"; cardColor = "#856404"; cardBg = "#fff3cd";
+            } else if (totalScore <= 7) {
+                mortality = "21.5%"; cardColor = "#856404"; cardBg = "#fff3cd";
+            } else if (totalScore <= 9) {
+                mortality = "33.3%"; cardColor = "#856404"; cardBg = "#fff3cd";
+            } else if (totalScore <= 11) {
+                mortality = "50.0%"; cardColor = "#721c24"; cardBg = "#f8d7da";
+            } else if (totalScore <= 14) {
+                mortality = "95.2%"; cardColor = "#721c24"; cardBg = "#f8d7da";
+            } else {
+                mortality = "> 95%"; cardColor = "#721c24"; cardBg = "#f8d7da";
+            }
+
+            const resultHTML = `
+                <div style="background-color: ${cardBg}; color: ${cardColor}; padding: 20px; border-radius: 8px; border: 1px solid ${cardColor}40;">
+                    <h3 style="margin-top: 0; font-size: 1.4rem; text-align: center;">Escore Total: <strong>SOFA ${totalScore} Pontos</strong></h3>
+                    
+                    <div style="background: rgba(255,255,255,0.6); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <h4 style="margin-top: 0; color: #333; font-size: 1.05rem;">Detalhamento por Sistema:</h4>
+                        <ul style="list-style: none; padding-left: 0; margin-bottom: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; color: #444; font-size: 0.95rem;">
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">air</span> Respiratório: <strong>${respScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">psychology</span> Neurológico: <strong>${neuroScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">favorite</span> Cardiovascular: <strong>${cardioScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">science</span> Hepático: <strong>${figadoScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">water_drop</span> Coagulação: <strong>${coagScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">kidney</span> Renal: <strong>${renalScore}</strong></li>
+                        </ul>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <span style="font-size: 1rem;">Mortalidade Estimada: <strong>${mortality}</strong></span>
+                        <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.85rem; opacity: 0.9;">Um aumento de 2 ou mais pontos no SOFA basal indica disfunção orgânica relacionada à infecção (sepse).</p>
                     </div>
                 </div>
             `;
-            
-            resDiv.style.display = "block";
-            resDiv.scrollIntoView({ behavior: 'smooth' });
+
+            resContainer.innerHTML = resultHTML;
+            resContainer.style.display = "block";
+            resContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     }
 });
