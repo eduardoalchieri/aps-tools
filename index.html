@@ -530,13 +530,58 @@
                 <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem;">
                     <h3 style="color: #0b5ed7; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined">psychology</span> Sistema Neurológico</h3>
                     <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Escala de Coma de Glasgow</label>
-                    <select id="sofa-glasgow" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background-color: #fff; margin-bottom: 0.8rem;">
-                        <option value="0">15</option>
-                        <option value="1">13 - 14</option>
-                        <option value="2">10 - 12</option>
-                        <option value="3">6 - 9</option>
-                        <option value="4">< 6</option>
-                    </select>
+                    <div style="display: flex; gap: 10px; margin-bottom: 0.8rem;">
+                        <select id="sofa-glasgow" style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background-color: #fff;">
+                            <option value="0">15</option>
+                            <option value="1">13 - 14</option>
+                            <option value="2">10 - 12</option>
+                            <option value="3">6 - 9</option>
+                            <option value="4">< 6</option>
+                        </select>
+                        <button type="button" id="btn-toggle-glasgow-calc" style="padding: 0 15px; border-radius: 8px; background-color: #f8f9fa; border: 1px solid #ddd; cursor: pointer; color: #0b5ed7; font-weight: 600; display: flex; align-items: center; justify-content: center;" title="Não lembro os parâmetros da escala">
+                            <span class="material-symbols-outlined" style="font-size: 1.5rem;">calculate</span>
+                        </button>
+                    </div>
+
+                    <!-- Calculadora Glasgow embutida -->
+                    <div id="sofa-glasgow-subcalc" style="display: none; background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="margin-top: 0; color: #333; font-size: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 5px;">
+                            <span class="material-symbols-outlined" style="font-size: 1.2rem;">psychology_alt</span> Calcular Glasgow
+                        </h4>
+                        
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem; font-size: 0.9rem;">Abertura Ocular</label>
+                        <select id="glasgow-ocular" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px; font-size: 0.9rem;">
+                            <option value="4">Espontânea (4)</option>
+                            <option value="3">Ao estímulo verbal (3)</option>
+                            <option value="2">Ao estímulo doloroso (2)</option>
+                            <option value="1">Nenhuma (1)</option>
+                        </select>
+
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem; font-size: 0.9rem;">Resposta Verbal</label>
+                        <select id="glasgow-verbal" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px; font-size: 0.9rem;">
+                            <option value="5">Orientada (5)</option>
+                            <option value="4">Confusa (4)</option>
+                            <option value="3">Palavras inapropriadas (3)</option>
+                            <option value="2">Sons ininteligíveis (2)</option>
+                            <option value="1">Nenhuma (1)</option>
+                            <option value="1">Intubado / Tubo (1T)</option>
+                        </select>
+
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem; font-size: 0.9rem;">Resposta Motora</label>
+                        <select id="glasgow-motora" style="width: 100%; padding: 0.6rem; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; font-size: 0.9rem;">
+                            <option value="6">Obedece a comandos (6)</option>
+                            <option value="5">Localiza a dor (5)</option>
+                            <option value="4">Movimento de retirada (4)</option>
+                            <option value="3">Flexão anormal / Decorticação (3)</option>
+                            <option value="2">Extensão anormal / Descerebração (2)</option>
+                            <option value="1">Nenhuma (1)</option>
+                        </select>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ddd; padding-top: 10px;">
+                            <span style="font-weight: bold; color: #0b5ed7; font-size: 1.1rem;">Total: <span id="glasgow-sub-total">15</span></span>
+                            <button type="button" id="btn-apply-glasgow" style="background-color: #0b5ed7; color: white; border: none; padding: 8px 15px; border-radius: 6px; font-weight: bold; cursor: pointer;">Aplicar ao SOFA</button>
+                        </div>
+                    </div>
                     <div style="background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 6px; font-size: 0.85rem; border: 1px solid #ffeeba; display: flex; gap: 8px; align-items: flex-start;">
                         <span class="material-symbols-outlined" style="font-size: 1.1rem;">warning</span>
                         <span><strong>Aviso:</strong> Em pacientes sob sedação contínua, utilize a última Escala de Glasgow registrada de forma confiável antes do início da sedação, ou o valor estimado "livre de sedação". Não utilize a ECG rebaixada pela droga.</span>

@@ -48,6 +48,55 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Glasgow Sub-calculator Logic
+    const btnToggleGlasgow = document.getElementById('btn-toggle-glasgow-calc');
+    const glasgowSubcalc = document.getElementById('sofa-glasgow-subcalc');
+    const glasgowOcular = document.getElementById('glasgow-ocular');
+    const glasgowVerbal = document.getElementById('glasgow-verbal');
+    const glasgowMotora = document.getElementById('glasgow-motora');
+    const glasgowSubTotal = document.getElementById('glasgow-sub-total');
+    const btnApplyGlasgow = document.getElementById('btn-apply-glasgow');
+    const mainGlasgowSelect = document.getElementById('sofa-glasgow');
+
+    if (btnToggleGlasgow) {
+        btnToggleGlasgow.addEventListener('click', () => {
+            if (glasgowSubcalc.style.display === 'none') {
+                glasgowSubcalc.style.display = 'block';
+            } else {
+                glasgowSubcalc.style.display = 'none';
+            }
+        });
+    }
+
+    function calculateGlasgowSub() {
+        const o = parseInt(glasgowOcular.value) || 1;
+        const v = parseInt(glasgowVerbal.value) || 1;
+        const m = parseInt(glasgowMotora.value) || 1;
+        const total = o + v + m;
+        glasgowSubTotal.textContent = total;
+        return total;
+    }
+
+    if (glasgowOcular && glasgowVerbal && glasgowMotora) {
+        glasgowOcular.addEventListener('change', calculateGlasgowSub);
+        glasgowVerbal.addEventListener('change', calculateGlasgowSub);
+        glasgowMotora.addEventListener('change', calculateGlasgowSub);
+    }
+
+    if (btnApplyGlasgow) {
+        btnApplyGlasgow.addEventListener('click', () => {
+            const total = calculateGlasgowSub();
+            let sofaScore = "0"; // 15
+            if (total >= 13 && total <= 14) sofaScore = "1";
+            else if (total >= 10 && total <= 12) sofaScore = "2";
+            else if (total >= 6 && total <= 9) sofaScore = "3";
+            else if (total < 6) sofaScore = "4";
+            
+            mainGlasgowSelect.value = sofaScore;
+            glasgowSubcalc.style.display = 'none';
+        });
+    }
+
     if (btnCalc) {
         btnCalc.addEventListener("click", () => {
             // A. Respiratory
@@ -148,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">favorite</span> Cardiovascular: <strong>${cardioScore}</strong></li>
                             <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">science</span> Hepático: <strong>${figadoScore}</strong></li>
                             <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">water_drop</span> Coagulação: <strong>${coagScore}</strong></li>
-                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">kidney</span> Renal: <strong>${renalScore}</strong></li>
+                            <li><span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">opacity</span> Renal: <strong>${renalScore}</strong></li>
                         </ul>
                     </div>
 
