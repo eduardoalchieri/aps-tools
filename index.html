@@ -495,6 +495,11 @@
                     <span class="material-symbols-outlined">warning</span>
                     qSOFA (Quick SOFA)
                 </button>
+                <button class="menu-btn" data-target="view-toast"
+                    data-keywords="avc, isquemia, neurologia, toast, etiológico, aterosclerose, cardioembolismo, lacunar">
+                    <span class="material-symbols-outlined">neurology</span>
+                    Critérios TOAST (AVC)
+                </button>
             </div>
         </section>
 
@@ -709,6 +714,57 @@
             </form>
 
             <div id="res-qsofa" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <section id="view-toast" class="view hidden">
+            <h2>Critérios TOAST (AVC Isquêmico)</h2>
+            
+            <div style="background-color: #e3f2fd; color: #0b5ed7; padding: 12px 16px; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; border: 1px solid #bbdefb;">
+                <strong>Quando usar este escore:</strong> Classificação etiológica e direcionamento propedêutico no Acidente Vascular Cerebral Isquêmico.
+            </div>
+
+            <form id="form-toast" style="display: flex; flex-direction: column; gap: 1.5rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                
+                <!-- Status Inicial -->
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem; background-color: #fafafa;">
+                    <h3 style="color: #333; margin-top: 0; margin-bottom: 1rem; font-size: 1.05rem;">Status da Investigação</h3>
+                    <label style="display: flex; align-items: center; gap: 10px; font-weight: 600; color: #555; font-size: 1rem; cursor: pointer;">
+                        <input type="checkbox" id="toast-investigation-done" style="width: 20px; height: 20px;">
+                        A investigação neurovascular e cardiológica básica já foi completamente finalizada?
+                    </label>
+                </div>
+
+                <!-- Achados Clínicos -->
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem;">
+                    <h3 style="color: #0b5ed7; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined">fact_check</span> Achados Clínicos Identificados</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: #333; font-size: 1rem; cursor: pointer; border: 1px solid #eee; padding: 12px; border-radius: 8px; transition: background 0.2s;">
+                            <input type="checkbox" class="toast-checkbox" id="toast-athero" style="width: 20px; height: 20px; margin-top: 2px;">
+                            <span>Estenose &gt; 50% ou oclusão de grande artéria extracraniana/intracraniana ipsilateral.</span>
+                        </label>
+
+                        <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: #333; font-size: 1rem; cursor: pointer; border: 1px solid #eee; padding: 12px; border-radius: 8px; transition: background 0.2s;">
+                            <input type="checkbox" class="toast-checkbox" id="toast-cardio" style="width: 20px; height: 20px; margin-top: 2px;">
+                            <span>Fonte cardioembólica de alto risco (ex: Fibrilação Atrial, prótese valvar mecânica, trombo intracavitário, endocardite).</span>
+                        </label>
+
+                        <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: #333; font-size: 1rem; cursor: pointer; border: 1px solid #eee; padding: 12px; border-radius: 8px; transition: background 0.2s;">
+                            <input type="checkbox" class="toast-checkbox" id="toast-lacunar" style="width: 20px; height: 20px; margin-top: 2px;">
+                            <span>Síndrome lacunar clínica com imagem confirmando infarto subcortical ou em tronco &lt; 1,5 cm.</span>
+                        </label>
+
+                        <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: #333; font-size: 1rem; cursor: pointer; border: 1px solid #eee; padding: 12px; border-radius: 8px; transition: background 0.2s;">
+                            <input type="checkbox" class="toast-checkbox" id="toast-other" style="width: 20px; height: 20px; margin-top: 2px;">
+                            <span>Outra causa específica confirmada por exames direcionados.</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+            <div id="res-toast" class="result-container" style="background: white; padding: 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem; overflow: hidden; border: 1px solid #eee;">
+                <!-- Content will be injected by JS -->
             </div>
         </section>
 
