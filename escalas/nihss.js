@@ -297,30 +297,73 @@ function calculateNihssScore() {
     document.getElementById(`row-sev-${i}`).style.backgroundColor = "transparent";
   }
 
+  let estagioText = "";
+
   if (totalScore === 0) {
     scoreDisplay.style.color = "#28a745";
     estagioDisplay.style.color = "#28a745";
-    estagioDisplay.innerText = "Sem sintomas de AVC";
+    estagioText = "Sem sintomas de AVC";
+    estagioDisplay.innerText = estagioText;
     document.getElementById("row-sev-0").style.backgroundColor = "#d4edda";
   } else if (totalScore >= 1 && totalScore <= 4) {
     scoreDisplay.style.color = "#ff9800";
     estagioDisplay.style.color = "#ff9800";
-    estagioDisplay.innerText = "AVC Leve";
+    estagioText = "AVC Leve";
+    estagioDisplay.innerText = estagioText;
     document.getElementById("row-sev-1").style.backgroundColor = "#fff3cd";
   } else if (totalScore >= 5 && totalScore <= 15) {
     scoreDisplay.style.color = "#ff9800";
     estagioDisplay.style.color = "#ff9800";
-    estagioDisplay.innerText = "AVC Moderado";
+    estagioText = "AVC Moderado";
+    estagioDisplay.innerText = estagioText;
     document.getElementById("row-sev-2").style.backgroundColor = "#fff3cd";
   } else if (totalScore >= 16 && totalScore <= 20) {
     scoreDisplay.style.color = "#dc3545";
     estagioDisplay.style.color = "#dc3545";
-    estagioDisplay.innerText = "AVC Moderado a Grave";
+    estagioText = "AVC Moderado a Grave";
+    estagioDisplay.innerText = estagioText;
     document.getElementById("row-sev-3").style.backgroundColor = "#f8d7da";
   } else if (totalScore >= 21) {
     scoreDisplay.style.color = "#dc3545";
     estagioDisplay.style.color = "#dc3545";
-    estagioDisplay.innerText = "AVC Grave";
+    estagioText = "AVC Grave";
+    estagioDisplay.innerText = estagioText;
     document.getElementById("row-sev-4").style.backgroundColor = "#f8d7da";
   }
+
+  let lostPointsHtml = '<div style="text-align: left; margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem;">';
+  let copyText = `Escala NIHSS: ${totalScore} pontos - ${estagioText}\n`;
+  
+  if (totalScore > 0) {
+    lostPointsHtml += '<h4 style="margin-bottom: 10px; color: #333; font-size: 1.1rem;">Pontuou nos seguintes tópicos:</h4><ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin-bottom: 15px; line-height: 1.5;">';
+    copyText += "Pontuou nos seguintes itens:\n";
+    
+    nihssData.forEach((step, index) => {
+      const val = nihssAnswers[index];
+      if (val > 0) {
+        const option = step.options.find(o => o.val === val);
+        const optionText = option ? option.text : String(val);
+        lostPointsHtml += `<li style="margin-bottom: 8px;"><strong>${step.title}</strong>: ${optionText}</li>`;
+        copyText += `- ${step.title}: ${optionText}\n`;
+      }
+    });
+    lostPointsHtml += '</ul>';
+  } else {
+    lostPointsHtml += '<h4 style="margin-bottom: 10px; color: #333; font-size: 1.1rem;">Nenhum ponto perdido.</h4>';
+  }
+
+  lostPointsHtml += '<h4 style="margin-bottom: 10px; color: #333; font-size: 1.1rem;">Copiar para Prontuário:</h4>';
+  lostPointsHtml += `<textarea readonly style="width: 100%; height: 120px; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; font-family: monospace; resize: vertical; background-color: #f8f9fa; cursor: pointer;" onclick="this.select(); document.execCommand('copy'); alert('Resultado copiado para a área de transferência!');">${copyText}</textarea>`;
+  lostPointsHtml += '<div style="font-size: 0.8rem; color: #888; margin-top: 5px;">Clique na caixa acima para copiar o texto e cole no prontuário.</div></div>';
+
+  let detailsContainer = document.getElementById("nihss-details-container");
+  if (!detailsContainer) {
+    detailsContainer = document.createElement("div");
+    detailsContainer.id = "nihss-details-container";
+    const btnReset = document.getElementById("btn-reset-nihss");
+    if (btnReset && btnReset.parentNode) {
+      btnReset.parentNode.insertBefore(detailsContainer, btnReset);
+    }
+  }
+  detailsContainer.innerHTML = lostPointsHtml;
 }
