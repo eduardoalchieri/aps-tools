@@ -4038,24 +4038,24 @@
                 <p style="margin: 0; font-size: 0.9rem; color: #495057; line-height: 1.5;">Esta calculadora aplica-se exclusivamente a bebês prematuros, ou seja, nascidos com menos de 37 semanas de idade gestacional. A correção da idade é clinicamente recomendada para a avaliação do crescimento e marcos de desenvolvimento neuropsicomotor até que a criança atinja 2 anos (24 meses) de idade cronológica.</p>
             </div>
 
-            <div class="input-group-med">
-                <label for="ip-data-nasc">Data de Nascimento do Bebê</label>
-                <input type="date" id="ip-data-nasc" onchange="calcularIdadeCorrigida()">
+            <div style="margin-bottom: 16px;">
+                <label for="ip-data-nasc" style="display: block; font-weight: 500; margin-bottom: 8px; color: #495057;">Data de Nascimento do Bebê</label>
+                <input type="date" id="ip-data-nasc" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; border: 1px solid #ddd; outline: none; box-sizing: border-box;" onchange="calcularIdadeCorrigida()">
             </div>
 
-            <div class="input-group-med">
-                <label for="ip-data-cons">Data da Consulta / Avaliação</label>
-                <input type="date" id="ip-data-cons" onchange="calcularIdadeCorrigida()">
+            <div style="margin-bottom: 16px;">
+                <label for="ip-data-cons" style="display: block; font-weight: 500; margin-bottom: 8px; color: #495057;">Data da Consulta / Avaliação</label>
+                <input type="date" id="ip-data-cons" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; border: 1px solid #ddd; outline: none; box-sizing: border-box;" onchange="calcularIdadeCorrigida()">
             </div>
 
-            <div style="display: flex; gap: 16px;">
-                <div class="input-group-med" style="flex: 1;">
-                    <label for="ip-ig-sem">IG ao Nascer (Semanas)</label>
-                    <input type="number" id="ip-ig-sem" min="20" max="42" placeholder="Ex: 34" oninput="calcularIdadeCorrigida()">
+            <div style="display: flex; gap: 16px; margin-bottom: 24px;">
+                <div style="flex: 1;">
+                    <label for="ip-ig-sem" style="display: block; font-weight: 500; margin-bottom: 8px; color: #495057;">IG ao Nascer (Semanas)</label>
+                    <input type="number" id="ip-ig-sem" min="20" max="42" placeholder="Ex: 34" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; border: 1px solid #ddd; outline: none; box-sizing: border-box;" oninput="calcularIdadeCorrigida()">
                 </div>
-                <div class="input-group-med" style="flex: 1;">
-                    <label for="ip-ig-dias">IG ao Nascer (Dias)</label>
-                    <input type="number" id="ip-ig-dias" min="0" max="6" value="0" oninput="calcularIdadeCorrigida()">
+                <div style="flex: 1;">
+                    <label for="ip-ig-dias" style="display: block; font-weight: 500; margin-bottom: 8px; color: #495057;">IG ao Nascer (Dias)</label>
+                    <input type="number" id="ip-ig-dias" min="0" max="6" value="0" style="width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; border: 1px solid #ddd; outline: none; box-sizing: border-box;" oninput="calcularIdadeCorrigida()">
                 </div>
             </div>
 
