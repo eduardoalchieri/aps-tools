@@ -475,6 +475,11 @@
                     <span class="material-symbols-outlined">pregnant_woman</span>
                     Calculadora Gestacional e Obstétrica
                 </button>
+                <button class="menu-btn" data-target="view-calc-prematuros"
+                    data-keywords="pediatria, bebê, prematuro, idade corrigida, crescimento, neonatologia, desenvolvimento, meses, gestacional">
+                    <span class="material-symbols-outlined">child_care</span>
+                    Calculadora Idade Corrigida (Prematuros)
+                </button>
                 <button class="menu-btn" data-target="view-calc-mdsupdrs"
                     data-keywords="parkinson, tremor, rigidez, bradicinesia, neurologia, neuro, movimento">
                     <span class="material-symbols-outlined">directions_walk</span>
@@ -4027,6 +4032,46 @@
             <div id="act-result" class="result-container"></div>
         </section>
 
+        <section id="view-calc-prematuros" class="view hidden">
+            <h2>Calculadora de Idade Corrigida para Prematuros</h2>
+            <div style="background-color: #f8f9fa; border-left: 4px solid #0b5ed7; padding: 16px; border-radius: 4px; margin-bottom: 24px;">
+                <p style="margin: 0; font-size: 0.9rem; color: #495057; line-height: 1.5;">Esta calculadora aplica-se exclusivamente a bebês prematuros, ou seja, nascidos com menos de 37 semanas de idade gestacional. A correção da idade é clinicamente recomendada para a avaliação do crescimento e marcos de desenvolvimento neuropsicomotor até que a criança atinja 2 anos (24 meses) de idade cronológica.</p>
+            </div>
+
+            <div class="input-group-med">
+                <label for="ip-data-nasc">Data de Nascimento do Bebê</label>
+                <input type="date" id="ip-data-nasc" onchange="calcularIdadeCorrigida()">
+            </div>
+
+            <div class="input-group-med">
+                <label for="ip-data-cons">Data da Consulta / Avaliação</label>
+                <input type="date" id="ip-data-cons" onchange="calcularIdadeCorrigida()">
+            </div>
+
+            <div style="display: flex; gap: 16px;">
+                <div class="input-group-med" style="flex: 1;">
+                    <label for="ip-ig-sem">IG ao Nascer (Semanas)</label>
+                    <input type="number" id="ip-ig-sem" min="20" max="42" placeholder="Ex: 34" oninput="calcularIdadeCorrigida()">
+                </div>
+                <div class="input-group-med" style="flex: 1;">
+                    <label for="ip-ig-dias">IG ao Nascer (Dias)</label>
+                    <input type="number" id="ip-ig-dias" min="0" max="6" value="0" oninput="calcularIdadeCorrigida()">
+                </div>
+            </div>
+
+            <button class="btn-action-sc" onclick="calcularIdadeCorrigida()">Calcular Idade Corrigida</button>
+
+            <div id="ip-alert-termo" style="background-color: #fff3cd; color: #856404; padding: 12px; border-radius: 6px; margin-top: 16px; display: none;">
+                Bebês nascidos com 37 semanas ou mais são considerados a termo. A correção de idade não é necessária para este perfil.
+            </div>
+
+            <div id="ip-result-card" class="final-score-box hidden"></div>
+
+            <div id="ip-alert-limite" style="background-color: #e2e3e5; color: #383d41; padding: 12px; border-radius: 6px; margin-top: 16px; display: none; font-size: 0.85rem;">
+                <strong>Nota:</strong> A criança já ultrapassou 2 anos de idade cronológica. Clinicamente, a correção da idade pode não ser mais necessária a partir deste marco.
+            </div>
+        </section>
+
         <section id="view-calc-gestacional" class="view hidden">
             <h2>Calculadora Gestacional e Obstétrica</h2>
 
@@ -7284,6 +7329,7 @@
     <script src="escalas/ckd_epi.js"></script>
     <script src="escalas/erg.js"></script>
     <script src="escalas/calculadora_gestacional.js"></script>
+    <script src="escalas/prematuridade.js"></script>
     <script src="escalas/mdsupdrs.js"></script>
     <script src="escalas/gold.js"></script>
     <script src="escalas/gina.js"></script>
