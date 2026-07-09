@@ -22,56 +22,56 @@
             tipo: "peso", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 0, valorMax: 24,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.76, top: 13.12, right: 93.2, bottom: 91.78 }
         },
         peso_meninos_0_5_zscore: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninos___0-5_anos__Em_Z_score.png",
             tipo: "peso", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 28,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.76, top: 13.12, right: 93.2, bottom: 91.78 }
         },
         peso_meninas_0_5_percentil: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninas___0-5_anos__Em_Percentil_.png",
             tipo: "peso", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 0, valorMax: 24,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 13.13, top: 20.07, right: 87.6, bottom: 85.13 }
         },
         peso_meninas_0_5_zscore: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninas___0-5_anos__Em__Z_score_.png",
             tipo: "peso", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 30,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 13.13, top: 20.07, right: 87.6, bottom: 85.13 }
         },
         peso_meninos_5_10_percentil: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninos___5-10_anos__Em_Percentil_.png",
             tipo: "peso", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 50,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         peso_meninos_5_10_zscore: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninos___5-10_anos__Em_Z_score_.png",
             tipo: "peso", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 60,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         peso_meninas_5_10_percentil: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninas___5-10_anos__Em_Percentil_.png",
             tipo: "peso", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 50,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
         peso_meninas_5_10_zscore: {
             img: "curvas_img/OMS__Peso_para_Idade__Meninas___5-10_anos__Em_Z_score_.png",
             tipo: "peso", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 60,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
 
         // ===================== ALTURA POR IDADE =====================
@@ -80,56 +80,56 @@
             tipo: "altura", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 120,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.76, top: 13.12, right: 93.2, bottom: 91.78 }
         },
         altura_meninos_0_5_zscore: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninos___0-5_anos__Em_Z_score_.png",
             tipo: "altura", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 125,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.76, top: 13.12, right: 93.2, bottom: 91.78 }
         },
         altura_meninas_0_5_percentil: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninas___0-5_anos__Em_Percentil_.png",
             tipo: "altura", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 120,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 13.13, top: 20.07, right: 87.6, bottom: 85.13 }
         },
         altura_meninas_0_5_zscore: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninas___0-5_anos__Em_Z_score_.png",
             tipo: "altura", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 125,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 13.13, top: 20.07, right: 87.6, bottom: 85.13 }
         },
         altura_meninos_5_19_percentil: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninos___5-19_anos__Em_Percentil_.png",
             tipo: "altura", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 100, valorMax: 190,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         altura_meninos_5_19_zscore: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninos___5-19_anos__Em_Z_score_.png",
             tipo: "altura", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 90, valorMax: 200,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         altura_meninas_5_19_percentil: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninas___5-19_anos__Em_Percentil_.png",
             tipo: "altura", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 100, valorMax: 180,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
         altura_meninas_5_19_zscore: {
             img: "curvas_img/OMS__Altura_para_Idade__Meninas___5-19_anos__Em_Z_score_.png",
             tipo: "altura", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 90, valorMax: 190,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
 
         // ===================== IMC POR IDADE =====================
@@ -138,42 +138,42 @@
             tipo: "imc", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 10, valorMax: 22,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.93, top: 13.24, right: 93.16, bottom: 91.48 }
         },
         imc_meninas_0_5_zscore: {
             img: "curvas_img/Curva_de_IMC__OMS__Meninas__de_0_a_5_anos__Escore_Z.png",
             tipo: "imc", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 10, valorMax: 22,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 13.17, top: 19.53, right: 87.64, bottom: 84.58 }
         },
         imc_meninos_5_19_percentil: {
             img: "curvas_img/OMS__IMC__Meninos___5-19_anos__Em_Percentil_.png",
             tipo: "imc", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 30,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         imc_meninos_5_19_zscore: {
             img: "curvas_img/OMS__IMC__Meninos___5-19_anos__Em_Z_score_.png",
             tipo: "imc", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 36,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         imc_meninas_5_19_percentil: {
             img: "curvas_img/OMS__IMC__Meninas___5-19_anos__Em_Percentil_.png",
             tipo: "imc", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 30,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
         imc_meninas_5_19_zscore: {
             img: "curvas_img/OMS__IMC__Meninas___5-19_anos__Em_Z_score_.png",
             tipo: "imc", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 36,
-            plotArea: { left: 12.82, top: 18.13, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
 
         // ===================== PERÍMETRO CEFÁLICO =====================
@@ -182,28 +182,28 @@
             tipo: "pc", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 32, valorMax: 54,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         pc_meninos_0_5_zscore: {
             img: "curvas_img/OMS__Perimetro_cefalico__Meninos___0-5_anos__Em_Z_score_.png",
             tipo: "pc", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 30, valorMax: 55,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 11.87, right: 93.63, bottom: 92.84 }
         },
         pc_meninas_0_5_percentil: {
             img: "curvas_img/OMS__Perimetro_cefalico__Meninas___0-5_anos__Em_Percentil_.png",
             tipo: "pc", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 32, valorMax: 54,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
         pc_meninas_0_5_zscore: {
             img: "curvas_img/OMS__Perimetro_cefalico__Meninas___0-5_anos__Em_Z_score_.png",
             tipo: "pc", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 30, valorMax: 55,
-            plotArea: { left: 12.82, top: 25.09, right: 86.57, bottom: 87.06 }
+            plotArea: { left: 6.19, top: 15.61, right: 93.63, bottom: 92.84 }
         },
     };
 
