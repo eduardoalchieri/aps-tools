@@ -22,7 +22,6 @@
             tipo: "peso", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 24.4,
-            ,
             plotArea: { left: 13.1, top: 20.04, right: 87.5, bottom: 85.04 }
         },
         peso_meninos_0_5_zscore: {
@@ -30,7 +29,6 @@
             tipo: "peso", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 28,
-            ,
             plotArea: { left: 13.1, top: 19.99, right: 84.9, bottom: 85.19 }
         },
         peso_meninas_0_5_percentil: {
@@ -38,7 +36,6 @@
             tipo: "peso", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 24.4,
-            ,
             plotArea: { left: 13, top: 20.04, right: 87.6, bottom: 85.04 }
         },
         peso_meninas_0_5_zscore: {
@@ -46,7 +43,6 @@
             tipo: "peso", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 2, valorMax: 30,
-            ,
             plotArea: { left: 13.1, top: 19.76, right: 85, bottom: 85.09 }
         },
         peso_meninos_5_10_percentil: {
@@ -54,7 +50,6 @@
             tipo: "peso", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 45,
-            ,
             plotArea: { left: 13.4, top: 18.58, right: 84, bottom: 85.28 }
         },
         peso_meninos_5_10_zscore: {
@@ -62,7 +57,6 @@
             tipo: "peso", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 57,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84, bottom: 85.42 }
         },
         peso_meninas_5_10_percentil: {
@@ -70,7 +64,6 @@
             tipo: "peso", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 47,
-            ,
             plotArea: { left: 13.3, top: 18.49, right: 84, bottom: 85.42 }
         },
         peso_meninas_5_10_zscore: {
@@ -78,7 +71,6 @@
             tipo: "peso", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 120,
             valorMin: 10, valorMax: 60,
-            ,
             plotArea: { left: 13.4, top: 18.49, right: 84, bottom: 85.42 }
         },
 
@@ -88,7 +80,6 @@
             tipo: "altura", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 120,
-            ,
             plotArea: { left: 13, top: 19.99, right: 84.8, bottom: 85.19 }
         },
         altura_meninos_0_5_zscore: {
@@ -96,7 +87,6 @@
             tipo: "altura", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 125,
-            ,
             plotArea: { left: 13.1, top: 19.99, right: 84.9, bottom: 85.04 }
         },
         altura_meninas_0_5_percentil: {
@@ -104,7 +94,6 @@
             tipo: "altura", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 120,
-            ,
             plotArea: { left: 13, top: 19.99, right: 84.9, bottom: 85.04 }
         },
         altura_meninas_0_5_zscore: {
@@ -112,7 +101,6 @@
             tipo: "altura", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 45, valorMax: 125,
-            ,
             plotArea: { left: 13, top: 19.85, right: 84.9, bottom: 84.9 }
         },
         altura_meninos_5_19_percentil: {
@@ -120,7 +108,6 @@
             tipo: "altura", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 100, valorMax: 192,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.2, bottom: 85.28 }
         },
         altura_meninos_5_19_zscore: {
@@ -128,7 +115,6 @@
             tipo: "altura", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 90, valorMax: 200,
-            ,
             plotArea: { left: 13.3, top: 18.63, right: 84, bottom: 85.56 }
         },
         altura_meninas_5_19_percentil: {
@@ -136,7 +122,6 @@
             tipo: "altura", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 100, valorMax: 182,
-            ,
             plotArea: { left: 13.4, top: 18.49, right: 84.2, bottom: 85.28 }
         },
         altura_meninas_5_19_zscore: {
@@ -144,7 +129,6 @@
             tipo: "altura", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 90, valorMax: 190,
-            ,
             plotArea: { left: 13.3, top: 18.63, right: 84.1, bottom: 85.56 }
         },
 
@@ -154,7 +138,6 @@
             tipo: "imc", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 9, valorMax: 22.4,
-            ,
             plotArea: { left: 13.2, top: 19.71, right: 85.1, bottom: 84.76 }
         },
         imc_meninas_0_5_zscore: {
@@ -162,7 +145,6 @@
             tipo: "imc", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 9, valorMax: 22.4,
-            ,
             plotArea: { left: 13, top: 19.43, right: 84.8, bottom: 84.48 }
         },
         imc_meninos_5_19_percentil: {
@@ -170,7 +152,6 @@
             tipo: "imc", sexo: "M", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 30,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.2, bottom: 85.28 }
         },
         imc_meninos_5_19_zscore: {
@@ -178,7 +159,6 @@
             tipo: "imc", sexo: "M", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 11.2, valorMax: 36,
-            ,
             plotArea: { left: 13.3, top: 18.63, right: 84.1, bottom: 85.42 }
         },
         imc_meninas_5_19_percentil: {
@@ -186,7 +166,6 @@
             tipo: "imc", sexo: "F", escala: "percentil",
             idadeMin: 60, idadeMax: 228,
             valorMin: 12, valorMax: 30,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.1, bottom: 85.28 }
         },
         imc_meninas_5_19_zscore: {
@@ -194,7 +173,6 @@
             tipo: "imc", sexo: "F", escala: "zscore",
             idadeMin: 60, idadeMax: 228,
             valorMin: 11.2, valorMax: 36,
-            ,
             plotArea: { left: 13.3, top: 18.63, right: 84, bottom: 85.42 }
         },
 
@@ -204,7 +182,6 @@
             tipo: "pc", sexo: "M", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 32, valorMax: 54,
-            ,
             plotArea: { left: 13.5, top: 18.63, right: 84.2, bottom: 85.28 }
         },
         pc_meninos_0_5_zscore: {
@@ -212,7 +189,6 @@
             tipo: "pc", sexo: "M", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 30, valorMax: 55,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.2, bottom: 85.28 }
         },
         pc_meninas_0_5_percentil: {
@@ -220,7 +196,6 @@
             tipo: "pc", sexo: "F", escala: "percentil",
             idadeMin: 0, idadeMax: 60,
             valorMin: 32, valorMax: 54,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.2, bottom: 85.42 }
         },
         pc_meninas_0_5_zscore: {
@@ -228,7 +203,6 @@
             tipo: "pc", sexo: "F", escala: "zscore",
             idadeMin: 0, idadeMax: 60,
             valorMin: 30, valorMax: 55,
-            ,
             plotArea: { left: 13.4, top: 18.63, right: 84.2, bottom: 85 }
         },
     };
