@@ -118,12 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setupCanvasDPI() {
-        // Obter tamanho real na tela
-        const rect = canvas.parentElement.getBoundingClientRect();
         const dpr = window.devicePixelRatio || 1;
 
-        // Limita a largura em 800 e a altura proporcionalmente (como no css style max-width: 800px e height: 400px)
-        const cssWidth = Math.min(rect.width, 800);
+        // Mantém tamanho fixo grande para legibilidade. Em mobile, o overflow-x: auto fará o scroll horizontal
+        const cssWidth = 800;
         const cssHeight = 400;
 
         // Atualizar canvas com as dimensões escalonadas
