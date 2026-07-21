@@ -69,6 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let meses = alvo.getMonth() - nasc.getMonth();
             let dias = alvo.getDate() - nasc.getDate();
 
+            // Ajuste pelo horário: se a hora alvo for menor que a hora de nascimento, o dia atual ainda não foi completado
+            const horaAlvoMinutos = alvo.getHours() * 60 + alvo.getMinutes();
+            const horaNascMinutos = nasc.getHours() * 60 + nasc.getMinutes();
+            if (horaAlvoMinutos < horaNascMinutos) {
+                dias--;
+            }
+
             if (dias < 0) {
                 meses--;
                 // Pega o último dia do mês anterior ao alvo para ajustar os dias
