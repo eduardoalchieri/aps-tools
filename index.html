@@ -510,6 +510,11 @@
                     <span class="material-symbols-outlined">calendar_month</span>
                     Calculadora de Idade
                 </button>
+                <button class="menu-btn" data-target="view-bilirrubina"
+                    data-keywords="icterícia, bilirrubina, neonatal, fototerapia, aap, recém-nascido, pediatria, amarelo">
+                    <span class="material-symbols-outlined">wb_sunny</span>
+                    Fototerapia AAP 2022
+                </button>
             </div>
         </section>
 
@@ -557,6 +562,46 @@
             </form>
 
             <div id="res-idade" style="display: none; margin-top: 2rem;"></div>
+        </section>
+
+        <section id="view-bilirrubina" class="view hidden">
+            <h2>Hiperbilirrubinemia (AAP 2022)</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Limiares de fototerapia para recém-nascidos ≥ 35 semanas (sem fatores de risco para neurotoxicidade).</p>
+
+            <form id="form-bilirrubina" style="display: flex; flex-direction: column; gap: 1.5rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 140px;">
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Idade Gestacional</label>
+                        <select id="bili-idade-gestacional" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background-color: white;">
+                            <option value="40">≥ 40 semanas</option>
+                            <option value="39">39 semanas</option>
+                            <option value="38">38 semanas</option>
+                            <option value="37">37 semanas</option>
+                            <option value="36">36 semanas</option>
+                            <option value="35">35 semanas</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Idade (horas de vida)</label>
+                        <input type="number" id="bili-idade-horas" min="0" max="336" placeholder="Ex: 48" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" required>
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Bilirrubina (mg/dL)</label>
+                        <input type="number" id="bili-valor" step="0.1" min="0" max="40" placeholder="Ex: 15.2" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" required>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-bilirrubina" class="btn-action-sc" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 1rem; background-color: #0b5ed7; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+                    <span class="material-symbols-outlined">show_chart</span> Avaliar Limiar
+                </button>
+            </form>
+
+            <div id="res-bilirrubina" style="display: none; margin-top: 2rem;">
+                <div id="bili-texto-resultado" style="margin-bottom: 1rem;"></div>
+                <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow-x: auto;">
+                    <canvas id="bili-canvas" width="600" height="400" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"></canvas>
+                </div>
+            </div>
         </section>
 
         <section id="view-sofa" class="view hidden">
@@ -7414,6 +7459,7 @@
     <script src="escalas/qsofa.js"></script>
     <script src="escalas/toast.js"></script>
     <script src="escalas/idade.js"></script>
+    <script src="escalas/bilirrubina.js"></script>
 
     <div id="ios-install-toast"
         style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); border-radius: 12px; padding: 15px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); width: 90%; max-width: 350px; z-index: 9999; text-align: center; border: 1px solid #e0e0e0; backdrop-filter: blur(5px);">

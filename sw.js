@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aps-tools-v40';
+const CACHE_NAME = 'aps-tools-v41';
 const urlsToCache = [
   './',
   './index.html',
@@ -66,6 +66,7 @@ const urlsToCache = [
   './escalas/toast.js',
   './escalas/prematuridade.js',
   './escalas/idade.js',
+  './escalas/bilirrubina.js',
   './curvas_crescimento.js'
 ];
 
