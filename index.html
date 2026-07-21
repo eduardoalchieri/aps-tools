@@ -566,7 +566,7 @@
 
         <section id="view-bilirrubina" class="view hidden">
             <h2>Hiperbilirrubinemia (AAP 2022)</h2>
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Limiares de fototerapia para recém-nascidos ≥ 35 semanas (sem fatores de risco para neurotoxicidade).</p>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Limiares de fototerapia e exsanguineotransfusão para recém-nascidos ≥ 35 semanas.</p>
 
             <form id="form-bilirrubina" style="display: flex; flex-direction: column; gap: 1.5rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -591,6 +591,22 @@
                     </div>
                 </div>
 
+                <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                    <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.8rem;">Fatores de Risco de Neurotoxicidade (Assinale se presentes):</label>
+                    <label style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0.5rem; cursor: pointer; color: #444; font-size: 0.95rem;">
+                        <input type="checkbox" id="bili-risk-hemo" style="width: 18px; height: 18px; margin-top: 2px;">
+                        <span>Doença hemolítica isoimune, deficiência de G6PD ou outras condições hemolíticas</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 0.5rem; cursor: pointer; color: #444; font-size: 0.95rem;">
+                        <input type="checkbox" id="bili-risk-sepse" style="width: 18px; height: 18px; margin-top: 2px;">
+                        <span>Sepse ou instabilidade clínica significativa nas últimas 24h</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer; color: #444; font-size: 0.95rem;">
+                        <input type="checkbox" id="bili-risk-albumina" style="width: 18px; height: 18px; margin-top: 2px;">
+                        <span>Albumina < 3.0 g/dL</span>
+                    </label>
+                </div>
+
                 <button type="button" id="btn-calc-bilirrubina" class="btn-action-sc" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 1rem; background-color: #0b5ed7; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.3s;">
                     <span class="material-symbols-outlined">show_chart</span> Avaliar Limiar
                 </button>
@@ -598,8 +614,14 @@
 
             <div id="res-bilirrubina" style="display: none; margin-top: 2rem;">
                 <div id="bili-texto-resultado" style="margin-bottom: 1rem;"></div>
-                <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow-x: auto;">
-                    <canvas id="bili-canvas" width="600" height="400" style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;"></canvas>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 1rem;">
+                    <button type="button" id="bili-tab-foto" style="flex: 1; padding: 0.8rem; border-radius: 8px; border: 1px solid #0b5ed7; background: #0b5ed7; color: white; font-weight: bold; cursor: pointer; font-size: 0.9rem;">Fototerapia</button>
+                    <button type="button" id="bili-tab-exsang" style="flex: 1; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd; background: #f8f9fa; color: #555; font-weight: bold; cursor: pointer; font-size: 0.9rem;">Exsanguíneo</button>
+                </div>
+
+                <div style="background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow-x: auto; position: relative;">
+                    <canvas id="bili-canvas" style="width: 100%; max-width: 800px; height: 400px; display: block; margin: 0 auto;"></canvas>
                 </div>
             </div>
         </section>
