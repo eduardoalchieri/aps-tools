@@ -505,7 +505,58 @@
                     <span class="material-symbols-outlined">neurology</span>
                     Critérios TOAST (AVC)
                 </button>
+                <button class="menu-btn" data-target="view-idade"
+                    data-keywords="idade, cronológica, meses, horas, pediatria, bebê, calculadora, nascimento, tempo, adulto, criança">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    Calculadora de Idade
+                </button>
             </div>
+        </section>
+
+        <section id="view-idade" class="view hidden">
+            <h2>Calculadora de Idade (Adultos e Bebês)</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Calcule a idade exata de adultos (anos, meses, dias) ou bebês (horas, dias).</p>
+
+            <form id="form-idade" style="display: flex; flex-direction: column; gap: 1.5rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem;">
+                    <h3 style="color: #0b5ed7; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined">event</span> Nascimento</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 140px;">
+                            <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Data</label>
+                            <input type="date" id="idade-data-nasc" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" required>
+                        </div>
+                        <div style="flex: 1; min-width: 140px;">
+                            <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Hora <span style="font-size: 0.8rem; color: #888;">(opcional/bebês)</span></label>
+                            <input type="time" id="idade-hora-nasc" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem;">
+                    <h3 style="color: #0b5ed7; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><span class="material-symbols-outlined">calendar_today</span> Data Alvo</h3>
+                    <div style="display: flex; gap: 10px; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 140px;">
+                            <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Data</label>
+                            <input type="date" id="idade-data-alvo" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" required>
+                        </div>
+                        <div style="flex: 1; min-width: 140px;">
+                            <label style="font-weight: 600; color: #555; display: block; margin-bottom: 0.3rem;">Hora</label>
+                            <input type="time" id="idade-hora-alvo" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;" required>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <button type="button" id="btn-idade-hoje" style="background: #e3f2fd; color: #0b5ed7; border: 1px solid #0b5ed7; padding: 8px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px;">
+                            <span class="material-symbols-outlined" style="font-size: 1.1rem;">update</span> Preencher com Agora
+                        </button>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-calc-idade" class="btn-action-sc" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 1rem; background-color: #0b5ed7; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+                    <span class="material-symbols-outlined">calculate</span> Calcular Idade
+                </button>
+            </form>
+
+            <div id="res-idade" style="display: none; margin-top: 2rem;"></div>
         </section>
 
         <section id="view-sofa" class="view hidden">
@@ -7362,6 +7413,7 @@
     <script src="escalas/sofa.js"></script>
     <script src="escalas/qsofa.js"></script>
     <script src="escalas/toast.js"></script>
+    <script src="escalas/idade.js"></script>
 
     <div id="ios-install-toast"
         style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.95); border-radius: 12px; padding: 15px 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); width: 90%; max-width: 350px; z-index: 9999; text-align: center; border: 1px solid #e0e0e0; backdrop-filter: blur(5px);">
