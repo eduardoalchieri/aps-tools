@@ -1,0 +1,65 @@
+Cliente: MARA REGINA DA SILVA SILVEIRA Data de Nasc:29/07/1974
+Prontuario: 413809 Cod. Cliente: 5285032
+Un. Requisitante: AMB Pedido: 2914698-00  em  01/04/2025 07:52:01
+Medico: MATEUS DORNELLES SEVERO Emissao Laudo: 13/05/2025 15:40:33
+__________________________________________________________________________________________________________
+HEMOGRAMA   
+Material: Sangue total com EDTA
+Método: Contagem automatizada de células, sem microscopia complementar 
+Eritrograma Leucograma
+Eritrócitos :       5,16  milhões/mm³ Leucócitos :        5240 /mm³    
+Hemoglobina :       14,2  g/dL Diferencial      Relativo        Absoluto
+Hematócrito :       40,2  % Neutrófilos :       62,5  %        3275 /mm³
+H.C.M. :       27,5  pg Linfócitos :       30,2  %        1582 /mm³ 
+V.C.M. :       77,9  micra³ Monócitos :        6,1  %         320 /mm³
+C.H.C.M. :       35,3  % Eosinófilos :        0,8  %          42 /mm³
+R.D.W. :       13,4  % Basófilos :        0,4  %          21 /mm³
+Plaquetas :          246 mil/mm³
+V.P.M. :         10,1 micra³
+Observações:
+                                                                                                                                                                                                   
+                          
+Colheita/Recebimento: 01/04/2025 07:52:01
+Conferência e Liberação Eletrônica: Jeniffer Beatriz Ramos dos Anjos - CRBM/RS - 11232
+Glicose                                          134 mg/dL
+Material: soro
+Método : Colorimétrico Enzimatico Valores de Referência
+70 a 99 mg/dl
+RN (até 28 d): 40 a 135 mg/dl
+                                                                                                                                                          
+Colheita/Recebimento: 01/04/2025 07:52:01
+Conferência e Liberação Eletrônica: Raquel Soares Moreira - CRBM/RS - 5402
+Hemoglobina glicada HbA1c_             6,7 %
+Material: sangue total                  
+Método: Cromatografia Líquida de Alta Performance- HPLC                          
+Glicose Média Estimada (GME)        145,6 mg/dL
+Valores de Referência (Indivíduos não diabéticos)
+HbA1c :< 5,7%  (GME correspondente: 117 mg/dL)
+Níveis de GME conforme recomendações das Diretrizes da Sociedade Brasileira de Diabetes 2013/2014.
+A técnica utilizada é certificada pelos seguintes métodos de referência:National Hemoglobin Standartization Program (NGSP) e 
+International Federation of Clinical Chemistry and Laboratory Medicine (IFCC).
+Colheita/Recebimento: 01/04/2025 07:52:01
+Conferência e Liberação Eletrônica: Miriam Maria Ten Kathen - CRF/RS - 11161
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Cliente: MARA REGINA DA SILVA SILVEIRA Data de Nasc:29/07/1974
+Prontuario: 413809 Cod. Cliente: 5285032
+Un. Requisitante: AMB Pedido: 2914698-00  em  01/04/2025 07:52:01
+Medico: MATEUS DORNELLES SEVERO Emissao Laudo: 13/05/2025 15:40:33
+__________________________________________________________________________________________________________
+Creatinina                                     0,65 mg/dL
+Material: soro                           
+Método Colorimétrico Cinético   Valores de Referência  
+     Homens  :0,8 a 1,3  mg/dL             RN : 0,24 a 0,85mg/dL
+     Mulheres: 0,6 a 1,0 mg/dL       2-12 m: 0,17 a 0,42 mg/dL
+         1-7 a : 0,24 a 0,59 mg/dL
+       7-13 a : 0,40 a 0,79 mg/dL
+      13-15 a: 0,57 a 0,89 mg/dL
+                Prematuros: 0,29 a 1,04 mg/dL
+                                                                                                                                                                                                 
+Colheita/Recebimento: 01/04/2025 07:52:01
+Conferência e Liberação Eletrônica: Raquel Soares Moreira - CRBM/RS - 5402
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754

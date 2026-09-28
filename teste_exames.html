@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Automatizado - Formatador de Exames</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1e1e1e; color: #d4d4d4; }
+        h1 { color: #569cd6; }
+        .test { margin: 15px 0; padding: 15px; border-radius: 6px; border-left: 4px solid #333; }
+        .test h3 { margin: 0 0 8px 0; }
+        .pass { border-left-color: #4ec9b0; }
+        .warn { border-left-color: #dcdcaa; }
+        .result { background: #2d2d2d; padding: 10px; border-radius: 4px; margin: 5px 0; font-size: 13px; white-space: pre-wrap; word-break: break-all;}
+        .label { color: #9cdcfe; }
+        .value { color: #ce9178; }
+        .expected { color: #6a9955; }
+        #summary { background: #264f78; padding: 15px; border-radius: 6px; margin-top: 20px; font-size: 16px; }
+        button { background: #0e639c; color: white; border: none; padding: 12px 24px; cursor: pointer; border-radius: 4px; font-size: 16px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste Automatizado - Motor V6</h1>
+    <p>Carregando exames da pasta amostras_exames/...</p>
+    <button onclick="runTests()">▶ Executar Todos os Testes</button>
+    <div id="output"></div>
+    <div id="summary"></div>
+
+    <!-- Importa o motor do formatador -->
+    <script>
+        // Copiar todo o motor aqui inline para testes
+        // (vamos incluir via fetch do arquivo principal)
+    </script>
+
+    <script>
+    // Exames esperados por arquivo (ground truth manual)
+    const expected = {
+        "exame_1": {
+            nome: "LUIZ FRANCISCO AUGUSTI",
+            prontuario: "162450",
+            exames: ["HbA1c 6,0%", "Cr 0,94", "CT 221", "TG 220", "HDL 50", "LDL 127"]
+        },
+        "exame_2": {
+            nome: "LUIS ADEMAR PIMENTEL",
+            prontuario: "423337",
+            exames: ["HbA1c 5,7%", "CT 96", "TG 80", "HDL 42", "LDL 38", "TSH 6,870", "T4L 1,58", "Anti-TPO 8,01", "TRAb 1,52"]
+        },
+        "exame_3": {
+            nome: "GILDA ROSANE DIEFENTHALER",
+            prontuario: "108979",
+            exames: ["HbA1c 6,7%", "Cr 1,11", "CT 169", "TG 162", "HDL 61", "LDL 75.6", "K 4,8", "Alb 4,0", "TGO 18", "TGP 31", "GGT 23"]
+        },
+        "exame_4": {
+            nome: "MARA REGINA DA SILVA SILVEIRA",
+            prontuario: "413809",
+            exames: ["Hb 14,2", "Ht 40,2%", "Leuc 5240", "Plaq 246", "Segm 62,5%", "Gli 134", "HbA1c 6,7%", "Cr 0,65"]
+        },
+        "exame_5": {
+            nome: "ILMO ARMANDO REETZ",
+            prontuario: "117287",
+            exames: ["Hb 15,3", "Ht 45,4%", "Leuc 11110", "Plaq 199", "HbA1c 5,9%", "Cr 1,15", "CT 158", "TG 178", "HDL 49", "LDL 73.4", "AU 6,3", "K 3,4", "TGP 40", "Vit D 36,66", "TSH 4,150", "PSA 1,060", "Vit B12 546.0"]
+        },
+        "exame_6": {
+            nome: "ILMO ARMANDO REETZ",
+            prontuario: "117287",
+            exames: ["Hb 15,3", "Ht 45,4%", "Leuc 11110", "Plaq 199", "HbA1c 5,9%", "Cr 1,15", "CT 158", "TG 178", "HDL 49", "LDL 73.4", "AU 6,3", "K 3,4", "TGP 40", "Vit D 36,66", "TSH 4,150", "PSA 1,060", "Vit B12 546.0"]
+        },
+        "exame_7": {
+            nome: "JANDIRA COSTA DA SILVA",
+            prontuario: "437524",
+            exames: ["Hb 14,1", "Ht 42,4%", "Leuc 8870", "Plaq 282", "Gli 154", "HbA1c 8,0%", "Ur 38,0", "Cr 0,92", "CT 254", "TG 226", "HDL 35", "LDL 173.8", "TGO 54", "TGP 59", "CPK 50"]
+        },
+        "exame_8": {
+            nome: "MARIA HELENA DORMALTO DA SILVA",
+            prontuario: "24984",
+            exames: ["Hb 15,7", "Ht 48,0%", "Leuc 6410", "Plaq 129", "Gli 128", "HbA1c 6,3%", "Cr 1,07", "CT 135", "TG 87", "HDL 42", "LDL 75.6", "K 4,8", "BNP 285"]
+        }
+    };
+
+    async function runTests() {
+        const output = document.getElementById('output');
+        const summary = document.getElementById('summary');
+        output.innerHTML = '<p>Executando testes...</p>';
+
+        // Fetch e parse do motor
+        const resp = await fetch('testador_exames.html');
+        const html = await resp.text();
+        
+        // Extrair o JS do motor
+        const scriptMatch = html.match(/<script>([\s\S]*?)<\/script>/);
+        if (!scriptMatch) {
+            output.innerHTML = '<p style="color:red">ERRO: Não consegui extrair o script do motor!</p>';
+            return;
+        }
+        
+        // Criar uma função sandbox com o motor
+        const motorCode = scriptMatch[1];
+        // Avaliar o motor no contexto global temporariamente
+        eval(motorCode);
+
+        let totalExames = 0;
+        let totalEncontrados = 0;
+        let totalFaltando = 0;
+        let resultHTML = '';
+
+        for (let arquivo in expected) {
+            const exp = expected[arquivo];
+            
+            // Fetch do arquivo de teste
+            let textoExame;
+            try {
+                const r = await fetch(`amostras_exames/${arquivo}.txt`);
+                textoExame = await r.text();
+            } catch(e) {
+                resultHTML += `<div class="test warn"><h3>⚠️ ${arquivo}.txt</h3><p>Arquivo não encontrado</p></div>`;
+                continue;
+            }
+
+            const { cabecalho, textoProntuario } = processarTexto(textoExame);
+
+            let encontrados = [];
+            let faltando = [];
+
+            for (let exEsperado of exp.exames) {
+                totalExames++;
+                // Checa se o resultado formatado contém o exame esperado
+                if (textoProntuario.includes(exEsperado)) {
+                    encontrados.push(exEsperado);
+                    totalEncontrados++;
+                } else {
+                    faltando.push(exEsperado);
+                    totalFaltando++;
+                }
+            }
+
+            let nomeOk = cabecalho.nome.includes(exp.nome.split(' ')[0]);
+            let prontuarioOk = cabecalho.prontuario === exp.prontuario;
+
+            let status = faltando.length === 0 ? 'pass' : 'warn';
+            let icon = faltando.length === 0 ? '✅' : '⚠️';
+
+            resultHTML += `<div class="test ${status}">`;
+            resultHTML += `<h3>${icon} ${arquivo}.txt — ${exp.nome.split(' ')[0]} ${exp.nome.split(' ').pop()}</h3>`;
+            resultHTML += `<div class="result"><span class="label">Nome:</span> ${cabecalho.nome} ${nomeOk ? '✅' : '❌'} | <span class="label">Prontuário:</span> ${cabecalho.prontuario} ${prontuarioOk ? '✅' : '❌'}</div>`;
+            resultHTML += `<div class="result"><span class="label">Saída:</span> <span class="value">${textoProntuario}</span></div>`;
+            
+            if (encontrados.length > 0) {
+                resultHTML += `<div class="result"><span class="expected">✅ Encontrados (${encontrados.length}/${exp.exames.length}):</span> ${encontrados.join(' | ')}</div>`;
+            }
+            if (faltando.length > 0) {
+                resultHTML += `<div class="result" style="color: #f48771;">❌ Faltando (${faltando.length}): ${faltando.join(' | ')}</div>`;
+            }
+            
+            resultHTML += `</div>`;
+        }
+
+        output.innerHTML = resultHTML;
+
+        let pct = totalExames > 0 ? Math.round((totalEncontrados / totalExames) * 100) : 0;
+        summary.innerHTML = `<strong>📊 Resumo:</strong> ${totalEncontrados}/${totalExames} exames extraídos corretamente (${pct}%) — ${totalFaltando} faltando`;
+        summary.style.background = pct === 100 ? '#2d4a22' : pct > 80 ? '#4a4422' : '#4a2222';
+    }
+    </script>
+</body>
+</html>

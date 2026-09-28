@@ -1,0 +1,102 @@
+Cliente: LUIS ADEMAR PIMENTEL Data de Nasc:02/08/1957
+Prontuario: 423337 Cod. Cliente: 5295056
+Un. Requisitante: AMB Pedido: 2861326-00  em  22/11/2024 07:40:19
+Medico: DIEGO CHEMELLO Emissao Laudo: 27/05/2025 12:25:41
+__________________________________________________________________________________________________________
+Hemoglobina glicada HbA1c_             5,7 %
+Material: sangue total                  
+Método: Cromatografia Líquida de Alta Performance- HPLC                          
+Glicose Média Estimada (GME)        116,9 mg/dL
+Valores de Referência (Indivíduos não diabéticos)
+HbA1c :< 5,7%  (GME correspondente: 117 mg/dL)
+Níveis de GME conforme recomendações das Diretrizes da Sociedade Brasileira de Diabetes 2013/2014.
+A técnica utilizada é certificada pelos seguintes métodos de referência:National Hemoglobin Standartization Program (NGSP) e 
+International Federation of Clinical Chemistry and Laboratory Medicine (IFCC).
+Colheita/Recebimento: 22/11/2024 07:40:19
+Conferência e Liberação Eletrônica: Danieli Valnes Magni - CRF/RS - 15043
+                                            COM JEJUM   SEM JEJUM
+Colesterol Total                               96 mg/dL     Valores de Referência: Adultos > 20 anos:              - Desejável       <190 < 190
+          (mg/dL)
+                                           
+Triglicerídeos                                  80 mg/dL     Valores de Referência: Adultos > 20 anos:              - Desejável        <150         < 175
+            (mg/dL) 
+  
+Colesterol HDL                                42 mg/dL    Valores de Referência: Adultos > 20 anos:             - Desejável        > 40 > 40
+ (mg/dL)     
+     CATEGORIA DE RISCO**
+Colesterol LDL                                38 mg/dL    Valores de Referência: Adultos > 20 anos:- Baixo < 130
+(mg/dL)- Intermediário     < 100
+Material: soro- Alto       < 70
+Método: Colorimétrico Enzimático Homogêneo- Muito alto     < 50
+                                                                                                                                                                                                              
+**A categoria de risco cardiovascular é estimada pelo médico solicitante.
+Os componentes do perfil lipídico podem sofrer VARIABILIDADES BIOLÓGICAS INDIVIDUAIS ao longo do tempo.
+Em indivíduos saudáveis, as variações médias para Colesterol total, HDL e LDL é cerca de 10 % e para Triglicerídeos, superior a 20%.
+Além disso, álcool e atividades físicas rigorosas também podem interferir nos resultados.
+Fonte: Atualização da Diretriz Brasileira sobre Dislipidemias e Prevenção da Aterosclerose da Sociedade Brasileira de Cardiologia - 2017
+Colheita/Recebimento: 22/11/2024 07:40:19
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+TSH                                                              6,870 uIU/mL
+Material: Soro
+Eletroquimioluminescência       
+                                                Valores de Referência
+                                      0,270 a 4,20 uIU/mL
+Colheita/Recebimento: 22/11/2024 07:40:19
+Conferência e Liberação Eletrônica: Juliana Fleck - CRF/RS - 5632
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Cliente: LUIS ADEMAR PIMENTEL Data de Nasc:02/08/1957
+Prontuario: 423337 Cod. Cliente: 5295056
+Un. Requisitante: AMB Pedido: 2861326-00  em  22/11/2024 07:40:19
+Medico: DIEGO CHEMELLO Emissao Laudo: 27/05/2025 12:25:41
+__________________________________________________________________________________________________________
+T4 Livre                                                          1,58 ng/dL     
+Material: Soro
+Eletroquimioluminescência       
+                                   
+ Valores de Referência:
+   Adultos : 0,93  a  1,71 ng/dl
+                                                                                                                                                                           
+Colheita/Recebimento: 22/11/2024 07:40:19
+Conferência e Liberação Eletrônica: Juliana Fleck - CRF/RS - 5632
+Anti  TPO   (TPO - Ab)                                         8,01  UI/mL       
+Material: Soro
+Eletroquimioluminescência                                       
+                                            Valores de Referência: até 34 UI/mL
+Colheita/Recebimento: 22/11/2024 07:40:19
+Conferência e Liberação Eletrônica: Juliana Fleck - CRF/RS - 5632
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Solicitante:
+Paciente: LUIS ADEMAR PIMENTEL
+Apoiado: 1047754 - HOSPITAL UNIVERSITARIO DE SANTA MARIA
+CRM-RS-26116 DIEGO CHEMELLO
+Cidade/UF: SANTA MARIA/RS
+Idade: 67a
+Cód. Apoiado: 1308965165
+2861326-00
+Masculino
+02/08/1957
+Sexo:
+Dt. Nasc:
+CPF:
+33516081015
+Pedido:
+Dt. Cadastro: 22/11/2024
+ANTICORPO ANTI RECEPTOR DE TSH - TRAB
+Resultado:                         
+Material: SORO
+Método..: QUIMIOLUMINESCÊNCIA
+DB SÃO JOSÉ DOS PINHAIS CNES: 6733921
+ 1,52 UI/L
+Assinatura digital:
+CF50CD3A75138D1047FEA933B0A2C6BFF2583FAE37169B4AD7666D3E25655DB
+Coletado em (22/11/2024 11:03)
+Valor de referência
+Reagente....: Superior a 3,10 UI/L
+Não reagente: Inferior a 3,10 UI/L
+Assinado eletronicamente em:(23/11/2024 18:43)
+por Dra. Anne Carolina Mezzomo - CRBM-6: 0336
+Página 1 de 1

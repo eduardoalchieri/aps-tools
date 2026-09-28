@@ -395,6 +395,11 @@
                     style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; outline: none;">
             </div>
             <div id="container-calculadoras" class="grid-container">
+                <button class="menu-btn" data-target="view-formatador-exames"
+                    data-keywords="exames, laboratório, lab, formatador, conversor, db, husm, copiar, colar, pdf, texto, resultados">
+                    <span class="material-symbols-outlined">assignment</span>
+                    Formatador de Exames Lab.
+                </button>
                 <button class="menu-btn" data-target="view-curb65"
                     data-keywords="pulmão, pneumonia, crb, curb, curb-65, respiração, infecção, ubs">
                     <span class="material-symbols-outlined">pulmonology</span>
@@ -944,6 +949,49 @@
             </form>
 
             <div id="res-meldna" class="result-container" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: none; margin-top: 1.5rem;">
+            </div>
+        </section>
+
+        <!-- FORMATADOR DE EXAMES -->
+        <section id="view-formatador-exames" class="view hidden">
+            <h2 style="display: flex; align-items: center; gap: 10px;">
+                <span class="material-symbols-outlined" style="color: #0b5ed7; font-size: 1.5rem;">assignment</span>
+                Formatador de Exames Lab.
+            </h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Cole o laudo bagunçado (PDF do laboratório copiado) abaixo. O sistema filtra automaticamente referências e sujeira estrutural, gerando um resumo limpo e padronizado.</p>
+            
+            <textarea id="inputText-formatador" placeholder="Exemplo: Cole o laudo do laboratório aqui (Ctrl+A e Ctrl+C no PDF)..." style="width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 8px; padding: 1rem; font-family: monospace; font-size: 14px; resize: vertical; box-sizing: border-box; margin-bottom: 1.5rem; background-color: #fafafa;"></textarea>
+            
+            <button class="btn-action-sc" onclick="executarFormatacao()" style="width: 100%; justify-content: center; margin-bottom: 2rem;">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                Processar Resultados
+            </button>
+            
+            <div id="resultPanel-formatador" style="display: none; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; font-weight: 700; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Validação do Paciente</div>
+                <div style="display: flex; gap: 2rem; border-left: 4px solid #0b5ed7; padding-left: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <span style="font-size: 0.75rem; color: #666; text-transform: uppercase; font-weight: 600;">Nome do Paciente</span>
+                        <strong id="outNome-formatador" style="color: #333; font-size: 1.125rem;">-</strong>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <span style="font-size: 0.75rem; color: #666; text-transform: uppercase; font-weight: 600;">Prontuário/ID</span>
+                        <strong id="outProntuario-formatador" style="color: #333; font-size: 1.125rem;">-</strong>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 4px;">
+                        <span style="font-size: 0.75rem; color: #666; text-transform: uppercase; font-weight: 600;">Data do Exame</span>
+                        <strong id="outData-formatador" style="color: #333; font-size: 1.125rem;">-</strong>
+                    </div>
+                </div>
+
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #666; font-weight: 700; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Resultado Formatado</div>
+                <div id="resultadoFinal-formatador" style="background: #f8f9fa; border: 1px solid #ddd; border-left: 4px solid #28a745; padding: 1rem; border-radius: 4px; font-family: monospace; font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.25rem; word-break: break-word; color: #111;">-</div>
+                
+                <button class="btn-action-sc" onclick="copiarTextoFormatador()" style="background-color: #28a745; border-color: #28a745; width: 100%; justify-content: center;">
+                    <span class="material-symbols-outlined">content_copy</span>
+                    Copiar para o Prontuário
+                </button>
+                <div id="copyFeedback-formatador" style="color: #28a745; font-weight: 600; font-size: 0.95rem; text-align: center; margin-top: 1rem; display: none;">Copiado com sucesso!</div>
             </div>
         </section>
 
@@ -7512,6 +7560,7 @@
     <script src="medicamentos.js"></script>
     <script src="curvas_crescimento.js"></script>
     <script src="escalas/lawton.js"></script>
+    <script src="formatador_exames.js"></script>
 
 </body>
 

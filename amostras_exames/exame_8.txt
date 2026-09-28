@@ -1,0 +1,124 @@
+Cliente: MARIA HELENA DORMALTO DA SILVA Data de Nasc:13/08/1948
+Prontuario: 24984 Cod. Cliente: 127262
+Un. Requisitante: AMB Pedido: 2929116-00  em  05/05/2025 07:47:35
+Medico: MATEUS DINIZ MARQUES Emissao Laudo: 27/05/2025 12:48:46
+__________________________________________________________________________________________________________
+HEMOGRAMA   
+Material: Sangue total com EDTA
+Método: Contagem automatizada de células, sem microscopia complementar 
+Eritrograma Leucograma
+Eritrócitos :       5,09  milhões/mm³ Leucócitos :        6410 /mm³    
+Hemoglobina :       15,7  g/dL Diferencial      Relativo        Absoluto
+Hematócrito :       48,0  % Neutrófilos :       56,0  %        3590 /mm³
+H.C.M. :       30,8  pg Linfócitos :       30,6  %        1961 /mm³ 
+V.C.M. :       94,3  micra³ Monócitos :        8,9  %         570 /mm³
+C.H.C.M. :       32,7  % Eosinófilos :        3,4  %         218 /mm³
+R.D.W. :       13,7  % Basófilos :        1,1  %          71 /mm³
+Plaquetas :          129 mil/mm³
+V.P.M. :         11,1 micra³
+Observações:
+                                                                                                                                                                                                   
+                          
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Bárbara Villa - CRBM/RS - 1450
+Glicose                                          128 mg/dL
+Material: soro
+Método : Colorimétrico Enzimatico Valores de Referência
+70 a 99 mg/dl
+RN (até 28 d): 40 a 135 mg/dl
+                                                                                                                                                          
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Sebastian Pandolfi Ribas - CRF/RS - 548178
+Hemoglobina glicada HbA1c_             6,3 %
+Material: sangue total                  
+Método: Cromatografia Líquida de Alta Performance- HPLC                          
+Glicose Média Estimada (GME)        134,1 mg/dL
+Valores de Referência (Indivíduos não diabéticos)
+HbA1c :< 5,7%  (GME correspondente: 117 mg/dL)
+Níveis de GME conforme recomendações das Diretrizes da Sociedade Brasileira de Diabetes 2013/2014.
+A técnica utilizada é certificada pelos seguintes métodos de referência:National Hemoglobin Standartization Program (NGSP) e 
+International Federation of Clinical Chemistry and Laboratory Medicine (IFCC).
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Miriam Maria Ten Kathen - CRF/RS - 11161
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Cliente: MARIA HELENA DORMALTO DA SILVA Data de Nasc:13/08/1948
+Prontuario: 24984 Cod. Cliente: 127262
+Un. Requisitante: AMB Pedido: 2929116-00  em  05/05/2025 07:47:35
+Medico: MATEUS DINIZ MARQUES Emissao Laudo: 27/05/2025 12:48:46
+__________________________________________________________________________________________________________
+Creatinina                                     1,07 mg/dL
+Material: soro                           
+Método Colorimétrico Cinético   Valores de Referência  
+     Homens  :0,8 a 1,3  mg/dL             RN : 0,24 a 0,85mg/dL
+     Mulheres: 0,6 a 1,0 mg/dL       2-12 m: 0,17 a 0,42 mg/dL
+         1-7 a : 0,24 a 0,59 mg/dL
+       7-13 a : 0,40 a 0,79 mg/dL
+      13-15 a: 0,57 a 0,89 mg/dL
+                Prematuros: 0,29 a 1,04 mg/dL
+                                                                                                                                                                                                 
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Sebastian Pandolfi Ribas - CRF/RS - 548178
+                                            COM JEJUM   SEM JEJUM
+Colesterol Total                              135 mg/dL     Valores de Referência: Adultos > 20 anos:              - Desejável       <190 < 190
+          (mg/dL)
+                                           
+Triglicerídeos                                  87 mg/dL     Valores de Referência: Adultos > 20 anos:              - Desejável        <150         < 175
+            (mg/dL) 
+  
+Colesterol HDL                                42 mg/dL    Valores de Referência: Adultos > 20 anos:             - Desejável        > 40 > 40
+ (mg/dL)     
+     CATEGORIA DE RISCO**
+Colesterol LDL                              75.6 mg/dL    Valores de Referência: Adultos > 20 anos:- Baixo < 130
+(mg/dL)- Intermediário     < 100
+Material: soro- Alto       < 70
+Método: Colorimétrico Enzimático Homogêneo- Muito alto     < 50
+                                                                                                                                                                                                              
+**A categoria de risco cardiovascular é estimada pelo médico solicitante.
+Os componentes do perfil lipídico podem sofrer VARIABILIDADES BIOLÓGICAS INDIVIDUAIS ao longo do tempo.
+Em indivíduos saudáveis, as variações médias para Colesterol total, HDL e LDL é cerca de 10 % e para Triglicerídeos, superior a 20%.
+Além disso, álcool e atividades físicas rigorosas também podem interferir nos resultados.
+Fonte: Atualização da Diretriz Brasileira sobre Dislipidemias e Prevenção da Aterosclerose da Sociedade Brasileira de Cardiologia - 2017
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Sebastian Pandolfi Ribas - CRF/RS - 548178
+Potássio                                        4,8 mmol/L  
+Material:soro                 
+Método: Íon Seletivo Indireto               Valores de Referência 
+                                                3,5 a   5,1mmol/L
+                                                                                                                                                                      
+Colheita/Recebimento: 05/05/2025 07:47:35
+Conferência e Liberação Eletrônica: Sebastian Pandolfi Ribas - CRF/RS - 548178
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Solicitante:
+Paciente: MARIA HELENA DORMALTO DA SILVA
+Apoiado: 1047754 - HOSPITAL UNIVERSITARIO DE SANTA MARIA
+CRM-RS-26444 MATEUS DINIZ MARQUES
+Cidade/UF: SANTA MARIA/RS
+Idade: 76a
+Cód. Apoiado: 1336458173
+2929116-00
+Feminino
+13/08/1948
+Sexo:
+Dt. Nasc:
+CPF:
+34222324000
+Pedido:
+Dt. Cadastro: 05/05/2025
+BNP - PEPTÍDEO NATRIURÉTICO
+Resultado:
+Método..: QUIMIOLUMINESCÊNCIA
+Material: PLASMA DE EDTA - CONGELADO
+DB SÃO JOSÉ DOS PINHAIS CNES: 6733921
+Assinatura digital:
+5F3ECDBF19499944B84A7201A122EE9B17BE472D3FBC47ED92A874BE172577C
+Coletado em (05/05/2025 10:50)
+Valor de referência
+ 285 pg/mL
+Inferior a 100 pg/mL
+Assinado eletronicamente em:(06/05/2025 14:57)
+por Dra. Karla Regina Kroker - CRBM-6: 0365
+Página 1 de 1

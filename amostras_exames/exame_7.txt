@@ -1,0 +1,141 @@
+Cliente: JANDIRA COSTA DA SILVA Data de Nasc:19/10/1961
+Prontuario: 437524 Cod. Cliente: 5309256
+Un. Requisitante: AMB Pedido: 2930316-00  em  07/05/2025 07:27:55
+Medico: ANGELA QUATRIN CAMPAGNOLO Emissao Laudo: 13/05/2025 15:27:50
+__________________________________________________________________________________________________________
+HEMOGRAMA   
+Material: Sangue total com EDTA
+Método: Contagem automatizada de células, sem microscopia complementar 
+Eritrograma Leucograma
+Eritrócitos : 4,51milhões/mm³ Leucócitos : 8870/mm³
+Hemoglobina :       14,1  g/dL Diferencial      Relativo        Absoluto
+Hematócrito :       42,4  % Neutrófilos :       53,8  %        4772 /mm³
+H.C.M. :       31,3  pg Linfócitos :       37,9  %        3362 /mm³ 
+V.C.M. :       94,0  micra³ Monócitos :        6,0  %         532 /mm³
+C.H.C.M. :       33,3  % Eosinófilos :        1,1  %          98 /mm³
+R.D.W. :       14,1  % Basófilos :        1,2  %         106 /mm³
+Plaquetas :          282 mil/mm³
+V.P.M. :         10,2 micra³
+Observações:
+                                                                                                                                                                                                  
+                          
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Fernanda Gomes Nascimento - CRF/RS - 8515
+Glicose                                          154 mg/dL
+Material: soro
+Método : Colorimétrico Enzimatico Valores de Referência
+70 a 99 mg/dl
+RN (até 28 d): 40 a 135 mg/dl
+                                                                                                                                                          
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+Hemoglobina glicada HbA1c_             8,0 %
+Material: sangue total                  
+Método: Cromatografia Líquida de Alta Performance- HPLC                          
+Glicose Média Estimada (GME)        182,9 mg/dL
+Valores de Referência (Indivíduos não diabéticos)
+HbA1c :< 5,7%  (GME correspondente: 117 mg/dL)
+Níveis de GME conforme recomendações das Diretrizes da Sociedade Brasileira de Diabetes 2013/2014.
+A técnica utilizada é certificada pelos seguintes métodos de referência:National Hemoglobin Standartization Program (NGSP) e 
+International Federation of Clinical Chemistry and Laboratory Medicine (IFCC).
+Análise do exame repetida e confirmada                                                                                                                                                         
+                                                                        
+                                                                                                                                                                                                                         
+                                             
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Danieli Valnes Magni - CRF/RS - 15043
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Cliente: JANDIRA COSTA DA SILVA Data de Nasc:19/10/1961
+Prontuario: 437524 Cod. Cliente: 5309256
+Un. Requisitante: AMB Pedido: 2930316-00  em  07/05/2025 07:27:55
+Medico: ANGELA QUATRIN CAMPAGNOLO Emissao Laudo: 13/05/2025 15:27:50
+__________________________________________________________________________________________________________
+Ureia                                           38,0 mg/dL 
+Material: soro                    
+Método:Cinético UV Valores de Referência 
+                                                        Adultos: 15 a 39 mg/dL     
+                                                                                                                                                                           
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+Creatinina                                     0,92 mg/dL
+Material: soro                           
+Método Colorimétrico Cinético   Valores de Referência  
+     Homens  :0,8 a 1,3  mg/dL             RN : 0,24 a 0,85mg/dL
+     Mulheres: 0,6 a 1,0 mg/dL       2-12 m: 0,17 a 0,42 mg/dL
+         1-7 a : 0,24 a 0,59 mg/dL
+       7-13 a : 0,40 a 0,79 mg/dL
+      13-15 a: 0,57 a 0,89 mg/dL
+                Prematuros: 0,29 a 1,04 mg/dL
+                                                                                                                                                                                                
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+                                            COM JEJUM   SEM JEJUM
+Colesterol Total                              254 mg/dL     Valores de Referência: Adultos > 20 anos:             - Desejável       <190 < 190
+          (mg/dL)
+                                           
+Triglicerídeos                                 226 mg/dL     Valores de Referência: Adultos > 20 anos:              - Desejável        <150         < 175
+            (mg/dL) 
+  
+Colesterol HDL                                35 mg/dL    Valores de Referência: Adultos > 20 anos:             - Desejável        > 40 > 40
+ (mg/dL)     
+     CATEGORIADE RISCO**
+Colesterol LDL                             173.8 mg/dL    Valores de Referência: Adultos > 20 anos:- Baixo < 130
+(mg/dL)- Intermediário     < 100
+Material: soro- Alto       < 70
+Método: Colorimétrico Enzimático Homogêneo- Muito alto     < 50
+                                                                                                                                                                                                             
+**A categoria de risco cardiovascular é estimada pelo médico solicitante.
+Os componentes do perfil lipídico podem sofrer VARIABILIDADES BIOLÓGICAS INDIVIDUAIS ao longo do tempo.
+Em indivíduos saudáveis, as variações médias para Colesterol total, HDL e LDL é cerca de 10 % e para Triglicerídeos, superior a 20%.
+Além disso, álcool e atividades físicas rigorosas também podem interferir nos resultados.
+Fonte: Atualização da Diretriz Brasileira sobre Dislipidemias e Prevenção da Aterosclerose da Sociedade Brasileira de Cardiologia - 2017
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+TGO                                               54 U/L                          
+Transaminase oxalacética
+Material: soro                                     
+Método: UV   Valores de Referência 
+                                    15 a 37 U/L   
+                                                                                                                                                                          
+Colheita/Recebimento: 07/05/2025 07:27:55
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
+Cliente: JANDIRA COSTA DA SILVA
+Prontuario: 437524
+Un. Requisitante: AMB
+Medico: ANGELA QUATRIN CAMPAGNOLO
+Data de Nasc:19/10/1961
+Cod. Cliente: 5309256
+Pedido: 2930316-00  em  07/05/2025 07:27:55
+Emissao Laudo: 13/05/2025 15:27:50
+__________________________________________________________________________________________________________
+TGP                                              
+ 59
+Transaminase pirúvica
+Material:soro
+Método: UV
+Colheita/Recebimento: 07/05/2025 07:27:55
+U/L                 
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+CPK                                              
+50
+CREATINOFOSFOQUINASE
+Material: soro
+Método: UV
+Colheita/Recebimento: 07/05/2025 07:27:55
+UI/L   
+Conferência e Liberação Eletrônica: Michelle Kaefer - CRF/RS - 10497
+Valores de Referência
+Masculino:  16 a 63 U/L
+Feminino:    14 a 59 U/L
+ Valores de Referência
+ Homens  :  39 a 308 UI/L
+ Mulheres :  26 a 192 UI/L
+__________________________________________________________________________________________________________
+Laboratório inscrito no CNES 2244306 e CRF-RS 5512                       
+Responsável Técnico Elehú Moura de Oliveira CRF-RS 2714
+Endereço: Avenida Roraima, Prédio 22 - Camobi - Santa Maria, RS   Telefone: (55) 3213 1754
