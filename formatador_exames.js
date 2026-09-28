@@ -261,7 +261,14 @@ function processarTexto(texto) {
             let nomeFinal = normalizarNome(nomeCapturado);
             
             if (nomeFinal && !resultados[nomeFinal]) {
-                resultados[nomeFinal] = valor + (unidade === '%' ? '%' : '');
+                // Preserva unidades especiais no valor
+                if (/mil\/mm/i.test(unidade)) {
+                    resultados[nomeFinal] = valor + ' mil';
+                } else if (/milh/i.test(unidade)) {
+                    resultados[nomeFinal] = valor + ' mi';
+                } else {
+                    resultados[nomeFinal] = valor + (unidade === '%' ? '%' : '');
+                }
             }
         }
 
@@ -293,9 +300,9 @@ function processarTexto(texto) {
     let outros = [];
 
     // Ordem preferencial para hemograma
-    const ordemHemo = ['Hm', 'Hb', 'Ht', 'VCM', 'HCM', 'CHCM', 'RDW', 'Leuc', 'Plaq', 'VPM'];
+    const ordemHemo = ['Hb', 'Ht', 'VCM', 'HCM', 'CHCM', 'RDW', 'Leuc', 'Plaq', 'VPM'];
     const nomeDiferencial = ['Neut', 'Linf', 'Mon', 'Eos', 'Bas'];
-    const ocultar = []; // Removemos os itens daqui para que todos sejam mostrados
+    const ocultar = ['Hm']; // Eritrócitos nunca são exibidos
 
     for (let chave in resultados) {
         let valor = resultados[chave];
