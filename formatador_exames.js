@@ -193,7 +193,7 @@ function processarTexto(texto) {
         if (/^\s*>\s*\d/i.test(linha)) continue;
 
         // Linhas descritivas longas (frases médicas, notas)
-        if (/certificada|recomendações|diretrizes|sociedade|brasileira|federação|national|international|variabilidade|atividades físicas|risco cardiovascular|diretriz|Atualização|mineralização|remodelação|departamento|bariátricos|osteo/i.test(linha)) continue;
+        if (/certificada|recomendações|diretrizes|sociedade|brasileira|federação|national|international|variabilidade|variações|saudáveis|cerca de|atividades físicas|risco cardiovascular|diretriz|Atualização|mineralização|remodelação|departamento|bariátricos|osteo/i.test(linha)) continue;
         if (/Método\.?\.*:|Método\s/i.test(linha) && !/\b(Hemoglobina|Hematócrito|Eritrócitos|Leucócitos|Plaquetas|Neutrófilos|Linfócitos|Monócitos|Eosinófilos|Basófilos)\b/i.test(linha)) continue;
         if (/^Material:/i.test(linha)) continue;
         if (/Valores\s+(de\s+)?Referência/i.test(linha) && !/^\s*\w+.*\d+.*(?:mg|ng|uI|mmol|g\/|U\/|%|pg|micra)/i.test(linha)) continue;
