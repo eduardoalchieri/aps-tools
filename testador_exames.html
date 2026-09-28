@@ -84,7 +84,7 @@
         const dicionario = {
             // Hemograma
             "hemoglobina": "Hb", "hematócrito": "Ht", "leucócitos": "Leuc", "plaquetas": "Plaq",
-            "neutrófilos": "Segm", "linfócitos": "Linf", "monócitos": "Mon", "eosinófilos": "Eos", "basófilos": "Bas",
+            "neutrófilos": "Neut", "linfócitos": "Linf", "monócitos": "Mon", "eosinófilos": "Eos", "basófilos": "Bas",
             "eritrócitos": "Hm", "vcm": "VCM", "hcm": "HCM", "chcm": "CHCM", "rdw": "RDW", "vpm": "VPM",
             // Glicemia
             "hemoglobina glicada": "HbA1c", "hba1c": "HbA1c", "glicose": "Gli",
@@ -372,9 +372,9 @@
             let outros = [];
 
             // Ordem preferencial para hemograma
-            const ordemHemo = ['Hb', 'Ht', 'Leuc', 'Plaq'];
-            const nomeDiferencial = ['Segm', 'Linf', 'Mon', 'Eos', 'Bas'];
-            const ocultar = ['Hm', 'VCM', 'HCM', 'CHCM', 'RDW', 'VPM'];
+            const ordemHemo = ['Hm', 'Hb', 'Ht', 'VCM', 'HCM', 'CHCM', 'RDW', 'Leuc', 'Plaq', 'VPM'];
+            const nomeDiferencial = ['Neut', 'Linf', 'Mon', 'Eos', 'Bas'];
+            const ocultar = []; // Removemos os itens daqui para que todos sejam mostrados
 
             for (let chave in resultados) {
                 let valor = resultados[chave];
