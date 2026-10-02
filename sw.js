@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aps-tools-v42';
+const CACHE_NAME = 'aps-tools-v43';
 const urlsToCache = [
   './',
   './index.html',
@@ -67,7 +67,8 @@ const urlsToCache = [
   './escalas/prematuridade.js',
   './escalas/idade.js',
   './escalas/bilirrubina.js',
-  './curvas_crescimento.js'
+  './curvas_crescimento.js',
+  './formatador_exames.js'
 ];
 
 // Instalação: Salva todos os arquivos essenciais no cache
