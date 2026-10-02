@@ -30,8 +30,14 @@ function getT00Date(dateString) {
     if (!dateString) return null;
     if (dateString.includes('/')) {
         const p = dateString.split('/');
-        if (p.length === 3 && p[2].length === 4) {
-            return new Date(`${p[2]}-${p[1]}-${p[0]}T00:00:00`);
+        if (p.length === 3) {
+            let ano = p[2];
+            if (ano.length === 2) {
+                ano = '20' + ano;
+            }
+            if (ano.length === 4) {
+                return new Date(`${ano}-${p[1]}-${p[0]}T00:00:00`);
+            }
         }
     }
     return new Date(dateString + 'T00:00:00');
