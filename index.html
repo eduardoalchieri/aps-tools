@@ -4251,11 +4251,10 @@
 
             <div id="module-dum" class="calc-module">
                 <div class="input-group-med" style="background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    <label for="dum-date" style="display: flex; justify-content: space-between; align-items: center; color: #444; font-weight: 600; margin-bottom: 8px;">
+                    <label for="dum-date" style="color: #444; font-weight: 600; margin-bottom: 8px;">
                         Data da Última Menstruação (DUM)
-                        <button onclick="document.getElementById('dum-date').valueAsDate = new Date(); event.preventDefault();" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; background: #eef2f5; color: #0b5ed7; border: 1px solid #d1e3f8; cursor: pointer; font-weight: bold; text-transform: uppercase;">Hoje</button>
                     </label>
-                    <input type="date" id="dum-date" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
+                    <input type="tel" id="dum-date" placeholder="DD/MM/AAAA" maxlength="10" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa; text-align: center; letter-spacing: 2px;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
                 </div>
                 <button class="btn-action-sc" onclick="calcularDUM()" style="width: 100%; margin-top: 15px; padding: 14px; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; gap: 8px;">
                     <span class="material-symbols-outlined">calculate</span> Calcular IG e DPP
@@ -4265,11 +4264,10 @@
 
             <div id="module-usg" class="calc-module hidden">
                 <div class="input-group-med" style="background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 15px;">
-                    <label for="usg-date" style="display: flex; justify-content: space-between; align-items: center; color: #444; font-weight: 600; margin-bottom: 8px;">
+                    <label for="usg-date" style="color: #444; font-weight: 600; margin-bottom: 8px;">
                         Data do Ultrassom
-                        <button onclick="document.getElementById('usg-date').valueAsDate = new Date(); event.preventDefault();" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; background: #eef2f5; color: #0b5ed7; border: 1px solid #d1e3f8; cursor: pointer; font-weight: bold; text-transform: uppercase;">Hoje</button>
                     </label>
-                    <input type="date" id="usg-date" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
+                    <input type="tel" id="usg-date" placeholder="DD/MM/AAAA" maxlength="10" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa; text-align: center; letter-spacing: 2px;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
                 </div>
                 <div style="display: flex; gap: 12px; margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     <div class="input-group-med" style="flex: 1; margin-bottom: 0;">
@@ -4289,11 +4287,10 @@
 
             <div id="module-fiv" class="calc-module hidden">
                 <div class="input-group-med" style="background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 15px;">
-                    <label for="fiv-date" style="display: flex; justify-content: space-between; align-items: center; color: #444; font-weight: 600; margin-bottom: 8px;">
+                    <label for="fiv-date" style="color: #444; font-weight: 600; margin-bottom: 8px;">
                         Data da Transferência
-                        <button onclick="document.getElementById('fiv-date').valueAsDate = new Date(); event.preventDefault();" style="font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; background: #eef2f5; color: #0b5ed7; border: 1px solid #d1e3f8; cursor: pointer; font-weight: bold; text-transform: uppercase;">Hoje</button>
                     </label>
-                    <input type="date" id="fiv-date" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
+                    <input type="tel" id="fiv-date" placeholder="DD/MM/AAAA" maxlength="10" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa; text-align: center; letter-spacing: 2px;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
                 </div>
                 <div class="input-group-med" style="background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     <label style="color: #444; font-weight: 600; margin-bottom: 12px; text-align: center; display: block;">Idade do Embrião Transferido</label>
@@ -4317,7 +4314,7 @@
             <div id="module-reversa" class="calc-module hidden">
                 <div class="input-group-med" style="background: #fff; padding: 15px; border-radius: 10px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
                     <label for="rev-dpp" style="color: #444; font-weight: 600; margin-bottom: 8px;">Data Provável do Parto (DPP)</label>
-                    <input type="date" id="rev-dpp" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
+                    <input type="tel" id="rev-dpp" placeholder="DD/MM/AAAA" maxlength="10" style="width: 100%; padding: 14px 12px; font-size: 1.15rem; color: #333; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: all 0.3s ease; box-sizing: border-box; background-color: #fafafa; text-align: center; letter-spacing: 2px;" onfocus="this.style.borderColor='#0b5ed7'; this.style.backgroundColor='#fff';" onblur="this.style.borderColor='#e0e0e0'; this.style.backgroundColor='#fafafa';">
                 </div>
                 <button class="btn-action-sc" onclick="calcularReversa()" style="width: 100%; margin-top: 15px; padding: 14px; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; gap: 8px;">
                     <span class="material-symbols-outlined">calendar_month</span> Projetar Idade Gestacional

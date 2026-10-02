@@ -6,10 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(e.target.value).classList.remove('hidden');
         });
     }
+
+    // Aplica máscara de data DD/MM/AAAA aos campos de input
+    const dateInputs = ['dum-date', 'usg-date', 'fiv-date', 'rev-dpp'];
+    dateInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', function(e) {
+                let v = e.target.value.replace(/\D/g, '');
+                if (v.length > 8) v = v.slice(0, 8);
+                if (v.length > 4) {
+                    v = v.replace(/(\d{2})(\d{2})(\d{1,4})/, '$1/$2/$3');
+                } else if (v.length > 2) {
+                    v = v.replace(/(\d{2})(\d{1,2})/, '$1/$2');
+                }
+                e.target.value = v;
+            });
+        }
+    });
 });
 
 function getT00Date(dateString) {
     if (!dateString) return null;
+    if (dateString.includes('/')) {
+        const p = dateString.split('/');
+        if (p.length === 3 && p[2].length === 4) {
+            return new Date(`${p[2]}-${p[1]}-${p[0]}T00:00:00`);
+        }
+    }
     return new Date(dateString + 'T00:00:00');
 }
 
