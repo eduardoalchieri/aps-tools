@@ -4252,57 +4252,59 @@
             <div id="module-dum" class="calc-module">
                 <div class="input-group-med">
                     <label for="dum-date">Data da Última Menstruação (DUM)</label>
-                    <input type="date" id="dum-date">
+                    <input type="date" id="dum-date" style="width: 100%;">
                 </div>
-                <button class="btn-action-sc" onclick="calcularDUM()">Calcular IG e DPP</button>
+                <button class="btn-action-sc" onclick="calcularDUM()" style="width: 100%; margin-top: 10px;">Calcular IG e DPP</button>
                 <div id="result-dum" class="final-score-box hidden"></div>
             </div>
 
             <div id="module-usg" class="calc-module hidden">
                 <div class="input-group-med">
                     <label for="usg-date">Data de realização do exame</label>
-                    <input type="date" id="usg-date">
+                    <input type="date" id="usg-date" style="width: 100%;">
                 </div>
-                <div class="input-group-med">
-                    <label for="usg-weeks">Semanas indicadas no exame</label>
-                    <input type="number" id="usg-weeks" min="0" max="42" placeholder="Ex: 8">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <div class="input-group-med" style="flex: 1; margin-bottom: 0;">
+                        <label for="usg-weeks">Semanas indicadas</label>
+                        <input type="number" id="usg-weeks" min="0" max="42" placeholder="Ex: 8" style="width: 100%;">
+                    </div>
+                    <div class="input-group-med" style="flex: 1; margin-bottom: 0;">
+                        <label for="usg-days">Dias indicados</label>
+                        <input type="number" id="usg-days" min="0" max="6" placeholder="Ex: 3" style="width: 100%;">
+                    </div>
                 </div>
-                <div class="input-group-med">
-                    <label for="usg-days">Dias indicados no exame</label>
-                    <input type="number" id="usg-days" min="0" max="6" placeholder="Ex: 3">
-                </div>
-                <button class="btn-action-sc" onclick="calcularUSG()">Calcular IG e DPP</button>
+                <button class="btn-action-sc" onclick="calcularUSG()" style="width: 100%; margin-top: 10px;">Calcular IG e DPP</button>
                 <div id="result-usg" class="final-score-box hidden"></div>
             </div>
 
             <div id="module-fiv" class="calc-module hidden">
                 <div class="input-group-med">
                     <label for="fiv-date">Data da Transferência Embrionária</label>
-                    <input type="date" id="fiv-date">
+                    <input type="date" id="fiv-date" style="width: 100%;">
                 </div>
                 <div class="input-group-med">
                     <label>Tipo de Embrião transferido</label>
-                    <div class="btn-group-sc">
-                        <label>
+                    <div class="btn-group-sc" style="display: flex; width: 100%;">
+                        <label style="flex: 1;">
                             <input type="radio" name="fiv-type" value="3" checked>
-                            <div class="btn-option-sc">D3 (Clivagem)</div>
+                            <div class="btn-option-sc" style="text-align: center; width: 100%;">D3 (Clivagem)</div>
                         </label>
-                        <label>
+                        <label style="flex: 1;">
                             <input type="radio" name="fiv-type" value="5">
-                            <div class="btn-option-sc">D5/D6 (Blastocisto)</div>
+                            <div class="btn-option-sc" style="text-align: center; width: 100%;">D5/D6 (Blastocisto)</div>
                         </label>
                     </div>
                 </div>
-                <button class="btn-action-sc" onclick="calcularFIV()">Calcular Ajuste Obstétrico</button>
+                <button class="btn-action-sc" onclick="calcularFIV()" style="width: 100%; margin-top: 10px;">Calcular Ajuste Obstétrico</button>
                 <div id="result-fiv" class="final-score-box hidden"></div>
             </div>
 
             <div id="module-reversa" class="calc-module hidden">
                 <div class="input-group-med">
                     <label for="rev-dpp">Data Provável do Parto (DPP)</label>
-                    <input type="date" id="rev-dpp">
+                    <input type="date" id="rev-dpp" style="width: 100%;">
                 </div>
-                <button class="btn-action-sc" onclick="calcularReversa()">Projetar Idade Gestacional</button>
+                <button class="btn-action-sc" onclick="calcularReversa()" style="width: 100%; margin-top: 10px;">Projetar Idade Gestacional</button>
                 <div id="result-reversa" class="final-score-box hidden"></div>
             </div>
 
